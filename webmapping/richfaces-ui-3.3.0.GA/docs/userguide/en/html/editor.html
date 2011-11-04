@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>6.34.  &lt; rich:editor &gt;</title><link rel="stylesheet" href="css/html.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link xmlns="" rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/><meta name="keywords" content="editor, rich:editor"/><meta name="keywords" content="rich:editor, editor"/><script xmlns="" type="text/javascript" src="script/prototype-1.6.0.2.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/effects.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/scriptaculous.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><link rel="start" href="index.html" title="RichFaces Developer Guide"/><link rel="up" href="RichFacesComponentsLibrary.html" title="Chapter 6. The RichFaces Components"/><link rel="prev" href="datascroller.html" title="6.33.  &lt; rich:datascroller &gt;"/><link rel="next" href="columns.html" title="6.35.  &lt; rich:columns &gt;"/><script xmlns="http://www.w3.org/TR/xhtml1/transitional" type="text/javascript" src="script/toggle.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script></head><body><div xmlns="" id="overlay"> </div><div xmlns="" id="feedback-maincontainer" style="display:none"><div id="feedback-header">
+			Send your remarks, comments or wishes to doc team
+		</div><a href="#" onclick="$('feedback-maincontainer').hide(); return false;" id="feedback-close"><img src="images/close.png" class="feedback-images"/></a><div id="feedback-state"> </div><form id="feedback-mailform"><div class="feedback-textbox-div">
+			  Subject:<input type="text" id="subject" name="subject" title="Enter the subject of your message" class="feedback-textbox"/></div><div class="feedback-textbox-div"><span style="vertical-align: top;">Message:</span><textarea name="message" title="Type here the text of your message" id="message"> </textarea></div><div class="feedback-textbox-div">
+			  Your name:<input type="text" id="name" name="name" title="Enter your name" class="feedback-textbox"/></div><div class="feedback-textbox-div">
+			  Your email:<input type="text" id="email" name="email" title="Enter your email address" class="feedback-textbox"/></div><span class="feedback-button-container"><input type="submit" value="Send Message" name="submit" class="feedback-formbutton" title="Send Message"/></span><span class="feedback-button-container"><input type="reset" value="Clear All Fields" class="feedback-formbutton" title="Clear All Fields"/></span></form></div><div xmlns="" id="feedback-wrapper"><a id="feedback-link" href="#" onclick="$('feedback-maincontainer').appear(); return false;"><img src="images/feedback_logo.png" class="feedback-images" width="100px"/></a></div><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="datascroller.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="columns.html"><strong>Next</strong></a></li></ul><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="editor"/>6.34. 
+				&lt;
+				rich:editor
+				&gt;
+			</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e19956"/>6.34.1. Description</h3></div></div></div><p>The <span class="bold"><strong>
+            <span class="property">&lt;rich:editor&gt;</span>
+         </strong></span> component is used for creating a  WYSIWYG editor on a page. 
+     </p><div class="figure"><a id="d0e19967"/><div class="figure-contents"><div class="mediaobject"><img src="images/editor1.png" alt="&lt;rich:editor&gt; component"/></div></div><p class="title"><b>Figure 6.41. 
+            <span class="bold">
+               <span class="property">&lt;rich:editor&gt;</span>
+            </span> component</b></p></div><br class="figure-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e19979"/>6.34.2. Key Features</h3></div></div></div><div class="itemizedlist"><ul><li><p>Seam text support</p></li><li><p>Manageable global configurations</p></li><li><p>Possibility to use custom plug-ins</p></li><li><p>Support of all TinyMCE's parameters through &lt;f:param&gt;</p></li></ul></div></div><div class="table"><a id="d0e19995"/><p class="title"><b>Table 6.128. rich
+					:
+					editor
+					attributes
+				</b></p><div class="table-contents"><table summary="rich&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;:&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;editor&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;attributes&#xA;&#x9;&#x9;&#x9;&#x9;" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Attribute Name</th><th>Description</th></tr></thead><tbody><tr><td>autoResize</td><td>Attribute enables to get the Editor area to resize to the boundaries of the contents.</td></tr><tr><td>binding</td><td>The attribute takes a value-binding expression for a component property of
+a backing bean</td></tr><tr><td>configuration</td><td>Attribute defines configuration properties file name</td></tr><tr><td>converter</td><td>Id of Converter to be used or reference to a Converter</td></tr><tr><td>converterMessage</td><td>converterMessage</td></tr><tr><td>customPlugins</td><td>Attribute defines property file name witch contains descriptors of custom plugins</td></tr><tr><td>dialogType</td><td>Attribute defines how dialogs/popups should be opened. Default value is "modal"</td></tr><tr><td>height</td><td>Attribute defines height of component.</td></tr><tr><td>id</td><td>Every component may have a unique id that is automatically created if omitted</td></tr><tr><td>immediate</td><td>A flag indicating that this component value must be converted
+            and validated immediately (that is, during Apply Request Values
+            phase), rather than waiting until a Process Validations phase</td></tr><tr><td>label</td><td>A localized user presentable name for this component.</td></tr><tr><td>language</td><td>Attribute defines Editor language</td></tr><tr><td>onchange</td><td>Attribute enables to specify a function name to be executed each time content is modified by TinyMCE.</td></tr><tr><td>oninit</td><td>Attribute defines a function name to be executed when all Editor instances have finished their initialization.</td></tr><tr><td>onsave</td><td>Attribute enables to add custom logic to be executed when the contents is extracted/saved.</td></tr><tr><td>onsetup</td><td>Attribute enables to add events to Editor instances before they get rendered.</td></tr><tr><td>plugins</td><td>Attribute defines Editor plugins</td></tr><tr><td>readonly</td><td>Attribute defines Editor is readonly</td></tr><tr><td>rendered</td><td>If "false", this component is not rendered</td></tr><tr><td>required</td><td>If "true", this component is checked for non-empty input</td></tr><tr><td>requiredMessage</td><td>requiredMessage</td></tr><tr><td>skin</td><td>Attribute defines Editor skin</td></tr><tr><td>style</td><td>CSS style(s) is/are to be applied when this component is rendered</td></tr><tr><td>styleClass</td><td>Corresponds to the HTML class attribute</td></tr><tr><td>tabindex</td><td>In visual mode the attribute works the same way as "tab_focus" TinyMCE's property the attribute enables 
+				you to specify an element ID to focus, when the TAB  key  is pressed .
+				You can also use the special ":prev" and ":next"  values that will then place the focus on 
+				an input element placed before/after the TinyMCE instance in the DOM. 
+				While in "source" mode the attribute works like standard HTML tabindex attribute.</td></tr><tr><td>theme</td><td>Attribute defines Editor theme</td></tr><tr><td>useSeamText</td><td>Attribute defines if model value should be converted to Seam Text. Default value is "false"</td></tr><tr><td>validator</td><td>MethodBinding pointing at a method that is called during
+            Process Validations phase of the request processing lifecycle,
+            to validate the current value of this component</td></tr><tr><td>validatorMessage</td><td>validatorMessage</td></tr><tr><td>value</td><td>The current value of this component</td></tr><tr><td>valueChangeListener</td><td>Listener for value changes</td></tr><tr><td>viewMode</td><td>Attribute defines if tinyMCE WYSIWYG should be disabled. Default value is "visual"</td></tr><tr><td>width</td><td>Attribute defines width of component.</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e20177"/><p class="title"><b>Table 6.129. Component identification parameters</b></p><div class="table-contents"><table summary="Component identification parameters" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>component-type</td><td>org.richfaces.component.editor</td></tr><tr><td>component-class</td><td>org.richfaces.component.html.Htmleditor</td></tr><tr><td>component-family</td><td>org.richfaces.component.editor</td></tr><tr><td>renderer-type</td><td>org.richfaces.renderkit.html.editorRenderer</td></tr><tr><td>tag-class</td><td>org.richfaces.taglib.editorTag</td></tr></tbody></table></div></div><br class="table-break"/><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e20213"/>6.34.3. Creating the Component with a Page Tag</h3></div></div></div><p>To create the simplest variant on a page use the following syntax:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:editor</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e20225"/>6.34.4. Creating the Component Dynamically Using Java</h3></div></div></div><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">import</span><!-- <br/> --><span class="java_plain">&nbsp;org</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">richfaces</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">component</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">html</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_type">Htmleditor</span><!-- <br/> --><span class="java_separator">;</span>
+<!--  --><br/><span class="java_separator">...</span>
+<!--  --><br/><span class="java_type">Htmleditor</span><span class="java_plain">&nbsp;myeditor&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">Htmleditor</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_separator">...</span></pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e20235"/>6.34.5. Details of Usage</h3></div></div></div><p>The <span class="bold"><strong>
+            <span class="property">&lt;rich:editor&gt;</span>
+         </strong></span> is fully based on TinyMCE web based Javascript HTML WYSIWYG editor control and supports all of the features it has.
+          The <span class="bold"><strong>
+            <span class="property">&lt;rich:editor&gt;</span>
+         </strong></span> adapts the TinyMCE editor for JSF environment and adds some functional capabilities.
+			</p><p>
+				The easiest way to place the <span class="bold"><strong>
+            <span class="property">&lt;rich:editor&gt;</span>
+         </strong></span> on a page is as follows:
+			</p><p>
+				     <span class="bold"><strong>Example:</strong></span>
+            </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:editor</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.editorValue}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre><p>
+		Implementation of  <span class="bold"><strong>
+            <span class="property">&lt;rich:editor&gt;</span>
+         </strong></span> provides three ways to define the properties of the component:
+    </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="orderedlist"><ol><li><p>Using attributes</p></li><li><p>Using using <span class="bold"><strong>
+                  <span class="property">&lt;f:param&gt;</span>
+               </strong></span> JSF tag</p></li><li><p>Using configuration files that allow you to set up multiple configurations for all editors in your application and change them in the runtime</p></li></ol></div><p>The three methods are described in details in the chapter.</p><p>
+		The most important properties are implemented as attributes and you can define them as any other attribute.
+        The attributes of the <span class="bold"><strong>
+            <span class="property">&lt;rich:editor&gt;</span>
+         </strong></span> component match the corresponding properties of TinyMCE editor.			
+	</p><p>
+		For example, a theme for the editor can be defined using the <span class="emphasis"><em>
+            <span class="property">"theme"</span>
+         </em></span> attribute like this: 
+	</p><p>
+        <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:editor</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.editorValue}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">theme</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;advanced&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre><p>Setting a different skin for the editor can be done using the <span class="emphasis"><em>
+            <span class="property">"skin"</span>
+         </em></span> attribute.</p><p>
+						Another useful property that is implemented at attribute level is <span class="emphasis"><em>
+            <span class="property">"viewMode"</span>
+         </em></span>. 
+						The attribute switches between "visual" and "source" modes, toggling between modes is performed setting the attribute to "visual" and "source" respectively. 
+                              Implementation of <span class="bold"><strong>
+            <span class="property">&lt;rich:editor&gt;</span>
+         </strong></span> also implies that you can change the modes dynamically setting the value of the <span class="property">"viewMode"</span> attribute using EL-expression. 
+                    </p><p>
+                                        <span class="bold"><strong>Example:</strong></span>
+                              </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...&nbsp;&nbsp;</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:editor</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{editor.submit}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">theme</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;advanced&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">viewMode</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{editor.viewMode}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:selectOneRadio</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{editor.viewMode}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onchange</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;submit();&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:selectItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">itemValue</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;visual&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">itemLabel</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;visual&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:selectItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">itemValue</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;source&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">itemLabel</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;source&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:selectOneRadio</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:editor</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>
+		Most configuration options that TinyMCE provides can be applied using <span class="bold"><strong>
+            <span class="property">&lt;f:param&gt;</span>
+         </strong></span> JSF tag. 
+        The syntax is quite simple: the <span class="emphasis"><em>
+            <span class="property">"name"</span>
+         </em></span> attribute should contain the option, 
+		the <span class="emphasis"><em>
+            <span class="property">"value"</span>
+         </em></span> attribute assigns some value to the option.
+	</p><p>
+		For example, this code adds some buttons to the editor and positions the toolbar.  
+	</p><p>
+        <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:editor</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.editorValue}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">theme</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;advanced&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">plugins</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;save,paste&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:param</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;theme_advanced_buttons1&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;bold,italic,underline,&nbsp;cut,copy,paste,pasteword&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:param</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;theme_advanced_toolbar_location&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;top&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:param</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;theme_advanced_toolbar_align&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;left&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:editor</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>This is what you get as a result:</p><div class="figure"><a id="d0e20379"/><div class="figure-contents"><div class="mediaobject"><img src="images/editor2.png" alt="Setting configuration options with &lt;f:param&gt;"/></div></div><p class="title"><b>Figure 6.42.  Setting configuration options with &lt;f:param&gt;
+             
+                              </b></p></div><br class="figure-break"/><p>The third way to configure the <span class="bold"><strong> 
+            <span class="property">&lt;rich:editor&gt;</span>
+         </strong></span> is 
+                    to use configuration file (.properties)</p><p>
+						This method eases your life if you need to configure multiple instances 
+						of the <span class="bold"><strong>
+            <span class="property">&lt;rich:editor&gt;</span>
+         </strong></span>: you configure the editor once 
+						and in one spot and the configuration properties can be applied to any 
+						<span class="bold"><strong>
+            <span class="property">&lt;rich:editor&gt;</span>
+         </strong></span> in your application.
+					</p><p>To implement this type of configuration you need to take a few steps:</p><div class="itemizedlist"><ul><li><p>
+									Create a configuration file (.properties) in the classpath folder and add some properties to it. 
+									Use standard syntax for the .properties files: <code class="code">parameter=value</code>.  
+									Here is an example of configuration file:
+								</p><p>
+									      <span class="bold"><strong>Example:</strong></span>
+                                </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">theme=&quot;advanced&quot;</span><br />
+<span class="xml_plain">plugins=&quot;save,paste&quot;</span><br />
+<span class="xml_plain">theme_advanced_buttons1=&quot;bold,italic,underline,&nbsp;cut,copy,paste,pasteword&quot;</span><br />
+<span class="xml_plain">theme_advanced_toolbar_location=&quot;top&quot;</span><br />
+<span class="xml_plain">theme_advanced_toolbar_align=&quot;left&quot;</span><br />
+</pre></li><li><p>
+									The properties stored in configuration file are passed to the
+                                    <span class="bold"><strong>
+                  <span class="property">&lt;rich:editor&gt;</span>
+               </strong></span> via 
+                                    <span class="emphasis"><em>
+                  <span class="property">"configuration"</span>
+               </em></span> attribute which takes the name of the configuration file 
+									as a value (with out .properties extension).
+								</p><p>
+									For example, if you named the configuration file "editorconfig", you would address it as follows:
+								</p><p>
+									      <span class="bold"><strong>Example:</strong></span>
+                                </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:editor</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.editorValue}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">configuration</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;editorconfig&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></li><li><p>
+                             Alternately, you can use a  EL-expression to define a configuration file. 
+							  This way you can dynamically change the sets of configuration properties. 
+						</p><p>
+							For example, you have two configuration files "configurationAdvanced" and  "configurationSimple" and you want them to be 
+             applied under some condition. 
+						</p><p>
+							To do this you need to bind  <span class="emphasis"><em>
+                  <span class="property">"configuration"</span>
+               </em></span> 
+							attribute to  the appropriate bean property  like this.
+						</p><p>
+                                        <span class="bold"><strong>Example:</strong></span>
+                              </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:editor</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.editorValue}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">configuration</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{editor.configuration}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>Your Java file should look like this.</p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_separator">...</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;configuration</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">if</span><span class="java_separator">(</span><span class="java_plain">some&nbsp;condition</span><span class="java_separator">){</span><span class="java_operator">//</span><span class="java_plain">defines&nbsp;some&nbsp;condition</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;configuration&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_literal">&quot;configurationAdvanced&quot;</span><span class="java_separator">;</span><span class="java_plain">&nbsp;</span><span class="java_operator">//</span><span class="java_plain">the&nbsp;name&nbsp;on&nbsp;the&nbsp;file&nbsp;with&nbsp;advanced&nbsp;properties&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">else</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;configuration</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_literal">&quot;configurationSimple&quot;</span><span class="java_separator">;</span><span class="java_plain">&nbsp;</span><span class="java_operator">//</span><span class="java_plain">the&nbsp;name&nbsp;on&nbsp;the&nbsp;file&nbsp;with&nbsp;simplified&nbsp;properties&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+<!--  --><br/><span class="java_separator">...</span></pre></li></ul></div><p>
+                              You also might want to add some custom plug-ins to your editor. 
+                              You can read about how to create a  plug-in <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://wiki.moxiecode.com/index.php/TinyMCE:Creating_Plugin">here</a>.
+                    </p><p>
+                              Adding a custom plugin also requires a few steps to take. Though, the procedure is very similar to adding a configuration file.
+                              
+                    </p><p>This is what you need to add a plugin:</p><div class="itemizedlist"><ul><li><p>Create a .properties file and put the name of the plug-in and a path to it into the file.
+                                        The file can contain multiple plug-in declarations. Your .properties file should be like this. 
+								</p><p>
+                                    <span class="bold"><strong>Example:</strong></span>
+                                </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">pluginName=/mytinymceplugins/plugin1Name/editor_plugin.js</span><br />
+<span class="xml_plain">...</span><br />
+</pre></li><li><p>
+											Use the <span class="property">"customPlugins"</span> attribute to specify the .properties file with a plugin name and a path to it.
+										</p><p>
+											If your .properties file is named "myPlugins", then your will have this code on the page.
+										</p><p>
+                                                  <span class="bold"><strong>Example:</strong></span>
+                                        </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:editor</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">theme</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;advanced&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">customPlugins</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;myPlugins&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">plugins</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;pluginName&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain">&nbsp;</span><br />
+<span class="xml_plain">...</span><br />
+</pre></li></ul></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note:</h2><p>
+Some plug-ins which available for download might have some dependencies on TinyMCE scripts.
+For example, dialog pop-ups require tiny_mce_popup.js script file. 
+Assuming that you will not plug  custom plugins to the RF jar with editor component
+(standard TinyMCE plugins creation implies that plugins are put into TinyMCE's corresponding directory)
+ you should manually add required TinyMCE scripts to some project folder and correct the js includes.
+                                        </p></div><p>
+                              The implementation of the <span class="bold"><strong>
+            <span class="property">&lt;rich:editor&gt;</span>
+         </strong></span> component has two  methods for handling
+                    events. 
+                    </p><p>The attributes take some function name as a value with is triggered on the appropriate event.  You need to use standard JavaScript function calling syntax. </p><div class="itemizedlist"><ul><li><p>Using  attributes (<span class="emphasis"><em>
+                  <span class="property">"onchange"</span>
+               </em></span>, 
+								  <span class="emphasis"><em>
+                  <span class="property">"oninit"</span>
+               </em></span>,
+								  <span class="emphasis"><em>
+                  <span class="property">"onsave"</span>
+               </em></span>,
+								  <span class="emphasis"><em>
+                  <span class="property">"onsetup"</span>
+               </em></span>)
+							  </p><p>
+                                        <span class="bold"><strong>Example:</strong></span>
+                              </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:editor</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.editorValue}&quot;</span><span class="xml_attribute_name">onchange</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;myCustomOnChangeHandler()&quot;</span><span class="xml_plain">&nbsp;&nbsp;...&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></li><li><p>
+							Using <span class="bold"><strong>
+                  <span class="property">&lt;f:param&gt;</span>
+               </strong></span> as a child element defining the <span class="emphasis"><em>
+                  <span class="property">"name"</span>
+               </em></span> attribute 
+							with one of the TinyMCE's callbacks and the 
+							<span class="emphasis"><em>
+                  <span class="property">"value"</span>
+               </em></span> attribute takes the function name you want to be called 
+							on the corresponding event as the value. Note, that the syntax in this case is a bit different: parentheses are not required. 
+						</p><p>
+	                        <span class="bold"><strong>Example:</strong></span>
+	                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:editor</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.editorValue}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:param</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;onchange&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;myCustomOnChangeHandler&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:editor</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></li></ul></div><p>The <span class="bold"><strong> 
+            <span class="property">&lt;rich:editor&gt;</span>
+         </strong></span> 
+                              component has a build-in converter that renders HTML code generated by the editor 
+                              to Seam text (you can read more Seam text <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://docs.jboss.org/seam/1.1.5.GA/reference/en/html/text.html">here</a>.), it also interprets Seam text
+                              passed to the <span class="bold"><strong> 
+            <span class="property">&lt;rich:editor&gt;</span>
+         </strong></span> and renders it to HTML. 
+                              The converter can be enable with the <span class="emphasis"><em>
+            <span class="property">"seamTest"</span>
+         </em></span> attribute.</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><p>This HTML code generated by editor</p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">p</span><span class="xml_tag_symbols">&gt;&lt;</span><span class="xml_tag_name">a</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">href</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;http://mysite.com&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Lorem&nbsp;ipsum</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">a</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">i</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">dolor&nbsp;sit</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">i</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;amet,&nbsp;ea&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">u</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">commodo</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">u</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;consequat.</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">p</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>will be parsed to the following Seam text:</p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">[Lorem&nbsp;ipsum=&gt;http://mysite.com]&nbsp;*dolor&nbsp;sit*&nbsp;amet,&nbsp;ea&nbsp;_commodo_&nbsp;consequat.</span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>Accordingly, if the Seam text is passed to the component it will be parsed to HTML code.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e20622"/>6.34.6. Look-and-Feel Customization</h3></div></div></div><p>For skinnability implementation, the components use a <span class="emphasis"><em>
+                                        <span class="property">style class redefinition method.</span>
+                              </em></span> Default style classes are mapped on <span class="emphasis"><em>
+                                        <span class="property">skin parameters.</span>
+                              </em></span>
+      </p><p>There are two ways to redefine the appearance of all <span class="bold"><strong>
+                                        <span class="property">&lt;rich:editor&gt;</span>
+                              </strong></span> components at once: </p><div class="itemizedlist"><ul><li><p>Redefine the corresponding skin
+                                                  parameters</p></li><li><p> Add to your style sheets style classes used
+                                                  by a <span class="bold"><strong>
+                                                  <span class="property">&lt;rich:editor&gt;</span>
+                                                  </strong></span> component</p></li></ul></div><p>
+                    </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e20661"/>6.34.7. Skin Parameters Redefinition</h3></div></div></div><div class="table"><a id="d0e20664"/><p class="title"><b>Table 6.130. Skin parameters redefinition for containers</b></p><div class="table-contents"><table summary="Skin parameters redefinition for containers" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>additionalBackgroundColor</td><td>background</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e20680"/><p class="title"><b>Table 6.131. Skin parameters redefinition for external controls</b></p><div class="table-contents"><table summary="Skin parameters redefinition for external controls" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>panelBorderColor</td><td>border-color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e20696"/><p class="title"><b>Table 6.132. Skin parameters redefinition for layout</b></p><div class="table-contents"><table summary="Skin parameters redefinition for layout" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>panelBorderColor</td><td>border-left-color</td></tr><tr><td>panelBorderColor</td><td>border-right-color</td></tr><tr><td>panelBorderColor</td><td>border-top-color</td></tr><tr><td>panelBorderColor</td><td>border-bottom-color</td></tr><tr><td>generalFamilyFont</td><td>font-family</td></tr><tr><td>generalTextColor</td><td>color</td></tr><tr><td>headerBackgroundColor</td><td>background-color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e20742"/><p class="title"><b>Table 6.133. Skin parameters redefinition for buttons</b></p><div class="table-contents"><table summary="Skin parameters redefinition for buttons" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>headerBackgroundColor</td><td>background-color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e20758"/><p class="title"><b>Table 6.134. Skin parameters redefinition for list box</b></p><div class="table-contents"><table summary="Skin parameters redefinition for list box" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>tableBackgroundColor</td><td>background</td></tr><tr><td>panelBorderColor</td><td>border-color</td></tr><tr><td>generalFamilyFont</td><td>font-family</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e20784"/><p class="title"><b>Table 6.135. Skin parameters redefinition for color split button</b></p><div class="table-contents"><table summary="Skin parameters redefinition for color split button" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>tableBackgroundColor</td><td>background</td></tr><tr><td>panelBorderColor</td><td>border-color</td></tr><tr><td>generalFamilyFont</td><td>font-family</td></tr><tr><td>additionalBackgroundColor</td><td>background-color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e20815"/><p class="title"><b>Table 6.136. Skin parameters redefinition for  hovered color split button</b></p><div class="table-contents"><table summary="Skin parameters redefinition for  hovered color split button" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>headerBackgroundColor</td><td>border-color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e20831"/><p class="title"><b>Table 6.137. Skin parameters redefinition for menu</b></p><div class="table-contents"><table summary="Skin parameters redefinition for menu" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>panelBorderColor</td><td>border-color</td></tr><tr><td>tableBackgroundColor</td><td>background</td></tr><tr><td>generalFamilyFont</td><td>font-family</td></tr><tr><td>generalTextColor</td><td>color</td></tr><tr><td>additionalBackgroundColor</td><td>background-color</td></tr><tr><td>additionalBackgroundColor</td><td>background-color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e20872"/><p class="title"><b>Table 6.138. Skin parameters redefinition for menu item</b></p><div class="table-contents"><table summary="Skin parameters redefinition for menu item" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>additionalBackgroundColor</td><td>background</td></tr><tr><td>panelBorderColor</td><td>border-bottom-color</td></tr><tr><td>generalTextColor</td><td>color</td></tr><tr><td>generalTextColor</td><td>color</td></tr><tr><td>tabDisabledTextColor</td><td>color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e20908"/><p class="title"><b>Table 6.139. Skin parameters redefinition for progress and resize states</b></p><div class="table-contents"><table summary="Skin parameters redefinition for progress and resize states" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>tableBackgroundColor</td><td>background</td></tr><tr><td>tableBorderColor</td><td>border-color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e20929"/><p class="title"><b>Table 6.140. Skin parameters redefinition for dialog box</b></p><div class="table-contents"><table summary="Skin parameters redefinition for dialog box" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>generalFamilyFont</td><td>font-family</td></tr><tr><td>generalBackgroundColor</td><td>background</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e20950"/><p class="title"><b>Table 6.141. Skin parameters redefinition for link in dialog box</b></p><div class="table-contents"><table summary="Skin parameters redefinition for link in dialog box" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>generalTextColor</td><td>color</td></tr><tr><td>hoverLinkColor</td><td>color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e20971"/><p class="title"><b>Table 6.142. Skin parameters redefinition for link in dialog box</b></p><div class="table-contents"><table summary="Skin parameters redefinition for link in dialog box" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>generalTextColor</td><td>color</td></tr><tr><td>hoverLinkColor</td><td>color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e20992"/><p class="title"><b>Table 6.143. Skin parameters redefinition for fieldset  in dialog box</b></p><div class="table-contents"><table summary="Skin parameters redefinition for fieldset  in dialog box" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>generalFamilyFont</td><td>font-family</td></tr><tr><td>panelBorderColor</td><td>border-color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e21013"/><p class="title"><b>Table 6.144. Skin parameters redefinition for fieldset legend in dialog box</b></p><div class="table-contents"><table summary="Skin parameters redefinition for fieldset legend in dialog box" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>generalLinkColor</td><td>color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e21029"/><p class="title"><b>Table 6.145. Skin parameters redefinition for input elements in dialog box</b></p><div class="table-contents"><table summary="Skin parameters redefinition for input elements in dialog box" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>warningColor</td><td>color</td></tr><tr><td>warningColor</td><td>border-color</td></tr><tr><td>controlBackgroundColor</td><td>background</td></tr><tr><td>tableBorderColor</td><td>border-color</td></tr><tr><td>generalFamilyFont</td><td>font-family</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e21065"/><p class="title"><b>Table 6.146. Skin parameters redefinition for panel wrapper in dialog box</b></p><div class="table-contents"><table summary="Skin parameters redefinition for panel wrapper in dialog box" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>panelBorderColor</td><td>border-color</td></tr><tr><td>tableBackgroundColor</td><td>background</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e21086"/><p class="title"><b>Table 6.147. Skin parameters redefinition for headers in dialog box</b></p><div class="table-contents"><table summary="Skin parameters redefinition for headers in dialog box" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>generalLinkColor</td><td>color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e21102"/><p class="title"><b>Table 6.148. Skin parameters redefinition for links in tabs in dialog box</b></p><div class="table-contents"><table summary="Skin parameters redefinition for links in tabs in dialog box" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>generalFamilyFont</td><td>font-family</td></tr><tr><td>generalTextColor</td><td>color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e21123"/><p class="title"><b>Table 6.149. Skin parameters redefinition for main text area</b></p><div class="table-contents"><table summary="Skin parameters redefinition for main text area" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>generalFamilyFont</td><td>font-family</td></tr><tr><td>generalTextColor</td><td>color</td></tr><tr><td>tableBackgroundColor</td><td>background</td></tr></tbody></table></div></div><br class="table-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="EditorDefinitionofCustomStyleSelectors"/>6.34.8. Definition of Custom Style Selectors</h3></div></div></div><p>On the screenshot there are CSS selectors  that define styles for component elements.</p><div class="figure"><a id="d0e21154"/><div class="figure-contents"><div class="mediaobject"><img src="images/editor3.png" alt="Classes names"/></div></div><p class="title"><b>Figure 6.43. Classes names</b></p></div><br class="figure-break"/><div class="table"><a id="d0e21160"/><p class="title"><b>Table 6.150. CSS selectors for the layout of the editor</b></p><div class="table-contents"><table summary="CSS selectors for the layout of the editor" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Selector</th><th>Description</th></tr></thead><tbody><tr><td>.richfacesSkin table.mceToolbar</td><td>Defines styles for the rows of icons within toolbar</td></tr><tr><td>.richfacesSkin .mceButton</td><td>Defines styles for the buttons</td></tr><tr><td>.richfacesSkin .mceButtonDisabled .mceIcon </td><td>Defines styles for the icons</td></tr><tr><td>.richfacesSkin .mceListBox</td><td>Defines styles for the list box</td></tr><tr><td>.richfacesSkin .mceSeparator</td><td>Defines styles for the buttons separator</td></tr><tr><td>.richfacesSkin .mceIframeContainer</td><td>Defines styles for the container</td></tr><tr><td>.richfacesSkin table.mceLayout</td><td>Defines styles for the table layout</td></tr><tr><td>.richfacesSkin .mceToolbar</td><td>Defines styles for the toolbar</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e21211"/><p class="title"><b>Table 6.151. CSS selectors for the menus</b></p><div class="table-contents"><table summary="CSS selectors for the menus" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Selector</th><th>Description</th></tr></thead><tbody><tr><td>.richfacesSkin .mceMenu</td><td>Defines styles for the menus</td></tr><tr><td>.richfacesSkin .mceMenu .mceMenuItemActive</td><td>Defines styles for the active menu items</td></tr><tr><td>.richfacesSkin .mceMenu .mceMenuItemActive</td><td>Defines styles for the active menu items</td></tr></tbody></table></div></div><br class="table-break"/><p>In order to redefine styles for all <span class="bold"><strong>
+                              <span class="property">&lt;rich:editor&gt;</span>
+                    </strong></span> components on a page using CSS, it's enough to create classes with the
+                              same names (possible classes could be found in the tables <a href="editor.html#EditorDefinitionofCustomStyleSelectors" title="6.34.8. Definition of Custom Style Selectors">above</a>) and define necessary properties in them.
+                    </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_selector">.richfacesSkin</span><span class="css_selector">&nbsp;</span><span class="css_selector">.mceButton</span><span class="css_normal">&nbsp;</span><span class="css_curly_brace">{</span><span class="css_normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">border</span><span class="css_colon">:</span><span class="css_normal">&nbsp;</span><span class="css_property_value">1px</span><span class="css_property_value">&nbsp;</span><span class="css_property_value">solid</span><span class="css_property_value">&nbsp;</span><span class="css_property_value">red</span><span class="css_semi_colon">;</span><span class="css_normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+</span><span class="css_curly_brace">}</span><span class="css_normal">&nbsp;&nbsp;<br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>This is the result:</p><div class="figure"><a id="d0e21257"/><div class="figure-contents"><div class="mediaobject"><img src="images/editor4.png" alt="Redefinition styles with predefined selectors"/></div></div><p class="title"><b>Figure 6.44. Redefinition styles with predefined selectors</b></p></div><br class="figure-break"/><p>It's also possible to change styles of a particular 
+                              <span class="bold"><strong> 
+            <span class="property">&lt;rich:editor&gt;</span>
+         </strong></span> component. In this case you should create own style classes and use them in corresponding 
+                              <span class="bold"><strong>
+            <span class="property">&lt;rich:editor&gt;</span>
+         </strong></span> 
+         <span class="emphasis"><em>
+            <span class="property">"styleClass"</span>
+         </em></span> attributes. An example is placed below:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_selector">.myClass</span><span class="css_curly_brace">{</span><span class="css_normal">&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">margin-top</span><span class="css_colon">:</span><span class="css_normal">&nbsp;</span><span class="css_property_value">20px</span><span class="css_semi_colon">;</span><span class="css_normal"><br />
+</span><span class="css_curly_brace">}</span><span class="css_normal"><br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>The <span class="emphasis"><em>
+            <span class="property">"styleClass"</span>
+         </em></span> attribute for <span class="bold"><strong>
+            <span class="property">&lt;rich:editor&gt; </span>
+         </strong></span> is defined as it's shown in the example below:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:editor</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.text}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">styleClass</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;myClass&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e21311"/>6.34.9. Relevant Resources Links</h3></div></div></div><p>The <span class="bold"><strong> 
+            <span class="property">&lt;rich:editor&gt;</span>
+         </strong></span> is based on TinyMCE editor and supports almost all its features and properties some of which are not described here since you can find more detailed documentation on them on the official <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://wiki.moxiecode.com/index.php/TinyMCE:Index">web site.</a>
+      </p><p>
+         <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://livedemo.exadel.com/richfaces-demo/richfaces/editor.jsf?c=editor">Here</a> you can see an example of <span class="bold"><strong>
+                                        <span class="property">&lt;rich:editor&gt;</span>
+                              </strong></span> usage and sources for the given example. </p></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="datascroller.html"><strong>Prev</strong>6.33. 
+				&lt;
+				rich:datascroller
+				&gt;
+			</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="columns.html"><strong>Next</strong>6.35. 
+				&lt;
+				rich:columns
+				&gt;
+			</a></li></ul></body></html>

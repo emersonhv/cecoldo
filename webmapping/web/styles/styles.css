@@ -1,0 +1,196 @@
+body { text-align:center; }
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+.search{
+    text-align: right;
+    color: #659BC9;
+    font-size: 11px
+}
+#search{
+    color: #999999;
+    font-size: 11px
+}
+.contenido{
+    font-family: Verdana;
+    font-size: 12px
+}
+.naranja{
+    color: #CC3300;
+    font-size: 11px;
+    font-family: Arial;
+}
+.dr-table-cell a{
+    color: #CC3300;
+}
+.punteado{    
+    border-bottom-style: dotted;
+    border-bottom-width: 1px;
+    border-bottom-color: #659BC9;
+}
+.boton{
+    font-family: verdana;
+    font-size: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #659BC9;    
+}
+.caja_boton{
+    width: 95px;
+    text-align: center;
+    vertical-align: middle;
+    height:18px;
+    background-image: url(../images/boton_bg.png);
+}
+.header1{
+    font-family: Tahoma;
+    font-size: 11px;
+    color: #CCCCCC;
+    margin: 0;
+    padding: 0;
+}
+.header_azul{
+    color: #70C1E6;
+}
+.header_selected{
+    color: #999999;
+}
+.borde_derecho{
+
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: #cccccc;
+}
+.footer{
+    font-family: Tahoma;
+    font-size: 11px;
+    color: #999999;
+}
+.main{    
+    /*border-style: solid;
+    border-width: 1px;
+    border-color: #BFD0E4;*/
+}
+.efecto_sobre{
+    /*width: 780px;*/
+    border-bottom-style: solid;
+    border-bottom-color: #eeeeee;
+    border-bottom-width: 2px;
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-right-color: #eeeeee;
+    margin:0 auto 0 auto;
+    text-align: center;
+}
+.linea_inferior{
+    border-bottom-style: solid;
+    border-bottom-color: #BFD0E4;
+    border-bottom-width: 1px;
+
+}
+.scroll
+{
+    width:100%; 
+    height:300px; 
+    overflow:auto;
+}
+.scroll2
+{
+    width:100%; 
+    height:600px; 
+    overflow:auto;
+}
+.scroll3
+{
+    width:500px; 
+    height:400px; 
+    overflow:auto;
+}
+
+.info{
+    background-color: #DDE9F4;
+    border: 1px solid #A5C5E2;
+    width: 950px;
+    padding: 10px;
+    text-align: left;
+    font-family: verdana;
+    margin-top:0px;
+}
+.info-title{
+    color: #CC3300;
+    font-size: 12px;
+    font-family: verdana;
+    font-weight: bold;    
+}
+.info th{
+    color: #CC3300;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: Arial;
+    padding: 5px;
+    width: 10px;
+}
+.info td{
+    color: #178FD4;
+    font-size: 12px;
+    padding: 5px;
+    border-bottom: 1px solid #A7C6E2;
+}
+.steps{
+    text-align:right;
+    margin-right: 90px;
+    color: #CC3300;
+    font-weight: bold;
+    font-size: 13px;
+    text-decoration: underline;
+    font-family: Arial,Helvetica,sans-serif;
+}efecto_sobre
+
+.contenido th{
+    color: #CC3300;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+.contenido table{
+    border-color: blue;
+}
+.rich-combobox-item{
+    text-align: left;
+}
+.rich-message-label{
+    color: red;
+    padding-left: 7px
+}
+td.banner {
+    font-size: 8pt;
+    color: #ffffff;
+    background-image: url('../images/blue-background.jpg');
+    border-bottom: 1px solid #ffffff; /* moved here from tr since IE accepts it only here */
+}
+td.banner-menu {
+    font-size: 8pt;
+    color: white;
+    background: #064377;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-bottom: 1px solid white;
+    height: 16px;
+}
+td.banner-login {
+    font-size: 8pt;
+    color: white;
+    background: #266397;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-bottom: 1px solid white;
+    height: 16px;
+    vertical-align: middle;
+}
+.panel_banner{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}

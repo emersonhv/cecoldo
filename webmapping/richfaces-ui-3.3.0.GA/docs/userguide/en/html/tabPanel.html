@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>6.85.  &lt; rich:tabPanel &gt;</title><link rel="stylesheet" href="css/html.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link xmlns="" rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/><meta name="keywords" content="rich:tabPanel"/><meta name="keywords" content="tab, rich:tabPanel, HtmltabPanel"/><script xmlns="" type="text/javascript" src="script/prototype-1.6.0.2.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/effects.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/scriptaculous.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><link rel="start" href="index.html" title="RichFaces Developer Guide"/><link rel="up" href="RichFacesComponentsLibrary.html" title="Chapter 6. The RichFaces Components"/><link rel="prev" href="suggestionbox.html" title="6.84.  &lt; rich:suggestionbox &gt;"/><link rel="next" href="tab.html" title="6.86.  &lt; rich:tab &gt;"/><script xmlns="http://www.w3.org/TR/xhtml1/transitional" type="text/javascript" src="script/toggle.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script></head><body><div xmlns="" id="overlay"> </div><div xmlns="" id="feedback-maincontainer" style="display:none"><div id="feedback-header">
+			Send your remarks, comments or wishes to doc team
+		</div><a href="#" onclick="$('feedback-maincontainer').hide(); return false;" id="feedback-close"><img src="images/close.png" class="feedback-images"/></a><div id="feedback-state"> </div><form id="feedback-mailform"><div class="feedback-textbox-div">
+			  Subject:<input type="text" id="subject" name="subject" title="Enter the subject of your message" class="feedback-textbox"/></div><div class="feedback-textbox-div"><span style="vertical-align: top;">Message:</span><textarea name="message" title="Type here the text of your message" id="message"> </textarea></div><div class="feedback-textbox-div">
+			  Your name:<input type="text" id="name" name="name" title="Enter your name" class="feedback-textbox"/></div><div class="feedback-textbox-div">
+			  Your email:<input type="text" id="email" name="email" title="Enter your email address" class="feedback-textbox"/></div><span class="feedback-button-container"><input type="submit" value="Send Message" name="submit" class="feedback-formbutton" title="Send Message"/></span><span class="feedback-button-container"><input type="reset" value="Clear All Fields" class="feedback-formbutton" title="Clear All Fields"/></span></form></div><div xmlns="" id="feedback-wrapper"><a id="feedback-link" href="#" onclick="$('feedback-maincontainer').appear(); return false;"><img src="images/feedback_logo.png" class="feedback-images" width="100px"/></a></div><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="suggestionbox.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="tab.html"><strong>Next</strong></a></li></ul><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="tabPanel"/>6.85. 
+				&lt;
+				rich:tabPanel
+				&gt;
+			</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e58616"/>6.85.1. Description</h3></div></div></div><p>A <span class="property">tab panel</span> displaying tabs for grouping content of the panel.</p><div class="figure"><a id="d0e58624"/><div class="figure-contents"><div class="mediaobject"><img src="images/tabPanel_init.png" alt="&lt;rich:tabPanel&gt; component"/></div></div><p class="title"><b>Figure 6.273. 
+            <span class="bold">
+               <span class="property">&lt;rich:tabPanel&gt;</span>
+            </span> component</b></p></div><br class="figure-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e58636"/>6.85.2. Key Features</h3></div></div></div><div class="itemizedlist"><ul><li><p>Skinnable <span class="property">tab panel</span> and child items</p></li><li><p>Disabled/enabled tab options</p></li><li><p>Customizable headers</p></li><li><p>Group any content inside a tab</p></li><li><p>Each tab has a unique name for direct access (e.g. for switching between tabs)</p></li><li><p>Switch methods can be easily customized with attribute to:</p><div class="itemizedlist"><ul><li><p>
+                     <code class="code">
+        Server
+        </code>
+                  </p></li><li><p>
+                     <code class="code">Client</code>
+                  </p></li><li><p>
+                     <code class="code">AJAX</code>
+                  </p></li></ul></div></li><li><p>Switch methods can be selected for the whole <span class="property">tab panel</span> and for the
+     each tab separately</p></li></ul></div></div><div class="table"><a id="d0e58686"/><p class="title"><b>Table 6.504. rich
+					:
+					tabPanel
+					attributes
+				</b></p><div class="table-contents"><table summary="rich&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;:&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;tabPanel&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;attributes&#xA;&#x9;&#x9;&#x9;&#x9;" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Attribute Name</th><th>Description</th></tr></thead><tbody><tr><td>activeTabClass</td><td>A CSS class to be applied to an active tab</td></tr><tr><td>binding</td><td>The attribute takes a value-binding expression for a component property of
+a backing bean</td></tr><tr><td>contentClass</td><td>A CSS class for content of a tab panel</td></tr><tr><td>contentStyle</td><td>A CSS style is for the content of a tab panel</td></tr><tr><td>converter</td><td>Id of Converter to be used or reference to a Converter</td></tr><tr><td>converterMessage</td><td>A ValueExpression enabled attribute that, if present, will be used as the text of the converter message, replacing any message that comes from the converter</td></tr><tr><td>dir</td><td>Direction indication for text that does not inherit
+			directionality. Valid values are "LTR" (left-to-right)
+			and "RTL" (right-to-left)</td></tr><tr><td>disabledTabClass</td><td>A CSS class to be applied to a disabled tab</td></tr><tr><td>headerAlignment</td><td>Sets tab headers alignment. It can be "left" or "right".
+	    		 Default value is "left".</td></tr><tr><td>headerClass</td><td>A CSS style is for the header of a tab panel.</td></tr><tr><td>headerSpacing</td><td>Sets tab headers spacing. It should be a valid size unit expression. Default value is "1px".</td></tr><tr><td>height</td><td>Height of a tab panel defined in pixels or in percents</td></tr><tr><td>id</td><td>Every component may have a unique id that is automatically created if omitted</td></tr><tr><td>immediate</td><td>A flag indicating that this component value must be converted
+            and validated immediately (that is, during Apply Request Values
+            phase), rather than waiting until a Process Validations phase</td></tr><tr><td>inactiveTabClass</td><td>CSS class to be applied to an inactive (but not disabled) tab</td></tr><tr><td>label</td><td>A localized user presentable name for this component.</td></tr><tr><td>lang</td><td>Code describing the language used in the generated markup for this component</td></tr><tr><td>onclick</td><td>HTML: a script expression; a pointer button is clicked</td></tr><tr><td>ondblclick</td><td>HTML: a script expression; a pointer button is double-clicked</td></tr><tr><td>onkeydown</td><td>HTML: a script expression; a key is pressed down</td></tr><tr><td>onkeypress</td><td>HTML: a script expression; a key is pressed and released</td></tr><tr><td>onkeyup</td><td>HTML: a script expression; a key is released</td></tr><tr><td>onmousedown</td><td>HTML: script expression; a pointer button is pressed down</td></tr><tr><td>onmousemove</td><td>HTML: a script expression; a pointer is moved within</td></tr><tr><td>onmouseout</td><td>HTML: a script expression; a pointer is moved away</td></tr><tr><td>onmouseover</td><td>HTML: a script expression; a pointer is moved onto</td></tr><tr><td>onmouseup</td><td>HTML: script expression; a pointer button is released</td></tr><tr><td>ontabchange</td><td>HTML: a script expression; a tab has been changed</td></tr><tr><td>rendered</td><td>If "false", this component is not rendered</td></tr><tr><td>required</td><td>If "true", this component is checked for non-empty input</td></tr><tr><td>requiredMessage</td><td>A ValueExpression enabled attribute that, if present, will be used as the text of the validation message for the "required" facility, if the "required" facility is used</td></tr><tr><td>selectedTab</td><td>Attribute defines name of selected tab</td></tr><tr><td>style</td><td>CSS style(s) is/are to be applied when this component is rendered</td></tr><tr><td>styleClass</td><td>Corresponds to the HTML class attribute</td></tr><tr><td>switchType</td><td>Tabs switch mode: "client", "server"(default), "ajax"</td></tr><tr><td>tabClass</td><td>A CSS class to be applied to all tabs</td></tr><tr><td>title</td><td>Advisory title information about markup elements generated for this component</td></tr><tr><td>validator</td><td>MethodBinding pointing at a method that is called during
+            Process Validations phase of the request processing lifecycle,
+            to validate the current value of this component</td></tr><tr><td>validatorMessage</td><td>A ValueExpression enabled attribute that, if present, will be used as the text of the validator message, replacing any message that comes from the validator</td></tr><tr><td>value</td><td>The current value of this component</td></tr><tr><td>valueChangeListener</td><td>Listener for value changes</td></tr><tr><td>width</td><td>Width of a tab panel defined in pixels or in percents. 
+	    	The default value is 100%</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e58915"/><p class="title"><b>Table 6.505. Component identification parameters </b></p><div class="table-contents"><table summary="Component identification parameters " border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>component-type</td><td>org.richfaces.tabPanel</td></tr><tr><td>component-class</td><td>org.richfaces.component.html.HtmltabPanel</td></tr><tr><td>component-family</td><td>org.richfaces.tabPanel</td></tr><tr><td>renderer-type</td><td>org.richfaces.tabPanelRenderer</td></tr><tr><td>tag-class</td><td>org.richfaces.taglib.tabPanelTag</td></tr></tbody></table></div></div><br class="table-break"/><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e58951"/>6.85.3. Creating the Component with a Page Tag</h3></div></div></div><p>To create the simplest variant on a page use the following syntax:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tabPanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--//Set&nbsp;of&nbsp;Tabs&nbsp;inside--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tab</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tab</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tabPanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e58963"/>6.85.4. Creating the Component Dynamically Using Java</h3></div></div></div><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">import</span><!-- <br/> --><span class="java_plain">&nbsp;org</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">richfaces</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">component</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">html</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_type">HtmltabPanel</span><!-- <br/> --><span class="java_separator">;</span>
+<!--  --><br/><span class="java_separator">...</span><span class="java_plain">&nbsp;</span>
+<!--  --><br/><span class="java_type">HtmltabPanel</span><span class="java_plain">&nbsp;mytabPanel&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">HtmltabPanel</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_separator">...</span>
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e58973"/>6.85.5. Details of Usage</h3></div></div></div><p>As it was mentioned <a href="tabPanel.html" title="6.85.  &lt; rich:tabPanel &gt;">above</a>,
+                                        <span class="property">tabPanel</span> groups content on panels and
+                              performs switching from one to another. Hence, modes of switching
+                              between panels are described first of all.</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note:</h2><p> All <span class="property">tabPanels</span> should be wrapped into a
+                                        form element so as content is correctly submitted inside. If
+                                        a form is placed into each tab, the Action elements of Tab
+                                        controls appear to be out of the form and content submission
+                                        inside the panels could be performed only for Action
+                                        components inside tabs.</p></div><p>Switching mode could be chosen with the <span class="property">tabPanel</span>
+                              attribute <span class="emphasis"><em>
+                                        <span class="property">"switchType"</span>
+                              </em></span> with three possible parameters.</p><div class="itemizedlist"><ul><li><p>
+               <code class="code">Server</code> (DEFAULT)</p><p>The common submission is performed around
+                                                  <span class="property">tabPanel</span> and a page
+                                                  is completely rendered on a called panel. Only one
+                                                  at a time <span class="property">tabPanel</span> is
+                                                  uploaded onto the client side.</p></li><li><p>
+                                                  <code class="code">Ajax</code>
+                                        </p><p>AJAX form submission is performed around the
+                                                  <span class="property">tabPanel</span>, content
+                                                  of the called <span class="property">tabPanel</span> is
+                                                  uploaded on Ajax request. Only one at a
+                                                  time <span class="property">tabPanel</span> is uploaded on
+                                                  the client.</p></li><li><p>
+                                                  <code class="code">Client</code>
+                                        </p><p> All <span class="property">tabPanels</span> are uploaded on
+                                                  the client side. The switching from the active to
+                                                  the hidden <span class="property">panel</span> is performed
+                                                  with client JavaScript.</p></li></ul></div><p>As a result, the <span class="property">tabPanel</span> is switched to the second
+                              tab according to the action returning outcome for moving onto another
+                              page and switching from the second to the first tab is performed.</p><p>There is also the <span class="emphasis"><em>
+                                        <span class="property">"selectedTab"</span>
+                              </em></span> attribute. The attribute keeps an active tab name;
+                              therefore, an active <span class="property">tabPanel</span> could be changed
+                              with setting a name of the necessary tab to this attribute.</p><p>There is also the <span class="emphasis"><em>
+                                        <span class="property">"headerAlignment"</span>
+                              </em></span> attribute responsible for rendering of
+                              <span class="property">tabPanel</span> components. The attribute has several
+                              values: "left" (Default), "right",
+                              "center", which specify Tabs components location on
+                              the top of the tabPanel.</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tabPanel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">width</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;40%&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">headerAlignment</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;right&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tab</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Canon&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tab</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tab</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Nikon&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tab</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tab</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Olympus&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tab</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tabPanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><div class="figure"><a id="d0e59083"/><div class="figure-contents"><div class="mediaobject"><img src="images/tabPanel2.png" alt="&lt;rich:tabPanel&gt; with right aligned tabs"/></div></div><p class="title"><b>Figure 6.274. 
+            <span class="bold">
+                                                  <span class="property">&lt;rich:tabPanel&gt;</span>
+                                        </span> with right aligned tabs</b></p></div><br class="figure-break"/><p> The <span class="emphasis"><em>
+                                        <span class="property">"label"</span>
+                              </em></span> attribute is a generic attribute. The <span class="emphasis"><em>
+                                        <span class="property">"label"</span>
+                              </em></span> attribute provides an association between a component, and
+                              the message that the component (indirectly) produced. This attribute
+                              defines the parameters of localized error and informational messages
+                              that occur as a result of conversion, validation, or other application
+                              actions during the request processing lifecycle. With the help of this
+                              attribute you can replace the last parameter substitution token shown
+                              in the messages. For example, {1} for
+                                        <code class="code">"DoubleRangeValidator.MAXIMUM"</code>,
+                              {2} for <code class="code">"ShortConverter.SHORT"</code>. </p><p>Except the specific attributes, the component has all necessary attributes
+                              for JavaScript events definition.</p><div class="itemizedlist"><ul><li><p>
+                                                  <span class="emphasis"><em>
+                                                  <span class="property">"onmouseover"</span>
+                                                  </em></span>
+                                        </p></li><li><p>
+                                                  <span class="emphasis"><em>
+                                                  <span class="property">"onmouseout"</span>
+                                                  </em></span>
+                                        </p></li><li><p> etc. </p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e59139"/>6.85.6. Look-and-Feel Customization</h3></div></div></div><p>For skinnability implementation, the components use a <span class="emphasis"><em>
+                                        <span class="property">style class redefinition method.</span>
+                              </em></span> Default style classes are mapped on <span class="emphasis"><em>
+                                        <span class="property">skin parameters.</span>
+                              </em></span>
+      </p><p>There are two ways to redefine the appearance of all <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tabPanel&gt;</span>
+                              </strong></span> components at once:</p><div class="itemizedlist"><ul><li><p>Redefine the corresponding skin parameters</p></li><li><p>Add to your style sheets <span class="emphasis"><em>
+                                                  <span class="property">style classes</span>
+                                                  </em></span> used by a <span class="bold"><strong>
+                                                  <span class="property">&lt;rich:tabPanel&gt;</span>
+                                                  </strong></span> component</p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e59183"/>6.85.7. Skin Parameters Redefinition</h3></div></div></div><div class="table"><a id="d0e59186"/><p class="title"><b>Table 6.506. Skin parameters redefinition for a header</b></p><div class="table-contents"><table summary="Skin parameters redefinition for a header" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>panelBorderColor</td><td>border-top-color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e59202"/><p class="title"><b>Table 6.507. Skin parameters redefinition for an internal content</b></p><div class="table-contents"><table summary="Skin parameters redefinition for an internal content" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>generalBackgroundColor</td><td>background-color</td></tr><tr><td>generalTextColor</td><td>color</td></tr><tr><td>panelBorderColor</td><td>border-bottom-color</td></tr><tr><td>panelBorderColor</td><td>border-right-color</td></tr><tr><td>panelBorderColor</td><td>border-left-color</td></tr><tr><td>generalSizeFont</td><td>font-size</td></tr><tr><td>generalFamilyFont</td><td>font-family</td></tr></tbody></table></div></div><br class="table-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e59248"/>6.85.8. Definition of Custom Style Classes</h3></div></div></div><p>On the screenshot there are classes names that define styles for component
+                              elements.</p><div class="figure"><a id="d0e59253"/><div class="figure-contents"><div class="mediaobject"><img src="images/tabPanel_cn.png" alt="Style classes"/></div></div><p class="title"><b>Figure 6.275. Style classes</b></p></div><br class="figure-break"/><div class="table"><a id="tab_cn5"/><p class="title"><b>Table 6.508. Classes names that define a component appearance</b></p><div class="table-contents"><table summary="Classes names that define a component appearance" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Class name</th><th>Description</th></tr></thead><tbody><tr><td>rich-tabpanel</td><td>Defines styles for all
+                                                  tabPanel</td></tr><tr><td>rich-tabpanel-content</td><td>Defines styles for an internal
+                                                  content</td></tr><tr><td>rich-tabpanel-content-position</td><td>Defines styles for a wrapper
+                                                  element of a tabPanel content.
+                                                  It should define a shift equal
+                                                  to borders width in order to
+                                                  overlap panel tabs</td></tr><tr><td>rich-tabhdr-side-border</td><td>Defines styles for side elements
+                                                  of a tabPanel header</td></tr><tr><td>rich-tabhdr-side-cell</td><td>Defines styles for a header
+                                                  internal element</td></tr><tr><td>rich-tab-bottom-line</td><td>Defines styles for a tab bottom
+                                                  line element of a tabPanel
+                                                  </td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e59300"/><p class="title"><b>Table 6.509. Classes names that define different tab header states
+                                        (corresponds to rich-tabhdr-side-cell)</b></p><div class="table-contents"><table summary="Classes names that define different tab header states&#xA;                                        (corresponds to rich-tabhdr-side-cell)" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Class name</th><th>Description</th></tr></thead><tbody><tr><td>rich-tabhdr-cell-active</td><td>Defines styles for an internal
+                                                  element of an active
+                                                  header</td></tr><tr><td>rich-tabhdr-cell-inactive</td><td>Defines styles for an internal
+                                                  element of an inactive label
+                                                  </td></tr><tr><td>rich-tabhdr-cell-disabled</td><td>Defines styles for an internal
+                                                  element of a disabled label
+                                                  </td></tr></tbody></table></div></div><br class="table-break"/><p>In order to redefine styles for all <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tabPanel&gt;</span>
+                              </strong></span> components on a page using CSS, it's enough to
+                              create classes with the same names (possible classes could be found in
+                              the table <a href="tabPanel.html#tab_cn5" title="Table 6.508. Classes names that define a component appearance">above</a>) and define necessary
+                              properties in them. An example is placed below:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_selector">.rich-tabhdr-cell-active</span><span class="css_curly_brace">{</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">font-weight</span><span class="css_colon">:</span><span class="css_normal">&nbsp;</span><span class="css_property_value">bold</span><span class="css_semi_colon">;</span><span class="css_normal"><br />
+</span><span class="css_curly_brace">}</span><span class="css_normal"><br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>This is a result:</p><div class="figure"><a id="d0e59346"/><div class="figure-contents"><div class="mediaobject"><img src="images/tabPanel_pc.png" alt="Redefinition styles with predefined classes"/></div></div><p class="title"><b>Figure 6.276. Redefinition styles with predefined classes</b></p></div><br class="figure-break"/><p>In the example a tab active font weight and text color were changed.</p><p>Also it's possible to change styles of particular <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tabPanel&gt;</span>
+                              </strong></span> component. In this case you should create own style
+                              classes and use them in corresponding <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tabPanel&gt;</span>
+                              </strong></span>
+                              <span class="emphasis"><em>
+                                        <span class="property">styleClass</span>
+                              </em></span> attributes. An example is placed below:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_selector">.myClass</span><span class="css_curly_brace">{</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">font-style</span><span class="css_colon">:</span><span class="css_normal">&nbsp;</span><span class="css_property_value">italic</span><span class="css_semi_colon">;</span><span class="css_normal"><br />
+</span><span class="css_curly_brace">}</span><span class="css_normal"><br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>The <span class="emphasis"><em>
+                                        <span class="property">"styleClass"</span>
+                              </em></span> attribute for <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tabPanel&gt; </span>
+                              </strong></span> is defined as it's shown in the example below:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tabPanel</span><span class="xml_plain">&nbsp;...&nbsp;</span><span class="xml_attribute_name">activeTabClass</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;myClass&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre><p>This is a result:</p><div class="figure"><a id="d0e59404"/><div class="figure-contents"><div class="mediaobject"><img src="images/tabPanel_oc.png" alt="Redefinition styles with own classes and styleClass attributes"/></div></div><p class="title"><b>Figure 6.277. Redefinition styles with own classes and <span class="emphasis"><em>
+                                                  <span class="property">styleClass</span>
+                                        </em></span> attributes</b></p></div><br class="figure-break"/><p>As it could be seen on the picture above, font style on inactive tab was
+                              changed.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e59418"/>6.85.9. Relevant Resources Links</h3></div></div></div><p>
+                              <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://livedemo.exadel.com/richfaces-demo/richfaces/tabPanel.jsf?c=tabPanel">Here</a> you can see the example of <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tabPanel&gt;</span>
+                              </strong></span> usage and sources for the given example. </p></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="suggestionbox.html"><strong>Prev</strong>6.84. 
+				&lt;
+				rich:suggestionbox
+				&gt;
+			</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="tab.html"><strong>Next</strong>6.86. 
+				&lt;
+				rich:tab
+				&gt;
+			</a></li></ul></body></html>

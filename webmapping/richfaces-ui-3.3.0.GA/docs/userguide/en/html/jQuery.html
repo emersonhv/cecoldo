@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>6.65.  &lt; rich:jQuery &gt;</title><link rel="stylesheet" href="css/html.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link xmlns="" rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/><meta name="keywords" content="rich:jQuery"/><meta name="keywords" content="rich:jQuery"/><script xmlns="" type="text/javascript" src="script/prototype-1.6.0.2.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/effects.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/scriptaculous.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><link rel="start" href="index.html" title="RichFaces Developer Guide"/><link rel="up" href="RichFacesComponentsLibrary.html" title="Chapter 6. The RichFaces Components"/><link rel="prev" href="insert.html" title="6.64.  &lt; rich:insert &gt;"/><link rel="next" href="listShuttle.html" title="6.66.  &lt; rich:listShuttle &gt;"/><script xmlns="http://www.w3.org/TR/xhtml1/transitional" type="text/javascript" src="script/toggle.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script></head><body><div xmlns="" id="overlay"> </div><div xmlns="" id="feedback-maincontainer" style="display:none"><div id="feedback-header">
+			Send your remarks, comments or wishes to doc team
+		</div><a href="#" onclick="$('feedback-maincontainer').hide(); return false;" id="feedback-close"><img src="images/close.png" class="feedback-images"/></a><div id="feedback-state"> </div><form id="feedback-mailform"><div class="feedback-textbox-div">
+			  Subject:<input type="text" id="subject" name="subject" title="Enter the subject of your message" class="feedback-textbox"/></div><div class="feedback-textbox-div"><span style="vertical-align: top;">Message:</span><textarea name="message" title="Type here the text of your message" id="message"> </textarea></div><div class="feedback-textbox-div">
+			  Your name:<input type="text" id="name" name="name" title="Enter your name" class="feedback-textbox"/></div><div class="feedback-textbox-div">
+			  Your email:<input type="text" id="email" name="email" title="Enter your email address" class="feedback-textbox"/></div><span class="feedback-button-container"><input type="submit" value="Send Message" name="submit" class="feedback-formbutton" title="Send Message"/></span><span class="feedback-button-container"><input type="reset" value="Clear All Fields" class="feedback-formbutton" title="Clear All Fields"/></span></form></div><div xmlns="" id="feedback-wrapper"><a id="feedback-link" href="#" onclick="$('feedback-maincontainer').appear(); return false;"><img src="images/feedback_logo.png" class="feedback-images" width="100px"/></a></div><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="insert.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="listShuttle.html"><strong>Next</strong></a></li></ul><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="jQuery"/>6.65. 
+				&lt;
+				rich:jQuery
+				&gt;
+			</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e41529"/>6.65.1. Description</h3></div></div></div><p>The <span class="bold"><strong>
+            <span class="property">&lt;rich:jQuery&gt;</span>
+        </strong></span> allows to apply styles and behaviour to DOM objects.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e41541"/>6.65.2. Key Features</h3></div></div></div><div class="itemizedlist"><ul><li><p>Presents jQuery JavaScript framework functionality</p></li><li><p>Able to apply onto JSF components and other DOM objects.</p></li><li><p>Works without conflicts with prototype.js library</p></li></ul></div></div><div class="table"><a id="d0e41554"/><p class="title"><b>Table 6.316. rich
+					:
+					jQuery
+					attributes
+				</b></p><div class="table-contents"><table summary="rich&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;:&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;jQuery&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;attributes&#xA;&#x9;&#x9;&#x9;&#x9;" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Attribute Name</th><th>Description</th></tr></thead><tbody><tr><td>binding</td><td>The attribute takes a value-binding expression for a component property of
+a backing bean</td></tr><tr><td>id</td><td>Every component may have a unique id that is automatically created if omitted</td></tr><tr><td>name</td><td>The name of a function that will be generated to execute a query. The "name" attribute is required 
+			    if "timing" attribute equals to "onJScall"</td></tr><tr><td>query</td><td>The query string that is executed for a given selector.</td></tr><tr><td>rendered</td><td>If "false", this component is not rendered</td></tr><tr><td>selector</td><td>Selector for query. The "selector" attribute uses defined by w3c
+			    consortium syntax for CSS rule selector with some jQuery extensions.</td></tr><tr><td>timing</td><td>The attribute that defines when to perform the query. The possible values are "immediate","onload" and "onJScall". 
+			 "immediate" performs the query right away. "onload" adds the task to the
+			 time when a document is loaded (the DOM tree is created). "onJScall" allows to invoke the 
+			 query by Javascipt function name defined with "name" attribute. The default value is 
+			 "immediate".</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e41604"/><p class="title"><b>Table 6.317. Component identification parameters</b></p><div class="table-contents"><table summary="Component identification parameters" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>component-type</td><td>org.richfaces.JQuery</td></tr><tr><td>component-class</td><td>org.richfaces.component.html.HtmlJQuery</td></tr><tr><td>component-family</td><td>org.richfaces.JQuery</td></tr><tr><td>renderer-type</td><td>org.richfaces.JQueryRenderer</td></tr><tr><td>tag-class</td><td>org.richfaces.taglib.JQueryTag</td></tr></tbody></table></div></div><br class="table-break"/><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e41640"/>6.65.3. Creating the Component with a Page Tag</h3></div></div></div><p>To create the simplest variant on a page, use the following syntax:</p><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:jQuery</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">selector</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#customList&nbsp;tr:odd&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">timing</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;onload&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">query</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;addClass(odd)&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e41652"/>6.65.4. Creating the Component Dynamically Using Java</h3></div></div></div><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">import</span><!-- <br/> --><span class="java_plain">&nbsp;org</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">richfaces</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">component</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">html</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_type">HtmlJQuery</span><!-- <br/> --><span class="java_separator">;</span><!-- <br/> --><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<!--  --><br/><span class="java_separator">...</span>
+<!--  --><br/><span class="java_type">HtmlJQuery</span><span class="java_plain">&nbsp;myJQuery&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">HtmlJQuery</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_separator">...</span>
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e41662"/>6.65.5. Details of Usage</h3></div></div></div><p>
+         <span class="bold"><strong>
+            <span class="property">&lt;rich:jQuery&gt;</span>
+         </strong></span> can be used in two main modes:</p><div class="itemizedlist"><ul><li><p>as a one-time query applied immediately or on a document ready event</p></li><li><p>as a JavaScript function that can be invoked from the JavaScript code</p></li></ul></div><p>The mode is chosen with <span class="emphasis"><em>
+            <span class="property">"timing"</span>
+         </em></span> attribute that has the following options:</p><div class="itemizedlist"><ul><li><p>"immediate" - applying a query immediately</p></li><li><p>"onload" - applying a query when a document is loaded</p></li><li><p>onJScall - applying a query by invoked JavaScript function defined with the <span class="emphasis"><em>
+                  <span class="property">"name"</span>
+               </em></span> attribute</p></li></ul></div><p>Definition of the <span class="emphasis"><em>
+            <span class="property">"name"</span>
+         </em></span> attribute is mandatory when the value of <span class="emphasis"><em>
+            <span class="property">"timing"</span>
+         </em></span> attribute is "onJScall". If the<span class="emphasis"><em>
+            <span class="property">"name"</span>
+         </em></span> attribute is defined when <span class="emphasis"><em>
+            <span class="property">"timing"</span>
+         </em></span> value equals to "immediate" or
+        "onload", the query is applied according to this
+      value, but you still have an opportunity to invoke it by a function name.</p><p>The <span class="emphasis"><em>
+            <span class="property">"selector"</span>
+         </em></span> attribute defines an object or a list of objects. The query is defined with the <span class="emphasis"><em>
+            <span class="property">"query"</span>
+         </em></span>attribute.</p><p>Here is an example of how to highlight odd rows in a table:</p><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_null">&lt;</span><span class="css_selector">style</span><span class="css_selector">&gt;</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_selector">.odd</span><span class="css_normal">&nbsp;</span><span class="css_curly_brace">{</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">background-color</span><span class="css_colon">:</span><span class="css_normal">&nbsp;</span><span class="css_property_value">#FFC</span><span class="css_semi_colon">;</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_curly_brace">}</span><span class="css_normal"><br />
+</span><span class="css_null">&lt;</span><span class="css_null">/</span><span class="css_selector">style</span><span class="css_selector">&gt;</span><span class="css_normal"><br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:table</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;customList&quot;</span><span class="xml_plain">&nbsp;...</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:table</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:jQuery</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">selector</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#customList&nbsp;tr:odd&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">timing</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;onload&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">query</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;addClass(odd)&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>The <span class="emphasis"><em>
+            <span class="property">"selector"</span>
+         </em></span> attribute uses defined by w3c consortium syntax for CSS rule <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.w3.org/TR/REC-CSS2/selector.html">selector</a> with some jQuery
+      extensions </p><p>Those are typical examples of using selector in the <span class="bold"><strong>
+            <span class="property">&lt;rich:jQuery&gt;</span>
+         </strong></span> component.</p><div class="table"><a id="d0e41774"/><p class="title"><b>Table 6.318. Examples of using selector</b></p><div class="table-contents"><table summary="Examples of using selector" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Selector</th><th>Comment</th></tr></thead><tbody><tr><td>"p[a]"</td><td>In a document all "p" tags with "a" tag
+              inside are selected</td></tr><tr><td>"ul/li"</td><td>All "li" elements of unordered "ul" lists are selected
+            </td></tr><tr><td>"p.foo[a]"</td><td>All "p" tags with "foo" class and inserted
+              "a" tag are selected</td></tr><tr><td>"input[@name=bar]"</td><td>All "input" tags with "name" attribute which
+              value is "bar" are selected</td></tr><tr><td>"input[@type=radio][@checked]"</td><td>All "input" tags with attribute
+              "type"="radio" and attribute value =
+              "chekced" are selected</td></tr><tr><td>"p,span,td"</td><td>All tag elements "p" or"span" or
+              "td" are selected</td></tr><tr><td>"p#secret"</td><td>"p" paragraph element with "id"
+              identification = "secret" is selected</td></tr><tr><td>"p span"</td><td>"span" tag is a (direct or non-direct) child of
+              "p" tag. If it's necessary, use "p &gt;
+              span" or "p/span" is selected</td></tr><tr><td>"p[@foo^=bar]"</td><td>"p" tag containing "foo" attribute with
+              textual value beginning with "bar" word is selected</td></tr><tr><td>"p[@foo$=bar] "</td><td>"p" tag containing "foo" attribute with
+              textual value ending with "bar" word is selected</td></tr><tr><td>"p[@foo*=bar] "</td><td>"p" tag with "foo" attribute containing
+              substring "bar" in any place is selected</td></tr><tr><td>"p//span "</td><td>"span" tag that is a (direct or non-direct) child of
+              "p" tag is selected</td></tr><tr><td>"p/../span "</td><td>"span" tag that is a grandchild of "p" tag is selected</td></tr></tbody></table></div></div><br class="table-break"/><p>In addition, RichFaces allows using either a component id or client id if you apply the
+      query to a JSF component. When you define a selector, RichFaces examines its content and
+      tries to replace the defined in the selector id with a component id if it's found.</p><p>For example, you have the following code:</p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:form</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;form&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:panelGrid</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;menu&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;...&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;...&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:panelGrid</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>The actual id of the <span class="bold"><strong>
+            <span class="property">&lt;h:panelGrid&gt;</span>
+         </strong></span> table in the browser DOM is <code class="code">"form:menu"</code>. However, you still can
+      reference to images inside this table using the following selector: </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:jQuery</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">selector</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#menu&nbsp;img&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">query</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;...&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>You can define the exact id in the selector if you want. The following code reference to
+      the same set of a DOM object:</p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:jQuery</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">selector</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#form\\:menu&nbsp;img&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">query</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;...&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>Pay attention to double slashes that escape a colon in the id.</p><p>In case when the <span class="emphasis"><em>
+            <span class="property">"name"</span>
+         </em></span> attribute is defined, <span class="bold"><strong>
+            <span class="property">&lt;rich:jQuery&gt;</span>
+         </strong></span> generates a JavaScript function that might be used from any place of JavaScript
+      code on a page.</p><p>There is an example of how to enlarge the picture smoothly on a mouse over event and return
+      back to the normal size on mouse out:</p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onmouseover</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;enlargePic(this)&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">width</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;50&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/price.png&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">onmouseover</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;enlargePic(this,&nbsp;{pwidth:'60px'})&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onmouseover</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;releasePic(this)&quot;</span><span class="xml_plain">&nbsp;&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onmouseover</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;enlargePic(this)&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">width</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;50&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/discount.png&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">onmouseover</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;enlargePic(this,&nbsp;{pwidth:'100px'})&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onmouseover</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;releasePic(this)&quot;</span><span class="xml_plain">&nbsp;&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:jQuery</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;enlargePic&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">timing</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;onJScall&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">query</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;animate({width:param.pwidth})&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:jQuery</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;releasePic&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">timing</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;onJScall&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">query</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;animate({width:'50px'})&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain">&nbsp;</span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>The JavaScript could use two parameters. The first parameter is a replacement for the
+      selector attribute. Thus, you can share the same query, applying it to the different DOM
+      objects. You can use a literal value or a direct reference for an existing DOM object. The
+      second parameter can be used to path the specific value inside the query. The JSON syntax is
+      used for the second parameter. The "param." namespace is used for
+      referencing data inside the parameter value.</p><p>
+         <span class="bold"><strong>
+            <span class="property">&lt;rich:jQuery&gt;</span>
+         </strong></span> adds styles and behavior to the DOM object dynamically. This means if you replace
+      something on a page during an Ajax response, the applied artifacts  is overwritten. But you
+      are allowed to apply them again after the Ajax response is complete.</p><p>Usually, it could be done with reRendering the <span class="bold"><strong>
+            <span class="property">&lt;rich:jQuery&gt;</span>
+         </strong></span> components in the same Ajax interaction with the components these queries are
+      applied to. Note, that queries with <span class="emphasis"><em>
+            <span class="property">"timing"</span>
+         </em></span> attribute set to "onload" are not
+      invoked even if the query is reRendered, because a DOM document is not fully reloaded during
+      the Ajax interaction. If you need to re-applies query with
+        "onload" value of <span class="emphasis"><em>
+            <span class="property">"timing"</span>
+         </em></span> attribute, define the <span class="emphasis"><em>
+            <span class="property">"name"</span>
+         </em></span> attribute and invoke the query by name in the <span class="emphasis"><em>
+            <span class="property">"oncomplete"</span>
+         </em></span> attribute of the Ajax component.</p><p>RichFaces includes jQuery JavaScript framework. You can use the futures of jQuery directly
+      without defining the <span class="bold"><strong>
+            <span class="property">&lt;rich:jQuery&gt;</span>
+         </strong></span> component on a page if it is convenient for you. To start using the jQuery feature
+      on the page, include the library into a page with the following code:</p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:loadScript</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">src</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;resource://jquery.js&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>Refer to the <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://docs.jquery.com/">jQuery documentation</a> for the
+      right syntax. Remember to use <code class="code">jQuery()</code> function instead of <code class="code">$()</code>, as soon as jQuery works
+      without conflicts with <code class="code">prototype.js</code>.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e41959"/>6.65.6. Look-and-Feel Customization</h3></div></div></div><p>
+         <span class="bold"><strong>
+            <span class="property">&lt;rich:jQuery&gt;</span>
+         </strong></span> has no skin parameters and custom <span class="property">style classes</span>, as the
+      component isn't visual.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e41973"/>6.65.7. Relevant Resources Links</h3></div></div></div><p>More information about jQuery framework and its features you can read <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://jquery.com/">here</a>.</p><p>How to use jQuery with other libraries see <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://docs.jquery.com/Using_jQuery_with_Other_Libraries">here</a>.</p></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="insert.html"><strong>Prev</strong>6.64. 
+				&lt;
+				rich:insert
+				&gt;
+			</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="listShuttle.html"><strong>Next</strong>6.66. 
+				&lt;
+				rich:listShuttle
+				&gt;
+			</a></li></ul></body></html>

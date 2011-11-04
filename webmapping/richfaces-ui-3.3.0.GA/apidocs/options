@@ -1,0 +1,16 @@
+-classpath 'c:/richfaces-trunk/target/checkout/ui/assembly/target/classes;c:/.m2t/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar;c:/.m2t/repository/com/sun/facelets/jsf-facelets/1.1.14/jsf-facelets-1.1.14.jar;c:/.m2t/repository/commons-collections/commons-collections/3.2/commons-collections-3.2.jar;c:/.m2t/repository/commons-beanutils/commons-beanutils/1.7.0/commons-beanutils-1.7.0.jar;c:/.m2t/repository/javax/servlet/jstl/1.1.2/jstl-1.1.2.jar;c:/.m2t/repository/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar;c:/.m2t/repository/org/richfaces/framework/richfaces-api/3.3.0.GA/richfaces-api-3.3.0.GA.jar;c:/.m2t/repository/org/richfaces/framework/richfaces-impl/3.3.0.GA/richfaces-impl-3.3.0.GA.jar;c:/.m2t/repository/javax/faces/jsf-api/1.2_11/jsf-api-1.2_11.jar;c:/.m2t/repository/javax/el/el-api/1.0/el-api-1.0.jar;c:/.m2t/repository/commons-digester/commons-digester/1.8/commons-digester-1.8.jar;c:/.m2t/repository/javax/servlet/jsp/jsp-api/2.1/jsp-api-2.1.jar' -protected
+-sourcepath
+'c:/richfaces-trunk/target/checkout/ui/assembly/target/src'
+-author
+-bottom
+'Copyright &copy; 2009. All Rights Reserved.'
+-charset
+'ISO-8859-1'
+-d
+'c:/richfaces-trunk/target/checkout/ui/assembly/target/apidocs'
+-doctitle
+'RichFaces JSF components library 3.3.0.GA API'
+-use
+-version
+-windowtitle
+'RichFaces JSF components library 3.3.0.GA API'

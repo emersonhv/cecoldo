@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>6.24.  &lt; a4j:support &gt;</title><link rel="stylesheet" href="css/html.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link xmlns="" rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/><meta name="keywords" content="a4j:support"/><script xmlns="" type="text/javascript" src="script/prototype-1.6.0.2.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/effects.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/scriptaculous.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><link rel="start" href="index.html" title="RichFaces Developer Guide"/><link rel="up" href="RichFacesComponentsLibrary.html" title="Chapter 6. The RichFaces Components"/><link rel="prev" href="status.html" title="6.23.  &lt; a4j:status &gt;"/><link rel="next" href="ajaxValidator.html" title="6.25.  &lt; rich:ajaxValidator &gt;"/><script xmlns="http://www.w3.org/TR/xhtml1/transitional" type="text/javascript" src="script/toggle.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script></head><body><div xmlns="" id="overlay"> </div><div xmlns="" id="feedback-maincontainer" style="display:none"><div id="feedback-header">
+			Send your remarks, comments or wishes to doc team
+		</div><a href="#" onclick="$('feedback-maincontainer').hide(); return false;" id="feedback-close"><img src="images/close.png" class="feedback-images"/></a><div id="feedback-state"> </div><form id="feedback-mailform"><div class="feedback-textbox-div">
+			  Subject:<input type="text" id="subject" name="subject" title="Enter the subject of your message" class="feedback-textbox"/></div><div class="feedback-textbox-div"><span style="vertical-align: top;">Message:</span><textarea name="message" title="Type here the text of your message" id="message"> </textarea></div><div class="feedback-textbox-div">
+			  Your name:<input type="text" id="name" name="name" title="Enter your name" class="feedback-textbox"/></div><div class="feedback-textbox-div">
+			  Your email:<input type="text" id="email" name="email" title="Enter your email address" class="feedback-textbox"/></div><span class="feedback-button-container"><input type="submit" value="Send Message" name="submit" class="feedback-formbutton" title="Send Message"/></span><span class="feedback-button-container"><input type="reset" value="Clear All Fields" class="feedback-formbutton" title="Clear All Fields"/></span></form></div><div xmlns="" id="feedback-wrapper"><a id="feedback-link" href="#" onclick="$('feedback-maincontainer').appear(); return false;"><img src="images/feedback_logo.png" class="feedback-images" width="100px"/></a></div><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="status.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="ajaxValidator.html"><strong>Next</strong></a></li></ul><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="support"/>6.24. 
+				&lt;
+				a4j:support
+				&gt;
+			</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e11695"/>6.24.1. Description</h3></div></div></div><p>The <span class="bold"><strong>
+            <span class="property">&lt;a4j:support&gt;</span>
+        </strong></span> component adds an Ajax support to any existing JSF component. It allows a component to generate asynchronous requests on the necessary event demand and with partial update of page content after a response incoming from the server.</p></div><div class="table"><a id="d0e11712"/><p class="title"><b>Table 6.48. a4j
+					:
+					support
+					attributes
+				</b></p><div class="table-contents"><table summary="a4j&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;:&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;support&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;attributes&#xA;&#x9;&#x9;&#x9;&#x9;" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Attribute Name</th><th>Description</th></tr></thead><tbody><tr><td>action</td><td>MethodBinding pointing at the application action to be invoked,
+            if this UIComponent is activated by you, during the Apply
+            Request Values or Invoke Application phase of the request
+            processing lifecycle, depending on the value of the immediate
+            property</td></tr><tr><td>actionListener</td><td>MethodBinding pointing at method accepting  an ActionEvent with return type void</td></tr><tr><td>ajaxSingle</td><td>boolean attribute which provides possibility to limit JSF tree processing(decoding, conversion/validation, value applying) 
+to the component which send the request only</td></tr><tr><td>binding</td><td>The attribute takes a value-binding expression for a component property of
+a backing bean</td></tr><tr><td>bypassUpdates</td><td>If "true", after process validations phase it skips updates of model beans on a force render response. It can be used for validating components input</td></tr><tr><td>data</td><td>Serialized (on default with JSON) data passed on the client by a developer on AJAX request. It's accessible via "data.foo" syntax</td></tr><tr><td>disabled</td><td>If "true", disable this component on page.</td></tr><tr><td>disableDefault</td><td>Disables default action for target event ( append "return false;" to JavaScript ). Default value is "false"</td></tr><tr><td>event</td><td>Name of JavaScript event property ( onclick, onchange,
+				etc.) of parent component, for which we will build AJAX
+				submission code</td></tr><tr><td>eventsQueue</td><td>Name of requests queue to avoid send next request before complete other from same event. Can be used to reduce number of requests of frequently events (key press, mouse move etc.)</td></tr><tr><td>focus</td><td>id of element to set focus after request completed on client side</td></tr><tr><td>id</td><td>Every component may have a unique id that is automatically created if omitted</td></tr><tr><td>ignoreDupResponses</td><td>Attribute allows to ignore an Ajax Response produced by a request if the newest 'similar' request is
+in a queue already. ignoreDupResponses="true" does not cancel the request while it is processed on the server,
+but just allows to avoid unnecessary updates on the client side if the response isn't actual now</td></tr><tr><td>immediate</td><td>True means, that the default ActionListener should be executed
+            immediately (i.e. during Apply Request Values phase of the
+            request processing lifecycle), rather than waiting until the
+            Invoke Application phase</td></tr><tr><td>limitToList</td><td>If "true", then of all AJAX-rendered on the page components only those will be updated, 
+		which ID's are passed to the "reRender" attribute of the describable component. 
+		"false"-the default value-means that all components with ajaxRendered="true" will be updated.</td></tr><tr><td>onbeforedomupdate</td><td>JavaScript code for call before DOM has been updated on client side</td></tr><tr><td>oncomplete</td><td>JavaScript code for call after request completed on client side</td></tr><tr><td>onsubmit</td><td>JavaScript code for call before submission of ajax
+				event</td></tr><tr><td>process</td><td>Id['s] (in format of call  UIComponent.findComponent()) of components, processed at the phases 2-5 in case of AjaxRequest  caused by this component. Can be single id, comma-separated list of Id's, or EL Expression  with array or Collection</td></tr><tr><td>rendered</td><td>If "false", this component is not rendered</td></tr><tr><td>requestDelay</td><td>Attribute defines the time (in ms.) that the request will be wait in the queue before it is ready to send.
+When the delay time is over, the request will be sent to the server or removed if the newest 'similar' request is in a queue already</td></tr><tr><td>reRender</td><td>Id['s] (in format of call  UIComponent.findComponent()) of components, rendered in case of AjaxRequest  caused by this component. Can be single id, comma-separated list of Id's, or EL Expression  with array or Collection</td></tr><tr><td>similarityGroupingId</td><td>If there are any component requests with identical IDs then these requests will be grouped.</td></tr><tr><td>status</td><td>ID (in format of call UIComponent.findComponent()) of Request status component</td></tr><tr><td>timeout</td><td>Timeout (in ms) for request</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e11854"/><p class="title"><b>Table 6.49. Component identification parameters</b></p><div class="table-contents"><table summary="Component identification parameters" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>component-type</td><td>org.ajax4jsf.Support</td></tr><tr><td>component-family</td><td>org.ajax4jsf.AjaxSupport</td></tr><tr><td>component-class</td><td>org.ajax4jsf.component.html.HtmlAjaxSupport</td></tr><tr><td>renderer-type</td><td>org.ajax4jsf.components.AjaxSupportRenderer</td></tr></tbody></table></div></div><br class="table-break"/><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e11885"/>6.24.2. Creating on a page</h3></div></div></div><p>To use a component, place <span class="bold"><strong>
+                                        <span class="property">&lt;a4j:support&gt;</span>
+                              </strong></span> as nested to the component requesting Ajax functionality
+                              and specify an event of a parent component that generates Ajax request
+                              and the components to be rerendered after a response from the server.</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:inputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.text}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:support</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">event</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;onkeyup&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">reRender</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;repeater&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:inputText</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;repeater&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.text}&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre><p>On every keyup event generated by an input field, a form is submitted on
+                              the server with the help of Ajax and on a response coming from the
+                              server, element with <code class="code">repeater</code> id, founded in a DOM tree
+                              is redrawn according to a new data from the response.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e11908"/>6.24.3. Creating the Component Dynamically Using Java</h3></div></div></div><p>In order to add <span class="bold"><strong>
+                                        <span class="property">&lt;a4j:support&gt;</span>
+                              </strong></span> in Java code you should add it as <span class="emphasis"><em>
+                                        <span class="property">facet</span>
+                              </em></span>, not children:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_type">HtmlInputText</span><!-- <br/> --><span class="java_plain">&nbsp;inputText&nbsp;</span><!-- <br/> --><span class="java_operator">=</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_keyword">new</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">HtmlInputText</span><!-- <br/> --><span class="java_separator">();</span>
+<!--  --><br/><span class="java_separator">...</span>
+<!--  --><br/><span class="java_type">HtmlAjaxSupport</span><span class="java_plain">&nbsp;ajaxSupport&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">HtmlAjaxSupport</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ajaxSupport</span><span class="java_separator">.</span><span class="java_plain">setActionExpression</span><span class="java_separator">(</span><span class="java_type">FacesContext</span><span class="java_separator">.</span><span class="java_plain">getCurrentInstance</span><span class="java_separator">().</span><span class="java_plain">getApplication</span><span class="java_separator">().</span><span class="java_plain">getExpressionFactory</span><span class="java_separator">().</span><span class="java_plain">createMethodExpression</span><span class="java_separator">(</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">FacesContext</span><span class="java_separator">.</span><span class="java_plain">getCurrentInstance</span><span class="java_separator">().</span><span class="java_plain">getELContext</span><span class="java_separator">(),</span><span class="java_plain">&nbsp;</span><span class="java_literal">&quot;#{bean.action}&quot;</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_type">String</span><span class="java_separator">.</span><span class="java_keyword">class</span><span class="java_separator">,</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">Class</span><span class="java_separator">[]</span><span class="java_plain">&nbsp;</span><span class="java_separator">{}));</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ajaxSupport</span><span class="java_separator">.</span><span class="java_plain">setEvent</span><span class="java_separator">(</span><span class="java_literal">&quot;onkeyup&quot;</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ajaxSupport</span><span class="java_separator">.</span><span class="java_plain">setReRender</span><span class="java_separator">(</span><span class="java_literal">&quot;output&quot;</span><span class="java_separator">);</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inputText</span><span class="java_separator">.</span><span class="java_plain">getFacets</span><span class="java_separator">().</span><span class="java_plain">put</span><span class="java_separator">(</span><span class="java_literal">&quot;a4jsupport&quot;</span><span class="java_separator">,</span><span class="java_plain">&nbsp;ajaxSupport</span><span class="java_separator">);</span>
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e11932"/>6.24.4. Key attributes and ways of usage</h3></div></div></div><p>
+         <span class="bold"><strong>
+                                        <span class="property">&lt;a4j:support&gt;</span>
+                              </strong></span> addition is very similar to correspondent event
+                              redefinition of a component, i.e. </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:inputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.text}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:support</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">event</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;onkeyup&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">reRender</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;output&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">action</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.action}&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:inputText</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>Is decoded on a page as:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">input</span><span class="xml_plain">&nbsp;&nbsp;</span><span class="xml_attribute_name">onkeyup</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;A4J.AJAX.Submit(&nbsp;Some&nbsp;request&nbsp;parameters&nbsp;)&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre><p>As you see from the code, the <span class="emphasis"><em>
+                                        <span class="property">"onkeyup"</span>
+                              </em></span> event calls a utility RichFaces method that submit a form
+                              creating a special marks for a filter informing that it is an Ajax
+                              request. Thus, any supports quantity could be added to every
+                              component, the supports define component behavior on these events. </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note</h2><p>The components: <span class="bold"><strong>
+                                                  <span class="property">&lt;a4j:commandLink&gt;</span>
+                                        </strong></span>, <span class="bold"><strong>
+                                                  <span class="property">&lt;a4j:commandButton&gt;</span>
+                                        </strong></span>, <span class="bold"><strong>
+                                                  <span class="property">&lt;a4j:poll&gt;</span>
+                                        </strong></span> and others from RichFaces library are already
+                                        supplied with <span class="bold"><strong>
+                                                  <span class="property">&lt;a4j:support&gt;</span>
+                                        </strong></span> functionality and there is no necessity to add
+                                        the support to them. </p></div><p>With the help of <span class="emphasis"><em>
+                                        <span class="property">"onsubmit"</span>
+                              </em></span> and <span class="emphasis"><em>
+                                        <span class="property">"oncomplete"</span>
+                              </em></span> attributes the component allows using JavaScript before
+                              (for request sending conditions checking) and after an Ajax response
+                              processing termination (for performance of user-defined activities on
+                              the client) </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:selectOneMenu</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.text}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:selectItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">itemValue</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;First&nbsp;Item&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">itemLabel</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;First&nbsp;Item&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:selectItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">itemValue</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;&nbsp;Second&nbsp;Item&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">itemLabel</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Second&nbsp;Item&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:selectItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">itemValue</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;&nbsp;Third&nbsp;Item&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">itemLabel</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Third&nbsp;Item&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:support</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">event</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;onblur&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">reRender</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;panel&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onsubmit</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;if(!confirm('Are&nbsp;you&nbsp;sure&nbsp;to&nbsp;change&nbsp;the&nbsp;option&nbsp;?'))&nbsp;</span><br />
+<span class="xml_attribute_value">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{form.reset();&nbsp;return&nbsp;false;}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">oncomplete</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;alert('Value&nbsp;succesfully&nbsp;stored')&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:selectOneMenu</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre><p>In example there is the condition checking (confirm) is used before
+                              request sending and message printing after the request processing is
+                              over. </p><p>The components allows different Ajax request managing ways for its various
+                              optimization in particular conditions such as: </p><div class="itemizedlist"><ul><li><p>
+                                                  <span class="bold"><strong>Limitation of the
+                                                  submit area and updating area
+                                                  for the request.</strong></span>
+                                                  </p><p>
+                  <span class="emphasis"><em>
+                                                  <span class="property">"ajaxSingle"</span>
+                                                  </em></span> is an attribute that allows
+                                                  submission on the server only component
+                                                  sending a request, as if the component
+                                                  presented on a separate form. </p><p>
+                  <span class="emphasis"><em>
+                                                  <span class="property">"limitToList"</span>
+                                                  </em></span> is an attribute that allows
+                                                  to limit areas, which are updated after
+                                                  the responses. Only these components
+                                                  defined in the <span class="emphasis"><em>
+                                                  <span class="property">
+                                                  "reRender"
+                                                  </span>
+                                                  </em></span>attribute are updated.
+                                                  </p></li></ul></div><p>
+      </p><p>
+                              <span class="bold"><strong>Example 1:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:inputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{person.name}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:support</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">event</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;onkeyup&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">reRender</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;test&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">ajaxSingle</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:inputText</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:inputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{person.middleName}&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre><p>In this example the request contains only the input component causes the
+                              request generation, not all the components contained on a form,
+                              because of <code class="code">ajaxSingle="true"</code> usage. </p><p>
+                              <span class="bold"><strong>Example 2:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:outputPanel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">ajaxRendered</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:messages</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">a4j:outputPanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:inputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{person.name}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:support</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">event</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;onkeyup&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">reRender</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;test&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">limitToList</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:inputText</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{person.name}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;test&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre><p>In this example the component <span class="bold"><strong>
+                                        <span class="property">&lt;h:messages&gt;</span>
+                              </strong></span> is always updated (as it capturing all Ajax requests,
+                              located in ajaxRendered <span class="bold"><strong>
+                                        <span class="property">&lt;a4j:outputPanel&gt;</span>
+                              </strong></span>), except the case when a response is sent from the input
+                              component from the example. On sending this component marks that
+                              updating area is limited to the defined in it components, it means
+                              that on its usage with
+                              <code class="code">limitToList="true"</code> the only component
+                              updated is the one with <code class="code">id="test"</code>.</p><div class="itemizedlist"><ul><li><p>
+                                                  <span class="bold"><strong>Limitation of requests
+                                                  frequency and updates quantity after the
+                                                  responses. </strong></span>
+                                        </p><p>
+               <span class="emphasis"><em>
+                                                  <span class="property">"requestDelay"</span>
+                                                  </em></span> is an attribute that defines a time
+                                                  interval in seconds minimally permissible between
+                                                  responses. </p><p>
+               <span class="emphasis"><em>
+                                                  <span class="property">"eventsQueue"</span>
+                                                  </em></span> is an attribute for naming of the
+                                                  queue where the next response is kept in till its
+                                                  processing, but if the next event comes in till
+                                                  this time is over, the waiting event is taken
+                                                  away, replacing with a new one. </p><p>
+               <span class="emphasis"><em>
+                                                  <span class="property">"ignoreDupResponces"</span>
+                                                  </em></span> is an attribute that allows to disable
+                                                  any updates on the client after an Ajax request if
+                                                  another Ajax request is already sent. </p><p>
+               <span class="emphasis"><em>
+                                                  <span class="property">"timeout"</span>
+                                                  </em></span> is an attribute that allows to set a
+                                                  time interval in millisecond to define a maximum
+                                                  time period of response wait time. In case of the
+                                                  interval interaction, a new request is sent and
+                                                  the previous one is canceled. Postprocessing of a
+                                                  response isn't performed. </p><p>
+                                                  <span class="bold"><strong>Example:</strong></span>
+                                        </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:inputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{person.name}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:support</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">event</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;onkeyup&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">reRender</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;test&quot;</span><span class="xml_plain">&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">requestDelay</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;1000&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">ignoreDupResponces</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">eventsQueue</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;myQueue&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:inputText</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{person.name}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;test&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre><p>This example clearly shows mentioned above attributes.
+                                                  If quick typing in a text field happens, every
+                                                  next requests sending is delayed for a second and
+                                                  requests quantity is reduced. The requests are
+                                                  kept in the queue till its the sending. Moreover,
+                                                  if the next request is already sent, the
+                                                  rerendering after the previous request is banned,
+                                                  and it helps to avoid unnecessary processing on
+                                                  the client.</p></li></ul></div><p> Information about the <span class="emphasis"><em>
+                                        <span class="property">"process"</span>
+                              </em></span> attribute usage you can find <a href="ArchitectureOverview.html#process" title="5.6.4. Decide what to process">here</a>. </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e12147"/>6.24.5. Relevant resources links</h3></div></div></div><p>
+                              <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://livedemo.exadel.com/richfaces-demo/richfaces/support.jsf?c=support">Here</a> you can see the example of <span class="bold"><strong>
+                                        <span class="property">&lt;a4j:support&gt;</span>
+                              </strong></span> usage and sources for the given example. </p></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="status.html"><strong>Prev</strong>6.23. 
+				&lt;
+				a4j:status
+				&gt;
+			</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="ajaxValidator.html"><strong>Next</strong>6.25. 
+				&lt;
+				rich:ajaxValidator
+				&gt;
+			</a></li></ul></body></html>

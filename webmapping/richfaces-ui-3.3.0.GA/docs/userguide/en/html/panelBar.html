@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>6.73.  &lt; rich:panelBar &gt;</title><link rel="stylesheet" href="css/html.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link xmlns="" rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/><meta name="keywords" content="rich:panelBar"/><meta name="keywords" content="bar, rich:panelbar, HtmlPanelBar"/><script xmlns="" type="text/javascript" src="script/prototype-1.6.0.2.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/effects.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/scriptaculous.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><link rel="start" href="index.html" title="RichFaces Developer Guide"/><link rel="up" href="RichFacesComponentsLibrary.html" title="Chapter 6. The RichFaces Components"/><link rel="prev" href="panel.html" title="6.72.  &lt; rich:panel &gt;"/><link rel="next" href="panelBarItem.html" title="6.74.  &lt; rich:panelBarItem &gt;"/><script xmlns="http://www.w3.org/TR/xhtml1/transitional" type="text/javascript" src="script/toggle.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script></head><body><div xmlns="" id="overlay"> </div><div xmlns="" id="feedback-maincontainer" style="display:none"><div id="feedback-header">
+			Send your remarks, comments or wishes to doc team
+		</div><a href="#" onclick="$('feedback-maincontainer').hide(); return false;" id="feedback-close"><img src="images/close.png" class="feedback-images"/></a><div id="feedback-state"> </div><form id="feedback-mailform"><div class="feedback-textbox-div">
+			  Subject:<input type="text" id="subject" name="subject" title="Enter the subject of your message" class="feedback-textbox"/></div><div class="feedback-textbox-div"><span style="vertical-align: top;">Message:</span><textarea name="message" title="Type here the text of your message" id="message"> </textarea></div><div class="feedback-textbox-div">
+			  Your name:<input type="text" id="name" name="name" title="Enter your name" class="feedback-textbox"/></div><div class="feedback-textbox-div">
+			  Your email:<input type="text" id="email" name="email" title="Enter your email address" class="feedback-textbox"/></div><span class="feedback-button-container"><input type="submit" value="Send Message" name="submit" class="feedback-formbutton" title="Send Message"/></span><span class="feedback-button-container"><input type="reset" value="Clear All Fields" class="feedback-formbutton" title="Clear All Fields"/></span></form></div><div xmlns="" id="feedback-wrapper"><a id="feedback-link" href="#" onclick="$('feedback-maincontainer').appear(); return false;"><img src="images/feedback_logo.png" class="feedback-images" width="100px"/></a></div><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="panel.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="panelBarItem.html"><strong>Next</strong></a></li></ul><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="panelBar"/>6.73. 
+				&lt;
+				rich:panelBar
+				&gt;
+			</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e48758"/>6.73.1. Description</h3></div></div></div><p>
+         <span class="property">panelBar</span> is used for grouping any content which is loaded on the client
+     side and appears as groups divided on child panels after the header is clicked.</p><div class="figure"><a id="d0e48766"/><div class="figure-contents"><div class="mediaobject"><img src="images/panelBar_init.png" alt="&lt;rich:panelBar&gt; with content inside"/></div></div><p class="title"><b>Figure 6.211. 
+            <span class="bold">
+               <span class="property">&lt;rich:panelBar&gt;</span>
+            </span> with content inside</b></p></div><br class="figure-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e48778"/>6.73.2. Key Features</h3></div></div></div><div class="itemizedlist"><ul><li><p>Skinnable slide panel and child items</p></li><li><p>Groups any content inside each panel</p></li></ul></div></div><div class="table"><a id="d0e48788"/><p class="title"><b>Table 6.399. rich
+					:
+					panelBar
+					attributes
+				</b></p><div class="table-contents"><table summary="rich&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;:&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;panelBar&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;attributes&#xA;&#x9;&#x9;&#x9;&#x9;" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Attribute Name</th><th>Description</th></tr></thead><tbody><tr><td>binding</td><td>The attribute takes a value-binding expression for a component property of
+a backing bean</td></tr><tr><td>contentClass</td><td>The component content style class</td></tr><tr><td>contentStyle</td><td>The component content style</td></tr><tr><td>converter</td><td>Id of Converter to be used or reference to a Converter</td></tr><tr><td>converterMessage</td><td>A ValueExpression enabled attribute that, if present, will be used as the text of the converter message, replacing any message that comes from the converter.</td></tr><tr><td>headerClass</td><td>The component header style class</td></tr><tr><td>headerClassActive</td><td>The component header style class active</td></tr><tr><td>headerStyle</td><td>The component header style</td></tr><tr><td>headerStyleActive</td><td>The component header style active</td></tr><tr><td>height</td><td>The height of the slide panel. Might be defined as pixels or as percentage.
+	    		Default value is "100%".</td></tr><tr><td>id</td><td>Every component may have a unique id that is automatically created if omitted</td></tr><tr><td>immediate</td><td>A flag indicating that this component value must be converted
+            and validated immediately (that is, during Apply Request Values
+            phase), rather than waiting until a Process Validations phase</td></tr><tr><td>label</td><td>A localized user presentable name for this component.</td></tr><tr><td>onclick</td><td>JavaScript code for call before header onclick</td></tr><tr><td>onitemchange</td><td>Event must occurs on than item has been changed</td></tr><tr><td>onmousemove</td><td>Event must occurs on than item has been changed</td></tr><tr><td>onmouseout</td><td>Event must occurs on than item has been changed</td></tr><tr><td>onmouseover</td><td>Event must occurs on than item has been changed</td></tr><tr><td>rendered</td><td>If "false", this component is not rendered</td></tr><tr><td>required</td><td>If "true", this component is checked for non-empty input</td></tr><tr><td>requiredMessage</td><td>A ValueExpression enabled attribute that, if present, will be used as the text of the validation message for the "required" facility, if the "required" facility is used.</td></tr><tr><td>selectedPanel</td><td>Attribure defines name of selected item</td></tr><tr><td>style</td><td>CSS style(s) is/are to be applied when this component is rendered</td></tr><tr><td>styleClass</td><td>Corresponds to the HTML class attribute.</td></tr><tr><td>validator</td><td>MethodBinding pointing at a method that is called during
+            Process Validations phase of the request processing lifecycle,
+            to validate the current value of this component</td></tr><tr><td>validatorMessage</td><td>A ValueExpression enabled attribute that, if present, will be used as the text of the validator message, replacing any message that comes from the validator.</td></tr><tr><td>value</td><td>The current value of this component</td></tr><tr><td>valueChangeListener</td><td>Listener for value changes</td></tr><tr><td>width</td><td>The width of the slide panel. Might be defined as pixels or as percentage.
+	    	Default value is "100%".</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e48952"/><p class="title"><b>Table 6.400. Component identification parameters </b></p><div class="table-contents"><table summary="Component identification parameters " border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>component-type</td><td>org.richfaces.PanelBar</td></tr><tr><td>component-class</td><td>org.richfaces.component.html.HtmlPanelBar</td></tr><tr><td>component-family</td><td>org.richfaces.PanelBar</td></tr><tr><td>renderer-type</td><td>org.richfaces.PanelBarRenderer</td></tr><tr><td>tag-class</td><td>org.richfaces.taglib.PanelBarTag</td></tr></tbody></table></div></div><br class="table-break"/><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e48988"/>6.73.3. Creating the Component with a Page Tag</h3></div></div></div><p>To create the simplest variant on a page use the following syntax:</p><p>
+            <span class="bold"><strong>Example:</strong></span>
+        </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panelBar</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--//...&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panelBarItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Canon&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:panelBarItem</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panelBarItem</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">label</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Nikon&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:panelBarItem</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:panelBar</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e49000"/>6.73.4. Creating the Component Dynamically Using Java</h3></div></div></div><p>
+            <span class="bold"><strong>Example:</strong></span>
+        </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">import</span><!-- <br/> --><span class="java_plain">&nbsp;org</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">richfaces</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">component</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">html</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_type">HtmlPanelBar</span><!-- <br/> --><span class="java_separator">;</span>
+<!--  --><br/><span class="java_separator">...</span>
+<!--  --><br/><span class="java_type">HtmlPanelBar</span><span class="java_plain">&nbsp;myBar&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">HtmlPanelBar</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_separator">...</span>
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e49010"/>6.73.5. Details of Usage</h3></div></div></div><p>As it was mentioned <a href="panelBar.html" title="6.73.  &lt; rich:panelBar &gt;">above</a>,
+            <span class="property">panelBar</span> is used for grouping any content on the client, thus its
+            customization deals only with specification of sizes and styles for rendering.</p><p>
+         <span class="emphasis"><em>
+                <span class="property">"width"</span>
+            </em></span> and <span class="emphasis"><em>
+                <span class="property">"height"</span>
+            </em></span> (both are 100% on default) attributes stand apart.</p><p>Style attributes are described further.</p><p>
+         <span class="property">panelBar</span> could contain any number of child
+            <span class="property">panelBarItem</span> components inside, which content is uploaded onto the
+            client and headers are controls to open the corresponding child element.</p><p>
+            The <span class="emphasis"><em>
+                <span class="property">"label"</span>
+            </em></span> attribute is a generic attribute.
+            The <span class="emphasis"><em>
+                <span class="property">"label"</span>
+            </em></span> attribute provides an association between a component, and the message that the component (indirectly) produced.  
+            This attribute defines the parameters of localized error and informational messages that
+            occur as a result of conversion, validation, or other application actions during the request
+            processing lifecycle. With the help of this attribute you can  replace the
+            last parameter substitution token shown in the messages. For example, {1} for <code class="code">"DoubleRangeValidator.MAXIMUM"</code>, {2}
+            for <code class="code">"ShortConverter.SHORT"</code>.
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e49065"/>6.73.6. Look-and-Feel Customization</h3></div></div></div><p>For skinnability implementation, the components use a <span class="emphasis"><em>
+            <span class="property">style class redefinition method.</span>
+        </em></span> Default style classes are mapped on <span class="emphasis"><em>
+            <span class="property">skin parameters.</span>
+        </em></span>
+      </p><p>There are two ways to redefine the appearance of all <span class="bold"><strong>
+            <span class="property">&lt;rich:panelBar&gt;</span>
+        </strong></span> components at once:</p><div class="itemizedlist"><ul><li><p>Redefine the corresponding skin parameters</p></li><li><p>Add to your style sheets <span class="emphasis"><em>
+                    <span class="property">style classes</span>
+                </em></span> used by a <span class="bold"><strong>
+                    <span class="property">&lt;rich:panelBar&gt;</span>
+                </strong></span> component</p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e49109"/>6.73.7. Skin Parameters Redefinition</h3></div></div></div><div class="table"><a id="d0e49112"/><p class="title"><b>Table 6.401. Skin parameter redefinition for a  whole component</b></p><div class="table-contents"><table summary="Skin parameter redefinition for a  whole component" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameter</th><th>CSS properties</th></tr></thead><tbody><tr><td>headerBackgroundColor</td><td>border-color</td></tr></tbody></table></div></div><br class="table-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e49128"/>6.73.8. Definition of Custom Style Classes</h3></div></div></div><p>There is one predefined class for the <span class="bold"><strong>
+                <span class="property">&lt;rich:panelBar&gt;</span>
+            </strong></span>, which is applicable to a whole component, specifying padding, borders, and
+            etc.</p><div class="figure"><a id="d0e49139"/><div class="figure-contents"><div class="mediaobject"><img src="images/panelBar_cn.png" alt="Style classes"/></div></div><p class="title"><b>Figure 6.212. Style classes</b></p></div><br class="figure-break"/><div class="table"><a id="tab_pB"/><p class="title"><b>Table 6.402. Class name that define a component appearance</b></p><div class="table-contents"><table summary="Class name that define a component appearance" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Class name</th><th>Class description</th></tr></thead><tbody><tr><td>rich-panelbar</td><td>Defines styles for a wrapper &lt;div&gt; element of a
+                            component</td></tr></tbody></table></div></div><br class="table-break"/><p>Other classes responsible for elements rendering are described for child <span class="bold"><strong>
+                <span class="property">&lt;rich:panelBarItem&gt;</span>
+            </strong></span> elements and could be found in the components chapters.</p><div class="table"><a id="d0e49169"/><p class="title"><b>Table 6.403. Style component classes</b></p><div class="table-contents"><table summary="Style component classes" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>A class attribute</th><th>A component element defined by an attribute</th></tr></thead><tbody><tr><td>styleClass</td><td>Applicable to a whole component (together with headers)</td></tr><tr><td>headerClass</td><td>Applicable to a header element</td></tr><tr><td>contentClass</td><td>Applicable to a content </td></tr></tbody></table></div></div><br class="table-break"/><p>In order to redefine styles for all <span class="bold"><strong>
+            <span class="property">&lt;rich:panelBar&gt;</span>
+        </strong></span> components on a page using CSS, it's enough to create classes with the
+            same names (possible classes could be found in the tables <a href="panelBar.html#tab_pB" title="Table 6.402. Class name that define a component appearance"> above</a>) and define necessary properties in them. </p><p>
+            <span class="bold"><strong>Example:</strong></span>
+        </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_selector">.rich-panelbar</span><span class="css_curly_brace">{</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">font-style</span><span class="css_colon">:</span><span class="css_normal">&nbsp;</span><span class="css_property_value">italic</span><span class="css_semi_colon">;</span><span class="css_normal"><br />
+</span><span class="css_curly_brace">}</span><span class="css_normal"><br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>This is a result:</p><div class="figure"><a id="d0e49215"/><div class="figure-contents"><div class="mediaobject"><img src="images/panelBar_pc.png" alt="Redefinition styles with predefined classes"/></div></div><p class="title"><b>Figure 6.213. Redefinition styles with predefined classes</b></p></div><br class="figure-break"/><p>In the example header and content font style was changed.</p><p>Also it's possible to change styles of particular <span class="bold"><strong>
+            <span class="property">&lt;rich:panelBar&gt;</span>
+         </strong></span> component. In this case you should create own style classes and use them in corresponding <span class="bold"><strong>
+            <span class="property">&lt;rich:panelBar&gt;</span>
+         </strong></span> 
+         <span class="emphasis"><em>
+            <span class="property">styleClass</span>
+         </em></span> attributes. An example is placed below:</p><p>
+            <span class="bold"><strong>Example:</strong></span>
+        </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_selector">.myClass</span><span class="css_curly_brace">{</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">font-family</span><span class="css_colon">:</span><span class="css_normal">&nbsp;</span><span class="css_property_value">Tahoma</span><span class="css_semi_colon">;</span><span class="css_normal"><br />
+</span><span class="css_curly_brace">}</span><span class="css_normal"><br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>The <span class="emphasis"><em>
+            <span class="property">"contentClass"</span>
+         </em></span> attribute for <span class="bold"><strong>
+            <span class="property">&lt;rich:panelBar&gt;</span>
+         </strong></span> is defined as it's shown in the example below:</p><p>
+            <span class="bold"><strong>Example:</strong></span>
+        </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panelBar</span><span class="xml_plain">&nbsp;...&nbsp;</span><span class="xml_attribute_name">contentClass</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;myClass&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre><p>This is a result:</p><div class="figure"><a id="d0e49273"/><div class="figure-contents"><div class="mediaobject"><img src="images/panelBar_oc.png" alt="Redefinition styles with own classes and styleClass attributes"/></div></div><p class="title"><b>Figure 6.214. Redefinition styles with own classes and <span class="emphasis"><em>
+               <span class="property">styleClass</span>
+            </em></span> attributes</b></p></div><br class="figure-break"/><p>As it could be seen on the picture above, the font family for content were changed.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e49287"/>6.73.9. Relevant Resources Links</h3></div></div></div><p>
+            <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://livedemo.exadel.com/richfaces-demo/richfaces/panelBar.jsf?c=panelBar">Here</a> you can see the example of <span class="bold"><strong>
+                <span class="property">&lt;rich:panelBar&gt;</span>
+            </strong></span> usage and sources for the given example. </p></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="panel.html"><strong>Prev</strong>6.72. 
+				&lt;
+				rich:panel
+				&gt;
+			</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="panelBarItem.html"><strong>Next</strong>6.74. 
+				&lt;
+				rich:panelBarItem
+				&gt;
+			</a></li></ul></body></html>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>6.82.  &lt; rich:simpleTogglePanel &gt;</title><link rel="stylesheet" href="css/html.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link xmlns="" rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/><meta name="keywords" content="rich:simpleTogglePanel"/><meta name="keywords" content="panel, rich:simpleTogglePanel, HtmlSimpleTogglePanel, switch"/><script xmlns="" type="text/javascript" src="script/prototype-1.6.0.2.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/effects.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/scriptaculous.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><link rel="start" href="index.html" title="RichFaces Developer Guide"/><link rel="up" href="RichFacesComponentsLibrary.html" title="Chapter 6. The RichFaces Components"/><link rel="prev" href="separator.html" title="6.81.  &lt; rich:separator &gt;"/><link rel="next" href="spacer.html" title="6.83.  &lt; rich:spacer &gt;"/><script xmlns="http://www.w3.org/TR/xhtml1/transitional" type="text/javascript" src="script/toggle.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script></head><body><div xmlns="" id="overlay"> </div><div xmlns="" id="feedback-maincontainer" style="display:none"><div id="feedback-header">
+			Send your remarks, comments or wishes to doc team
+		</div><a href="#" onclick="$('feedback-maincontainer').hide(); return false;" id="feedback-close"><img src="images/close.png" class="feedback-images"/></a><div id="feedback-state"> </div><form id="feedback-mailform"><div class="feedback-textbox-div">
+			  Subject:<input type="text" id="subject" name="subject" title="Enter the subject of your message" class="feedback-textbox"/></div><div class="feedback-textbox-div"><span style="vertical-align: top;">Message:</span><textarea name="message" title="Type here the text of your message" id="message"> </textarea></div><div class="feedback-textbox-div">
+			  Your name:<input type="text" id="name" name="name" title="Enter your name" class="feedback-textbox"/></div><div class="feedback-textbox-div">
+			  Your email:<input type="text" id="email" name="email" title="Enter your email address" class="feedback-textbox"/></div><span class="feedback-button-container"><input type="submit" value="Send Message" name="submit" class="feedback-formbutton" title="Send Message"/></span><span class="feedback-button-container"><input type="reset" value="Clear All Fields" class="feedback-formbutton" title="Clear All Fields"/></span></form></div><div xmlns="" id="feedback-wrapper"><a id="feedback-link" href="#" onclick="$('feedback-maincontainer').appear(); return false;"><img src="images/feedback_logo.png" class="feedback-images" width="100px"/></a></div><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="separator.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="spacer.html"><strong>Next</strong></a></li></ul><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="simpleTogglePanel"/>6.82. 
+				&lt;
+				rich:simpleTogglePanel
+				&gt;
+			</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e56383"/>6.82.1. Description</h3></div></div></div><p>A collapsible panel, which content shows/hides after activating a header control.</p><div class="figure"><a id="d0e56388"/><div class="figure-contents"><div class="mediaobject"><img src="images/simpleTogglePanel_init.png" alt="&lt;rich:simpleTogglePanel&gt; component"/></div></div><p class="title"><b>Figure 6.260. 
+            <span class="bold">
+               <span class="property">&lt;rich:simpleTogglePanel&gt;</span>
+            </span> component</b></p></div><br class="figure-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e56400"/>6.82.2. Key Features</h3></div></div></div><div class="itemizedlist"><ul><li><p>Highly customizable look and feel </p></li><li><p>Support for any content inside</p></li><li><p>Collapsing expanding content</p></li><li><p>Three modes of collapsing/expanding</p><div class="itemizedlist"><ul><li><p>
+                     <code class="code">Server</code>
+                  </p></li><li><p>
+                     <code class="code">Client</code>
+                  </p></li><li><p>
+                     <code class="code">Ajax</code>
+                  </p></li></ul></div></li></ul></div></div><div class="table"><a id="d0e56435"/><p class="title"><b>Table 6.485. rich
+					:
+					simpleTogglePanel
+					attributes
+				</b></p><div class="table-contents"><table summary="rich&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;:&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;simpleTogglePanel&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;attributes&#xA;&#x9;&#x9;&#x9;&#x9;" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Attribute Name</th><th>Description</th></tr></thead><tbody><tr><td>action</td><td>MethodBinding pointing at the application action to be invoked,
+            if this UIComponent is activated by you, during the Apply
+            Request Values or Invoke Application phase of the request
+            processing lifecycle, depending on the value of the immediate
+            property</td></tr><tr><td>actionListener</td><td>MethodBinding pointing at method accepting  an ActionEvent with return type void</td></tr><tr><td>ajaxSingle</td><td>boolean attribute which provides possibility to limit JSF tree processing(decoding, conversion/validation, value applying) 
+to the component which send the request only</td></tr><tr><td>binding</td><td>The attribute takes a value-binding expression for a component property of
+a backing bean</td></tr><tr><td>bodyClass</td><td>A class that defines a style for a panel content</td></tr><tr><td>bypassUpdates</td><td>If "true", after process validations phase it skips updates of model beans on a force render response. It can be used for validating components input</td></tr><tr><td>data</td><td>Serialized (on default with JSON) data passed on the client by a developer on AJAX request. It's accessible via "data.foo" syntax</td></tr><tr><td>eventsQueue</td><td>Name of requests queue to avoid send next request before complete other from same event. Can be used to reduce number of requests of frequently events (key press, mouse move etc.)</td></tr><tr><td>focus</td><td>id of element to set focus after request completed on client side</td></tr><tr><td>headerClass</td><td>Class that defines the style for panel header</td></tr><tr><td>height</td><td>Height of a simple toggle panel content area might be defined as pixels or in percents.
+	    		By default height is not defined</td></tr><tr><td>id</td><td>Every component may have a unique id that is automatically created if omitted</td></tr><tr><td>ignoreDupResponses</td><td>Attribute allows to ignore an Ajax Response produced by a request if the newest 'similar' request is
+in a queue already. ignoreDupResponses="true" does not cancel the request while it is processed on the server,
+but just allows to avoid unnecessary updates on the client side if the response isn't actual now</td></tr><tr><td>immediate</td><td>True means, that the default ActionListener should be executed
+            immediately (i.e. during Apply Request Values phase of the
+            request processing lifecycle), rather than waiting until the
+            Invoke Application phase</td></tr><tr><td>label</td><td>Marker to be rendered on a panel header</td></tr><tr><td>limitToList</td><td>If "true", then of all AJAX-rendered on the page components only those will be updated, 
+		which ID's are passed to the "reRender" attribute of the describable component. 
+		"false"-the default value-means that all components with ajaxRendered="true" will be updated.</td></tr><tr><td>onbeforedomupdate</td><td>JavaScript code for call before DOM has been updated on client side</td></tr><tr><td>onclick</td><td>HTML: a script expression; a pointer button is clicked</td></tr><tr><td>oncollapse</td><td>Event must occurs on befor panel collapsed</td></tr><tr><td>oncomplete</td><td>JavaScript code for call after request completed on client side</td></tr><tr><td>ondblclick</td><td>HTML: a script expression; a pointer button is double-clicked</td></tr><tr><td>onexpand</td><td>Event must occurs on befor panel expanded</td></tr><tr><td>onkeydown</td><td>HTML: a script expression; a key is pressed down</td></tr><tr><td>onkeypress</td><td>HTML: a script expression; a key is pressed and released</td></tr><tr><td>onkeyup</td><td>HTML: a script expression; a key is released</td></tr><tr><td>onmousedown</td><td>HTML: script expression; a pointer button is pressed down</td></tr><tr><td>onmousemove</td><td>HTML: a script expression; a pointer is moved within</td></tr><tr><td>onmouseout</td><td>HTML: a script expression; a pointer is moved away</td></tr><tr><td>onmouseover</td><td>HTML: a script expression; a pointer is moved onto</td></tr><tr><td>onmouseup</td><td>HTML: script expression; a pointer button is released</td></tr><tr><td>opened</td><td>A "false" value for this attribute makes the panel closed by default. Default value is "true".</td></tr><tr><td>process</td><td>Id['s] (in format of call  UIComponent.findComponent()) of components, processed at the phases 2-5 in case of AjaxRequest  caused by this component. Can be single id, comma-separated list of Id's, or EL Expression  with array or Collection</td></tr><tr><td>rendered</td><td>If "false", this component is not rendered</td></tr><tr><td>requestDelay</td><td>Attribute defines the time (in ms.) that the request will be wait in the queue before it is ready to send.
+When the delay time is over, the request will be sent to the server or removed if the newest 'similar' request is in a queue already</td></tr><tr><td>reRender</td><td>Id['s] (in format of call  UIComponent.findComponent()) of components, rendered in case of AjaxRequest  caused by this component. Can be single id, comma-separated list of Id's, or EL Expression  with array or Collection</td></tr><tr><td>similarityGroupingId</td><td>If there are any component requests with identical IDs then these requests will be grouped.</td></tr><tr><td>status</td><td>ID (in format of call UIComponent.findComponent()) of Request status component</td></tr><tr><td>style</td><td>CSS style(s) is/are to be applied when this component is rendered</td></tr><tr><td>styleClass</td><td>Corresponds to the HTML class attribute</td></tr><tr><td>switchType</td><td>Panels switch mode: "client", "server"(default), "ajax"</td></tr><tr><td>timeout</td><td>Response waiting time on a particular request. If a response is not received during this time, the request is aborted</td></tr><tr><td>value</td><td>The current value for this component</td></tr><tr><td>width</td><td>Width of a simple toggle panel might be defined as pixels or in percents.
+	    	By default width is not defined</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e56671"/><p class="title"><b>Table 6.486. Component identification parameters</b></p><div class="table-contents"><table summary="Component identification parameters" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>component-type</td><td>org.richfaces.SimpleTogglePanel</td></tr><tr><td>component-class</td><td>org.richfaces.component.html.HtmlSimpleTogglePanel</td></tr><tr><td>component-family</td><td>org.richfaces.SimpleTogglePanel</td></tr><tr><td>renderer-type</td><td>org.richfaces.SimpleTogglePanelRenderer</td></tr><tr><td>tag-class</td><td>org.richfaces.taglib.SimpleTogglePanelTag</td></tr></tbody></table></div></div><br class="table-break"/><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e56707"/>6.82.3. Creating the Component with a Page Tag</h3></div></div></div><p>To create the simplest variant on a page use the following syntax:</p><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:simpleTogglePanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:simpleTogglePanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e56719"/>6.82.4. Creating the Component Dynamically Using Java</h3></div></div></div><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">import</span><!-- <br/> --><span class="java_plain">&nbsp;org</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">richfaces</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">component</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">html</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_type">HtmlSimpleTogglePanel</span><!-- <br/> --><span class="java_separator">;</span>
+<!--  --><br/><span class="java_separator">...</span>
+<!--  --><br/><span class="java_type">HtmlSimpleTogglePanel</span><span class="java_plain">&nbsp;myPanel&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">HtmlSimpleTogglePanel</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_separator">...</span>
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e56729"/>6.82.5. Details of Usage</h3></div></div></div><p>The component is a simplified version of <span class="property">toggle panel</span> that initially
+      has a defined layout as a panel with a header playing a role of a mode switching control. On a
+      component header element, it's possible to define a label using an attribute with the
+      same name.</p><p>Switching mode could be defined with the <span class="emphasis"><em>
+            <span class="property">"switchType"</span>
+         </em></span> attribute with three possible parameters.</p><div class="itemizedlist"><ul><li><p> 
+               <code class="code">Server</code> (DEFAULT)</p><p>The common submission is performed around
+            <span class="property">simpleTogglePanel</span> and a page is completely rendered on a called
+          panel. Only one at a time panel is uploaded onto the client side.</p></li><li><p>
+               <code class="code"> Ajax</code>
+            </p><p>AJAX form submission is performed around the panel, content of the called
+          panel is uploaded on Ajax request and additionally specified elements in the <span class="emphasis"><em>
+                  <span class="property">"reRender"</span>
+               </em></span> attribute are rendered. Only one at a time panel is uploaded on the client
+          side.</p></li><li><p>
+               <code class="code">Client</code>
+            </p><p> All panels are uploaded on the client side. Switching from the active
+          to the hidden panel is performed with client JavaScript.</p></li></ul></div><p>The <span class="bold"><strong>
+            <span class="property">&lt;rich:simpleTogglePanel&gt;</span>
+         </strong></span>component also has an <span class="emphasis"><em>
+            <span class="property">"opened"</span>
+         </em></span> attribute responsible for keeping a panel state. It gives an
+      opportunity to manage state of the component from a model.
+      If the value of this attribute is"true" the component is expanded.
+    </p><div class="itemizedlist"><ul><li><p> 
+               <span class="emphasis"><em>
+                  <span class="property">"onmouseover "</span>
+               </em></span>
+            </p></li><li><p> 
+               <span class="emphasis"><em>
+                  <span class="property">"onclick "</span>
+               </em></span>
+            </p></li><li><p> 
+               <span class="emphasis"><em>
+                  <span class="property">"onmouseout "</span>
+               </em></span>
+            </p></li><li><p> etc. </p></li></ul></div><div class="figure"><a id="d0e56825"/><div class="figure-contents"><div class="mediaobject"><img src="images/simpleTogglePanel2.png" alt="&lt;rich:simpleTogglePanel&gt; states"/></div></div><p class="title"><b>Figure 6.261. 
+            <span class="bold">
+               <span class="property">&lt;rich:simpleTogglePanel&gt;</span>
+            </span> states</b></p></div><br class="figure-break"/><p>
+	        </p><p>
+		With help of
+	      <span class="emphasis"><em>
+	              <span class="property">
+	          "openMarker"
+	        </span>
+	           </em></span>
+	   and
+	  <span class="emphasis"><em>
+	              <span class="property">
+	      "closeMarker"
+	    </span>
+	           </em></span> facets you can set toggle icon for
+	  <span class="property">
+	    simpleTogglePanel
+	  </span>.
+	</p><p>
+     Information about the <span class="emphasis"><em>
+            <span class="property">"process"</span>
+         </em></span> attribute usage you can find <a href="ArchitectureOverview.html#process" title="5.6.4. Decide what to process">here</a>.
+    </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e56866"/>6.82.6. Facets</h3></div></div></div><div class="table"><a id="d0e56869"/><p class="title"><b>Table 6.487. Facets</b></p><div class="table-contents"><table summary="Facets" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Facet name</th><th>Description</th></tr></thead><tbody><tr><td>openMarker</td><td>Redefines the icon for expanding the panel</td></tr><tr><td>closeMarker</td><td>Redefines the icon for collapsing the panel</td></tr></tbody></table></div></div><br class="table-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e56890"/>6.82.7. Look-and-Feel Customization</h3></div></div></div><p>For skinnability implementation, the components use a <span class="emphasis"><em>
+            <span class="property">style class redefinition method.</span>
+         </em></span> Default style classes are mapped on <span class="emphasis"><em>
+            <span class="property">skin parameters.</span>
+         </em></span>
+      </p><p>There are two ways to redefine the appearance of all <span class="bold"><strong>
+            <span class="property">&lt;rich:simpleTooglePanel&gt;</span>
+         </strong></span> components at once:</p><div class="itemizedlist"><ul><li><p>Redefine the corresponding skin parameters</p></li><li><p>Add to your style sheets <span class="emphasis"><em>
+                  <span class="property">style classes</span>
+               </em></span> used by a <span class="bold"><strong>
+                  <span class="property">&lt;rich:simpleTooglePanel&gt;</span>
+               </strong></span> component</p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e56934"/>6.82.8. Skin Parameters Redefinition</h3></div></div></div><div class="table"><a id="d0e56937"/><p class="title"><b>Table 6.488. Skin parameters for a whole component</b></p><div class="table-contents"><table summary="Skin parameters for a whole component" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>generalBackgroundColor</td><td>background-color</td></tr><tr><td>panelBorderColor</td><td>border-color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e56958"/><p class="title"><b>Table 6.489. Skin parameters for a header element</b></p><div class="table-contents"><table summary="Skin parameters for a header element" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>headerBackgroundColor</td><td>background-color</td></tr><tr><td>headerBackgroundColor</td><td>border-color</td></tr><tr><td>headerSizeFont</td><td>font-size </td></tr><tr><td>headTextColor</td><td>color</td></tr><tr><td>headerWeightFont</td><td>font-weight</td></tr><tr><td>headerFamilyFont</td><td>font-family</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e56999"/><p class="title"><b>Table 6.490. Skin parameters for a body element</b></p><div class="table-contents"><table summary="Skin parameters for a body element" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>generalBackgroundColor</td><td>background-color</td></tr><tr><td>generalSizeFont</td><td>font-size</td></tr><tr><td>panelTextColor</td><td>color</td></tr><tr><td>generalFamilyFont</td><td>font-family</td></tr></tbody></table></div></div><br class="table-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e57030"/>6.82.9. Definition of Custom Style Classes</h3></div></div></div><p>On the screenshot there are classes names that define styles for component elements.</p><div class="figure"><a id="d0e57035"/><div class="figure-contents"><div class="mediaobject"><img src="images/simpleTogglePanel_cn.png" alt="Style classes"/></div></div><p class="title"><b>Figure 6.262. Style classes</b></p></div><br class="figure-break"/><div class="table"><a id="simpTogPanC"/><p class="title"><b>Table 6.491. Classes names that define a component appearance</b></p><div class="table-contents"><table summary="Classes names that define a component appearance" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Class name</th><th>Class description</th></tr></thead><tbody><tr><td>rich-stglpanel</td><td>Defines styles for a wrapper  &lt;div&gt; element of a component</td></tr><tr><td>rich-stglpanel-header</td><td>Defines styles for header element of a component</td></tr><tr><td>rich-stglpnl-marker</td><td>Defines styles for a wrapper  &lt;div&gt; element of a marker</td></tr><tr><td>rich-stglpanel-body</td><td>Defines styles for a component content</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e57072"/><p class="title"><b>Table 6.492. Style component classes</b></p><div class="table-contents"><table summary="Style component classes" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Class name</th><th>Class description</th></tr></thead><tbody><tr><td>styleClass</td><td>The class defines panel common style. It's used in the outside <span class="bold"><strong>
+                        <span class="property">&lt;div&gt;</span>
+                     </strong></span>element</td></tr><tr><td>bodyClass</td><td>applicable to panels body elements</td></tr><tr><td>headerClass</td><td>applicable to header elements</td></tr></tbody></table></div></div><br class="table-break"/><p>In order to redefine styles for all <span class="bold"><strong>
+            <span class="property">&lt;rich:simpleTogglePanel&gt;</span>
+         </strong></span> components on a page using CSS, it's enough to create classes with the
+      same names (possible classes could be found in the tables <a href="simpleTogglePanel.html#simpTogPanC" title="Table 6.491. Classes names that define a component appearance"> above</a>) and define necessary properties in them. </p><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_selector">.rich-stglpanel-header</span><span class="css_curly_brace">{</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">font-style</span><span class="css_colon">:</span><span class="css_property_value">italic</span><span class="css_semi_colon">;</span><span class="css_normal"><br />
+</span><span class="css_curly_brace">}</span><span class="css_normal"><br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>This is a result:</p><div class="figure"><a id="d0e57124"/><div class="figure-contents"><div class="mediaobject"><img src="images/simpleTogglePanel_pc.png" alt="Redefinition styles with predefined classes"/></div></div><p class="title"><b>Figure 6.263. Redefinition styles with predefined classes</b></p></div><br class="figure-break"/><p>In the example the font style for header was changed.</p><p>Also it's possible to change styles of particular <span class="bold"><strong>
+            <span class="property">&lt;rich:simpleTogglePanel&gt;</span>
+         </strong></span> component. In this case you should create own style classes and use them in corresponding <span class="bold"><strong>
+            <span class="property">&lt;rich:simpleTogglePanel&gt;</span>
+         </strong></span> 
+         <span class="emphasis"><em>
+            <span class="property">styleClass</span>
+         </em></span> attributes. An example is placed below:</p><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_selector">.myClass</span><span class="css_curly_brace">{</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">background-color</span><span class="css_colon">:</span><span class="css_property_value">#ffead9</span><span class="css_semi_colon">;</span><span class="css_normal"><br />
+</span><span class="css_curly_brace">}</span><span class="css_normal"><br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>The <span class="emphasis"><em>
+            <span class="property">"bodyClass"</span>
+         </em></span> attribute for <span class="bold"><strong>
+            <span class="property">&lt;rich:simpleTogglePanel&gt;</span>
+         </strong></span> is defined as it's shown in the example below:</p><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:simpleTogglePanel</span><span class="xml_plain">&nbsp;...&nbsp;</span><span class="xml_attribute_name">bodyClass</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;myClass&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre><p>This is a result:</p><div class="figure"><a id="d0e57182"/><div class="figure-contents"><div class="mediaobject"><img src="images/simpleTogglePanel_oc.png" alt="Redefinition styles with own classes and styleClass attributes"/></div></div><p class="title"><b>Figure 6.264. Redefinition styles with own classes and <span class="emphasis"><em>
+               <span class="property">styleClass</span>
+            </em></span> attributes</b></p></div><br class="figure-break"/><p>As it could be seen on the picture above,background color for body was changed.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e57196"/>6.82.10. Relevant Resources Links</h3></div></div></div><p>
+         <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://livedemo.exadel.com/richfaces-demo/richfaces/simpleTogglePanel.jsf?c=simpleTogglePanel">Here</a> you can see the example of <span class="bold"><strong>
+            <span class="property">&lt;rich:simpleTogglePanel&gt;</span>
+         </strong></span> usage and sources for the given example.
+    </p></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="separator.html"><strong>Prev</strong>6.81. 
+				&lt;
+				rich:separator
+				&gt;
+			</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="spacer.html"><strong>Next</strong>6.83. 
+				&lt;
+				rich:spacer
+				&gt;
+			</a></li></ul></body></html>

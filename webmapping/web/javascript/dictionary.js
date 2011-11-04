@@ -1,0 +1,1 @@
+var globalNS = new Object();

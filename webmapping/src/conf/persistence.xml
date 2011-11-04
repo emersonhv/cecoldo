@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
+    <persistence-unit name="WebMappingPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <non-jta-data-source/>
+        <class>com.dimar.cecoldo.bean.ArchivoDatos</class>
+        <class>com.dimar.cecoldo.bean.BodcCategory</class>
+        <class>com.dimar.cecoldo.bean.BodcCategoryLink</class>
+        <class>com.dimar.cecoldo.bean.BodcDatos</class>
+        <class>com.dimar.cecoldo.bean.BodcDetalleDatos</class>
+        <class>com.dimar.cecoldo.bean.BodcRequiredParameter</class>
+        <class>com.dimar.cecoldo.bean.CecoldoProperties</class>
+        <class>com.dimar.cecoldo.bean.Groups</class>
+        <class>com.dimar.cecoldo.bean.GenMunicipio</class>
+        <class>com.dimar.cecoldo.bean.GenProfesion</class>
+        <class>com.dimar.cecoldo.bean.Gendepartamento</class>
+        <class>com.dimar.cecoldo.bean.InvChiefScientist</class>
+        <class>com.dimar.cecoldo.bean.InvCruiseInstitutions</class>
+        <class>com.dimar.cecoldo.bean.InvCruiseInventory</class>
+        <class>com.dimar.cecoldo.bean.InvFunctionClassifiers</class>
+        <class>com.dimar.cecoldo.bean.InvInstitutions</class>
+        <class>com.dimar.cecoldo.bean.InvLaboratories</class>
+        <class>com.dimar.cecoldo.bean.InvShipName</class>
+        <class>com.dimar.cecoldo.bean.InvShipType</class>
+        <class>com.dimar.cecoldo.bean.InvStatus</class>
+        <class>com.dimar.cecoldo.bean.InvStatusIndicators</class>
+        <class>com.dimar.cecoldo.bean.Metadata</class>
+        <class>com.dimar.cecoldo.bean.Paises0101</class>
+        <class>com.dimar.cecoldo.bean.Regions</class>
+        <class>com.dimar.cecoldo.bean.SolicitudParametros</class>
+        <class>com.dimar.cecoldo.bean.TempMalla</class>
+        <class>com.dimar.cecoldo.bean.UnlocodePort</class>
+        <class>com.dimar.cecoldo.bean.UnlocodeStatusIndicators</class>
+        <class>com.dimar.cecoldo.bean.Users</class>
+        <properties>
+            <!--
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"/>
+            <property name="hibernate.connection.driver_class" value="net.sourceforge.jtds.jdbc.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:jtds:sqlserver://172.25.2.53:1433/cecoldo;tds=8.0;lastupdatecount=true"/>
+            <property name="hibernate.connection.username" value="sa"/>
+            <property name="hibernate.connection.password" value="cecoldo"/>
+            <property name="hibernate.hbm2ddl.auto" value="false"/>
+            -->
+            
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://192.168.0.100:3306/cenimarc_"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value="root"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+           
+        </properties>
+    </persistence-unit>
+</persistence>
