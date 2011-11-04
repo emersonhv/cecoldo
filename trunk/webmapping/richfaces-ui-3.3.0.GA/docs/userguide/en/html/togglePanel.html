@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>6.87.  &lt; rich:togglePanel &gt;</title><link rel="stylesheet" href="css/html.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link xmlns="" rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/><meta name="keywords" content="rich:togglePanel"/><meta name="keywords" content="facet, rich:togglePanel, HtmltogglePanel"/><script xmlns="" type="text/javascript" src="script/prototype-1.6.0.2.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/effects.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/scriptaculous.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><link rel="start" href="index.html" title="RichFaces Developer Guide"/><link rel="up" href="RichFacesComponentsLibrary.html" title="Chapter 6. The RichFaces Components"/><link rel="prev" href="tab.html" title="6.86.  &lt; rich:tab &gt;"/><link rel="next" href="toggleControl.html" title="6.88.  &lt; rich:toggleControl &gt;"/><script xmlns="http://www.w3.org/TR/xhtml1/transitional" type="text/javascript" src="script/toggle.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script></head><body><div xmlns="" id="overlay"> </div><div xmlns="" id="feedback-maincontainer" style="display:none"><div id="feedback-header">
+			Send your remarks, comments or wishes to doc team
+		</div><a href="#" onclick="$('feedback-maincontainer').hide(); return false;" id="feedback-close"><img src="images/close.png" class="feedback-images"/></a><div id="feedback-state"> </div><form id="feedback-mailform"><div class="feedback-textbox-div">
+			  Subject:<input type="text" id="subject" name="subject" title="Enter the subject of your message" class="feedback-textbox"/></div><div class="feedback-textbox-div"><span style="vertical-align: top;">Message:</span><textarea name="message" title="Type here the text of your message" id="message"> </textarea></div><div class="feedback-textbox-div">
+			  Your name:<input type="text" id="name" name="name" title="Enter your name" class="feedback-textbox"/></div><div class="feedback-textbox-div">
+			  Your email:<input type="text" id="email" name="email" title="Enter your email address" class="feedback-textbox"/></div><span class="feedback-button-container"><input type="submit" value="Send Message" name="submit" class="feedback-formbutton" title="Send Message"/></span><span class="feedback-button-container"><input type="reset" value="Clear All Fields" class="feedback-formbutton" title="Clear All Fields"/></span></form></div><div xmlns="" id="feedback-wrapper"><a id="feedback-link" href="#" onclick="$('feedback-maincontainer').appear(); return false;"><img src="images/feedback_logo.png" class="feedback-images" width="100px"/></a></div><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="tab.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="toggleControl.html"><strong>Next</strong></a></li></ul><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="togglePanel"/>6.87. 
+				&lt;
+				rich:togglePanel
+				&gt;
+			</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e60369"/>6.87.1. Description</h3></div></div></div><p>A wrapper component with named facets, where every facet is shown after activation of
+    the corresponding <span class="property">toggleControl</span>
+    (the other is hidden).</p><div class="figure"><a id="d0e60377"/><div class="figure-contents"><div class="mediaobject"><img src="images/togglePanel_init.png" alt="&lt;rich:togglePanel&gt; component"/></div></div><p class="title"><b>Figure 6.283. 
+            <span class="bold">
+               <span class="property">&lt;rich:togglePanel&gt;</span>
+            </span> component</b></p></div><br class="figure-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e60389"/>6.87.2. Key Features</h3></div></div></div><div class="itemizedlist"><ul><li><p>Support for any content inside</p></li><li><p>Three modes of facets switching</p><div class="itemizedlist"><ul><li><p>
+                     <code class="code">Server</code>
+                  </p></li><li><p>
+                     <code class="code">Client</code>
+                  </p></li><li><p>
+                     <code class="code">Ajax</code>
+                  </p></li></ul></div></li><li><p>Controls for <span class="property">togglePanel</span> can be everywhere in layout</p></li></ul></div></div><div class="table"><a id="d0e60424"/><p class="title"><b>Table 6.519. rich
+					:
+					togglePanel
+					attributes
+				</b></p><div class="table-contents"><table summary="rich&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;:&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;togglePanel&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;attributes&#xA;&#x9;&#x9;&#x9;&#x9;" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Attribute Name</th><th>Description</th></tr></thead><tbody><tr><td>binding</td><td>The attribute takes a value-binding expression for a component property of
+a backing bean</td></tr><tr><td>converter</td><td>Id of Converter to be used or reference to a Converter</td></tr><tr><td>converterMessage</td><td>A ValueExpression enabled attribute that, if present, will be used as the text of the converter message, replacing any message that comes from the converter</td></tr><tr><td>id</td><td>Every component may have a unique id that is automatically created if omitted</td></tr><tr><td>immediate</td><td>A flag indicating that this component value must be converted
+            and validated immediately (that is, during Apply Request Values
+            phase), rather than waiting until a Process Validations phase</td></tr><tr><td>initialState</td><td>It contains a name of the first active facet</td></tr><tr><td>label</td><td>A localized user presentable name for this component.</td></tr><tr><td>onclick</td><td>HTML: a script expression; a pointer button is clicked</td></tr><tr><td>ondblclick</td><td>HTML: a script expression; a pointer button is double-clicked</td></tr><tr><td>onkeydown</td><td>HTML: a script expression; a key is pressed down</td></tr><tr><td>onkeypress</td><td>HTML: a script expression; a key is pressed and released</td></tr><tr><td>onkeyup</td><td>HTML: a script expression; a key is released</td></tr><tr><td>onmousedown</td><td>HTML: script expression; a pointer button is pressed down</td></tr><tr><td>onmousemove</td><td>HTML: a script expression; a pointer is moved within</td></tr><tr><td>onmouseout</td><td>HTML: a script expression; a pointer is moved away</td></tr><tr><td>onmouseover</td><td>HTML: a script expression; a pointer is moved onto</td></tr><tr><td>onmouseup</td><td>HTML: script expression; a pointer button is released</td></tr><tr><td>rendered</td><td>If "false", this component is not rendered</td></tr><tr><td>required</td><td>If "true", this component is checked for non-empty input</td></tr><tr><td>requiredMessage</td><td>A ValueExpression enabled attribute that, if present, will be used as the text of the validation message for the "required" facility, if the "required" facility is used</td></tr><tr><td>stateOrder</td><td>Names of the facets in the switching order. If
+				ToggleControl doesn't contain information about a next facet to
+				be shown it is switched corresponding to this
+				attribute</td></tr><tr><td>style</td><td>CSS style(s) is/are to be applied when this component is rendered</td></tr><tr><td>styleClass</td><td>Corresponds to the HTML class attribute</td></tr><tr><td>switchType</td><td>Facets switch mode: "client", "server"(default), "ajax".</td></tr><tr><td>validator</td><td>MethodBinding pointing at a method that is called during
+            Process Validations phase of the request processing lifecycle,
+            to validate the current value of this component</td></tr><tr><td>validatorMessage</td><td>A ValueExpression enabled attribute that, if present, will be used as the text of the validator message, replacing any message that comes from the validator</td></tr><tr><td>value</td><td>The current value of this component</td></tr><tr><td>valueChangeListener</td><td>Listener for value changes</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e60583"/><p class="title"><b>Table 6.520. Component identification parameters</b></p><div class="table-contents"><table summary="Component identification parameters" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>component-type</td><td>org.richfaces.TogglePanel</td></tr><tr><td>component-class</td><td>org.richfaces.component.html.HtmlTogglePanel</td></tr><tr><td>component-family</td><td>org.richfaces.TogglePanel</td></tr><tr><td>renderer-type</td><td>org.richfaces.TogglePanelRenderer</td></tr><tr><td>tag-class</td><td>org.richfaces.Taglib.togglePanelTag</td></tr></tbody></table></div></div><br class="table-break"/><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e60619"/>6.87.3. Creating the Component with a Page Tag</h3></div></div></div><p>Here is a simple example as it could be used in a page: </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:togglePanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;first&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;second&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:togglePanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--//Set&nbsp;of&nbsp;the&nbsp;toggleControls&nbsp;somewhere&nbsp;on&nbsp;a&nbsp;page.--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e60631"/>6.87.4. Creating the Component Dynamically Using Java</h3></div></div></div><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">import</span><!-- <br/> --><span class="java_plain">&nbsp;org</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">richfaces</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">component</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">html</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_type">HtmltogglePanel</span><!-- <br/> --><span class="java_separator">;</span>
+<!--  --><br/><span class="java_separator">...</span><span class="java_plain">&nbsp;</span>
+<!--  --><br/><span class="java_type">HtmltogglePanel</span><span class="java_plain">&nbsp;myPanel&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">HtmltogglePanel</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_separator">...</span>
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e60641"/>6.87.5. Details of Usage</h3></div></div></div><p>As it was mentioned <a href="togglePanel.html" title="6.87.  &lt; rich:togglePanel &gt;">above</a>,
+                                        <span class="property">togglePanel</span> splits content into named
+                              facets that become rendered and processed when a click performed on
+                              controls linked to this <span class="property">togglePanel</span> (either
+                              switched on the client or send requests on the server for switching).</p><p>The initial component state is defined with <span class="emphasis"><em>
+                                        <span class="property">"initialState"</span>
+                              </em></span> attribute, where a facet name that is shown at first is
+                              defined.</p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note:</h2><p> It's also possible to define an <span class="emphasis"><em>
+                                                  <span class="property">"empty"</span>
+                                        </em></span> facet to implement the functionality as
+                                        drop-down panels have and make the facet active when no
+                                        content is required to be rendered.</p></div><p>Switching mode could be defined with the <span class="emphasis"><em>
+                                        <span class="property">"switchType"</span>
+                              </em></span> attribute with three possible parameters:</p><div class="itemizedlist"><ul><li><p>
+                                                  <code class="code">Server</code> (DEFAULT)</p><p>The common submission is performed around
+                                                  <span class="property">togglePanel</span> and a
+                                                  page is completely rendered on a called panel.
+                                                  Only one at a time the panel is uploaded onto the
+                                                  client side.</p></li><li><p>
+                                                  <code class="code">Ajax</code>
+                                        </p><p>AJAX form submission is performed around the panel,
+                                                  content of the called panel is uploaded on an Ajax
+                                                  request . Only one at a
+                                                  time the panel is uploaded on the client
+                                        side.</p></li><li><p>
+                                                  <code class="code">Client</code>
+                                        </p><p> All panels are uploaded on the client side. The
+                                                  switching from the active to the hidden panel is
+                                                  performed with client JavaScript.</p></li></ul></div><p>"Facets" switching order could be defined on the side of
+                                        <span class="bold"><strong>
+                                        <span class="property">&lt;rich:toggleControl&gt;</span>
+                              </strong></span> component or on the panel. On the side of the togglePanel
+                              it's possible to define facets switching order with the <span class="emphasis"><em>
+                                        <span class="property">"stateOrder"</span>
+                              </em></span> attribute. The facets names are enumerated in such an
+                              order that they are rendered when a control is clicked, as
+                              it's not defined where to switch beforehand.</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:togglePanel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;panel&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">initialState</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;panelB&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">switchType</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;client&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">stateOrder</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;panelA,panelB,panelC&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;panelA&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;panelB&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;panelC&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:togglePanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:toggleControl</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">for</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;panel&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Switch&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>The example shows a <span class="property">togglePanel</span> initial state when
+                              the second facet (<code class="code">panelB</code>) is rendered and successive
+                              switching from the first to the second happens.</p><p> The <span class="emphasis"><em>
+                                        <span class="property">"label"</span>
+                              </em></span> attribute is a generic attribute. The <span class="emphasis"><em>
+                                        <span class="property">"label"</span>
+                              </em></span> attribute provides an association between a component, and
+                              the message that the component (indirectly) produced. This attribute
+                              defines the parameters of localized error and informational messages
+                              that occur as a result of conversion, validation, or other application
+                              actions during the request processing lifecycle. With the help of this
+                              attribute you can replace the last parameter substitution token shown
+                              in the messages. For example, {1} for
+                                        <code class="code">"DoubleRangeValidator.MAXIMUM"</code>,
+                              {2} for <code class="code">"ShortConverter.SHORT"</code>. </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e60759"/>6.87.6. Look-and-Feel Customization</h3></div></div></div><p>The component doesn't have its own representation rendering only
+                              content of its facets, thus all look and feel is set only for
+                    content.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e60764"/>6.87.7. Definition of Custom Style Classes</h3></div></div></div><div class="table"><a id="togglePC"/><p class="title"><b>Table 6.521. Classes names that define a component appearance</b></p><div class="table-contents"><table summary="Classes names that define a component appearance" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Class name</th><th>Description</th></tr></thead><tbody><tr><td>rich-toggle-panel</td><td>Defines styles for all
+                                                  component</td></tr><tr><td>rich-tglctrl</td><td>Defines styles for a toggle
+                                                  control</td></tr></tbody></table></div></div><br class="table-break"/><p>In order to redefine styles for all <span class="bold"><strong>
+                                        <span class="property">&lt;rich:togglePanel&gt;</span>
+                              </strong></span> components on a page using CSS, it's enough to
+                              create classes with the same names (possible classes could be found in
+                              the tables <a href="togglePanel.html#togglePC" title="Table 6.521. Classes names that define a component appearance"> above</a>) and define
+                              necessary properties in them. </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_selector">.rich-toggle-panel</span><span class="css_curly_brace">{</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">font-style</span><span class="css_colon">:</span><span class="css_property_value">italic</span><span class="css_semi_colon">;</span><span class="css_normal"><br />
+</span><span class="css_curly_brace">}</span><span class="css_normal"><br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>This is a result:</p><div class="figure"><a id="d0e60808"/><div class="figure-contents"><div class="mediaobject"><img src="images/togglePanel_pc.png" alt="Redefinition styles with predefined classes"/></div></div><p class="title"><b>Figure 6.284. Redefinition styles with predefined classes</b></p></div><br class="figure-break"/><p>In the example the font style for output text was changed.</p><p>Also it's possible to change styles of particular <span class="bold"><strong>
+                                        <span class="property">&lt;rich:togglePanel&gt;</span>
+                              </strong></span> component. In this case you should create own style
+                              classes and use them in corresponding <span class="bold"><strong>
+                                        <span class="property">&lt;rich:togglePanel&gt;</span>
+                              </strong></span>
+                              <span class="property">styleClass</span> attributes. An example is placed
+                              below:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_selector">.myClass</span><span class="css_curly_brace">{</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">background-color</span><span class="css_colon">:</span><span class="css_property_value">#bed6f8</span><span class="css_semi_colon">;</span><span class="css_normal"><br />
+</span><span class="css_curly_brace">}</span><span class="css_normal"><br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>The <span class="emphasis"><em>
+                                        <span class="property">"styleClass"</span>
+                              </em></span> attribute for <span class="bold"><strong>
+                                        <span class="property">&lt;rich:togglePanel&gt;</span>
+                              </strong></span> is defined as it's shown in the example below:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:togglePanel</span><span class="xml_plain">&nbsp;...&nbsp;</span><span class="xml_attribute_name">styleClass</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;myClass&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre><p>This is a result:</p><div class="figure"><a id="d0e60863"/><div class="figure-contents"><div class="mediaobject"><img src="images/togglePanel_oc.png" alt="Redefinition styles with own classes and &#34;styleClass&#34; attributes"/></div></div><p class="title"><b>Figure 6.285. Redefinition styles with own classes and <span class="emphasis"><em>
+                                                  <span class="property">"styleClass"</span>
+                                        </em></span> attributes</b></p></div><br class="figure-break"/><p>As it could be seen on the picture above, background color for panel was
+                              changed.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e60877"/>6.87.8. Relevant Resources Links</h3></div></div></div><p>
+                              <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://livedemo.exadel.com/richfaces-demo/richfaces/togglePanel.jsf?c=togglePanel">Here</a> you can see the example of <span class="bold"><strong>
+                                        <span class="property">&lt;rich:togglePanel&gt;</span>
+                              </strong></span> usage and sources for the given example. </p></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="tab.html"><strong>Prev</strong>6.86. 
+				&lt;
+				rich:tab
+				&gt;
+			</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="toggleControl.html"><strong>Next</strong>6.88. 
+				&lt;
+				rich:toggleControl
+				&gt;
+			</a></li></ul></body></html>

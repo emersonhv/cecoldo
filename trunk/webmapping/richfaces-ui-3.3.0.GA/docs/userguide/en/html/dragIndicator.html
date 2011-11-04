@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>6.45.  &lt; rich:dragIndicator &gt;</title><link rel="stylesheet" href="css/html.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link xmlns="" rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/><meta name="keywords" content="rich:dragIndicator"/><meta name="keywords" content="dragged element, rich:dragIndicator, HtmlDragIndicator, dndParam"/><script xmlns="" type="text/javascript" src="script/prototype-1.6.0.2.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/effects.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/scriptaculous.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><link rel="start" href="index.html" title="RichFaces Developer Guide"/><link rel="up" href="RichFacesComponentsLibrary.html" title="Chapter 6. The RichFaces Components"/><link rel="prev" href="dndParam.html" title="6.44.  &lt; rich:dndParam &gt;"/><link rel="next" href="dragSupport.html" title="6.46.  &lt; rich:dragSupport &gt;"/><script xmlns="http://www.w3.org/TR/xhtml1/transitional" type="text/javascript" src="script/toggle.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script></head><body><div xmlns="" id="overlay"> </div><div xmlns="" id="feedback-maincontainer" style="display:none"><div id="feedback-header">
+			Send your remarks, comments or wishes to doc team
+		</div><a href="#" onclick="$('feedback-maincontainer').hide(); return false;" id="feedback-close"><img src="images/close.png" class="feedback-images"/></a><div id="feedback-state"> </div><form id="feedback-mailform"><div class="feedback-textbox-div">
+			  Subject:<input type="text" id="subject" name="subject" title="Enter the subject of your message" class="feedback-textbox"/></div><div class="feedback-textbox-div"><span style="vertical-align: top;">Message:</span><textarea name="message" title="Type here the text of your message" id="message"> </textarea></div><div class="feedback-textbox-div">
+			  Your name:<input type="text" id="name" name="name" title="Enter your name" class="feedback-textbox"/></div><div class="feedback-textbox-div">
+			  Your email:<input type="text" id="email" name="email" title="Enter your email address" class="feedback-textbox"/></div><span class="feedback-button-container"><input type="submit" value="Send Message" name="submit" class="feedback-formbutton" title="Send Message"/></span><span class="feedback-button-container"><input type="reset" value="Clear All Fields" class="feedback-formbutton" title="Clear All Fields"/></span></form></div><div xmlns="" id="feedback-wrapper"><a id="feedback-link" href="#" onclick="$('feedback-maincontainer').appear(); return false;"><img src="images/feedback_logo.png" class="feedback-images" width="100px"/></a></div><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="dndParam.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="dragSupport.html"><strong>Next</strong></a></li></ul><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="dragIndicator"/>6.45. 
+				&lt;
+				rich:dragIndicator
+				&gt;
+			</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e27529"/>6.45.1. Description</h3></div></div></div><p>This is a component for defining what appears under the mouse cursor during drag-and-drop
+      operations. The displayed drag indicator can show information about the dragged elements.</p><div class="figure"><a id="d0e27534"/><div class="figure-contents"><div class="mediaobject"><img src="images/dragIndicator_init.png" alt="&lt;rich:dragIndicator&gt; component"/></div></div><p class="title"><b>Figure 6.93. 
+            <span class="bold">
+               <span class="property">&lt;rich:dragIndicator&gt;</span>
+            </span> component</b></p></div><br class="figure-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e27546"/>6.45.2. Key Features</h3></div></div></div><div class="itemizedlist"><ul><li><p>Customizable look and feel</p></li><li><p>Customizable marker according to the type of dragable elements</p></li></ul></div></div><div class="table"><a id="d0e27556"/><p class="title"><b>Table 6.188. rich
+					:
+					dragIndicator
+					attributes
+				</b></p><div class="table-contents"><table summary="rich&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;:&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;dragIndicator&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;attributes&#xA;&#x9;&#x9;&#x9;&#x9;" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Attribute Name</th><th>Description</th></tr></thead><tbody><tr><td>acceptClass</td><td>Corresponds to the HTML class attribute and added to an indicator when a drop is accepted</td></tr><tr><td>binding</td><td>The attribute takes a value-binding expression for a component property of
+a backing bean</td></tr><tr><td>id</td><td>Every component may have a unique id that is automatically created if omitted</td></tr><tr><td>rejectClass</td><td>Corresponds to the HTML class attribute and added to an indicator when a drop is rejected</td></tr><tr><td>rendered</td><td>If "false", this component is not rendered</td></tr><tr><td>style</td><td>CSS style(s) is/are to be applied when this component is rendered</td></tr><tr><td>styleClass</td><td>Corresponds to the HTML class attribute</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e27612"/><p class="title"><b>Table 6.189. Component identification parameters </b></p><div class="table-contents"><table summary="Component identification parameters " border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>component-type</td><td>org.richfaces.Draggable</td></tr><tr><td>component-class</td><td>org.richfaces.component.html.HtmlDragIndicator</td></tr><tr><td>component-family</td><td>org.richfaces.DragIndicator</td></tr><tr><td>renderer-type</td><td>org.richfaces.DragIndicatorRenderer</td></tr><tr><td>tag-class</td><td>org.richfaces.taglib.DragIndicatorTag</td></tr></tbody></table></div></div><br class="table-break"/><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e27648"/>6.45.3. Creating the Component with a Page Tag</h3></div></div></div><p>Here is a simple example as it could be used on a page:</p><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:dragIndicator</span><span class="xml_plain">&nbsp;&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;indicator&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;single&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:verbatim</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">b</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Single&nbsp;item</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">b</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;{DragInfo}</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:verbatim</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:dragIndicator</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:dragSupport</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">dragType</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;text&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">dragIndicator</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;indicator&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e27660"/>6.45.4. Creating the Component Dynamically Using Java</h3></div></div></div><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">import</span><!-- <br/> --><span class="java_plain">&nbsp;org</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">richfaces</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">component</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">html</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_type">HtmlDragIndicator</span><!-- <br/> --><span class="java_separator">;</span>
+<!--  --><br/><span class="java_separator">...</span>
+<!--  --><br/><span class="java_type">HtmlDragIndicator</span><span class="java_plain">&nbsp;myDragIndicator&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">HtmlDragIndicator</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_separator">...</span>
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e27670"/>6.45.5. Details of Usage</h3></div></div></div><p> In the simplest way the component could be defined empty - in that case a default
+      indicator is shown like this: </p><div class="figure"><a id="d0e27675"/><div class="figure-contents"><div class="mediaobject"><img src="images/dragIndicator3.png" alt="The simplest &lt;rich:dragIndicator&gt;"/></div></div><p class="title"><b>Figure 6.94. The simplest <span class="bold">
+               <span class="property">&lt;rich:dragIndicator&gt;</span>
+            </span> 
+         </b></p></div><br class="figure-break"/><p>For indicator customization you need to define one of the following facets:</p><div class="itemizedlist"><ul><li><p>
+               <span class="emphasis"><em>
+                  <span class="property">"single"</span>
+               </em></span>
+            </p></li></ul></div><p>Indicator shown when dragging a single element.</p><div class="itemizedlist"><ul><li><p>
+               <span class="emphasis"><em>
+                  <span class="property">"multiple"</span>
+               </em></span>
+            </p></li></ul></div><p>Indicator shown when dragging several components (for future components that will support
+      multiple selection).</p><p>Thus for specify a look-and-feel you have to define one of these facets and include into
+      it a content that should be shown in indicator.</p><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="d0e27715"/>6.45.5.1. Macro definitions</h4></div></div></div><p>To place some data from drag or drop zones into component you can use macro definitions.
+        They are being defining in the following way:</p><div class="itemizedlist"><ul><li><p>
+                  <span class="bold"><strong>
+                     <span class="property">&lt;rich:dndParam&gt;</span>
+                  </strong></span> component with a specific name and value is being included into a drag/drop
+          support component (an image can be defined as placed inside <span class="bold"><strong>
+                     <span class="property">&lt;rich:dndParam&gt;</span>
+                  </strong></span> without defining a value). </p></li><li><p> in needed place a parameter value is included into the marking of indicator using
+          syntax (name of parameter)</p></li></ul></div><p> For instance, this:</p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:dropSupport...</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:dndParam</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;testDrop&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/file-manager.png&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:dndParam</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:dropSupport</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>Is placed into indicator as follows:</p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;single&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{testDrop}</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="d0e27747"/>6.45.5.2. Predefined macro definitions</h4></div></div></div><p> Indicator can accept two default macro definitions:</p><div class="itemizedlist"><ul><li><p>marker</p></li><li><p>label</p></li></ul></div><p>Thus including one of these elements in the marking of indicator, in other words after
+        setting up appropriate parameters in DnD components and defining only default indicator -
+        without specifying facets - a developer gets these parameters values displayed in indicator
+        in the order "marker - label".</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h4 class="title"><a id="d0e27761"/>6.45.5.3. Marker customization</h4></div></div></div><p>The macro definition <span class="emphasis"><em>
+               <span class="property">"marker"</span>
+            </em></span> can be customized depending on what a draggable element is located over. For
+        that you should define one of these three parameters (specify a parameter with one of three
+        names):</p><div class="itemizedlist"><ul><li><p>
+                  <code class="code">accept</code> 
+               </p></li></ul></div><p>Parameter will be set instead of {marker} into indicator when a draggable element is
+        positioned over drop zone that accept this type of elements</p><div class="itemizedlist"><ul><li><p>
+                  <code class="code">reject</code>
+               </p></li></ul></div><p>Parameter is set instead of {marker} into indicator when a draggable element is
+        positioned over drop zone that doesn't accept this type of elements </p><div class="itemizedlist"><ul><li><p>
+                  <code class="code">default</code>
+               </p></li></ul></div><p>Parameter is set instead of {marker} into indicator when a draggable element is
+        positioned over all the rest of page elements</p></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>
+        Note:
+      </h2><p>
+        If you use <span class="bold"><strong>
+               <span class="property">&lt;rich:dragIndicator&gt;</span>
+            </strong></span> inside a form 
+        do not forget to use id like <code class="code">formId:indicatorID</code> 
+        defined in <span class="bold"><strong>
+               <span class="property">&lt;rich:dragSupport&gt;</span>
+            </strong></span> indicator attribute.
+      </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e27819"/>6.45.6. Look-and-Feel Customization</h3></div></div></div><p>The <span class="bold"><strong>
+            <span class="property">&lt;rich:dragIndicator&gt;</span>
+         </strong></span> component has no skin parameters and special <span class="emphasis"><em>
+            <span class="property">style classes</span>
+         </em></span>, as it consists of one element
+      generated with a your method on the server. To define some style properties such as an indent
+      or a border, it's possible to use <span class="emphasis"><em>
+            <span class="property">"style"</span>
+         </em></span> and <span class="emphasis"><em>
+            <span class="property">"styleClass"</span>
+         </em></span> attributes on the component.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e27848"/>6.45.7. Relevant Resources Links</h3></div></div></div><p>
+         <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://livedemo.exadel.com/richfaces-demo/richfaces/dragSupport.jsf?c=dragIndicator">Here</a> you can see the example of <span class="bold"><strong>
+            <span class="property">&lt;rich:dragIndicator&gt;</span>
+         </strong></span> usage and sources for the given example. </p></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="dndParam.html"><strong>Prev</strong>6.44. 
+				&lt;
+				rich:dndParam
+				&gt;
+			</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="dragSupport.html"><strong>Next</strong>6.46. 
+				&lt;
+				rich:dragSupport
+				&gt;
+			</a></li></ul></body></html>

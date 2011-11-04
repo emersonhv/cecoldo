@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 7. Generating unit tests</title><link rel="stylesheet" href="css/html.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link xmlns="" rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/><meta name="keywords" content="test, unit, CDK, Guide"/><script xmlns="" type="text/javascript" src="script/prototype-1.6.0.2.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/effects.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/scriptaculous.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><link rel="start" href="index.html" title="RichFaces CDK Developer Guide"/><link rel="up" href="index.html" title="RichFaces CDK Developer Guide"/><link rel="prev" href="devsample.html" title="Chapter 6. Developer sample creation"/><link rel="next" href="button.html" title="Chapter 8. Button component development"/><script xmlns="http://www.w3.org/TR/xhtml1/transitional" type="text/javascript" src="script/toggle.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script></head><body><div xmlns="" id="overlay"> </div><div xmlns="" id="feedback-maincontainer" style="display:none"><div id="feedback-header">
+			Send your remarks, comments or wishes to doc team
+		</div><a href="#" onclick="$('feedback-maincontainer').hide(); return false;" id="feedback-close"><img src="images/close.png" class="feedback-images"/></a><div id="feedback-state"> </div><form id="feedback-mailform"><div class="feedback-textbox-div">
+			  Subject:<input type="text" id="subject" name="subject" title="Enter the subject of your message" class="feedback-textbox"/></div><div class="feedback-textbox-div"><span style="vertical-align: top;">Message:</span><textarea name="message" title="Type here the text of your message" id="message"> </textarea></div><div class="feedback-textbox-div">
+			  Your name:<input type="text" id="name" name="name" title="Enter your name" class="feedback-textbox"/></div><div class="feedback-textbox-div">
+			  Your email:<input type="text" id="email" name="email" title="Enter your email address" class="feedback-textbox"/></div><span class="feedback-button-container"><input type="submit" value="Send Message" name="submit" class="feedback-formbutton" title="Send Message"/></span><span class="feedback-button-container"><input type="reset" value="Clear All Fields" class="feedback-formbutton" title="Clear All Fields"/></span></form></div><div xmlns="" id="feedback-wrapper"><a id="feedback-link" href="#" onclick="$('feedback-maincontainer').appear(); return false;"><img src="images/feedback_logo.png" class="feedback-images" width="100px"/></a></div><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="devsample.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="button.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="test"/>Chapter 7. Generating unit tests</h2></div></div></div><p>
+      Unit testing is a method of testing that verifies the individual units of source code are working properly. 
+      A unit is the smallest testable part of an application, method for example.
+      </p><p>
+      The goal of unit testing is to isolate each part of the program and show that the individual parts are correct. 
+      Unit tests find problems early in the development cycle and allow you 
+      to perform code refactoring at a later date, and make sure the module still works correctly.
+      By testing the parts of a program first and then testing the sum of its parts, integration testing becomes much easier.
+      </p><p>
+      Unit testing provides a sort of living documentation of the system. You could learn unit functionality
+      by looking at the unit test and get a basic understanding of the unit API.
+    </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note:</h2><p>
+			Unit testing cannot be expected to catch every error in the program. 
+			It only tests the functionality of the units themselves. 
+			Therefore it is more effective if  the other software testing activities
+			are used in conjunction with unit tests.
+		</p></div><p>
+		Unit tests generated by CDK check all the properties of the component, resources availability,
+		and perform render test view.  
+	</p><p>
+		In order to add unit tests to the project you should 
+		take the following steps:
+	</p><div class="itemizedlist"><ul><li><p>
+				proceed to the <span class="property">inputDate/src/main/config/component</span> directory,
+				open the <span class="property">inputDate.xml</span> file
+			</p></li><li><p>
+				add the <span class="bold"><strong><span class="property">&lt;test&gt;</span></strong></span> element nested to
+				<span class="bold"><strong><span class="property">&lt;component&gt;</span></strong></span> in order to generate
+				unit test for the <span class="property">UIInputDate</span> class
+			</p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">test</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">classname</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.richfaces.component.html.HtmlInputDateComponentTest</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">classname</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">superclassname</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.ajax4jsf.tests.AbstractAjax4JsfTestCase</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">superclassname</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;</span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">test</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></li><li><p>
+				add the <span class="bold"><strong><span class="property">&lt;test /&gt;</span></strong></span> element nested to
+				<span class="bold"><strong><span class="property">&lt;tag&gt;</span></strong></span> in order to generate
+				unit test for the <span class="property">InputDateTag</span> class
+			</p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">tag</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">inputDate</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">classname</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.mycompany.taglib.InputDateTag</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">classname</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">superclass</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.ajax4jsf.webapp.taglib.HtmlComponentTagBase</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">superclass</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">test</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">tag</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></li><li><p>
+				proceed to the <span class="property">inputDate</span> directory,
+				and add new execution with the <span class="property">generate-tests</span> goal to <span class="property">pom.xml</span>
+			</p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">execution</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">id</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">generate-test-sources</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">id</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">phase</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">generate-test-sources</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">phase</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">goals</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">goal</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">generate-tests</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">goal</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">goals</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">execution</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></li><li><p>
+				launch the following command in the <span class="property">inputDate</span> directory
+			</p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">mvn&nbsp;clean&nbsp;install</span><br />
+</pre></li></ul></div><p>
+		 If all the tests have been run successfully, the "BUILD SUCCESSFUL" message will appeared.
+	</p><p>
+		You could also find detailed tests information in the <span class="property">surefire reports</span> placed in the 
+		<span class="property">inputDate/target/surefire-reports</span> directory.  
+	</p></div><ul class="docnav"><li class="previous"><a accesskey="p" href="devsample.html"><strong>Prev</strong>Chapter 6. Developer sample creation</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="button.html"><strong>Next</strong>Chapter 8. Button component development</a></li></ul></body></html>

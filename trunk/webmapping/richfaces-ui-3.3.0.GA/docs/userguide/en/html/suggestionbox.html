@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>6.84.  &lt; rich:suggestionbox &gt;</title><link rel="stylesheet" href="css/html.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link xmlns="" rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/><meta name="keywords" content="rich:suggestionBox"/><meta name="keywords" content="on-keypress suggestion, rich:suggestionbox, HtmlsuggestionBox"/><script xmlns="" type="text/javascript" src="script/prototype-1.6.0.2.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/effects.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/scriptaculous.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><link rel="start" href="index.html" title="RichFaces Developer Guide"/><link rel="up" href="RichFacesComponentsLibrary.html" title="Chapter 6. The RichFaces Components"/><link rel="prev" href="spacer.html" title="6.83.  &lt; rich:spacer &gt;"/><link rel="next" href="tabPanel.html" title="6.85.  &lt; rich:tabPanel &gt;"/><script xmlns="http://www.w3.org/TR/xhtml1/transitional" type="text/javascript" src="script/toggle.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script></head><body><div xmlns="" id="overlay"> </div><div xmlns="" id="feedback-maincontainer" style="display:none"><div id="feedback-header">
+			Send your remarks, comments or wishes to doc team
+		</div><a href="#" onclick="$('feedback-maincontainer').hide(); return false;" id="feedback-close"><img src="images/close.png" class="feedback-images"/></a><div id="feedback-state"> </div><form id="feedback-mailform"><div class="feedback-textbox-div">
+			  Subject:<input type="text" id="subject" name="subject" title="Enter the subject of your message" class="feedback-textbox"/></div><div class="feedback-textbox-div"><span style="vertical-align: top;">Message:</span><textarea name="message" title="Type here the text of your message" id="message"> </textarea></div><div class="feedback-textbox-div">
+			  Your name:<input type="text" id="name" name="name" title="Enter your name" class="feedback-textbox"/></div><div class="feedback-textbox-div">
+			  Your email:<input type="text" id="email" name="email" title="Enter your email address" class="feedback-textbox"/></div><span class="feedback-button-container"><input type="submit" value="Send Message" name="submit" class="feedback-formbutton" title="Send Message"/></span><span class="feedback-button-container"><input type="reset" value="Clear All Fields" class="feedback-formbutton" title="Clear All Fields"/></span></form></div><div xmlns="" id="feedback-wrapper"><a id="feedback-link" href="#" onclick="$('feedback-maincontainer').appear(); return false;"><img src="images/feedback_logo.png" class="feedback-images" width="100px"/></a></div><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="spacer.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="tabPanel.html"><strong>Next</strong></a></li></ul><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="suggestionbox"/>6.84. 
+				&lt;
+				rich:suggestionbox
+				&gt;
+			</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e57545"/>6.84.1. Description</h3></div></div></div><p>The component adds on-keypress suggestions capabilities to any input text component 
+    (like <span class="bold"><strong>
+            <span class="property">&lt;h:inputText&gt;</span>
+         </strong></span>). When a key 
+    is pressed in the field Ajax request is sent to the server. When the suggestion action returns a 
+    list of possible values, it pop ups them inside the 
+      <span class="bold"><strong>
+            <span class="property">&lt;div&gt;</span>
+         </strong></span> element bellow the input.</p><div class="figure"><a id="d0e57562"/><div class="figure-contents"><div class="mediaobject"><img src="images/suggestionbox_init.png" alt="&lt;rich:suggestionBox&gt; component"/></div></div><p class="title"><b>Figure 6.266. 
+            <span class="bold">
+               <span class="property">&lt;rich:suggestionBox&gt;</span>
+            </span> component</b></p></div><br class="figure-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e57574"/>6.84.2. Key Features</h3></div></div></div><div class="itemizedlist"><ul><li><p>Fully skinnable component</p></li><li><p>Adds <span class="emphasis"><em>
+                  <span class="property">"onkeypress"</span>
+               </em></span> suggestions capabilities to any input text component</p></li><li><p>Performs suggestion via Ajax requests without any line of JavaScript code written 
+        by you</p></li><li><p>Possible to render table as a popup suggestion</p></li><li><p>Can be pointed to any Ajax request status indicator of the page</p></li><li><p>Easily customizable size of suggestion popup</p></li><li><p>Setting rules that appear between cells within a table of popup values</p></li><li><p>
+               <span class="emphasis"><em>
+                  <span class="property">"Event queue"</span>
+               </em></span> and <span class="emphasis"><em>
+                  <span class="property">"request delay"</span>
+               </em></span> attributes present to divide
+ frequently requests</p></li><li><p>Managing area of components submitted on Ajax request</p></li><li><p>Flexible list of components to update after Ajax request managed by attributes</p></li><li><p>Setting restriction to Ajax request generation</p></li><li><p>Easily setting action to collect suggestion data</p></li><li><p>Keyboard navigation support</p></li></ul></div></div><div class="table"><a id="d0e57635"/><p class="title"><b>Table 6.495. rich
+					:
+					suggestionbox
+					attributes
+				</b></p><div class="table-contents"><table summary="rich&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;:&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;suggestionbox&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;attributes&#xA;&#x9;&#x9;&#x9;&#x9;" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Attribute Name</th><th>Description</th></tr></thead><tbody><tr><td>ajaxSingle</td><td>Boolean attribute which provides possibility to limit JSF tree processing(decoding, conversion/validation, value applying) to the component which send the request only.
+                Default value is "true"</td></tr><tr><td>bgcolor</td><td>Deprecated. This attribute sets the background color for the document body or table cells.
+            
+            This attribute sets the background color of the canvas for the document body (the BODY element) or for tables (the TABLE, TR, TH, and TD elements). Additional attributes for specifying text color can be used with the BODY element.
+            
+            This attribute has been deprecated in favor of style sheets for specifying background color information</td></tr><tr><td>binding</td><td>The attribute takes a value-binding expression for a component property of
+a backing bean</td></tr><tr><td>border</td><td>This attributes specifies the width (in pixels only) of the frame around a table</td></tr><tr><td>bypassUpdates</td><td>If "true", after process validations phase it skips updates of model beans on a force render response. It can be used for validating components input</td></tr><tr><td>cellpadding</td><td>This attribute specifies the amount of space between the
+                border of the cell and its contents. If the value of
+                this attribute is a pixel length, all four margins
+                should be this distance from the contents. If the value
+                of the attribute is percentage length, the top and
+                bottom margins should be equally separated from the
+                content based on percentage of the available vertical
+                space, and the left and right margins should be equally
+                separated from the content based on percentage of the
+                available horizontal space</td></tr><tr><td>cellspacing</td><td>This attribute specifies how much space the user agent
+                should leave between the table and the column on all
+                four sides. The attribute also specifies the amount of
+                space to leave between cells</td></tr><tr><td>dir</td><td>Direction indication for text that does not inherit
+			directionality. Valid values are "LTR" (left-to-right)
+			and "RTL" (right-to-left)</td></tr><tr><td>entryClass</td><td>Name of the CSS class for a suggestion entry element. 
+                (table row)</td></tr><tr><td>eventsQueue</td><td>Name of requests queue to avoid send next request before complete other from same event. Can be used to reduce number of requests of frequently events (key press, mouse move etc.)</td></tr><tr><td>fetchValue</td><td>A value to set in the target input element on a choice
+                suggestion that isn't shown in the suggestion table. It
+                can be used for descriptive output comments or
+                suggestions. If not set, all text in the suggestion row
+                is set as a value</td></tr><tr><td>first</td><td>A zero-relative row number of the first row to display</td></tr><tr><td>for</td><td>id (or full path of id's) of target components, for which this element must provide support.
+		If a target component inside of the same &lt;code&gt;NamingContainer&lt;/code&gt; (UIForm, UIData in base implementations), can be simple value of the "id" attribute.
+		For other cases must include id's of &lt;code&gt;NamingContainer&lt;/code&gt; components, separated by ':'. For search from the root of components, must be started with ':'.</td></tr><tr><td>frame</td><td>This attribute specifies which sides of the frame surrounding a table will be visible. Possible values:  "void", "above", "below", "hsides", "lhs", "rhs", "vsides", "box" and "border".
+        The default value is "void".</td></tr><tr><td>frequency</td><td>Delay (in seconds) before activating the suggestion
+                pop-up. Default value is 400ms</td></tr><tr><td>height</td><td>Height of the pop-up window in pixels. Default value is "200".</td></tr><tr><td>id</td><td>Every component may have a unique id that is automatically created if omitted</td></tr><tr><td>ignoreDupResponses</td><td>Attribute allows to ignore an Ajax Response produced by a request if the newest 'similar' request is
+in a queue already. ignoreDupResponses="true" does not cancel the request while it is processed on the server,
+but just allows to avoid unnecessary updates on the client side if the response isn't actual now</td></tr><tr><td>immediate</td><td>A flag indicating that this component value must be converted and validated immediately (that is, during Apply Request Values phase), rather than waiting until a Process Validations phase.</td></tr><tr><td>lang</td><td>Code describing the language used in the generated markup for this component</td></tr><tr><td>limitToList</td><td>If "true", then of all AJAX-rendered on the page components only those will be updated, 
+		which ID's are passed to the "reRender" attribute of the describable component. 
+		"false"-the default value-means that all components with ajaxRendered="true" will be updated.</td></tr><tr><td>minChars</td><td>Minimal number of chars in input to activate suggestion
+                pop-up</td></tr><tr><td>nothingLabel</td><td>"nothingLabel" is inserted to popup list if the autocomplete returns empty list. 
+				It isn't selectable and list is closed as always after click on it and nothing is put to input.</td></tr><tr><td>onbeforedomupdate</td><td>JavaScript code for call before DOM has been updated on client side</td></tr><tr><td>oncomplete</td><td>JavaScript code for call after request completed on client side</td></tr><tr><td>onobjectchange</td><td>JavaScript code for call when selected objects are changed</td></tr><tr><td>onselect</td><td>JavaScript code for call on select suggestion, after
+                update value of target element</td></tr><tr><td>onsubmit</td><td>JavaScript code for call before submission of ajax event</td></tr><tr><td>param</td><td>Name the HTTP request parameter with the value of input
+                element token. If not set, it be will sent as an input
+                element name. In this case, input will perform
+                validation and update the value. Default value is "inputvalue".</td></tr><tr><td>popupClass</td><td>HTML CSS class attribute of element for pop-up
+                suggestion content</td></tr><tr><td>popupStyle</td><td>HTML CSS style attribute of element for pop-up
+                suggestion content</td></tr><tr><td>process</td><td>Id['s] (in format of call  UIComponent.findComponent()) of components, processed at the phases 2-5 in case of AjaxRequest  caused by this component. Can be single id, comma-separated list of Id's, or EL Expression  with array or Collection</td></tr><tr><td>rendered</td><td>If "false", this component is not rendered</td></tr><tr><td>requestDelay</td><td>Attribute defines the time (in ms.) that the request will be wait in the queue before it is ready to send.
+When the delay time is over, the request will be sent to the server or removed if the newest 'similar' request is in a queue already</td></tr><tr><td>reRender</td><td>Id['s] (in format of call  UIComponent.findComponent()) of components, rendered in case of AjaxRequest  caused by this component. Can be single id, comma-separated list of Id's, or EL Expression  with array or Collection</td></tr><tr><td>rowClasses</td><td>A comma-delimited list of CSS style classes that is applied to popup table rows. A space separated list of classes may also be specified for any individual row. The styles are applied, in turn, to each row in the table. For example, if the list has two elements, the first style class in the list is applied to the first row, the second to the second row, the first to the third row, the second to the fourth row, etc. In other words, we keep iterating through the list until we reach the end, and then we start at the beginning again</td></tr><tr><td>rules</td><td>This attribute specifies which rules will appear between cells within a table. The rendering of rules is user agent dependent. Possible values:
+            
+            * none: No rules. This is the default value.
+            * groups: Rules will appear between row groups (see THEAD, TFOOT, and TBODY) and column groups (see COLGROUP and COL) only.
+            * rows: Rules will appear between rows only.
+            * cols: Rules will appear between columns only.
+            * all: Rules will appear between all rows and columns</td></tr><tr><td>selectedClass</td><td>Name of the CSS class for a selected suggestion entry
+                element (table row)</td></tr><tr><td>selectValueClass</td><td>Name of the CSS class for a selected suggestion entry
+                element (table cell)</td></tr><tr><td>selfRendered</td><td>If "true", forces active Ajax region render response
+                directly from stored components tree, bypasses page
+                processing. Can be used for increase performance. Also,
+                must be set to 'true' inside iteration components, such
+                as dataTable.</td></tr><tr><td>shadowDepth</td><td>Pop-up shadow depth for suggestion content</td></tr><tr><td>shadowOpacity</td><td>Attribute defines shadow opacity for suggestion content</td></tr><tr><td>similarityGroupingId</td><td>If there are any component requests with identical IDs then these requests will be grouped.</td></tr><tr><td>status</td><td>ID (in format of call UIComponent.findComponent()) of Request status component</td></tr><tr><td>style</td><td>CSS style(s) is/are to be applied when this component is rendered</td></tr><tr><td>styleClass</td><td>Corresponds to the HTML class attribute</td></tr><tr><td>suggestionAction</td><td>Method calls an expression to get a collection of suggestion data on request. It must have one parameter with a type of Object with content of input component and must return any type allowed for &lt;h:datatable&gt;</td></tr><tr><td>summary</td><td>This attribute provides a summary of the table's purpose and structure for user agents rendering to non-visual media such as speech and Braille</td></tr><tr><td>timeout</td><td>Response waiting time on a particular request. If a response is not received during this time, the request is aborted</td></tr><tr><td>title</td><td>Advisory title information about markup elements generated for this component</td></tr><tr><td>tokens</td><td>The list (or single value) of symbols which can be used
+                for division chosen of suggestion pop-up values in a
+                target element. After input of a symbol from the list
+                suggestion pop-up it is caused again</td></tr><tr><td>usingSuggestObjects</td><td>if true, a suggested object list will be created and will be updated every time when  an input value is changed. Default value is "false".</td></tr><tr><td>var</td><td>A request-scope attribute via which the data object for the
+            current row will be used when iterating</td></tr><tr><td>width</td><td>Width of the pop-up window in pixels. Default value is "200".</td></tr><tr><td>zindex</td><td>Attribute is similar to the standard HTML attribute and can specify window placement relative to the content. Default value is "200".</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e57929"/><p class="title"><b>Table 6.496. Component identification parameters</b></p><div class="table-contents"><table summary="Component identification parameters" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>component-type</td><td>org.richfaces.SuggestionBox</td></tr><tr><td>component-class</td><td>org.richfaces.component.html.HtmlSuggestionBox</td></tr><tr><td>component-family</td><td>org.richfaces.SuggestionBox</td></tr><tr><td>renderer-type</td><td>org.richfaces.SuggestionBoxRenderer</td></tr><tr><td>tag-class</td><td>org.richfaces.taglib.SuggestionBoxTag</td></tr></tbody></table></div></div><br class="table-break"/><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e57965"/>6.84.3. Creating the Component with a Page Tag</h3></div></div></div><p>To create the simplest variant on a page use the following syntax:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:inputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.property}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;suggest&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:suggestionbox</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">for</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;suggest&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">suggestionAction</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.autocomplete}&quot;</span><span class="xml_plain">&nbsp;&nbsp;</span><span class="xml_attribute_name">var</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;suggest&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:column</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{suggest.text}&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain">&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:column</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:suggestionbBox</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>Here is the <code class="code">bean.autocomplete</code> method that returns the
+                              collection to pop up:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">public</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_type">List</span><!-- <br/> --><span class="java_plain">&nbsp;autocomplete</span><!-- <br/> --><span class="java_separator">(</span><!-- <br/> --><span class="java_type">Object</span><!-- <br/> --><span class="java_plain">&nbsp;event</span><!-- <br/> --><span class="java_separator">)</span><!-- <br/> --><span class="java_plain">&nbsp;</span><!-- <br/> --><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_type">String</span><span class="java_plain">&nbsp;pref&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;event</span><span class="java_separator">.</span><span class="java_plain">toString</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_operator">//</span><span class="java_plain">collecting&nbsp;some&nbsp;data&nbsp;that&nbsp;begins&nbsp;with&nbsp;</span><span class="java_literal">&quot;pref&quot;</span><span class="java_plain">&nbsp;letters</span><span class="java_separator">.</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">...</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">return</span><span class="java_plain">&nbsp;result</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">}</span>
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e57989"/>6.84.4. Creating the Component Dynamically Using Java</h3></div></div></div><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">import</span><!-- <br/> --><span class="java_plain">&nbsp;org</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">richfaces</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">component</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">html</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_type">HtmlSuggestionBox</span><!-- <br/> --><span class="java_separator">;</span>
+<!--  --><br/><span class="java_separator">...</span>
+<!--  --><br/><span class="java_type">HtmlSuggestionBox</span><span class="java_plain">&nbsp;myList&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">HtmlSuggestionBox</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_separator">...</span>
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e57999"/>6.84.5. Details of Usage</h3></div></div></div><p>As it is shown in the example above, the main component attribute are:</p><div class="itemizedlist"><ul><li><p>
+                                                  <span class="emphasis"><em>
+                                                  <span class="property">"for"</span>
+                                                  </em></span>
+                                        </p><p>The attribute where there is an input component which
+                                                  activation causes a suggestion activation</p></li><li><p>
+                                                  <span class="emphasis"><em>
+                                                  <span class="property">"suggestionAction"</span>
+                                                  </em></span>
+                                        </p><p> is an accepting parameter of a suggestionEvent type
+                                                  that returns as a result a collection for
+                                                  rendering in a tool tip window.</p></li><li><p>
+                                                  <span class="emphasis"><em>
+                                                  <span class="property">"var"</span>
+                                                  </em></span>
+                                        </p><p> a collection name that provides access for inputting
+                                                  into a table in a popup</p></li></ul></div><p>There are also two size attributes (<span class="emphasis"><em>
+                                        <span class="property">"width"</span>
+                              </em></span> and <span class="emphasis"><em>
+                                        <span class="property">"height"</span>
+                              </em></span>) that are obligatory for the suggestion component. The
+                              attributes have initial Defaults but should be specified manually in
+                              order to be changed.</p><p>The <span class="property">suggestionbox</span> component, as it is shown on the
+                              screenshot, could get any collection for an output and outputs it in a
+                              ToolTip window the same as a custom dataTable (in several columns)</p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:suggestionbox</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">for</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;test&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">suggestionAction</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.autocomplete}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">var</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;cit&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">fetchValue</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{cit.text}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:column</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{cit.label}&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:column</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:column</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{cit.text}&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:column</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:suggestionbox</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>It looks on a page in the following way:</p><div class="figure"><a id="d0e58061"/><div class="figure-contents"><div class="mediaobject"><img src="images/suggestionbox2.png" alt="&lt;rich:suggestionbox&gt; with ToolTip window"/></div></div><p class="title"><b>Figure 6.267. 
+            <span class="bold">
+                                                  <span class="property">&lt;rich:suggestionbox&gt;</span>
+                                        </span> with ToolTip window</b></p></div><br class="figure-break"/><p>When some string is chosen input receives the corresponding value from the
+                              second column containing <code class="code">#{cit.text}</code>
+      </p><p>There is also one more important attribute named <span class="emphasis"><em>
+                                        <span class="property">"tokens"</span>
+                              </em></span> that specifies separators after which a set of some
+                              characters sequence is defined as a new prefix beginning from this
+                              separator and not from the string beginning.</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:suggestionbox</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">for</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;test&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">suggestionAction</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.autocomplete}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">var</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;cit&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">selfRendered</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">tokens</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;,&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:column</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{cit.text}&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:column</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:suggestionbox</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>This example shows that when a city is chosen and a comma and first letter
+                              character are input, Ajax request is called again, but it submits a
+                              value starting from the last token:</p><div class="figure"><a id="d0e58095"/><div class="figure-contents"><div class="mediaobject"><img src="images/suggestionbox3.png" alt="&lt;rich:suggestionbox&gt; with chosen word"/></div></div><p class="title"><b>Figure 6.268. 
+            <span class="bold">
+                                                  <span class="property">&lt;rich:suggestionbox&gt;</span>
+                                        </span> with chosen word</b></p></div><br class="figure-break"/><p>For a multiple definition use either "<code class="code">,.;</code> "
+                              syntax as a value for tokens or link a parameter to some bean property
+                              transmitting separators collection.</p><p>The component also encompasses <span class="emphasis"><em>
+                                        <span class="property">"style"</span>
+                              </em></span> attributes corresponding to dataTable ones for a table
+                              appearing in popup (for additional information, read JSF Reference)
+                              and custom attribute managing AJAX requests sending (for additional
+                              information, see <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jboss.org/projects/jbossajax4jsf">Ajax4JSF
+                                        Project</a>).</p><p>In addition to these attributes common for Ajax action components and
+                              limiting requests quantity and frequency,
+                              <span class="property">suggestionbox</span> has one more its own attribute
+                              limiting requests (the <span class="emphasis"><em>
+                                        <span class="property">"minChars"</span>
+                              </em></span> attribute). The attribute defines characters quantity
+                              inputted into a field after which Ajax requests are called to perform
+                              suggestion.</p><p> There is possibility to define what be shown if the autocomplete returns
+                              empty list. Attribute<span class="emphasis"><em>
+                                        <span class="property"> "nothingLabel" </span>
+                              </em></span>or facet with the same name could be used for it. </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:suggestionbox</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">nothingLabel</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Empty&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">for</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;test&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">suggestionAction</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.autocomplete}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">var</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;cit&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:column</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{cit.text}&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:column</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:suggestionbox</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:suggestionbox</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">for</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;test&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">suggestionAction</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.autocomplete}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">var</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;cit&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;nothingLabel&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Empty&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:column</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{cit.text}&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:column</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:suggestionbox</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>It looks on a page in the following way:</p><div class="figure"><a id="d0e58158"/><div class="figure-contents"><div class="mediaobject"><img src="images/suggestionbox4.png" alt="&lt;rich:suggestionbox&gt; with empty list"/></div></div><p class="title"><b>Figure 6.269. 
+            <span class="bold">
+                                                  <span class="property">&lt;rich:suggestionbox&gt;</span>
+                                        </span> with empty list</b></p></div><br class="figure-break"/><p> There is such feature in <span class="bold"><strong>
+                                        <span class="property">&lt;rich:suggestionbox&gt;</span>
+                              </strong></span> component as object selection. If you want that selected
+                              item has been represented as object, you could set to "true" the value
+                              for <span class="emphasis"><em>
+                                        <span class="property"> "usingSuggestObjects"
+                                        </span>
+                              </em></span> attribute, "false" value means that selected item
+                              represents as string. </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:suggestionbox</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">for</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;test&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">suggestionAction</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.autocomplete}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">var</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;cit&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">usingSuggestObjects</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:column</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{cit.text}&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:column</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:suggestionbox</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p> Information about the <span class="emphasis"><em>
+                                        <span class="property">"process"</span>
+                              </em></span> attribute usage you can find <a href="ArchitectureOverview.html#process" title="5.6.4. Decide what to process">here</a>. </p><p>
+                              <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://wiki.jboss.org/wiki/RichFacesSuggestionGettingAdditionalProperties">Here </a> you can find example of getting additional
+                              properties. </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e58207"/>6.84.6. JavaScript API</h3></div></div></div><div class="table"><a id="d0e58210"/><p class="title"><b>Table 6.497. JavaScript API</b></p><div class="table-contents"><table summary="JavaScript API" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Function</th><th>Description</th></tr></thead><tbody><tr><td>callSuggestion()</td><td>Calls the suggestion. If the
+                                                  "ignoreMinChars"
+                                                  value is
+                                                  "true" then
+                                                  the number of symbols to send
+                                                  a query is no longer actual
+                                                  for callSuggestion()</td></tr><tr><td>getSelectedItems()</td><td>Returns the array of
+                                                  objects</td></tr></tbody></table></div></div><br class="table-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e58231"/>6.84.7. Facets</h3></div></div></div><div class="table"><a id="d0e58234"/><p class="title"><b>Table 6.498. Facets</b></p><div class="table-contents"><table summary="Facets" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Facet name</th><th>Description</th></tr></thead><tbody><tr><td>nothingLabel</td><td>Redefines the content item if the autocomplete returns empty list. Related attribute is "nothingLabel"</td></tr><tr><td>popup</td><td>Redefines the content for the popup list of the suggestion</td></tr><tr><td>header</td><td>Defines the header content</td></tr><tr><td>footer</td><td>Defines the footer content</td></tr></tbody></table></div></div><br class="table-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e58265"/>6.84.8. Look-and-Feel Customization</h3></div></div></div><p>For skinnability implementation, the components use a <span class="emphasis"><em>
+                                        <span class="property">style class redefinition method.</span>
+                              </em></span> Default style classes are mapped on <span class="emphasis"><em>
+                                        <span class="property">skin parameters.</span>
+                              </em></span>
+      </p><p>There are two ways to redefine the appearance of all <span class="bold"><strong>
+                                        <span class="property">&lt;rich:suggestionbox&gt;</span>
+                              </strong></span> components at once:</p><div class="itemizedlist"><ul><li><p>Redefine the corresponding skin parameters</p></li><li><p>Add to your style sheets <span class="emphasis"><em>
+                                                  <span class="property">style classes</span>
+                                                  </em></span> used by a <span class="bold"><strong>
+                                                  <span class="property">&lt;rich:suggestionbox&gt;</span>
+                                                  </strong></span> component</p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e58309"/>6.84.9.  Skin Parameters Redefinition</h3></div></div></div><div class="table"><a id="d0e58312"/><p class="title"><b>Table 6.499. General skin parameters redefinition for popup list</b></p><div class="table-contents"><table summary="General skin parameters redefinition for popup list" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Parameters for popup list</th><th>CSS properties</th></tr></thead><tbody><tr><td>additionalBackgroundColor</td><td>background-color</td></tr><tr><td>panelBorderColor</td><td>border-color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e58333"/><p class="title"><b>Table 6.500. Skin parameters redefinition for shadow element of the list</b></p><div class="table-contents"><table summary="Skin parameters redefinition for shadow element of the list" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Parameters for shadow element of
+                                                  the list</th><th>CSS properties</th></tr></thead><tbody><tr><td>shadowBackgroundColor</td><td>background-color</td></tr><tr><td>shadowBackgroundColor</td><td>border-color</td></tr><tr><td>shadowOpacity</td><td>opacity</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e58359"/><p class="title"><b>Table 6.501. Skin parameters redefinition for popup table rows</b></p><div class="table-contents"><table summary="Skin parameters redefinition for popup table rows" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Parameters for popup table rows</th><th>CSS properties</th></tr></thead><tbody><tr><td>generalSizeFont</td><td>font-size</td></tr><tr><td>generalTextColor</td><td>color</td></tr><tr><td>generalFamilyFont</td><td>font-family</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e58385"/><p class="title"><b>Table 6.502. Skin parameters redefinition for selected row</b></p><div class="table-contents"><table summary="Skin parameters redefinition for selected row" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Parameters for selected row</th><th>CSS properties</th></tr></thead><tbody><tr><td>headerBackgroundColor</td><td>background-color</td></tr><tr><td>generalSizeFont</td><td>font-size</td></tr><tr><td>generalFamilyFont</td><td>font-family</td></tr><tr><td>headerTextColor</td><td>color</td></tr></tbody></table></div></div><br class="table-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e58416"/>6.84.10. Definition of Custom Style Classes</h3></div></div></div><div class="figure"><a id="d0e58419"/><div class="figure-contents"><div class="mediaobject"><img src="images/suggestionbox_cn.png" alt="Classes names"/></div></div><p class="title"><b>Figure 6.270. Classes names</b></p></div><br class="figure-break"/><p>On the screenshot, there are classes names defining specified elements.</p><div class="table"><a id="suggBoxC"/><p class="title"><b>Table 6.503. Classes names that define a suggestionbox</b></p><div class="table-contents"><table summary="Classes names that define a suggestionbox" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Class name</th><th>Description</th></tr></thead><tbody><tr><td>rich-sb-common-container</td><td>Defines styles for a wrapper
+                                                  &lt;div&gt; element of
+                                                  a suggestion container</td></tr><tr><td>rich-sb-ext-decor-1</td><td>Defines styles for the first
+                                                  wrapper &lt;div&gt;
+                                                  element of a suggestion box
+                                                  exterior</td></tr><tr><td>rich-sb-ext-decor-2</td><td>Defines styles for the second
+                                                  wrapper &lt;div&gt;
+                                                  element of a suggestion box
+                                                  exterior</td></tr><tr><td>rich-sb-ext-decor-3</td><td>Defines styles for the third
+                                                  wrapper &lt;div&gt;
+                                                  element of a suggestion box
+                                                  exterior</td></tr><tr><td>rich-sb-overflow</td><td>Defines styles for a wrapper
+                                                  &lt;div&gt;
+                                                  element</td></tr><tr><td>rich-sb-int-decor-table</td><td>Defines styles for a suggestion
+                                                  box table</td></tr><tr><td>rich-sb-int</td><td>Defines the styles for a
+                                                  suggestion box table rows
+                                                  (tr)</td></tr><tr><td>rich-sb-cell-padding</td><td>Defines the styles for suggestion
+                                                  box table cells (td)</td></tr><tr><td>rich-sb-int-sel</td><td>Defines styles for a selected
+                                                  row</td></tr><tr><td>rich-sb-shadow</td><td>Defines styles for a suggestion
+                                                  boxshadow</td></tr></tbody></table></div></div><br class="table-break"/><p>In order to redefine styles for all <span class="bold"><strong>
+                                        <span class="property">&lt;rich:suggestionbox&gt;</span>
+                              </strong></span> components on a page using CSS, it's enough to
+                              create classes with the same names (possible classes could be found in
+                              the tables <a href="suggestionbox.html#suggBoxC" title="Table 6.503. Classes names that define a suggestionbox"> above</a>) and define
+                              necessary properties in them. </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_selector">.rich-sb-int</span><span class="css_curly_brace">{</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">font-weight</span><span class="css_colon">:</span><span class="css_property_value">bold</span><span class="css_semi_colon">;</span><span class="css_normal"><br />
+</span><span class="css_curly_brace">}</span><span class="css_normal"><br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>This is a result:</p><div class="figure"><a id="d0e58508"/><div class="figure-contents"><div class="mediaobject"><img src="images/suggestionbox_pc.png" alt="Redefinition styles with predefined classes"/></div></div><p class="title"><b>Figure 6.271. Redefinition styles with predefined classes</b></p></div><br class="figure-break"/><p>In the example the font weight for rows was changed.</p><p>Also it's possible to change styles of particular <span class="bold"><strong>
+                                        <span class="property">&lt;rich:suggestionbox&gt;</span>
+                              </strong></span> component. In this case you should create own style
+                              classes and use them in corresponding <span class="bold"><strong>
+                                        <span class="property">&lt;rich:suggestionbox&gt;</span>
+                              </strong></span>
+                              <span class="emphasis"><em>
+                                        <span class="property">styleClass</span>
+                              </em></span> attributes. An example is placed below:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_selector">.myClass</span><span class="css_curly_brace">{</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">background-color</span><span class="css_colon">:</span><span class="css_property_value">#f0ddcd</span><span class="css_semi_colon">;</span><span class="css_normal"><br />
+</span><span class="css_curly_brace">}</span><span class="css_normal"><br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>The <span class="emphasis"><em>
+                                        <span class="property">"selectedClass"</span>
+                              </em></span> attribute for <span class="bold"><strong>
+                                        <span class="property">&lt;rich:suggestionbox&gt;</span>
+                              </strong></span> is defined as it's shown in the example below:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:suggestionbox</span><span class="xml_plain">&nbsp;...&nbsp;</span><span class="xml_attribute_name">selectedClass</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;myClass&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre><p>This is a result:</p><div class="figure"><a id="d0e58566"/><div class="figure-contents"><div class="mediaobject"><img src="images/suggestionbox_oc.png" alt="Redefinition styles with own classes and styleClass attributes"/></div></div><p class="title"><b>Figure 6.272. Redefinition styles with own classes and <span class="emphasis"><em>
+                                                  <span class="property">styleClass</span>
+                                        </em></span> attributes</b></p></div><br class="figure-break"/><p>As it could be seen on the picture above,background color for selected
+                              item was changed.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e58580"/>6.84.11. Relevant Resources Links</h3></div></div></div><p>Vizit <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://livedemo.exadel.com/richfaces-demo/richfaces/suggestionBox.jsf?c=suggestionBox">SuggestionBox</a> 
+					page at RichFaces Livedemo for examples of component usage and sources.
+					</p><p>RichFaces cookbook at JBoss Portal includes some articles that cover different aspects of working with 
+					<span class="bold"><strong>
+            <span class="property">&lt;rich:suggestionbox&gt;</span>
+         </strong></span>:
+					</p><div class="itemizedlist"><ul><li><p>
+							    "<a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jboss.org/community/docs/DOC-11851">Creating suggestion box dynamically</a>";
+							</p></li><li><p>
+							    "<a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jboss.org/community/docs/DOC-11865">Getting additional properties from &lt;rich:suggectionbox&gt;</a>".
+                            </p></li></ul></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="spacer.html"><strong>Prev</strong>6.83. 
+				&lt;
+				rich:spacer
+				&gt;
+			</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="tabPanel.html"><strong>Next</strong>6.85. 
+				&lt;
+				rich:tabPanel
+				&gt;
+			</a></li></ul></body></html>

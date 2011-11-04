@@ -1,0 +1,314 @@
+<html xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>subTable
+          (RichFaces JSF components library Tag library documentation)
+        </title>
+<meta name="keywords" content="$title">
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+</head>
+<script>
+            function asd()
+            {
+            parent.document.title="subTable (RichFaces JSF components library Tag library documentation)";
+            }
+          </script>
+<body bgcolor="white" onload="asd();">
+<a name="navbar_top"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_top_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="subTable.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<h2>
+<font size="-1">RichFaces</font>
+<br>
+            Tag subTable</h2>
+<hr>The &lt;rich:subTable&gt; component is used for inserting subtables into tables with opportunity to choose data from a model and built-in Ajax updates support.<br>
+<p></p>
+<hr>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2"><b>Tag Information</b></font></td>
+</tr>
+<tr>
+<td>Tag Class</td><td>org.richfaces.taglib.SubTableTag</td>
+</tr>
+<tr>
+<td>TagExtraInfo Class</td><td><i>None</i></td>
+</tr>
+<tr>
+<td>Body Content</td><td>JSP</td>
+</tr>
+<tr>
+<td>Display Name</td><td><i>None</i></td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Attributes</b></font></td>
+</tr>
+<tr>
+<td><b>Name</b></td><td><b>Required</b></td><td><b>Request-time</b></td><td><b>Type</b></td><td><b>Description</b></td>
+</tr>
+<tr valign="top">
+<td>ajaxKeys</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.util.Set</code>)
+                    </td><td>This attribute defines row keys that are updated after an AJAX request</td>
+</tr>
+<tr valign="top">
+<td>binding</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>javax.faces.component.UIComponent</code>)
+                    </td><td>The attribute takes a value-binding expression for a component property of a backing bean</td>
+</tr>
+<tr valign="top">
+<td>columnClasses</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Comma-delimited list of CSS style classes that are be applied to the columns of this table. A space separated list of classes may also be specified for any individual column. If the number of elements in this list is less than the number of columns specified in the "columns" attribute, no "class" attribute is output for each column greater than the number of elements in the list. If the number of elements in the list is greater than the number of columns specified in the "columns" attribute, the elements at the position in the list after the value of the "columns" attribute are ignored</td>
+</tr>
+<tr valign="top">
+<td>componentState</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>org.ajax4jsf.model.DataComponentState</code>)
+                    </td><td>It defines EL-binding for a component state for saving or redefinition</td>
+</tr>
+<tr valign="top">
+<td>filterMethod</td><td>false</td><td>false</td><td><code>javax.el.MethodExpression</code>
+<br>(<i>signature must match </i><code>void filterMethod(${prop.methodargs})</code>)
+                    </td><td>filterMethod</td>
+</tr>
+<tr valign="top">
+<td>filterValue</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>filterValue</td>
+</tr>
+<tr valign="top">
+<td>first</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>int</code>)
+                    </td><td>A zero-relative row number of the first row to display</td>
+</tr>
+<tr valign="top">
+<td>footerClass</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Space-separated list of CSS style class(es) that are be applied to any footer generated for this table</td>
+</tr>
+<tr valign="top">
+<td>headerClass</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Space-separated list of CSS style class(es) that are be applied to any header generated for this table</td>
+</tr>
+<tr valign="top">
+<td>id</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>Every component may have a unique id that is automatically created if omitted</td>
+</tr>
+<tr valign="top">
+<td>onRowClick</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: a script expression; a pointer button is clicked on row</td>
+</tr>
+<tr valign="top">
+<td>onRowDblClick</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: a script expression; a pointer button is double-clicked on row</td>
+</tr>
+<tr valign="top">
+<td>onRowMouseDown</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: script expression; a pointer button is pressed down on row</td>
+</tr>
+<tr valign="top">
+<td>onRowMouseMove</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: a script expression; a pointer is moved within of row</td>
+</tr>
+<tr valign="top">
+<td>onRowMouseOut</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: a script expression; a pointer is moved away of row</td>
+</tr>
+<tr valign="top">
+<td>onRowMouseOver</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: a script expression; a pointer is moved onto of row</td>
+</tr>
+<tr valign="top">
+<td>onRowMouseUp</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: script expression; a pointer button is released on row</td>
+</tr>
+<tr valign="top">
+<td>onclick</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: a script expression; a pointer button is clicked</td>
+</tr>
+<tr valign="top">
+<td>ondblclick</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: a script expression; a pointer button is double-clicked</td>
+</tr>
+<tr valign="top">
+<td>onkeydown</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: a script expression; a key is pressed down</td>
+</tr>
+<tr valign="top">
+<td>onkeypress</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: a script expression; a key is pressed and released</td>
+</tr>
+<tr valign="top">
+<td>onkeyup</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: a script expression; a key is released</td>
+</tr>
+<tr valign="top">
+<td>onmousedown</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: script expression; a pointer button is pressed down</td>
+</tr>
+<tr valign="top">
+<td>onmousemove</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: a script expression; a pointer is moved within</td>
+</tr>
+<tr valign="top">
+<td>onmouseout</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: a script expression; a pointer is moved away</td>
+</tr>
+<tr valign="top">
+<td>onmouseover</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: a script expression; a pointer is moved onto</td>
+</tr>
+<tr valign="top">
+<td>onmouseup</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: script expression; a pointer button is released</td>
+</tr>
+<tr valign="top">
+<td>rendered</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>If "false", this component is not rendered</td>
+</tr>
+<tr valign="top">
+<td>rowClasses</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>A comma-delimited list of CSS style classes that is applied to popup table rows. A space separated list of classes may also be specified for any individual row. The styles are applied, in turn, to each row in the table. For example, if the list has two elements, the first style class in the list is applied to the first row, the second to the second row, the first to the third row, the second to the fourth row, etc. In other words, we keep iterating through the list until we reach the end, and then we start at the beginning again</td>
+</tr>
+<tr valign="top">
+<td>rowKeyConverter</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>javax.faces.convert.Converter</code>)
+                    </td><td>Converter for a row key object</td>
+</tr>
+<tr valign="top">
+<td>rowKeyVar</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>The attribute provides access to a row key in a Request scope</td>
+</tr>
+<tr valign="top">
+<td>rows</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>int</code>)
+                    </td><td>A number of rows to display, or zero for all remaining rows in the table</td>
+</tr>
+<tr valign="top">
+<td>selfSorted</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>selfSorted</td>
+</tr>
+<tr valign="top">
+<td>sortExpression</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>sortExpression</td>
+</tr>
+<tr valign="top">
+<td>sortMode</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>sortMode</td>
+</tr>
+<tr valign="top">
+<td>sortOrder</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>org.richfaces.model.Ordering</code>)
+                    </td><td>sortOrder</td>
+</tr>
+<tr valign="top">
+<td>sortPriority</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.util.Collection</code>)
+                    </td><td>sortPriority</td>
+</tr>
+<tr valign="top">
+<td>stateVar</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>The attribute provides access to a component state on the client side</td>
+</tr>
+<tr valign="top">
+<td>value</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.Object</code>)
+                    </td><td>The current value for this component</td>
+</tr>
+<tr valign="top">
+<td>var</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>A request-scope attribute via which the data object for the current row will be used when iterating</td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Variables</b></font></td>
+</tr>
+<td colspan="2"><i>No Variables Defined.</i></td>
+</table>
+<br>
+<p></p>
+<a name="navbar_bottom"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_bottom_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="subTable.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<small><i>
+            Output Generated by 
+            <a href="http://taglibrarydoc.dev.java.net/" target="_blank">Tag Library Documentation Generator</a>.
+            Java, JSP, and JavaServer Pages are trademarks or 
+            registered trademarks of Sun Microsystems, Inc. in the US and other
+            countries.  Copyright 2002-4 Sun Microsystems, Inc.
+            4150 Network Circle
+            Santa Clara, CA 95054, U.S.A.
+            All Rights Reserved. 
+            </i></small>
+</body>
+</html>

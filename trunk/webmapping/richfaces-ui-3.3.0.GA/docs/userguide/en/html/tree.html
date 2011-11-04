@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>6.92.  &lt; rich:tree &gt;</title><link rel="stylesheet" href="css/html.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link xmlns="" rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/><meta name="keywords" content="rich:tree"/><meta name="keywords" content="presentation of data, rich:tree, HtmlTree"/><script xmlns="" type="text/javascript" src="script/prototype-1.6.0.2.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/effects.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/scriptaculous.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><link rel="start" href="index.html" title="RichFaces Developer Guide"/><link rel="up" href="RichFacesComponentsLibrary.html" title="Chapter 6. The RichFaces Components"/><link rel="prev" href="toolTip.html" title="6.91.  &lt; rich:toolTip &gt;"/><link rel="next" href="treeNode.html" title="6.93.  &lt; rich:treeNode &gt;"/><script xmlns="http://www.w3.org/TR/xhtml1/transitional" type="text/javascript" src="script/toggle.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script></head><body><div xmlns="" id="overlay"> </div><div xmlns="" id="feedback-maincontainer" style="display:none"><div id="feedback-header">
+			Send your remarks, comments or wishes to doc team
+		</div><a href="#" onclick="$('feedback-maincontainer').hide(); return false;" id="feedback-close"><img src="images/close.png" class="feedback-images"/></a><div id="feedback-state"> </div><form id="feedback-mailform"><div class="feedback-textbox-div">
+			  Subject:<input type="text" id="subject" name="subject" title="Enter the subject of your message" class="feedback-textbox"/></div><div class="feedback-textbox-div"><span style="vertical-align: top;">Message:</span><textarea name="message" title="Type here the text of your message" id="message"> </textarea></div><div class="feedback-textbox-div">
+			  Your name:<input type="text" id="name" name="name" title="Enter your name" class="feedback-textbox"/></div><div class="feedback-textbox-div">
+			  Your email:<input type="text" id="email" name="email" title="Enter your email address" class="feedback-textbox"/></div><span class="feedback-button-container"><input type="submit" value="Send Message" name="submit" class="feedback-formbutton" title="Send Message"/></span><span class="feedback-button-container"><input type="reset" value="Clear All Fields" class="feedback-formbutton" title="Clear All Fields"/></span></form></div><div xmlns="" id="feedback-wrapper"><a id="feedback-link" href="#" onclick="$('feedback-maincontainer').appear(); return false;"><img src="images/feedback_logo.png" class="feedback-images" width="100px"/></a></div><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="toolTip.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="treeNode.html"><strong>Next</strong></a></li></ul><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="tree"/>6.92. 
+				&lt;
+				rich:tree
+				&gt;
+			</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e63614"/>6.92.1. Description</h3></div></div></div><p>The component is designed for hierarchical data presentation and is applied for building 
+a tree structure with a drag-and-drop capability.  </p><div class="figure"><a id="d0e63619"/><div class="figure-contents"><div class="mediaobject"><img src="images/tree_init.png" alt="Expanded &lt;rich:tree&gt; with child elements"/></div></div><p class="title"><b>Figure 6.303. Expanded <span class="bold">
+               <span class="property">&lt;rich:tree&gt;</span>
+            </span> with child elements</b></p></div><br class="figure-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e63632"/>6.92.2. Key Features</h3></div></div></div><div class="itemizedlist"><ul><li><p>Highly customizable look-and-feel</p></li><li><p>Built-in drag and drop capability, than enable relocating tree nodes within the tree</p></li><li><p>Built-in Ajax processing</p></li><li><p>Possibility to define a visual representation by node type</p></li><li><p>Support of several root elements in a tree</p></li></ul></div></div><div class="table"><a id="d0e63651"/><p class="title"><b>Table 6.539. rich
+					:
+					tree
+					attributes
+				</b></p><div class="table-contents"><table summary="rich&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;:&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;tree&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;attributes&#xA;&#x9;&#x9;&#x9;&#x9;" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Attribute Name</th><th>Description</th></tr></thead><tbody><tr><td>acceptCursors</td><td>List of comma separated cursors that indicates when acceptable draggable over dropzone</td></tr><tr><td>acceptedTypes</td><td>A list of drag zones types, which elements are accepted by a drop zone</td></tr><tr><td>adviseNodeOpened</td><td>MethodBinding pointing at a method accepting an org.richfaces.component.UITree with return of java.lang.Boolean type.
+If returned value is:
+java.lang.Boolean. TRUE, a particular treeNode is expanded;
+java.lang.Boolean.FALSE, a particular treeNode is collapsed;
+null, a particular treeNode saves the current state</td></tr><tr><td>adviseNodeSelected</td><td>MethodBinding pointing at a method accepting an org.richfaces.component.UITree with return of java.lang.Boolean type.
+If returned value is:
+java.lang.Boolean. TRUE, a particular treeNode is selected;
+java.lang.Boolean.FALSE, a particular treeNode is unselected;
+null, a particular treeNode saves the current state</td></tr><tr><td>ajaxChildActivationEncodeBehavior</td><td>ajaxChildActivationEncodeBehavior</td></tr><tr><td>ajaxKeys</td><td>ajaxKeys</td></tr><tr><td>ajaxNodeKeys</td><td>ajaxNodeKeys</td></tr><tr><td>ajaxNodeSelectionEncodeBehavior</td><td>ajaxNodeSelectionEncodeBehavior</td></tr><tr><td>ajaxSingle</td><td>boolean attribute which provides possibility to limit JSF tree processing(decoding, conversion/validation, value applying) 
+to the component which send the request only</td></tr><tr><td>ajaxSubmitSelection</td><td>If "true", an Ajax request to be submit when selecting node. Default value is "false".</td></tr><tr><td>binding</td><td>The attribute takes a value-binding expression for a component property of
+a backing bean</td></tr><tr><td>bypassUpdates</td><td>If "true", after process validations phase it skips updates of model beans on a force render response. It can be used for validating components input</td></tr><tr><td>changeExpandListener</td><td>Listener called on expand/collapse event on the node</td></tr><tr><td>componentState</td><td>It defines EL-binding  for a component state for saving or redefinition</td></tr><tr><td>cursorTypeMapping</td><td>Mapping between drop types and acceptable cursors</td></tr><tr><td>data</td><td>Serialized (on default with JSON) data passed on the client by a developer on AJAX request. It's accessible via "data.foo" syntax</td></tr><tr><td>disableKeyboardNavigation</td><td>${prop.xmlEncodedDescription}</td></tr><tr><td>dragIndicator</td><td>Id of a component that is used as drag pointer during the drag operation</td></tr><tr><td>dragListener</td><td>MethodBinding representing an action listener method that will be notified after drag operation</td></tr><tr><td>dragType</td><td>A drag zone type that is used for zone definition, which elements can be accepted by a drop zone</td></tr><tr><td>dragValue</td><td>Data to be sent to the drop zone after a drop event. Default value is "getRowKey()".</td></tr><tr><td>dropListener</td><td>MethodBinding representing an action listener method that will be notified after drop operation</td></tr><tr><td>dropValue</td><td>Data to be processed after a drop event. Default value is "getRowKey()".</td></tr><tr><td>eventsQueue</td><td>Name of requests queue to avoid send next request before complete other from same event. Can be used to reduce number of requests of frequently events (key press, mouse move etc.)</td></tr><tr><td>focus</td><td>id of element to set focus after request completed on client side</td></tr><tr><td>grabbingCursors</td><td>List of comma separated cursors that indicates when you has grabbed something</td></tr><tr><td>grabCursors</td><td>List of comma separated cursors that indicates when you can grab and drag an object</td></tr><tr><td>highlightedClass</td><td>Corresponds to the HTML class attribute. Applied to highlighted node</td></tr><tr><td>icon</td><td>The icon for node</td></tr><tr><td>iconCollapsed</td><td>The icon for collapsed node</td></tr><tr><td>iconExpanded</td><td>The icon for expanded node</td></tr><tr><td>iconLeaf</td><td>An icon for component leaves</td></tr><tr><td>id</td><td>Every component may have a unique id that is automatically created if omitted</td></tr><tr><td>ignoreDupResponses</td><td>Attribute allows to ignore an Ajax Response produced by a request if the newest 'similar' request is
+in a queue already. ignoreDupResponses="true" does not cancel the request while it is processed on the server,
+but just allows to avoid unnecessary updates on the client side if the response isn't actual now</td></tr><tr><td>immediate</td><td>A flag indicating that this component value must be
+				converted and validated immediately (during an
+				Apply Request Values phase), rather than waiting until a
+				Process Validations phase</td></tr><tr><td>limitToList</td><td>If "true", then of all AJAX-rendered on the page components only those will be updated, 
+		which ID's are passed to the "reRender" attribute of the describable component. 
+		"false"-the default value-means that all components with ajaxRendered="true" will be updated.</td></tr><tr><td>nodeFace</td><td>Node face facet name</td></tr><tr><td>nodeSelectListener</td><td>MethodBinding representing an action listener method that will be notified after selection of node.</td></tr><tr><td>onbeforedomupdate</td><td>JavaScript code for call before DOM has been updated on client side</td></tr><tr><td>onclick</td><td>HTML: a script expression; a pointer button is clicked</td></tr><tr><td>oncollapse</td><td>HTML: script expression to invoke on node collapsing</td></tr><tr><td>oncomplete</td><td>JavaScript code for call after request completed on client side</td></tr><tr><td>oncontextmenu</td><td>JavaScript handler to be called on right click.
+		   Returning false prevents default browser context menu from being displayed</td></tr><tr><td>ondblclick</td><td>HTML: a script expression; a pointer button is double-clicked</td></tr><tr><td>ondragend</td><td>A JavaScript event handler called after a drag operation</td></tr><tr><td>ondragenter</td><td>A JavaScript event handler called on enter draggable object to zone</td></tr><tr><td>ondragexit</td><td>A JavaScript event handler called after a drag object leaves zone</td></tr><tr><td>ondragstart</td><td>A JavaScript event handler called before drag operation</td></tr><tr><td>ondrop</td><td>It's an event that is called when something is dropped on a drop zone</td></tr><tr><td>ondropend</td><td>A JavaScript handler for event fired on a drop even the drop for a given type is not available</td></tr><tr><td>ondropout</td><td>A JavaScript event handler called after a out operation</td></tr><tr><td>ondropover</td><td>A JavaScript event handler called after a drop operation</td></tr><tr><td>onexpand</td><td>HTML: script expression to invoke on node expansion</td></tr><tr><td>onkeydown</td><td>HTML: a script expression; a key is pressed down</td></tr><tr><td>onkeypress</td><td>HTML: a script expression; a key is pressed and released</td></tr><tr><td>onkeyup</td><td>HTML: a script expression; a key is released</td></tr><tr><td>onmousedown</td><td>HTML: script expression; a pointer button is pressed down</td></tr><tr><td>onmousemove</td><td>HTML: a script expression; a pointer is moved within</td></tr><tr><td>onmouseout</td><td>HTML: a script expression; a pointer is moved away</td></tr><tr><td>onmouseover</td><td>HTML: a script expression; a pointer is moved onto</td></tr><tr><td>onmouseup</td><td>HTML: script expression; a pointer button is released</td></tr><tr><td>onselected</td><td>HTML: script expression to invoke on node selection</td></tr><tr><td>preserveDataInRequest</td><td>If "true", data is preserved in a request. Default value is "true".</td></tr><tr><td>preserveModel</td><td>Possible values are  "state", "request", "none". Default value is "request"</td></tr><tr><td>process</td><td>Id['s] (in format of call  UIComponent.findComponent()) of components, processed at the phases 2-5 in case of AjaxRequest  caused by this component. Can be single id, comma-separated list of Id's, or EL Expression  with array or Collection</td></tr><tr><td>rejectCursors</td><td>List of comma separated cursors that indicates when rejectable draggable over dropzone</td></tr><tr><td>rendered</td><td>If "false", this component is not rendered</td></tr><tr><td>requestDelay</td><td>Attribute defines the time (in ms.) that the request will be wait in the queue before it is ready to send.
+When the delay time is over, the request will be sent to the server or removed if the newest 'similar' request is in a queue already</td></tr><tr><td>reRender</td><td>Id['s] (in format of call  UIComponent.findComponent()) of components, rendered in case of AjaxRequest  caused by this component. Can be single id, comma-separated list of Id's, or EL Expression  with array or Collection</td></tr><tr><td>rowKeyVar</td><td>The attribute provides access to a row key in a Request scope</td></tr><tr><td>selectedClass</td><td>Corresponds to the HTML class attribute. Applied to selected node</td></tr><tr><td>showConnectingLines</td><td>If "true", connecting lines are show</td></tr><tr><td>similarityGroupingId</td><td>If there are any component requests with identical IDs then these requests will be grouped.</td></tr><tr><td>stateAdvisor</td><td>ValueBinding pointing at instance of class implementing org.richfaces.component.state.TreeStateAdvisor interface.</td></tr><tr><td>stateVar</td><td>The attribute  provides access to a component state on the client side</td></tr><tr><td>status</td><td>ID (in format of call UIComponent.findComponent()) of Request status component</td></tr><tr><td>style</td><td>CSS style(s) is/are to be applied when this component is rendered</td></tr><tr><td>styleClass</td><td>Corresponds to the HTML class attribute</td></tr><tr><td>switchType</td><td>Tree Nodes switch mode: "client", "server", "ajax"</td></tr><tr><td>timeout</td><td>Response waiting time on a particular request. If a response is not received during this time, the request is aborted</td></tr><tr><td>toggleOnClick</td><td>If "false" do not toggle node state on click.
+				If "true", than node will be toggles on click on ether node content, 
+				or node icon. 
+ 				Default value is "false".</td></tr><tr><td>treeNodeVar</td><td>The attribute provides access to a TreeNode instance in a Request scope</td></tr><tr><td>typeMapping</td><td>The attribute associates a type of dragable zone (dragType) with &lt;rich:dndParam&gt; defined for &lt;rich:dropSupport&gt; for passing parameter value to &lt;rich:dragIndicator&gt;. It uses JSON format: (drag_type: parameter_name).</td></tr><tr><td>value</td><td>The current value for this component</td></tr><tr><td>var</td><td>Attribute contains a name providing an access to data defined with value</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e64095"/><p class="title"><b>Table 6.540. Component identification parameters </b></p><div class="table-contents"><table summary="Component identification parameters " border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>component-type</td><td>org.richfaces.Tree</td></tr><tr><td>component-class</td><td>org.richfaces.component.html.HtmlTree</td></tr><tr><td>component-family</td><td>org.richfaces.Tree</td></tr><tr><td>renderer-type</td><td>org.richfaces.TreeRenderer</td></tr><tr><td>tag-class</td><td>org.richfaces.taglib.TreeTag</td></tr></tbody></table></div></div><br class="table-break"/><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e64131"/>6.92.3. Creating the Component with a Page Tag</h3></div></div></div><p>There are two ways to set up a tree: 1) with <span class="bold"><strong>
+                                        <span class="property">&lt;rich:recursiveTreeNodesAdaptor&gt;</span>
+                              </strong></span> or <span class="bold"><strong>
+                                        <span class="property">&lt;rich:treeNodesAdaptor&gt;</span>
+                              </strong></span> 2) and without them. The first method allows to omit<span class="emphasis"><em>
+                                        <span class="property">"value"</span>
+                              </em></span> and <span class="emphasis"><em>
+                                        <span class="property">"var"</span>
+                              </em></span> attributes definition as follows: </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tree</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:recursiveTreeNodesAdaptor</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">roots</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{fileSystemBean.sourceRoots}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">var</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;item&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">nodes</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{item.nodes}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tree</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p> The second way requires defining some attributes, as it's shown
+                              in the example: </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tree</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{library.data}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">var</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;item&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_plain">&nbsp;&nbsp;</span><span class="xml_attribute_name">icon</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/singer.png&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{item.name}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tree</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e64176"/>6.92.4. Creating the Component Dynamically Using Java</h3></div></div></div><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">import</span><!-- <br/> --><span class="java_plain">&nbsp;org</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">richfaces</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">component</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">html</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_type">HtmlTree</span><!-- <br/> --><span class="java_separator">;</span>
+<!--  --><br/><span class="java_separator">...</span>
+<!--  --><br/><span class="java_type">HtmlTree</span><span class="java_plain">&nbsp;myTree&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">HtmlTree</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_separator">...</span></pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e64186"/>6.92.5. Details of Usage</h3></div></div></div><p>As it has been mentioned <a href="tree.html" title="6.92.  &lt; rich:tree &gt;">above</a> the <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tree&gt;</span>
+                              </strong></span> component allows rendering any tree-like data model.</p><p>The component interacts with data model via
+                                        <code class="code">"TreeNode"</code> interface (<a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://labs.jboss.com/file-access/default/members/jbossrichfaces/freezone/docs/apidoc_framework/org/richfaces/model/TreeNode.html">org.richfaces.model.TreeNode</a>) that is used for tree
+                              nodes representation. The <span class="emphasis"><em>
+                                        <span class="property">"value"</span>
+                              </em></span> attribute of the <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tree&gt;</span>
+                              </strong></span> component contains a nodes structure defined in a bean
+                              property. The property keeps a structure of objects that implements
+                                        <code class="code">"TreeNode"</code> interface.</p><p>
+         <span class="bold"><strong>
+                                        <span class="property">&lt;rich:treeNode&gt;</span>
+                              </strong></span> has a property
+                              <span class="property">"data"</span> (see <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://labs.jboss.com/file-access/default/members/jbossrichfaces/freezone/docs/apidoc_framework/org/richfaces/model/TreeNode.html">org.richfaces.model.TreeNode</a>). Data contained in
+                              the property is placed in a request scope variable, which name is
+                              defined with <span class="emphasis"><em>
+                                        <span class="property">"var"</span>
+                              </em></span> attribute for the <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tree&gt;</span>
+                              </strong></span> component.</p><p>You can develop and use your own pattern of the
+                                        <code class="code">"TreeNode"</code> interface or use a
+                              default implementation, which is defined with a default class
+                                        <code class="code">"TreeNodeImpl"</code> (<a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://labs.jboss.com/file-access/default/members/jbossrichfaces/freezone/docs/apidoc_framework/org/richfaces/model/TreeNodeImpl.html">org.richfaces.model.TreeNodeImpl</a>).</p><p>There is a <code class="code">"XmlTreeDataBuilder"</code> class
+                                        (<a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://labs.jboss.com/file-access/default/members/jbossrichfaces/freezone/docs/apidoc/org/richfaces/component/xml/XmlTreeDataBuilder.html">org.richfaces.component.xml.XmlTreeDataBuilder</a>)
+                              that allows transforming XML into structures of objects containing
+                                        <code class="code">"XmlNodeData"</code> (<a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://labs.jboss.com/file-access/default/members/jbossrichfaces/freezone/docs/apidoc_framework/org/richfaces/component/xml/XmlNodeData.html">org.richfaces.component.xml.XmlNodeData</a>) instances
+                              as data, which could be represented by the <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tree&gt;</span>
+                              </strong></span> component.</p><p>It's possible to define a visual representation of a node data
+                              model (to define a node icon) and its behavior in correspondence with
+                              the data contained in this node (with a value of the <span class="emphasis"><em>
+                                        <span class="property">"var"</span>
+                              </em></span> attribute). The node behavior is defined by the components
+                              nested into the <span class="bold"><strong>
+                                        <span class="property">&lt;rich:treeNode&gt;</span>
+                              </strong></span> (e.g. links or buttons). For these purposes you should use <span class="emphasis"><em>
+                                        <span class="property">"nodeFace"</span>
+                              </em></span> attribute. For each tree node a value of <span class="emphasis"><em>
+                                        <span class="property">"nodeFace"</span>
+                              </em></span> attribute is evaluated and <span class="bold"><strong>
+                                        <span class="property">&lt;rich:treeNode&gt;</span>
+                              </strong></span> with a value of <span class="emphasis"><em>
+                                        <span class="property">"type"</span>
+                              </em></span> attribute equal to a value of <span class="emphasis"><em>
+                                        <span class="property">"nodeFace"</span>
+                              </em></span> is used for node representation. See an example below.</p><p><a id="example"/>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tree</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">style</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;width:300px&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{library.data}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">var</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;item&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">nodeFace</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{item.type}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;artist&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">iconLeaf</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/singer.png&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">icon</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/singer.png&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{item.name}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;album&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">iconLeaf</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/disc.png&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">icon</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/disc.png&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{item.title}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;song&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">iconLeaf</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/song.png&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">icon</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/song.png&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{item.title}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tree</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>This is a result: </p><div class="figure"><a id="d0e64333"/><div class="figure-contents"><div class="mediaobject"><img src="images/tree2.png" alt="The &#34;nodeFace&#34; attribute usage"/></div></div><p class="title"><b>Figure 6.304. The <span class="emphasis"><em>
+                                                  <span class="property">"nodeFace"</span>
+                                        </em></span> attribute usage</b></p></div><br class="figure-break"/><p>In the example above, when each node of data model is processed, data
+                              contained in the <code class="code">"data"</code> property of
+                                        <span class="property">"TreeNode"</span> interface
+                              is assigned to a request scope variable, which name is defined with <span class="emphasis"><em>
+                                        <span class="property">"var"</span>
+                              </em></span> attribute. The value of the <span class="emphasis"><em>
+                                        <span class="property">"nodeFace"</span>
+                              </em></span> attribute is evaluated in correspondence with the data
+                              assigned to the <span class="emphasis"><em>
+                                        <span class="property">"var"</span>
+                              </em></span> attribute. The corresponding <span class="bold"><strong>
+                                        <span class="property">&lt;rich:treeNode&gt;</span>
+                              </strong></span> component (with a value of <span class="emphasis"><em>
+                                        <span class="property">"type"</span>
+                              </em></span> attribute equal to a value of <span class="emphasis"><em>
+                                        <span class="property">"nodeFace"</span>
+                              </em></span>) is used for the node representation. For example, during
+                              data model processing, an object with a name "Chris
+                              Rea" was inserted in the <span class="emphasis"><em>
+                                        <span class="property">"var"</span>
+                              </em></span> attribute. Then the value of <span class="emphasis"><em>
+                                        <span class="property">"nodeFace"</span>
+                              </em></span> attribute was evaluated as
+                                        <code class="code">"artist"</code>. Thus, for the node
+                              representation the <span class="bold"><strong>
+                                        <span class="property">&lt;rich:treeNode&gt;</span>
+                              </strong></span> with <span class="emphasis"><em>
+                                        <span class="property">"type"</span>
+                              </em></span> equal to "<code class="code">artist</code>" was used.</p><p>You can also assign an EL-expression as value of the <span class="emphasis"><em>
+                                        <span class="property">"nodeFace"</span>
+                              </em></span> attribute. See an example below: </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"></span>
+<!--  --><br/><span class="java_plain">nodeFace</span><span class="java_operator">=</span><span class="java_literal">&quot;#{data.name&nbsp;!=&nbsp;'param-value'&nbsp;?&nbsp;'artist'&nbsp;:&nbsp;'album'}&quot;</span>
+<!--  --><br/><span class="java_plain">&nbsp;</span></pre><p>There are some essential points in a <span class="emphasis"><em>
+                                        <span class="property">"nodeFace"</span>
+                              </em></span> attribute usage: you need to define notions for
+                                        <span class="property">typeless</span> and a
+                              <span class="property">default</span> nodes. </p><p>The <span class="property">typeless node</span> is the first <span class="bold"><strong>
+                                        <span class="property">&lt;rich:treeNode&gt;</span>
+                              </strong></span> component (from all children nodes nested to the <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tree&gt;</span>
+                              </strong></span> component) with not defined <span class="emphasis"><em>
+                                        <span class="property">"type"</span>
+                              </em></span> attribute and defined <span class="emphasis"><em>
+                                        <span class="property">"rendered"</span>
+                              </em></span> attribute. The <span class="property">typeless node</span> is used
+                              for representation when <span class="emphasis"><em>
+                                        <span class="property">"nodeFace"</span>
+                              </em></span> attribute is null.</p><p>
+         <span class="property">Default node</span> has the following interior presentation:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{varAttributeName}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>
+                              <span class="emphasis"><em>
+                                        <span class="property">"varAttributeName"</span>
+                              </em></span> is a value for <span class="emphasis"><em>
+                                        <span class="property">"var"</span>
+                              </em></span> attribute. </p><p>
+         <span class="property">Default node</span> is used in the following cases:</p><div class="itemizedlist"><ul><li><p>
+               <span class="emphasis"><em>
+                                                  <span class="property">"nodeFace"</span>
+                                                  </em></span> attribute is defined, but its value
+                                                  isn't equal to any <span class="emphasis"><em>
+                                                  <span class="property">"type"</span>
+                                                  </em></span> attribute value from all children
+                                                  nodes;</p></li><li><p>
+               <span class="emphasis"><em>
+                                                  <span class="property">"nodeFace"</span>
+                                                  </em></span> attribute is defined and its value is
+                                                  equal to a value of some <span class="emphasis"><em>
+                                                  <span class="property">"type"</span>
+                                                  </em></span> attribute from all children nodes, but
+                                                  the value of <span class="emphasis"><em>
+                                                  <span class="property">"rendered"</span>
+                                                  </em></span> attribute for this node is
+                                                  <span class="property">"false"</span>.</p></li></ul></div><p>There is also one thing that has to be remembered using <span class="emphasis"><em>
+                                        <span class="property">"type"</span>
+                              </em></span> and <span class="emphasis"><em>
+                                        <span class="property">"rendered"</span>
+                              </em></span> attributes: it's possible to define several
+                                        <span class="bold"><strong>
+                                        <span class="property">&lt;rich:treeNode&gt;</span>
+                              </strong></span> components with equal values of <span class="emphasis"><em>
+                                        <span class="property">"type"</span>
+                              </em></span> attribute and different values of <span class="emphasis"><em>
+                                        <span class="property">"rendered"</span>
+                              </em></span> attribute. It provides a possibility to define different
+                              representation styles for the same node types. In the example with
+                              artists and their albums (see <a href="tree.html#example">above</a>)
+                              it's possible to represent albums that are available for sale
+                              and albums that are not available. Please study the example below:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tree</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">style</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;width:300px&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{library.data}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">var</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;item&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">nodeFace</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{item.type}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;album&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">iconLeaf</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/album.gif&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">icon</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/album.gif&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">rendered</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{item.exist}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{item.name}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;album&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">iconLeaf</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/album_absent.gif&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">icon</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/album_absent.gif&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">rendered</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{not&nbsp;item.exist}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{item.name}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tree</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>This is a result of the code: </p><div class="figure"><a id="d0e64601"/><div class="figure-contents"><div class="mediaobject"><img src="images/tree4.png" alt="The &#34;type&#34; and the &#34;rendered&#34; attributes usage"/></div></div><p class="title"><b>Figure 6.305. The <span class="emphasis"><em>
+                                                  <span class="property">"type"</span>
+                                        </em></span> and the <span class="emphasis"><em>
+                                                  <span class="property">"rendered"</span>
+                                        </em></span> attributes usage</b></p></div><br class="figure-break"/><p>In the example the <span class="bold"><strong>
+                                        <span class="property">&lt;rich:treeNode&gt;</span>
+                              </strong></span> components has equal values of the <span class="emphasis"><em>
+                                        <span class="property">"type"</span>
+                              </em></span> attribute. Depending on value of the <span class="emphasis"><em>
+                                        <span class="property">"rendered"</span>
+                              </em></span> attribute the corresponding <span class="bold"><strong>
+                                        <span class="property">&lt;rich:treeNode&gt;</span>
+                              </strong></span> component is selected for node representation. If an album
+                              is available for sale the value of the <span class="emphasis"><em>
+                                        <span class="property">"rendered"</span>
+                              </em></span> for the first <span class="emphasis"><em>
+                                        <span class="property">&lt;rich:treeNode&gt;</span>
+                              </em></span> component is "true", for the second one
+                              is "false". Thus, the first <span class="bold"><strong>
+                                        <span class="property">&lt;rich:treeNode&gt;</span>
+                              </strong></span> is selected for node representation. </p><p>Tree node can be run in tree modes. Modes can be specified with <span class="emphasis"><em>
+                                        <span class="property">"switchType"</span>
+                              </em></span> attribute for<span class="bold"><strong>
+                                        <span class="property">&lt;rich:tree&gt;</span>
+                              </strong></span> component.</p><div class="itemizedlist"><ul><li><p>
+               <code class="code">Ajax</code> (default value) - Ajax submission is
+                                                  used performing the functionality. Note, that for
+                                                  collapse/expand operations an Ajax request is sent
+                                                  to the server and it can cause a short
+                                        delay.</p></li><li><p>
+               <code class="code">Server</code> - regular form of submission
+                                                  request is used.</p></li><li><p>
+               <code class="code">Client</code> – all operations are performed
+                                                  totally on the client; no interaction with a
+                                                  server is involved. Full page content is reloaded
+                                                  after every action.</p></li></ul></div><p> The <span class="emphasis"><em>
+                                        <span class="property">"icon"</span>
+                              </em></span>, <span class="emphasis"><em>
+                                        <span class="property">"iconCollapsed"</span>
+                              </em></span>, <span class="emphasis"><em>
+                                        <span class="property">"iconExpanded"</span>
+                              </em></span>, <span class="emphasis"><em>
+                                        <span class="property">"iconLeaf"</span>
+                              </em></span> attributes set the icons' images for the
+                              component. You can also define icons using facets with the same names.
+                              If the facets are defined, the corresponding attributes are ignored
+                              and facets' content is used as icons. By default the width of
+                              a rendered facet area is 16px. </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tree</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{library.data}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">var</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;item&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;icon&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/singer.png&nbsp;&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;iconCollapsed&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/singer.png&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;iconExpanded&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/singer.png&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;iconLeaf&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/song.png&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tree</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p> The <span class="bold"><strong>
+                                        <span class="property">&lt;rich: tree&gt;</span>
+                              </strong></span> component can be used together with <span class="bold"><strong>
+                                        <span class="property">&lt;rich: treeNodeAdaptor&gt;</span>
+                              </strong></span>. In this case there is no need to specify the attributes <span class="emphasis"><em>
+                                        <span class="property">"value"</span>
+                              </em></span> and <span class="emphasis"><em>
+                                        <span class="property">"var"</span>
+                              </em></span>. Besides, visual representation shouldn't be
+                              defined right in the <span class="property">tree</span>. In this case a
+                                        <span class="bold"><strong>
+                                        <span class="property">&lt;rich: tree&gt;</span>
+                              </strong></span> tag is applied mainly for defining common attributes such
+                              as <span class="emphasis"><em>
+                                        <span class="property">"ajaxSubmitSelection"</span>
+                              </em></span> etc. </p><p> Information about the <span class="emphasis"><em>
+                                        <span class="property">"process"</span>
+                              </em></span> attribute usage you can find <a href="ArchitectureOverview.html#process" title="5.6.4. Decide what to process">here</a>. </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="tip"><h2>Tip:</h2><p>
+                                        <span class="emphasis"><em>
+                                                  <span class="property">"rowKeyConverter"</span>
+                                        </em></span> support for the <span class="bold"><strong>
+                                                  <span class="property">&lt;rich:tree&gt;</span>
+                                        </strong></span> is pending! </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="tsebro"/>6.92.6. Built-In Drag and Drop</h3></div></div></div><p>Words "built-in" in this context mean, that <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tree&gt;</span>
+                              </strong></span> component has its own attributes, that provide
+                                        <span class="property">drag-and-drop</span> capability. These
+                              attributes can be divided into two groups: those ones which provide
+                                        <span class="property">drag</span> and those which provide
+                                        <span class="property">drop</span> operations (see the tables below). </p><div class="table"><a id="d0e64818"/><p class="title"><b>Table 6.541. Drag group</b></p><div class="table-contents"><table summary="Drag group" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Attribute Name</th><th>Description</th></tr></thead><tbody><tr><td>dragValue</td><td>Element value drag passed into
+                                                  processing after a Drop
+                                                  event</td></tr><tr><td>dragListener</td><td>A listener that processes a Drag
+                                                  event</td></tr><tr><td>dragIndicator</td><td>Id of a component that is used as
+                                                  a drag pointer during the drag
+                                                  operation</td></tr><tr><td>dragType</td><td>Defines a drag zone type that is
+                                                  used for definition of a
+                                                  dragged element, which can be
+                                                  accepted by a drop
+                                                  zone</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e64849"/><p class="title"><b>Table 6.542. Drop group</b></p><div class="table-contents"><table summary="Drop group" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Attribute Name</th><th>Description</th></tr></thead><tbody><tr><td>dropValue</td><td>Element value drop passed into
+                                                  processing after Drop events
+                                                  </td></tr><tr><td>dropListener</td><td>A listener that processes a Drop
+                                                  event. </td></tr><tr><td>acceptedTypes</td><td>Drag zone names are allowed to be
+                                                  processed with a Drop
+                                                  zone</td></tr><tr><td>typeMapping</td><td>Drag zones names mapping on the
+                                                  corresponding drop zone
+                                                  parameters</td></tr></tbody></table></div></div><br class="table-break"/><p>Consider <span class="property">drag-and-drop</span> inside a tree. All zones,
+                              which are assumed to be dragged, must be marked. In terms of <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tree&gt;</span>
+                              </strong></span> these zones completely correspond to tree nodes. So, all
+                              dragging nodes should be marked with <span class="emphasis"><em>
+                                        <span class="property">"dragType"</span>
+                              </em></span> attribute.
+                              Then, to mark zone(-s), where the dragging node
+                              could be dropped, pass the type of dragging node to the <span class="emphasis"><em>
+                                        <span class="property">"acceptedTypes"</span>
+                              </em></span> attribute of the drop zone. It would be good to itemize,
+                              that each tree node in the <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tree&gt;</span>
+                              </strong></span> component’s structure has its own
+                              <span class="emphasis"><em>key</em></span>. Depending on how the component is used,
+                              these keys can be generated by the component itself or can be taken
+                              from the component’s data model. Keys help to identify each node in a
+                              tree; key is what exactly being passing from one node to another in
+                                        <span class="property">drag-and-drop</span> operations. Finally, the
+                              method binding, that will process <span class="property">drag-and-drop</span>
+                              operation, should be pointed via <span class="emphasis"><em>
+                                        <span class="property">"dropListener"</span>
+                              </em></span> attribute of the <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tree&gt;</span>
+                              </strong></span>. </p><p> Chapters "<a href="">6.40
+                              &lt;dragIndicator&gt;</a>" and "<a href="dndParam.html" title="6.44.  &lt; rich:dndParam &gt;">6.39
+                              &lt;dndParam&gt;</a>" describes how to apply
+                              visual element, that show some additional information (e.g. dragging
+                              item name) while operating with <span class="property">drag-and-drop</span>. </p><p> Page code, that describes a tree with built in
+                              <span class="property">drag-and-drop</span> in the way it is considered, is
+                              shown below. </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tree</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">style</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;width:300px&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{libraryAjaxTree.data}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">nodeFace</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{item.type}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">var</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;item&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">dragIndicator</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;:treeDragIndicator&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">dropListener</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{libraryAjaxTree.processDrop}&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;artist&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">icon</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/group.png&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">iconLeaf</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/group.png&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">acceptedTypes</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;album&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{item.name}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;album&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">icon</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/cd.png&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">iconLeaf</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/cd.png&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">dragType</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;album&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">acceptedTypes</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;song&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{item.title}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:dndParam</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;label&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;drag&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Album:&nbsp;#{item.title}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;song&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">icon</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/music.png&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">iconLeaf</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/tree/music.png&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">dragType</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;song&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{item.title}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:dndParam</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;label&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;drag&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Song:&nbsp;#{item.title}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:treeNode</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:tree</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>This code renders following tree:</p><div class="figure"><a id="d0e64955"/><div class="figure-contents"><div class="mediaobject"><img src="images/tree5.png" alt="Drag-and-drop operations"/></div></div><p class="title"><b>Figure 6.306. Drag-and-drop operations</b></p></div><br class="figure-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e64961"/>6.92.7. Events handling</h3></div></div></div><p>Listeners classes that process events on the server side are defined with
+                              the help of:</p><div class="itemizedlist"><ul><li><p>
+               <span class="property">changeExpandListener</span> processes
+                                                  expand/collapse event of a
+                                                  <span class="property">treeNode</span>
+            </p></li><li><p>
+               <span class="property">dropListener</span> processes a Drop
+                                                  event</p></li><li><p>
+               <span class="property">dragListener</span> processes a Drag
+                                                  event</p></li><li><p>
+               <span class="property">nodeSelectListener</span> is called
+                                                  during request sending on a node selecting event
+                                                  (if request sending on this event is
+                                        defined)</p></li></ul></div><p>Listener methods can be defined using the <a href="treeNode.html#treeNodeKF" title="6.93.2. Key Features">following attributes</a> or using nested tags.</p><p>Client event attributes are:</p><div class="itemizedlist"><ul><li><p>
+               <span class="emphasis"><em>
+                                                  <span class="property">"onexpand"</span>
+                                                  </em></span> is a script expression to invoke when
+                                                  a node is expanded</p></li><li><p>
+               <span class="emphasis"><em>
+                                                  <span class="property">"oncollapse"</span>
+                                                  </em></span> is a script expression to invoke when
+                                                  a node is collapsed</p></li><li><p>
+               <span class="emphasis"><em>
+                                                  <span class="property">"ondragexit"</span>
+                                                  </em></span> is a script expression to invoke when
+                                                  an element passing out from a tree zone</p></li><li><p>
+               <span class="emphasis"><em>
+                                                  <span class="property">"ondragstart"</span>
+                                                  </em></span> is a script expression to invoke when
+                                                  dragging starts</p></li><li><p>
+               <span class="emphasis"><em>
+                                                  <span class="property">"ondragend"</span>
+                                                  </em></span> is a script expression to invoke when
+                                                  dragging ends (a drop event)</p></li><li><p>
+               <span class="emphasis"><em>
+                                                  <span class="property">"ondragenter"</span>
+                                                  </em></span>is a script expression to invoke when a
+                                                  dragged element appears on a tree</p></li></ul></div><p>They can be used to add some JavaScript effects.</p><p> Standart HTML event attributes like<span class="emphasis"><em>
+                                        <span class="property">"onclick"</span>
+                              </em></span>, <span class="emphasis"><em>
+                                        <span class="property">"onmousedown"</span>
+                              </em></span>, <span class="emphasis"><em>
+                                        <span class="property">"onmouseover"</span>
+                              </em></span> etc. can be also used. Event handlers of a <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tree&gt;</span>
+                              </strong></span> component capture events occured on any
+                              <span class="property">tree</span> part. But event handlers of
+                                        <span class="property">treeNode</span> capture events occured on
+                                        <span class="property">treeNode</span> only, except for children
+                              events. </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e65093"/>6.92.8. Facets</h3></div></div></div><div class="table"><a id="d0e65096"/><p class="title"><b>Table 6.543. Facets</b></p><div class="table-contents"><table summary="Facets" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Facet name</th><th>Description</th></tr></thead><tbody><tr><td>icon</td><td>Redefines the icon for node. Related attribute is "icon"</td></tr><tr><td>iconCollapsed</td><td>Redefines the icon for collapsed node. Related attribute is "iconCollapsed"</td></tr><tr><td>iconExpanded</td><td>Redefines the icon for expanded node. Related attribute is "iconExpanded"</td></tr><tr><td>iconLeaf</td><td>Redefines the icon for component leaves. Related attribute is "iconLeaf"</td></tr></tbody></table></div></div><br class="table-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e65127"/>6.92.9. Look-and-Feel Customization</h3></div></div></div><p>For skinnability implementation, the components use a <span class="emphasis"><em>
+                                        <span class="property">style class redefinition method.</span>
+                              </em></span> Default style classes are mapped on <span class="emphasis"><em>
+                                        <span class="property">skin parameters.</span>
+                              </em></span>
+      </p><p>There are two ways to redefine the appearance of all <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tree&gt;</span>
+                              </strong></span> components at once:</p><div class="itemizedlist"><ul><li><p>Redefine the corresponding skin parameters</p></li><li><p>Add to your style sheets <span class="emphasis"><em>
+                                                  <span class="property">style classes</span>
+                                                  </em></span> used by a <span class="bold"><strong>
+                                                  <span class="property">&lt;rich:tree&gt;</span>
+                                                  </strong></span> component</p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e65171"/>6.92.10. Skin Parameters Redefinition:</h3></div></div></div><p>There is only one skin parameter for <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tree&gt;</span>
+                              </strong></span>. As it's a wrapper component for <span class="bold"><strong>
+                                        <span class="property">&lt;rich:treeNode&gt;</span>
+                              </strong></span> components, look and feel customization is described in
+                              the <a href="treeNode.html#SPRofTN" title="6.93.10. Skin Parameters Redefinition">corresponding section</a>.</p><div class="table"><a id="d0e65191"/><p class="title"><b>Table 6.544. Skin parameters for a wrapper element</b></p><div class="table-contents"><table summary="Skin parameters for a wrapper element" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>overAllBackground</td><td>background-color </td></tr></tbody></table></div></div><br class="table-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e65207"/>6.92.11. Definition of Custom Style Classes</h3></div></div></div><div class="table"><a id="tab_cn7"/><p class="title"><b>Table 6.545. Classes names that define a component appearance</b></p><div class="table-contents"><table summary="Classes names that define a component appearance" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Class name</th><th>Description</th></tr></thead><tbody><tr><td>rich-tree</td><td>Defines styles for a wrapper
+                                                  &lt;div&gt; element of
+                                                  a tree</td></tr></tbody></table></div></div><br class="table-break"/><p>In order to redefine styles for all <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tree&gt;</span>
+                              </strong></span> components on a page using CSS, it's enough to
+                              create classes with the same names (possible classes could be found in
+                              the table <a href="tree.html#tab_cn7" title="Table 6.545. Classes names that define a component appearance">above</a>) and define necessary
+                              properties in them. An example is placed below:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+&nbsp;</span><span class="css_selector">.rich-tree</span><span class="css_curly_brace">{</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">font-weight</span><span class="css_colon">:</span><span class="css_property_value">bold</span><span class="css_semi_colon">;</span><span class="css_normal"><br />
+</span><span class="css_curly_brace">}</span><span class="css_normal"><br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>This is a result:</p><div class="figure"><a id="d0e65246"/><div class="figure-contents"><div class="mediaobject"><img src="images/tree_pc.png" alt="Redefinition styles with predefined classes"/></div></div><p class="title"><b>Figure 6.307. Redefinition styles with predefined classes</b></p></div><br class="figure-break"/><p>In the example a tree font weight was changed to bold.</p><p>Also it's possible to change styles of a particular <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tree&gt;</span>
+                              </strong></span> component. In this case you should create own style
+                              classes and use them in corresponding <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tree&gt;</span>
+                              </strong></span>
+                              <span class="property">styleClass</span> attributes. An example is placed
+                              below:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_selector">.myClass</span><span class="css_curly_brace">{</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">font-weight</span><span class="css_colon">:</span><span class="css_property_value">bold</span><span class="css_semi_colon">;</span><span class="css_normal"><br />
+</span><span class="css_curly_brace">}</span><span class="css_normal"><br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>The <span class="emphasis"><em>
+                                        <span class="property">"highlightedClass"</span>
+                              </em></span> attribute for <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tree&gt; </span>
+                              </strong></span> is defined as it's shown in the example below:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:tree</span><span class="xml_plain">&nbsp;...&nbsp;</span><span class="xml_attribute_name">styleClass</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;myClass&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre><p>This is a result:</p><div class="figure"><a id="d0e65301"/><div class="figure-contents"><div class="mediaobject"><img src="images/tree_oc.png" alt="Redefinition styles with own classes and styleClass attributes"/></div></div><p class="title"><b>Figure 6.308. Redefinition styles with own classes and styleClass attributes</b></p></div><br class="figure-break"/><p>As it's shown on the picture above, font weight of highlighted
+                              text node of a <span class="property">tree</span> was changed to bold.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e65312"/>6.92.12. Relevant Resources Links</h3></div></div></div><p>
+                              <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://livedemo.exadel.com/richfaces-demo/richfaces/tree.jsf?c=tree">Here</a> you can see the example of <span class="bold"><strong>
+                                        <span class="property">&lt;rich:tree&gt;</span>
+                              </strong></span> usage and sources for the given example. </p><p>How to Expand/Collapse Tree Nodes from code, see <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://labs.jboss.com/wiki/ExpandCollapseTreeNodes">here</a>. </p></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="toolTip.html"><strong>Prev</strong>6.91. 
+				&lt;
+				rich:toolTip
+				&gt;
+			</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="treeNode.html"><strong>Next</strong>6.93. 
+				&lt;
+				rich:treeNode
+				&gt;
+			</a></li></ul></body></html>

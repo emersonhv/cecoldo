@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>6.2.  &lt; a4j:keepAlive &gt;</title><link rel="stylesheet" href="css/html.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link xmlns="" rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/><meta name="keywords" content="a4j:keepAlive"/><script xmlns="" type="text/javascript" src="script/prototype-1.6.0.2.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/effects.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/scriptaculous.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><link rel="start" href="index.html" title="RichFaces Developer Guide"/><link rel="up" href="RichFacesComponentsLibrary.html" title="Chapter 6. The RichFaces Components"/><link rel="prev" href="ajaxListener.html" title="6.1.  &lt; a4j:ajaxListener &gt;"/><link rel="next" href="actionparam.html" title="6.3.  &lt; a4j:actionparam &gt;"/><script xmlns="http://www.w3.org/TR/xhtml1/transitional" type="text/javascript" src="script/toggle.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script></head><body><div xmlns="" id="overlay"> </div><div xmlns="" id="feedback-maincontainer" style="display:none"><div id="feedback-header">
+			Send your remarks, comments or wishes to doc team
+		</div><a href="#" onclick="$('feedback-maincontainer').hide(); return false;" id="feedback-close"><img src="images/close.png" class="feedback-images"/></a><div id="feedback-state"> </div><form id="feedback-mailform"><div class="feedback-textbox-div">
+			  Subject:<input type="text" id="subject" name="subject" title="Enter the subject of your message" class="feedback-textbox"/></div><div class="feedback-textbox-div"><span style="vertical-align: top;">Message:</span><textarea name="message" title="Type here the text of your message" id="message"> </textarea></div><div class="feedback-textbox-div">
+			  Your name:<input type="text" id="name" name="name" title="Enter your name" class="feedback-textbox"/></div><div class="feedback-textbox-div">
+			  Your email:<input type="text" id="email" name="email" title="Enter your email address" class="feedback-textbox"/></div><span class="feedback-button-container"><input type="submit" value="Send Message" name="submit" class="feedback-formbutton" title="Send Message"/></span><span class="feedback-button-container"><input type="reset" value="Clear All Fields" class="feedback-formbutton" title="Clear All Fields"/></span></form></div><div xmlns="" id="feedback-wrapper"><a id="feedback-link" href="#" onclick="$('feedback-maincontainer').appear(); return false;"><img src="images/feedback_logo.png" class="feedback-images" width="100px"/></a></div><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="ajaxListener.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="actionparam.html"><strong>Next</strong></a></li></ul><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="keepAlive"/>6.2. 
+				&lt;
+				a4j:keepAlive
+				&gt;
+			</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e4870"/>6.2.1. Description</h3></div></div></div><p>The <span class="bold"><strong>
+                                        <span class="property">&lt;a4j:keepAlive&gt;</span>
+                              </strong></span> tag allows to keep a state of a bean between
+                              requests.</p></div><div class="table"><a id="d0e4885"/><p class="title"><b>Table 6.3. a4j
+					:
+					keepAlive
+					attributes
+				</b></p><div class="table-contents"><table summary="a4j&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;:&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;keepAlive&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;attributes&#xA;&#x9;&#x9;&#x9;&#x9;" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Attribute Name</th><th>Description</th></tr></thead><tbody><tr><td>ajaxOnly</td><td> if true, bean value restored in ajax requests only.</td></tr><tr><td>beanName</td><td> name of bean for EL-expressions.</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e4912"/><p class="title"><b>Table 6.4. Tag identification parameters </b></p><div class="table-contents"><table summary="Tag identification parameters " border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>component-type</td><td>org.ajax4jsf.components.KeepAlive</td></tr><tr><td>component-family</td><td>org.ajax4jsf.components.AjaxKeepAlive</td></tr><tr><td>component-class</td><td>org.ajax4jsf.components.AjaxKeepAlive</td></tr></tbody></table></div></div><br class="table-break"/><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="a4jkalpagetag"/>6.2.2. Using the tag on a Page</h3></div></div></div><p>To create the simplest variant on a page use the following syntax:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:keepAlive</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">beanName</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">=</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_value">&quot;testBean&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre><p>Note, that to be put into the request scope the pointed bean should be
+                              registered inside faces-config.xml file and marked with
+                                        <span class="property">org.ajax4jsf.model.KeepAlive</span>
+                                        annotation. </p><p>
+                              A bean instance in the request scope could also be saved directly through the declaration of <code class="code">@KeepAlive</code> annotation inside the bean.
+                    </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e4960"/>6.2.3. Key attributes and ways of usage</h3></div></div></div><p> If a managed bean is declared with <span class="property">request</span> scope in
+                              the configuration file with the help of <span class="bold"><strong>
+                                        <span class="property">&lt;managed-bean-scope&gt;</span>
+                              </strong></span> tag then the life-time of this bean instance is valid only
+                              for the current request. Any attempts to make a reference to the bean
+                              instance after the request end will throw in Illegal Argument
+                              Exception by the server. To avoid these kinds of Exception, component
+                                        <span class="bold"><strong>
+                                        <span class="property">&lt;a4j:keepAlive&gt;</span>
+                              </strong></span> is used to maintain the state of the whole bean object
+                              among subsequent request. </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:keepAlive</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">beanName</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">=</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_value">&quot;#{myClass.testBean}&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre><p> The <span class="emphasis"><em>
+                                        <span class="property">"beanName"</span>
+                              </em></span> attribute defines the request scope bean name
+                              you'd like to re-use. Note that this attribute must point to
+                              a legal JSF EL expression which resolves to a managed mean instance.
+                              For example for the above code the class definition may look like this
+                              one: </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"></span>
+<!--  --><br/><span class="java_keyword">class</span><span class="java_plain">&nbsp;</span><span class="java_type">MyClass</span><span class="java_separator">{</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">...</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_keyword">private</span><span class="java_plain">&nbsp;</span><span class="java_type">TestBean</span><span class="java_plain">&nbsp;testBean</span><span class="java_separator">;</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_operator">//</span><span class="java_plain">&nbsp;</span><span class="java_type">Getters</span><span class="java_plain">&nbsp;and&nbsp;</span><span class="java_type">Setters</span><span class="java_plain">&nbsp;</span><span class="java_keyword">for</span><span class="java_plain">&nbsp;testBean</span><span class="java_separator">.</span>
+<!--  --><br/><span class="java_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="java_separator">...</span>
+<!--  --><br/><span class="java_separator">}</span>
+</pre><p> The <span class="emphasis"><em>
+                                        <span class="property">"ajaxOnly"</span>
+                              </em></span> attribute declares whether the value of the bean should be
+                              available during a non-Ajax request. If the value of this attribute is
+                              "true" a request scope bean keeps the same value
+                              during Ajax requests from the given page. If a non-Ajax request is
+                              sent from this page the bean is re-created as a regular request scope
+                              bean. </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e5005"/>6.2.4. Relevant resources links</h3></div></div></div><p>
+         <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://livedemo.exadel.com/richfaces-demo/richfaces/keepAlive.jsf?c=keepAlive">Here</a> you can see the example of <span class="bold"><strong>
+                                        <span class="property">&lt;a4j:keepAlive&gt;</span>
+                              </strong></span> usage and sources for the given example. </p><p> Some additional information about usage of component can be found <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://jboss.com/index.html?module=bb&amp;op=viewtopic&amp;t=104989">here</a>. </p></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="ajaxListener.html"><strong>Prev</strong>6.1. 
+				&lt;
+				a4j:ajaxListener
+				&gt;
+			</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="actionparam.html"><strong>Next</strong>6.3. 
+				&lt;
+				a4j:actionparam
+				&gt;
+			</a></li></ul></body></html>

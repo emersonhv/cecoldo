@@ -1,0 +1,591 @@
+<html xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>calendar
+          (RichFaces JSF components library Tag library documentation)
+        </title>
+<meta name="keywords" content="$title">
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+</head>
+<script>
+            function asd()
+            {
+            parent.document.title="calendar (RichFaces JSF components library Tag library documentation)";
+            }
+          </script>
+<body bgcolor="white" onload="asd();">
+<a name="navbar_top"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_top_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="calendar.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<h2>
+<font size="-1">RichFaces</font>
+<br>
+            Tag calendar</h2>
+<hr>The &lt;rich:calendar&gt; component is a UI control used for creating graphical monthly calendar on a page.<br>
+<p></p>
+<hr>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2"><b>Tag Information</b></font></td>
+</tr>
+<tr>
+<td>Tag Class</td><td>org.richfaces.taglib.CalendarTag</td>
+</tr>
+<tr>
+<td>TagExtraInfo Class</td><td><i>None</i></td>
+</tr>
+<tr>
+<td>Body Content</td><td>JSP</td>
+</tr>
+<tr>
+<td>Display Name</td><td><i>None</i></td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Attributes</b></font></td>
+</tr>
+<tr>
+<td><b>Name</b></td><td><b>Required</b></td><td><b>Request-time</b></td><td><b>Type</b></td><td><b>Description</b></td>
+</tr>
+<tr valign="top">
+<td>ajaxSingle</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>boolean attribute which provides possibility to limit JSF tree processing(decoding, conversion/validation, value applying) to the component which send the request only. Default value is "true"</td>
+</tr>
+<tr valign="top">
+<td>binding</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>javax.faces.component.UIComponent</code>)
+                    </td><td>The attribute takes a value-binding expression for a component property of a backing bean</td>
+</tr>
+<tr valign="top">
+<td>boundaryDatesMode</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>This attribute is responsible for behaviour of dates from the previous and next months which are displayed in the current month. Valid values are "inactive" (Default) dates inactive and gray colored, "scroll" boundaries work as month scrolling controls, and "select" boundaries work in the same way as "scroll" but with the date clicked selection. Default value is "inactive".</td>
+</tr>
+<tr valign="top">
+<td>buttonClass</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Style Class attribute for the popup button</td>
+</tr>
+<tr valign="top">
+<td>buttonIcon</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Defines icon for the popup button element. The attribute is ignored if the "buttonLabel" is set</td>
+</tr>
+<tr valign="top">
+<td>buttonIconDisabled</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Defines disabled icon for the popup button element. The attribute is ignored if the "buttonLabel" is set</td>
+</tr>
+<tr valign="top">
+<td>buttonLabel</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Defines label for the popup button element. If the attribute is set "buttonIcon" and "buttonIconDisabled" are ignored</td>
+</tr>
+<tr valign="top">
+<td>bypassUpdates</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>If "true", after process validations phase it skips updates of model beans on a force render response. It can be used for validating components input</td>
+</tr>
+<tr valign="top">
+<td>cellHeight</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>attribute to set fixed cells height</td>
+</tr>
+<tr valign="top">
+<td>cellWidth</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>attribute to set fixed cells width</td>
+</tr>
+<tr valign="top">
+<td>converter</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>javax.faces.convert.Converter</code>)
+                    </td><td>Id of Converter to be used or reference to a Converter</td>
+</tr>
+<tr valign="top">
+<td>converterMessage</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>A ValueExpression enabled attribute that, if present, will be used as the text of the converter message, replacing any message that comes from the converter</td>
+</tr>
+<tr valign="top">
+<td>currentDate</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.Object</code>)
+                    </td><td>Defines current date</td>
+</tr>
+<tr valign="top">
+<td>currentDateChangeListener</td><td>false</td><td>false</td><td><code>javax.el.MethodExpression</code>
+<br>(<i>signature must match </i><code>void currentDateChangeListener(org.richfaces.event.CurrentDateChangeEvent)</code>)
+                    </td><td>MethodExpression representing an action listener method that will be notified after date selection</td>
+</tr>
+<tr valign="top">
+<td>dataModel</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>org.richfaces.model.CalendarDataModel</code>)
+                    </td><td>Used to provide data for calendar elements. If data is not provided, all Data Model related functions are disabled</td>
+</tr>
+<tr valign="top">
+<td>datePattern</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Defines date pattern. Default value is "MMM d, yyyy".</td>
+</tr>
+<tr valign="top">
+<td>dayStyleClass</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Should be binded to some JS function that will provide style classes for special sets of days highlighting.</td>
+</tr>
+<tr valign="top">
+<td>defaultTime</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.Object</code>)
+                    </td><td>Defines time that will be used: 1) to set time when the value is empty 2) to set time when date changes and flag "resetTimeOnDateSelect" is true. Default value is "getDefaultValueOfDefaultTime()"</td>
+</tr>
+<tr valign="top">
+<td>direction</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Defines direction of the calendar popup ("top-left", "top-right", "bottom-left", "bottom-right" (Default), "auto"). Default value is "bottom-right".</td>
+</tr>
+<tr valign="top">
+<td>disabled</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>If "true", rendered is disabled. In "popup" mode both controls are disabled. Default value is "false".</td>
+</tr>
+<tr valign="top">
+<td>enableManualInput</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>If "true" calendar input will be editable and it will be possible to change the date manualy. If "false" value for this attribute makes a text field "read-only", so the value can be changed only from a handle. Default value is "false".</td>
+</tr>
+<tr valign="top">
+<td>eventsQueue</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Name of requests queue to avoid send next request before complete other from same event. Can be used to reduce number of requests of frequently events (key press, mouse move etc.)</td>
+</tr>
+<tr valign="top">
+<td>firstWeekDay</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>int</code>)
+                    </td><td>Gets what the first day of the week is; e.g., SUNDAY in the U.S., MONDAY in France. Default value is "getDefaultFirstWeekDay()". Possible values should be integers from 0 to 6, 0 corresponds to Sunday</td>
+</tr>
+<tr valign="top">
+<td>focus</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>id of element to set focus after request completed on client side</td>
+</tr>
+<tr valign="top">
+<td>horizontalOffset</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>int</code>)
+                    </td><td>Sets the horizontal offset between button and calendar element conjunction point. Default value is "0".</td>
+</tr>
+<tr valign="top">
+<td>id</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>Every component may have a unique id that is automatically created if omitted</td>
+</tr>
+<tr valign="top">
+<td>ignoreDupResponses</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>Attribute allows to ignore an Ajax Response produced by a request if the newest 'similar' request is in a queue already. ignoreDupResponses="true" does not cancel the request while it is processed on the server, but just allows to avoid unnecessary updates on the client side if the response isn't actual now</td>
+</tr>
+<tr valign="top">
+<td>immediate</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>A flag indicating that this component value must be converted and validated immediately (that is, during Apply Request Values phase), rather than waiting until a Process Validations phase</td>
+</tr>
+<tr valign="top">
+<td>inputClass</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Style Class attribute for the text field</td>
+</tr>
+<tr valign="top">
+<td>inputSize</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>int</code>)
+                    </td><td>Defines the size of an input field. Similar to the "size" attribute of &lt;h:inputText/&gt;</td>
+</tr>
+<tr valign="top">
+<td>inputStyle</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Style attribute for text field</td>
+</tr>
+<tr valign="top">
+<td>isDayEnabled</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Should be binded to some JS function that returns day state.</td>
+</tr>
+<tr valign="top">
+<td>jointPoint</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Set the corner of the button for the popup to be connected with (top-left, top-right, bottom-left (Default), bottom-right, auto). Default value is "bottom-left".</td>
+</tr>
+<tr valign="top">
+<td>label</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>A localized user presentable name for this component.</td>
+</tr>
+<tr valign="top">
+<td>limitToList</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>If "true", then of all AJAX-rendered on the page components only those will be updated, which ID's are passed to the "reRender" attribute of the describable component. "false"-the default value-means that all components with ajaxRendered="true" will be updated.</td>
+</tr>
+<tr valign="top">
+<td>locale</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.Object</code>)
+                    </td><td>Used for locale definition. Default value is "getDefaultLocale()".</td>
+</tr>
+<tr valign="top">
+<td>minDaysInFirstWeek</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>int</code>)
+                    </td><td>Gets what the minimal days required in the first week of the year are; e.g., if the first week is defined as one that contains the first day of the first month of a year, this method returns 1. If the minimal days required must be a full week, this method returns 7. Default value is "getDefaultMinDaysInFirstWeek()".</td>
+</tr>
+<tr valign="top">
+<td>mode</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Valid values: ajax or client. Default value is "client".</td>
+</tr>
+<tr valign="top">
+<td>monthLabels</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.Object</code>)
+                    </td><td>Attribute that allows to customize names of the months. Should accept list with the month names</td>
+</tr>
+<tr valign="top">
+<td>monthLabelsShort</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.Object</code>)
+                    </td><td>Attribute that allows to customize short names of the months. Should accept list with the month names</td>
+</tr>
+<tr valign="top">
+<td>onbeforedomupdate</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>JavaScript code for call before DOM has been updated on client side</td>
+</tr>
+<tr valign="top">
+<td>onchanged</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>onChanged event handler</td>
+</tr>
+<tr valign="top">
+<td>oncollapse</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>onCollapse event handler</td>
+</tr>
+<tr valign="top">
+<td>oncomplete</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>JavaScript code for call after request completed on client side</td>
+</tr>
+<tr valign="top">
+<td>oncurrentdateselect</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>onCurrentDateSelect event handler</td>
+</tr>
+<tr valign="top">
+<td>oncurrentdateselected</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>onCurrentDateSelected event handler</td>
+</tr>
+<tr valign="top">
+<td>ondatemouseout</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>onDateMouseOut event handler</td>
+</tr>
+<tr valign="top">
+<td>ondatemouseover</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>onDateMouseOver event handler</td>
+</tr>
+<tr valign="top">
+<td>ondateselect</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>onDateSelect event handler</td>
+</tr>
+<tr valign="top">
+<td>ondateselected</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>onDateSelected event handler</td>
+</tr>
+<tr valign="top">
+<td>onexpand</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>onExpand event handler</td>
+</tr>
+<tr valign="top">
+<td>oninputblur</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>input onBlur event handler</td>
+</tr>
+<tr valign="top">
+<td>oninputchange</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>input onChange event handler</td>
+</tr>
+<tr valign="top">
+<td>oninputclick</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>input onClick event handler</td>
+</tr>
+<tr valign="top">
+<td>oninputfocus</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>input onFocus event handler</td>
+</tr>
+<tr valign="top">
+<td>oninputkeydown</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>input onKeyDown event handler</td>
+</tr>
+<tr valign="top">
+<td>oninputkeypress</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>input onKeyPress event handler</td>
+</tr>
+<tr valign="top">
+<td>oninputkeyup</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>input onKeyUp event handler</td>
+</tr>
+<tr valign="top">
+<td>oninputmouseout</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td><i>No Description</i></td>
+</tr>
+<tr valign="top">
+<td>oninputmouseover</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td><i>No Description</i></td>
+</tr>
+<tr valign="top">
+<td>oninputselect</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>input onSelect event handler</td>
+</tr>
+<tr valign="top">
+<td>ontimeselect</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>onTimeSelect event handler</td>
+</tr>
+<tr valign="top">
+<td>ontimeselected</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>onTimeSelected event handler</td>
+</tr>
+<tr valign="top">
+<td>popup</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>If "true" calendar will be rendered initially as hidden with additional elements for calling as popup. Default value is "true".</td>
+</tr>
+<tr valign="top">
+<td>preloadDateRangeBegin</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.Object</code>)
+                    </td><td>Define the initial range of date which will be loaded to client from dataModel under rendering. Default value is "getDefaultPreloadBegin(getCurrentDateOrDefault())".</td>
+</tr>
+<tr valign="top">
+<td>preloadDateRangeEnd</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.Object</code>)
+                    </td><td>Defines the last range of date which will be loaded to client from dataModel under rendering. Default value is "getDefaultPreloadEnd(getCurrentDateOrDefault())".</td>
+</tr>
+<tr valign="top">
+<td>process</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.Object</code>)
+                    </td><td>Id['s] (in format of call UIComponent.findComponent()) of components, processed at the phases 2-5 in case of AjaxRequest caused by this component. Can be single id, comma-separated list of Id's, or EL Expression with array or Collection</td>
+</tr>
+<tr valign="top">
+<td>reRender</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.Object</code>)
+                    </td><td>Id['s] (in format of call UIComponent.findComponent()) of components, rendered in case of AjaxRequest caused by this component. Can be single id, comma-separated list of Id's, or EL Expression with array or Collection</td>
+</tr>
+<tr valign="top">
+<td>readonly</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>If "true". Date and time are not selectable. In "popup" mode input is disabled and button is enabled. Default value is "false".</td>
+</tr>
+<tr valign="top">
+<td>rendered</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>If "false", this component is not rendered</td>
+</tr>
+<tr valign="top">
+<td>requestDelay</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>int</code>)
+                    </td><td>Attribute defines the time (in ms.) that the request will be wait in the queue before it is ready to send. When the delay time is over, the request will be sent to the server or removed if the newest 'similar' request is in a queue already</td>
+</tr>
+<tr valign="top">
+<td>required</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>If "true", this component is checked for non-empty input</td>
+</tr>
+<tr valign="top">
+<td>requiredMessage</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>A ValueExpression enabled attribute that, if present, will be used as the text of the validation message for the "required" facility, if the "required" facility is used</td>
+</tr>
+<tr valign="top">
+<td>resetTimeOnDateSelect</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>If value is true then calendar should change time to defaultTime for newly-selected dates. Default value is "false"</td>
+</tr>
+<tr valign="top">
+<td>showApplyButton</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>If false ApplyButton should not be shown. Default value is "false".</td>
+</tr>
+<tr valign="top">
+<td>showFooter</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>If false Calendar's footer should not be shown. Default value is "true".</td>
+</tr>
+<tr valign="top">
+<td>showHeader</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>If false Calendar's header should not be shown. Default value is "true".</td>
+</tr>
+<tr valign="top">
+<td>showInput</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>"false" value for this attribute makes text field invisible. It works only if popupMode="true" If showInput is "true" - input field will be shown. Default value is "true".</td>
+</tr>
+<tr valign="top">
+<td>showWeekDaysBar</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>If false this bar should not be shown. Default value is "true".</td>
+</tr>
+<tr valign="top">
+<td>showWeeksBar</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>If false this bar should not be shown. Default value is "true".</td>
+</tr>
+<tr valign="top">
+<td>similarityGroupingId</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>If there are any component requests with identical IDs then these requests will be grouped.</td>
+</tr>
+<tr valign="top">
+<td>status</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>ID (in format of call UIComponent.findComponent()) of Request status component</td>
+</tr>
+<tr valign="top">
+<td>style</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>CSS style(s) is/are to be applied when this component is rendered</td>
+</tr>
+<tr valign="top">
+<td>styleClass</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Corresponds to the HTML class attribute</td>
+</tr>
+<tr valign="top">
+<td>timeZone</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.util.TimeZone</code>)
+                    </td><td>Used for current date calculations. Default value is "getDefaultTimeZone()".</td>
+</tr>
+<tr valign="top">
+<td>timeout</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>int</code>)
+                    </td><td>Response waiting time on a particular request. If a response is not received during this time, the request is aborted</td>
+</tr>
+<tr valign="top">
+<td>todayControlMode</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>This attribute defines the mode for "today" control. Possible values are "scroll", "select", "hidden". Default value is "select".</td>
+</tr>
+<tr valign="top">
+<td>validator</td><td>false</td><td>false</td><td><code>javax.el.MethodExpression</code>
+<br>(<i>signature must match </i><code>void validator(javax.faces.context.FacesContext, javax.faces.component.UIComponent, java.lang.Object)</code>)
+                    </td><td>MethodBinding pointing at a method that is called during Process Validations phase of the request processing lifecycle, to validate the current value of this component</td>
+</tr>
+<tr valign="top">
+<td>validatorMessage</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>A ValueExpression enabled attribute that, if present, will be used as the text of the validator message, replacing any message that comes from the validator</td>
+</tr>
+<tr valign="top">
+<td>value</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.Object</code>)
+                    </td><td>The current value of this component</td>
+</tr>
+<tr valign="top">
+<td>valueChangeListener</td><td>false</td><td>false</td><td><code>javax.el.MethodExpression</code>
+<br>(<i>signature must match </i><code>void valueChangeListener(javax.faces.event.ValueChangeEvent)</code>)
+                    </td><td>Listener for value changes</td>
+</tr>
+<tr valign="top">
+<td>verticalOffset</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>int</code>)
+                    </td><td>Sets the vertical offset between button and calendar element conjunction point. Default value is "0".</td>
+</tr>
+<tr valign="top">
+<td>weekDayLabels</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.Object</code>)
+                    </td><td>List of the day names displays on the days bar in the following way "Sun, Mon, Tue, Wed, "</td>
+</tr>
+<tr valign="top">
+<td>weekDayLabelsShort</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.Object</code>)
+                    </td><td>Attribute that allows to customize short names of the weeks. Should accept list with the weeks names.</td>
+</tr>
+<tr valign="top">
+<td>zindex</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>int</code>)
+                    </td><td>Attribute is similar to the standard HTML attribute and can specify window placement relative to the content. Default value is "3".</td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Variables</b></font></td>
+</tr>
+<td colspan="2"><i>No Variables Defined.</i></td>
+</table>
+<br>
+<p></p>
+<a name="navbar_bottom"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_bottom_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="calendar.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<small><i>
+            Output Generated by 
+            <a href="http://taglibrarydoc.dev.java.net/" target="_blank">Tag Library Documentation Generator</a>.
+            Java, JSP, and JavaServer Pages are trademarks or 
+            registered trademarks of Sun Microsystems, Inc. in the US and other
+            countries.  Copyright 2002-4 Sun Microsystems, Inc.
+            4150 Network Circle
+            Santa Clara, CA 95054, U.S.A.
+            All Rights Reserved. 
+            </i></small>
+</body>
+</html>

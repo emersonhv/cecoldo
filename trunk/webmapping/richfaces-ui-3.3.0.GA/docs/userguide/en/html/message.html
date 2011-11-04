@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>6.67.  &lt; rich:message &gt;</title><link rel="stylesheet" href="css/html.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link xmlns="" rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/><meta name="keywords" content="rich:message"/><meta name="keywords" content="message, rich:message, HtmlMessage"/><script xmlns="" type="text/javascript" src="script/prototype-1.6.0.2.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/effects.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/scriptaculous.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><link rel="start" href="index.html" title="RichFaces Developer Guide"/><link rel="up" href="RichFacesComponentsLibrary.html" title="Chapter 6. The RichFaces Components"/><link rel="prev" href="listShuttle.html" title="6.66.  &lt; rich:listShuttle &gt;"/><link rel="next" href="messages.html" title="6.68.  &lt; rich:messages &gt;"/><script xmlns="http://www.w3.org/TR/xhtml1/transitional" type="text/javascript" src="script/toggle.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script></head><body><div xmlns="" id="overlay"> </div><div xmlns="" id="feedback-maincontainer" style="display:none"><div id="feedback-header">
+			Send your remarks, comments or wishes to doc team
+		</div><a href="#" onclick="$('feedback-maincontainer').hide(); return false;" id="feedback-close"><img src="images/close.png" class="feedback-images"/></a><div id="feedback-state"> </div><form id="feedback-mailform"><div class="feedback-textbox-div">
+			  Subject:<input type="text" id="subject" name="subject" title="Enter the subject of your message" class="feedback-textbox"/></div><div class="feedback-textbox-div"><span style="vertical-align: top;">Message:</span><textarea name="message" title="Type here the text of your message" id="message"> </textarea></div><div class="feedback-textbox-div">
+			  Your name:<input type="text" id="name" name="name" title="Enter your name" class="feedback-textbox"/></div><div class="feedback-textbox-div">
+			  Your email:<input type="text" id="email" name="email" title="Enter your email address" class="feedback-textbox"/></div><span class="feedback-button-container"><input type="submit" value="Send Message" name="submit" class="feedback-formbutton" title="Send Message"/></span><span class="feedback-button-container"><input type="reset" value="Clear All Fields" class="feedback-formbutton" title="Clear All Fields"/></span></form></div><div xmlns="" id="feedback-wrapper"><a id="feedback-link" href="#" onclick="$('feedback-maincontainer').appear(); return false;"><img src="images/feedback_logo.png" class="feedback-images" width="100px"/></a></div><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="listShuttle.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="messages.html"><strong>Next</strong></a></li></ul><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="message"/>6.67. 
+				&lt;
+				rich:message
+				&gt;
+			</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e43875"/>6.67.1. Description</h3></div></div></div><p>The component is used for rendering a single message for a specific component. </p><div class="figure"><a id="d0e43880"/><div class="figure-contents"><div class="mediaobject"><img src="images/message_init.png" alt="&lt;rich:message&gt; component"/></div></div><p class="title"><b>Figure 6.186. 
+            <span class="bold">
+               <span class="property">&lt;rich:message&gt;</span>
+            </span> component</b></p></div><br class="figure-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e43892"/>6.67.2. Key Features</h3></div></div></div><div class="itemizedlist"><ul><li><p>Highly customizable look and feel </p></li><li><p>Tracking both traditional and Ajax based requests</p></li><li><p>Optional toolTip to display the detail portion of the message</p></li><li><p>Additionally customizable with attributes and facets</p></li><li><p>Additionally provides two parts to be optionally defined: marker and
+            label</p></li></ul></div></div><div class="table"><a id="d0e43911"/><p class="title"><b>Table 6.345. rich
+					:
+					message
+					attributes
+				</b></p><div class="table-contents"><table summary="rich&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;:&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;message&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;attributes&#xA;&#x9;&#x9;&#x9;&#x9;" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Attribute Name</th><th>Description</th></tr></thead><tbody><tr><td>ajaxRendered</td><td>Define, must be (or not) content of this component will be included in AJAX response created by parent AJAX Container, even if not forced by reRender list of ajax action.
+            Ignored if component marked to output by some Ajax action component. The default value is "true".</td></tr><tr><td>binding</td><td>The attribute takes a value-binding expression for a component property of
+a backing bean</td></tr><tr><td>errorClass</td><td>CSS style class to apply to any message with a severity class of "ERROR"</td></tr><tr><td>errorLabelClass</td><td>CSS style class to apply to any message label with a severity class of "ERROR"</td></tr><tr><td>errorMarkerClass</td><td>CSS style class to apply to any message marker with a severity class of "ERROR"</td></tr><tr><td>fatalClass</td><td>CSS style class to apply to any message with a severity class of "FATAL"</td></tr><tr><td>fatalLabelClass</td><td>CSS style class to apply to any message label with a severity class of "FATAL"</td></tr><tr><td>fatalMarkerClass</td><td>CSS style class to apply to any message marker with a severity class of "FATAL"</td></tr><tr><td>for</td><td>Client identifier of the component for which to display messages</td></tr><tr><td>id</td><td>Every component may have a unique id that is automatically created if omitted</td></tr><tr><td>infoClass</td><td>CSS style class to apply to any message with a severity class of "INFO"</td></tr><tr><td>infoLabelClass</td><td>CSS style class to apply to any message label with a severity class of "INFO"</td></tr><tr><td>infoMarkerClass</td><td>CSS style class to apply to any message marker with a severity class of "INFO"</td></tr><tr><td>labelClass</td><td>CSS style class to apply to label</td></tr><tr><td>level</td><td>A comma-separated list of messages categories which should be displayed. Default value is "ALL".</td></tr><tr><td>markerClass</td><td>CSS style class to apply to marker</td></tr><tr><td>markerStyle</td><td>CSS style(s) is/are to be applied to marker when this component is rendered</td></tr><tr><td>passedLabel</td><td>Attribute should define the label to be displayed when no message appears</td></tr><tr><td>rendered</td><td>If "false", this component is not rendered</td></tr><tr><td>showDetail</td><td>Flag indicating whether detailed information of a displayed messages should be included.  Default value is "true".</td></tr><tr><td>showSummary</td><td>Flag indicating whether the summary portion of displayed messages should be included.  Default value is "false".</td></tr><tr><td>style</td><td>The CSS style for message</td></tr><tr><td>styleClass</td><td>Space-separated list of CSS style class(es) to be applied when this element is rendered.  This value must be passed through as the "class" attribute on generated markup</td></tr><tr><td>title</td><td>Advisory title information about markup elements generated for this component</td></tr><tr><td>tooltip</td><td>Flag indicating whether the detail portion of the message should be displayed as a tooltip.  Default value is "false".</td></tr><tr><td>warnClass</td><td>CSS style class to apply to any message with a severity class of "WARN"</td></tr><tr><td>warnLabelClass</td><td>CSS style class to apply to any message label with a severity class of "WARN"</td></tr><tr><td>warnMarkerClass</td><td>CSS style class to apply any message marker with a severity class of "WARN"</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e44070"/><p class="title"><b>Table 6.346. Component identification parameters </b></p><div class="table-contents"><table summary="Component identification parameters " border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>component-type</td><td>org.richfaces.component.RichMessage</td></tr><tr><td>component-class</td><td>org.richfaces.component.html.HtmlRichMessage</td></tr><tr><td>component-family</td><td>org.richfaces.component.RichMessage</td></tr><tr><td>renderer-type</td><td>org.richfaces.renderkit.html.RichMessagesHtmlBaseRenderer</td></tr><tr><td>tag-class</td><td>org.richfaces.taglib.RichMessageTag</td></tr></tbody></table></div></div><br class="table-break"/><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e44106"/>6.67.3. Creating the Component with a Page Tag</h3></div></div></div><p>To create the simplest variant of <span class="property">message</span> on a page, use the
+      following syntax:</p><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:message</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">for</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;id&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e44121"/>6.67.4. Creating the Component Dynamically Using Java</h3></div></div></div><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">import</span><!-- <br/> --><span class="java_plain">&nbsp;org</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">richfaces</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">component</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">html</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_type">HtmlRichMessage</span><!-- <br/> --><span class="java_separator">;</span>
+<!--  --><br/><span class="java_separator">...</span>
+<!--  --><br/><span class="java_type">HtmlRichMessage</span><span class="java_plain">&nbsp;myMessage&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">HtmlRichMessage</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_separator">...</span>
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e44131"/>6.67.5. Details of Usage</h3></div></div></div><p> The component has the same behavior as standard <span class="bold"><strong>
+            <span class="property">&lt;h:message&gt;</span>
+         </strong></span>component except next two features: </p><div class="itemizedlist"><ul><li><p>It's ajaxRendered. It means that the component is reRendered after Ajax request
+          automatically without outputPanel usage</p></li><li><p>The component optionally provides "passed" state which will be shown if no message is displayed</p></li><li><p>Provides possibility to add some marker to message. By default  a marker element
+          isn't shown</p></li></ul></div><p>
+      </p><p> A set of facets which can be used for marker defining: </p><div class="itemizedlist"><ul><li><p>
+                  <span class="emphasis"><em>
+                     <span class="property">"passedMarker"</span>
+                  </em></span>. This facet is provided to allow setting a marker to display if
+          there is no message</p></li><li><p>
+                  <span class="emphasis"><em>
+                     <span class="property">"errorMarker"</span>
+                  </em></span>. This facet is provided to allow setting a marker to display if there
+          is a message with a severity class of "ERROR"</p></li><li><p>
+                  <span class="emphasis"><em>
+                     <span class="property">"fatalMarker"</span>
+                  </em></span>. This facet is provided to allow setting a marker to display if there
+          is a message with a severity class of "FATAL"</p></li><li><p>
+                  <span class="emphasis"><em>
+                     <span class="property">"infoMarker"</span>
+                  </em></span>. This facet is provided to allow setting a marker to display if there
+          is a message with a severity class of "INFO"</p></li><li><p>
+                  <span class="emphasis"><em>
+                     <span class="property">"warnMarker"</span>
+                  </em></span>. This facet is provided to allow setting a marker to display if there
+          is a message with a severity class of "WARN"</p></li></ul></div><p>
+      </p><p> The following example shows different variants for component customization. The
+      attribute <span class="emphasis"><em>
+            <span class="property">"passedLabel"</span>
+         </em></span> is used for definition of the label to display when no message
+      appears. But the message component doesn't appear before the form submission even when 
+      state is defined as passed (on initial rendering). Boolean attribute<span class="emphasis"><em>
+            <span class="property"> "showSummary" </span>
+         </em></span>defines possibility to
+      display summary portion of displayed messages. The facets <span class="emphasis"><em>
+            <span class="property">"errorMarker"</span>
+         </em></span> and <span class="emphasis"><em>
+            <span class="property">"passedMarker"</span>
+         </em></span> set
+      corresponding images for markers. </p><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:message</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">for</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;id&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">passedLabel</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;No&nbsp;errors&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">showSummary</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;errorMarker&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">url</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/image/error.png&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;passedMarker&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">url</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/image/passed.png&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:message</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+<span class="xml_plain">...</span><br />
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e44235"/>6.67.6. Facets</h3></div></div></div><div class="table"><a id="d0e44238"/><p class="title"><b>Table 6.347. Facets</b></p><div class="table-contents"><table summary="Facets" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Facet</th><th>Description</th></tr></thead><tbody><tr><td>errorMarker</td><td>Redefines the content for the marker if there is message with a severity class of "ERROR"</td></tr><tr><td>fatalError</td><td>Redefines the content for the marker if there is message with a severity class of "FATAL"</td></tr><tr><td>infoError</td><td>Redefines the content for the marker if there is message with a severity class of "INFO"</td></tr><tr><td>warnError</td><td>Redefines the content for the marker if there is message with a severity class of "WARN"</td></tr><tr><td>passedError</td><td>Redefines the content for the marker if there is no message</td></tr></tbody></table></div></div><br class="table-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e44274"/>6.67.7. Look-and-Feel Customization</h3></div></div></div><p>For skinnability implementation, the components use a <span class="emphasis"><em>
+            <span class="property">style class redefinition method.</span>
+         </em></span>
+      </p><p>There are no skin parameters and default predefined values. To redefine the appearance of all <span class="bold"><strong>
+            <span class="property">&lt;rich:message&gt;</span>
+         </strong></span> components at once, you should only  add to your style sheets <span class="emphasis"><em>
+            <span class="property">style classes</span>
+         </em></span> used by a <span class="bold"><strong>
+            <span class="property">&lt;rich:message&gt;</span>
+         </strong></span> component.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e44305"/>6.67.8. Definition of Custom Style Classes</h3></div></div></div><p>On the screenshot there are classes names that define styles for component elements.</p><div class="figure"><a id="d0e44310"/><div class="figure-contents"><div class="mediaobject"><img src="images/message_cn.png" alt="Classes names"/></div></div><p class="title"><b>Figure 6.187. Classes names</b></p></div><br class="figure-break"/><div class="table"><a id="mC"/><p class="title"><b>Table 6.348. Classes names that define a component appearance</b></p><div class="table-contents"><table summary="Classes names that define a component appearance" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Class name</th><th>Description</th></tr></thead><tbody><tr><td>rich-message</td><td>Defines styles for a wrapper element</td></tr><tr><td>rich-message-marker</td><td>Defines styles for a marker</td></tr><tr><td>rich-message-label</td><td>Defines styles for a label</td></tr></tbody></table></div></div><br class="table-break"/><p>In order to redefine styles for all <span class="bold"><strong>
+            <span class="property">&lt;rich:message&gt;</span>
+         </strong></span> components on a page using CSS, it's enough to create classes with the
+      same names (possible classes could be found in the tables <a href="message.html#mC" title="Table 6.348. Classes names that define a component appearance"> above</a>) and define necessary properties in them. </p><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_selector">.rich-message-label</span><span class="css_curly_brace">{</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">font-style</span><span class="css_colon">:</span><span class="css_property_value">italic</span><span class="css_normal"><br />
+</span><span class="css_curly_brace">}</span><span class="css_normal"><br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>This is a result:</p><div class="figure"><a id="d0e44362"/><div class="figure-contents"><div class="mediaobject"><img src="images/message_pc.png" alt="Redefinition styles with predefined classes"/></div></div><p class="title"><b>Figure 6.188. Redefinition styles with predefined classes</b></p></div><br class="figure-break"/><p>In the example the font style for message was changed.</p><p>Also it's possible to change styles of particular <span class="bold"><strong>
+            <span class="property">&lt;rich:message&gt;</span>
+         </strong></span> component. In this case you should create own style classes and use them in corresponding <span class="bold"><strong>
+            <span class="property">&lt;rich:message&gt;</span>
+         </strong></span> 
+         <span class="property">styleClass</span> attributes. An example is placed below:</p><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_selector">.myClass</span><span class="css_curly_brace">{</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">font-weight</span><span class="css_colon">:</span><span class="css_property_value">bold</span><span class="css_semi_colon">;</span><span class="css_normal"><br />
+</span><span class="css_curly_brace">}</span><span class="css_normal"><br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>The <span class="emphasis"><em>
+            <span class="property">"styleClass"</span>
+         </em></span> attribute for <span class="bold"><strong>
+            <span class="property">&lt;rich:message&gt;</span>
+         </strong></span> is defined as it's shown in the example below:</p><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:message</span><span class="xml_plain">&nbsp;...&nbsp;</span><span class="xml_attribute_name">styleClass</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;myClass&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre><p>This is a result:</p><div class="figure"><a id="d0e44417"/><div class="figure-contents"><div class="mediaobject"><img src="images/message_oc.png" alt="Redefinition styles with own classes and styleClass attributes"/></div></div><p class="title"><b>Figure 6.189. Redefinition styles with own classes and <span class="emphasis"><em>
+               <span class="property">styleClass</span>
+            </em></span> attributes</b></p></div><br class="figure-break"/><p>As it could be seen on the picture above, the font weight for message was changed.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e44431"/>6.67.9. Relevant Resources Links</h3></div></div></div><p>
+         <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://livedemo.exadel.com/richfaces-demo/richfaces/message.jsf?c=message">Here</a> you can see the example of <span class="bold"><strong>
+            <span class="property">&lt;rich:message&gt;</span>
+         </strong></span> usage and sources for the given example. </p></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="listShuttle.html"><strong>Prev</strong>6.66. 
+				&lt;
+				rich:listShuttle
+				&gt;
+			</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="messages.html"><strong>Next</strong>6.68. 
+				&lt;
+				rich:messages
+				&gt;
+			</a></li></ul></body></html>

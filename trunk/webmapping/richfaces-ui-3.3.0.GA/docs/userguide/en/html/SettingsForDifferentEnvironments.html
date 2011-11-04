@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 4. Settings for different environments</title><link rel="stylesheet" href="css/html.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link xmlns="" rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/><meta name="keywords" content="MyFaces, JSF, RichFaces"/><script xmlns="" type="text/javascript" src="script/prototype-1.6.0.2.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/effects.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/scriptaculous.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><link rel="start" href="index.html" title="RichFaces Developer Guide"/><link rel="up" href="index.html" title="RichFaces Developer Guide"/><link rel="prev" href="GettingStarted.html" title="Chapter 3. Getting Started with RichFaces"/><link rel="next" href="ArchitectureOverview.html" title="Chapter 5. Basic concepts of the RichFaces Framework"/><script xmlns="http://www.w3.org/TR/xhtml1/transitional" type="text/javascript" src="script/toggle.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script></head><body><div xmlns="" id="overlay"> </div><div xmlns="" id="feedback-maincontainer" style="display:none"><div id="feedback-header">
+			Send your remarks, comments or wishes to doc team
+		</div><a href="#" onclick="$('feedback-maincontainer').hide(); return false;" id="feedback-close"><img src="images/close.png" class="feedback-images"/></a><div id="feedback-state"> </div><form id="feedback-mailform"><div class="feedback-textbox-div">
+			  Subject:<input type="text" id="subject" name="subject" title="Enter the subject of your message" class="feedback-textbox"/></div><div class="feedback-textbox-div"><span style="vertical-align: top;">Message:</span><textarea name="message" title="Type here the text of your message" id="message"> </textarea></div><div class="feedback-textbox-div">
+			  Your name:<input type="text" id="name" name="name" title="Enter your name" class="feedback-textbox"/></div><div class="feedback-textbox-div">
+			  Your email:<input type="text" id="email" name="email" title="Enter your email address" class="feedback-textbox"/></div><span class="feedback-button-container"><input type="submit" value="Send Message" name="submit" class="feedback-formbutton" title="Send Message"/></span><span class="feedback-button-container"><input type="reset" value="Clear All Fields" class="feedback-formbutton" title="Clear All Fields"/></span></form></div><div xmlns="" id="feedback-wrapper"><a id="feedback-link" href="#" onclick="$('feedback-maincontainer').appear(); return false;"><img src="images/feedback_logo.png" class="feedback-images" width="100px"/></a></div><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="GettingStarted.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="ArchitectureOverview.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="SettingsForDifferentEnvironments"/>Chapter 4. Settings for different environments</h2></div></div></div><p> RichFaces comes with support for all tags (components) included in the JavaServer
+                    Faces specification. To add RichFaces capabilities to the existing JSF project
+                    you should just put the RichFaces libraries into the lib folder of the project
+                    and add filter mapping. The behavior of the existing project doesn't
+                    change just because of RichFaces. </p><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="WebApplicationDescriptorParameters"/>4.1. Web Application Descriptor Parameters</h2></div></div></div><p>RichFaces doesn't require any parameters to be defined in your web.xml. But
+                    the <span class="property">RichFaces</span> parameters listed below may help with
+                    development and may increase the flexibility of RichFaces usage.</p><p>
+                    </p><div class="table"><a id="d0e448"/><p class="title"><b>Table 4.1. Initialization Parameters</b></p><div class="table-contents"><table summary="Initialization Parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th>Name</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td>org.richfaces.SKIN</td><td>DEFAULT</td><td>Is a name of a skin used in an
+                                                  application. It can be a
+                                                  literal string with a skin
+                                                  name, or the <span class="emphasis"><em>
+                                                  <span class="property">EL</span>
+                                                  </em></span> expression
+                                                  (<code class="code">#{...}</code>)
+                                                  pointed to a <span class="emphasis"><em>
+                                                  <span class="property">String</span>
+                                                  </em></span> property (skin
+                                                  name) or a property of a
+                                                  org.richfaces.framework.skin
+                                                  type. Skin in last case, this
+                                                  instance is used as a current
+                                                  skin</td></tr><tr><td>org.richfaces.LoadScriptStrategy</td><td>DEFAULT</td><td>Defines how the RichFaces script
+                                                  files are loaded to
+                                                  application. Possible values
+                                                  are: ALL, DEFAULT, NONE. For
+                                                  more information see <a href="ArchitectureOverview.html#ScriptsandStylesLoadStrategy" title="5.8. Scripts and Styles Load Strategy">"Scripts
+                                                  and Styles Load
+                                                  Strategy"</a>.</td></tr><tr><td>org.richfaces.LoadStyleStrategy</td><td>DEFAULT</td><td>Defines how the RichFaces style
+                                                  files are loaded to
+                                                  application. Possible values
+                                                  are: ALL, DEFAULT, NONE. For
+                                                  more information see <a href="ArchitectureOverview.html#ScriptsandStylesLoadStrategy" title="5.8. Scripts and Styles Load Strategy">"Scripts
+                                                  and Styles Load
+                                                  Strategy"</a>.</td></tr><tr><td>org.ajax4jsf.LOGFILE</td><td>none</td><td>Is an URL to an application or a
+                                                  container log file (if
+                                                  possible). If this parameter
+                                                  is set, content from the given
+                                                  URL is shown on a <span class="emphasis"><em>
+                                                  <span class="property">Debug</span>
+                                                  </em></span> error page in the <span class="emphasis"><em>
+                                                  <span class="property">iframe</span>
+                                                  </em></span> window</td></tr><tr><td>org.ajax4jsf.VIEW_HANDLERS</td><td>none</td><td>Is a comma-separated list of
+                                                  custom <span class="emphasis"><em>
+                                                  <span class="property">ViewHandler</span>
+                                                  </em></span> instances for
+                                                  inserting in chain. Handlers
+                                                  are inserted BEFORE RichFaces
+                                                  viewhandlers in the given
+                                                  order. For example, in
+                                                  facelets application this
+                                                  parameter must contain
+                                                  com.sun.facelets.FaceletViewHandler,
+                                                  instead of declaration in
+                                                  faces-config.xml</td></tr><tr><td>org.ajax4jsf.CONTROL_COMPONENTS</td><td>none</td><td>Is a comma-separated list of
+                                                  names for a component as a
+                                                  special control case, such as
+                                                  messages bundle loader, alias
+                                                  bean components, etc. Is a
+                                                  type of component got by a
+                                                  reflection from the static
+                                                  field <span class="emphasis"><em>
+                                                  <span class="property">COMPONENT_TYPE</span>
+                                                  </em></span>. For components
+                                                  with such types encode methods
+                                                  always are called in rendering
+                                                  Ajax responses, even if a
+                                                  component isn't in an
+                                                  updated part</td></tr><tr><td>org.ajax4jsf.ENCRYPT_RESOURCE_DATA</td><td>false</td><td>For generated resources, such as
+                                                  encrypt generation data,
+                                                  it's encoded in the
+                                                  resource URL. For example, URL
+                                                  for an image generated from
+                                                  the <span class="emphasis"><em>
+                                                  <span class="property">mediaOutput</span>
+                                                  </em></span> component contains
+                                                  a name of a generation method,
+                                                  since for a hacker attack, it
+                                                  is possible to create a
+                                                  request for any JSF baked
+                                                  beans or other attributes. To
+                                                  prevent such attacks, set this
+                                                  parameter to
+                                                  "true" in
+                                                  critical applications (works
+                                                  with JRE &gt; 1.4
+                                                  )</td></tr><tr><td>org.ajax4jsf.ENCRYPT_PASSWORD</td><td>random</td><td>Is a password for encryption of
+                                                  resources data. If
+                                                  isn't set, a random
+                                                  password is used</td></tr><tr><td>org.ajax4jsf.COMPRESS_SCRIPT</td><td>true</td><td>It doesn't allow
+                                                  framework to reformat
+                                                  JavaScript files (makes it
+                                                  impossible to debug) </td></tr><tr><td>org.ajax4jsf.RESOURCE_URI_PREFIX</td><td>a4j</td><td> Defines prefix which is added to
+                                                  all URIs of generated
+                                                  resources. This prefix
+                                                  designed to handle RichFaces
+                                                  generated resources requests
+                                                  </td></tr><tr><td>org.ajax4jsf.GLOBAL_RESOURCE_URI_PREFIX</td><td>a4j/g</td><td> Defines prefix which is added to
+                                                  URIs of global resources. This
+                                                  prefix designed to handle
+                                                  RichFaces generated resources
+                                                  requests </td></tr><tr><td>org.ajax4jsf.SESSION_RESOURCE_URI_PREFIX</td><td>a4j/s</td><td> Defines prefix which is used for
+                                                  session tracking for generated
+                                                  resources. This prefix
+                                                  designed to handle RichFaces
+                                                  generated resources requests
+                                                  </td></tr><tr><td>org.ajax4jsf.DEFAULT_EXPIRE</td><td>86400</td><td> Defines in seconds how long
+                                                  streamed back to browser
+                                                  resources can be cached
+                                                  </td></tr><tr><td>org.ajax4jsf.SERIALIZE_SERVER_STATE</td><td>false</td><td> If enabled the component state
+                                                  (not the tree) will be
+                                                  serialized before being stored
+                                                  in the session. This may be
+                                                  desirable for applications
+                                                  that may have issues with view
+                                                  state being sensitive to model
+                                                  changes. Instead of this
+                                                  parameter can use
+                                                  <code class="code">com.sun.faces.serializeServerState</code>
+                                                  and <code class="code">
+                                                  org.apache.myfaces.SERIALIZE_STATE_IN_SESSION
+                                                  </code> parameters for
+                                                  corresponding environments.
+                                                  </td></tr></tbody></table></div></div><p><br class="table-break"/>
+          </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note:</h2><p><code class="code">org.richfaces.SKIN</code> is used in the same way as
+                                        <code class="code">org.ajax4jsf.SKIN</code></p></div><p>
+                    </p><div class="table"><a id="d0e628"/><p class="title"><b>Table 4.2. org.ajax4jsf.Filter Initialization Parameters</b></p><div class="table-contents"><table summary="org.ajax4jsf.Filter Initialization Parameters" border="1"><colgroup><col/><col/><col/></colgroup><thead><tr><th>Name</th><th>Default</th><th>Description</th></tr></thead><tbody><tr><td>log4j-init-file</td><td>-</td><td>Is a path (relative to web
+                                                  application context) to the <span class="emphasis"><em>
+                                                  <span class="property">log4j.xml</span>
+                                                  </em></span> configuration
+                                                  file, it can be used to setup
+                                                  per-application custom
+                                                  logging</td></tr><tr><td>enable-cache</td><td>true</td><td>Enable caching of
+                                                  framework-generated resources
+                                                  (JavaScript, CSS, images,
+                                                  etc.). For debug purposes
+                                                  development custom JavaScript
+                                                  or Style prevents to use old
+                                                  cached data in a
+                                                  browser</td></tr><tr><td>forcenotrf</td><td>true</td><td>Force parsing by a filter <span class="emphasis"><em>
+                                                  <span class="property">HTML</span>
+                                                  </em></span> syntax checker on
+                                                  any JSF page. If
+                                                  "false",
+                                                  only Ajax responses are parsed
+                                                  to syntax check and conversion
+                                                  to well-formed XML. Setting to
+                                                  "false"
+                                                  improves performance, but can
+                                                  provide visual effects on Ajax
+                                                  updates</td></tr></tbody></table></div></div><p><br class="table-break"/>
+          </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="SunJSFRI"/>4.2. Sun JSF RI</h2></div></div></div><p> RichFaces works with implementation of <span class="property">JSF</span> (JSF 1.2)
+                              and with most <span class="property">JSF</span> component libraries without any
+                              additional settings. For more information look at: </p><table class="simplelist" border="0" summary="Simple list"><tr><td>
+                                        <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://java.sun.com/javaee/javaserverfaces/">
+                                                  java.sun.com </a>
+                              </td></tr></table><p> Additional information how to get <code class="code"> ViewExpiredExceptions </code>
+                              when using <span class="property">RichFaces</span> with <span class="property">JSF
+                              1.2</span> you can find <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://wiki.jboss.org/auth/wiki//RichFacesCookbook/ViewExpiredException">here</a>. </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="ApacheMyFaces"/>4.3. Apache MyFaces</h2></div></div></div><p> RichFaces works with <span class="property">Apache MyFaces</span> 1.2.5 version
+                              including specific libraries like TOMAHAWK Sandbox and Trinidad (the
+                              previous ADF Faces). However, there are some considerations to take
+                              into account for configuring applications to work with
+                                        <span class="property">MyFaces</span> and RichFaces. </p><p> There are some problems with different filters defined in the web.xml
+                              file clashing. To avoid these problems, the RichFaces filter must be
+                              the first one among other filters in the web.xml configuration file. </p><p> For more information look at: <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://myfaces.apache.org">
+                                        http://myfaces.apache.org </a>
+                    </p><p> There's one more problem while using <span class="property">MyFaces +
+                              Seam</span> . If you use this combination you should use <span class="bold"><strong>
+                                        <span class="property">&lt;a4j:page&gt;</span>
+                              </strong></span> inside <span class="bold"><strong>
+                                        <span class="property">&lt;f:view&gt;</span>
+                              </strong></span> (right after it in your code) wrapping another content
+                              inside your pages because of some problems in realization of <span class="bold"><strong>
+                                        <span class="property">&lt;f:view&gt;</span>
+                              </strong></span> in myFaces. </p><p> The problem is to be overcome in the nearest future. </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="FaceletsSupport"/>4.4. Facelets Support</h2></div></div></div><p> A high-level support for <span class="property">Facelets</span> is one of our main
+                              support features. When working with RichFaces, there is no difference
+                              what release of <span class="property">Facelets</span> is used. </p><p> You should also take into account that some JSF frameworks such as
+                                        <span class="property">Facelets</span> use their own
+                                        <code class="code">ViewHandler</code> and need to have it first in the
+                              chain of ViewHandlers and the RichFaces AjaxViewHandler is not an
+                              exception. At first RichFaces installs its ViewHandler in any case, so
+                              in case of two frameworks, for example RichFaces + Facelets, no
+                              changes in settings are required. Although, when more then one
+                              framework (except RichFaces) is used, it's possible to use
+                              the <code class="code">VIEW_HANDLERS</code> parameter defining these frameworks
+                              view handlers according to its usage order in it. For example, the
+                              declaration: </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.ajax4jsf.VIEW_HANDLERS</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">com.sun.facelets.FaceletViewHandler</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br />
+</pre><p> says that <span class="property">Facelets</span> will officially be the first,
+                              however <code class="code">AjaxViewHandler</code> will be a little ahead
+                              temporarily to do some small, but very important job. </p><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note:</h2><p> In this case you don't have to define
+                                                  <code class="code">FaceletViewHandler</code> in the
+                                        WEB-INF/faces-config.xml. </p></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="JBossSeamSupport"/>4.5. JBoss Seam Support</h2></div></div></div><p> RichFaces now works out-of-the-box with <span class="property">JBoss Seam</span>
+                              and Facelets running inside JBoss AS 4.0.4 and higher. There is no
+                              more shared JAR files needed. You just have to package the RichFaces
+                              library with your application. </p><p> Your web.xml for <span class="property">Seam 1.2</span> must be like this: </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_processing_instruction">&lt;?xml&nbsp;version=&quot;1.0&quot;&nbsp;?&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">web-app</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">xmlns</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;http://java.sun.com/xml/ns/j2ee&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">xmlns:xsi</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">xsi:schemaLocation</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;http://java.sun.com/xml/ns/j2ee&nbsp;http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">version</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;2.4&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--&nbsp;richfaces&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">filter</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">display-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">RichFaces&nbsp;Filter</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">display-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">filter-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">richfaces</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">filter-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">filter-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.ajax4jsf.Filter</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">filter-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">filter</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">filter-mapping</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">filter-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">richfaces</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">filter-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">url-pattern</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">*.seam</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">url-pattern</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">filter-mapping</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_comment">&lt;!--&nbsp;Seam&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">listener</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">listener-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.jboss.seam.servlet.SeamListener</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">listener-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">listener</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Seam&nbsp;Resource&nbsp;Servlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.jboss.seam.servlet.ResourceServlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-mapping</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Seam&nbsp;Resource&nbsp;Servlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">url-pattern</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">/seam/resource/*</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">url-pattern</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-mapping</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">filter</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">filter-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Seam&nbsp;Filter</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">filter-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">filter-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.jboss.seam.web.SeamFilter</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">filter-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">filter</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">filter-mapping</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">filter-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Seam&nbsp;Filter</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">filter-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">url-pattern</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">/*</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">url-pattern</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">filter-mapping</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--&nbsp;MyFaces&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">listener</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">listener-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.apache.myfaces.webapp.StartupServletContextListener</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">listener-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">listener</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--&nbsp;JSF&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">javax.faces.STATE_SAVING_METHOD</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">client</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">javax.faces.DEFAULT_SUFFIX</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">.xhtml</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Faces&nbsp;Servlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">javax.faces.webapp.FacesServlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">load-on-startup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">1</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">load-on-startup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-mapping</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Faces&nbsp;Servlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">url-pattern</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">*.seam</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">url-pattern</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-mapping</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">web-app</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre><p>
+                              <span class="property">Seam 2</span> supports RichFaces Filter. Thus your
+                              web.xml for Seam 2 must be like this: </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_processing_instruction">&lt;?xml&nbsp;version=&quot;1.0&quot;&nbsp;encoding=&quot;UTF-8&quot;?&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">web-app</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">version</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;2.5&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">xmlns</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;http://java.sun.com/xml/ns/javaee&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">xmlns:xsi</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">xsi:schemaLocation</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;http://java.sun.com/xml/ns/javaee&nbsp;http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.ajax4jsf.VIEW_HANDLERS</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">com.sun.facelets.FaceletViewHandler</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--&nbsp;Seam&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">listener</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">listener-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.jboss.seam.servlet.SeamListener</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">listener-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">listener</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Seam&nbsp;Resource&nbsp;Servlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.jboss.seam.servlet.SeamResourceServlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-mapping</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Seam&nbsp;Resource&nbsp;Servlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">url-pattern</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">/seam/resource/*</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">url-pattern</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-mapping</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">filter</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">filter-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Seam&nbsp;Filter</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">filter-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">filter-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">org.jboss.seam.servlet.SeamFilter</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">filter-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">filter</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">filter-mapping</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">filter-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Seam&nbsp;Filter</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">filter-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">url-pattern</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">/*</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">url-pattern</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">filter-mapping</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--&nbsp;JSF&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">javax.faces.DEFAULT_SUFFIX</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">.xhtml</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">facelets.DEVELOPMENT</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">true</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">param-value</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">context-param</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Faces&nbsp;Servlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">javax.faces.webapp.FacesServlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">load-on-startup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">1</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">load-on-startup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-mapping</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Faces&nbsp;Servlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">url-pattern</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">*.seam</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">url-pattern</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-mapping</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">web-app</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+</pre><p> Only one issue still persists while using <span class="property">Seam</span> with
+                              MyFaces. Look at myFaces part of this section. </p><p>Detailed information on how to integrate Richfaces and Trinidad and how to
+                              hide ".seam" postfix in the URL you can find <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://wiki.jboss.org/auth/wiki/RichFacesWithTrinidad">here</a></p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="PortletSupport"/>4.6. Portlet Support</h2></div></div></div><p>
+                              <span class="property">JBoss Portlets</span> have support since version
+                              Ajax4jsf 1.1.1. This support is improved from RichFaces 3.2.1. Provide
+                              your feedback on compatible with RichFaces if you face some problems.
+                    </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="SybaseEAServer"/>4.7. Sybase EAServer</h2></div></div></div><p> The load-on-startup for the Faces Servlet had to be set to 0 in web.xml. </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Faces&nbsp;Servlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-name</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">servlet-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">javax.faces.webapp.FacesServlet</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet-class</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">load-on-startup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">0</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">load-on-startup</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">servlet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p> This is because, EAServer calls servlet <code class="code">init()</code> before the
+                                        <code class="code">ServletContextInitializer</code>. Not an EAServer bug,
+                              this is in Servlet 2.3 spec. </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="OracleAS_OC4J"/>4.8. Oracle AS/OC4J</h2></div></div></div><p> In order to deploy your project with RichFaces components to an
+                                        <span class="property">Oracle AS</span> you just have to prevent the
+                              application's class loader from importing the Oracle XML
+                              parser. Use the following notation in
+                              <span class="property">orion-application.xml</span> : </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">imported-shared-libraries</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">remove-inherited</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;oracle.xml&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">remove-inherited</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;oracle.xml.security&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">imported-shared-libraries</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="GettingStarted.html"><strong>Prev</strong>Chapter 3. Getting Started with RichFaces</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="ArchitectureOverview.html"><strong>Next</strong>Chapter 5. Basic concepts of the RichFaces Framew...</a></li></ul></body></html>

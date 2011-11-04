@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>6.60.  &lt; rich:inplaceInput &gt;</title><link rel="stylesheet" href="css/html.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link xmlns="" rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/><meta name="keywords" content="inplaceInput, rich:inplaceInput"/><meta name="keywords" content="rich:inplaceInput, inplaceInput"/><script xmlns="" type="text/javascript" src="script/prototype-1.6.0.2.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/effects.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/scriptaculous.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><link rel="start" href="index.html" title="RichFaces Developer Guide"/><link rel="up" href="RichFacesComponentsLibrary.html" title="Chapter 6. The RichFaces Components"/><link rel="prev" href="hotKey.html" title="6.59.  &lt; rich:hotKey &gt;"/><link rel="next" href="inplaceSelect.html" title="6.61.  &lt; rich:inplaceSelect &gt;"/><script xmlns="http://www.w3.org/TR/xhtml1/transitional" type="text/javascript" src="script/toggle.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script></head><body><div xmlns="" id="overlay"> </div><div xmlns="" id="feedback-maincontainer" style="display:none"><div id="feedback-header">
+			Send your remarks, comments or wishes to doc team
+		</div><a href="#" onclick="$('feedback-maincontainer').hide(); return false;" id="feedback-close"><img src="images/close.png" class="feedback-images"/></a><div id="feedback-state"> </div><form id="feedback-mailform"><div class="feedback-textbox-div">
+			  Subject:<input type="text" id="subject" name="subject" title="Enter the subject of your message" class="feedback-textbox"/></div><div class="feedback-textbox-div"><span style="vertical-align: top;">Message:</span><textarea name="message" title="Type here the text of your message" id="message"> </textarea></div><div class="feedback-textbox-div">
+			  Your name:<input type="text" id="name" name="name" title="Enter your name" class="feedback-textbox"/></div><div class="feedback-textbox-div">
+			  Your email:<input type="text" id="email" name="email" title="Enter your email address" class="feedback-textbox"/></div><span class="feedback-button-container"><input type="submit" value="Send Message" name="submit" class="feedback-formbutton" title="Send Message"/></span><span class="feedback-button-container"><input type="reset" value="Clear All Fields" class="feedback-formbutton" title="Clear All Fields"/></span></form></div><div xmlns="" id="feedback-wrapper"><a id="feedback-link" href="#" onclick="$('feedback-maincontainer').appear(); return false;"><img src="images/feedback_logo.png" class="feedback-images" width="100px"/></a></div><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="hotKey.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="inplaceSelect.html"><strong>Next</strong></a></li></ul><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="inplaceInput"/>6.60. 
+				&lt;
+				rich:inplaceInput
+				&gt;
+			</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e36649"/>6.60.1. Description</h3></div></div></div><p>The <span class="bold"><strong>
+            <span class="property">&lt;rich:inplaceInput&gt;</span>
+        </strong></span> is an input component used for displaying and editing data inputted. </p><div class="figure"><a id="d0e36660"/><div class="figure-contents"><div class="mediaobject"><img src="images/inplaceInput_init.png" alt="&lt;rich:inplaceInput&gt; component"/></div></div><p class="title"><b>Figure 6.145. 
+            <span class="bold">
+               <span class="property">&lt;rich:inplaceInput&gt;</span>
+            </span> component</b></p></div><br class="figure-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e36672"/>6.60.2. Key Features</h3></div></div></div><div class="itemizedlist"><ul><li><p>View/changed/edit states highly customizable representations</p></li><li><p>Changing state event customization</p></li><li><p>Possibility to call custom JavaScript function on state changes</p></li><li><p>Optional "inline" or "block" element rendering on a page</p></li><li><p>Edit mode activation when the component gets focus with the "Tab"</p></li><li><p>Sizes synchronizations between modes</p></li><li><p>Controls customization</p></li></ul></div></div><div class="table"><a id="d0e36697"/><p class="title"><b>Table 6.273. rich
+					:
+					inplaceInput
+					attributes
+				</b></p><div class="table-contents"><table summary="rich&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;:&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;inplaceInput&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;attributes&#xA;&#x9;&#x9;&#x9;&#x9;" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Attribute Name</th><th>Description</th></tr></thead><tbody><tr><td>binding</td><td>The attribute takes a value-binding expression for a component property of
+a backing bean</td></tr><tr><td>cancelControlIcon</td><td>Defines custom cancel icon</td></tr><tr><td>changedClass</td><td>CSS style class for changed state</td></tr><tr><td>changedHoverClass</td><td>CSS style class for hovered text in changed state</td></tr><tr><td>controlClass</td><td>CSS style class for controls</td></tr><tr><td>controlHoverClass</td><td>CSS style class for hovered control</td></tr><tr><td>controlPressedClass</td><td>CSS style class for pressed press controls</td></tr><tr><td>controlsHorizontalPosition</td><td>Positions the controls horizontally. Possible values are "left", "center", "right". Default value is "right".</td></tr><tr><td>controlsVerticalPosition</td><td>Positions the controls vertically. Possible values are "bottom","center" and "top". Default value is "center"</td></tr><tr><td>converter</td><td>Id of Converter to be used or reference to a Converter</td></tr><tr><td>converterMessage</td><td>A ValueExpression enabled attribute that, if present, will be used as the text of the converter message, replacing any message that comes from the converter</td></tr><tr><td>defaultLabel</td><td>The attribute is used to display text while value is undefined</td></tr><tr><td>editClass</td><td>CSS style class for edit state</td></tr><tr><td>editEvent</td><td>Provides an option to assign an JavaScript action that initiates the change of the state. Default value is "onclick".</td></tr><tr><td>id</td><td>Every component may have a unique id that is automatically created if omitted</td></tr><tr><td>immediate</td><td>A flag indicating that this component value must be converted
+            and validated immediately (that is, during Apply Request Values
+            phase), rather than waiting until a Process Validations phase</td></tr><tr><td>inputWidth</td><td>Sets width of the input field</td></tr><tr><td>label</td><td>A localized user presentable name for this component.</td></tr><tr><td>layout</td><td>Defines how the component is displayed in the layout. Possible values are "block", "inline". Default value is "inline".</td></tr><tr><td>maxInputWidth</td><td>Sets the maximum width of the input field. Default value is "500px".</td></tr><tr><td>minInputWidth</td><td>Sets the minimum width of the input field. Default value is "40px".</td></tr><tr><td>onblur</td><td>HTML: script expression; the element lost the focus</td></tr><tr><td>onchange</td><td>HTML: script expression; the element value was changed</td></tr><tr><td>onclick</td><td>HTML: a script expression; a pointer button is clicked</td></tr><tr><td>ondblclick</td><td>HTML: a script expression; a pointer button is double-clicked</td></tr><tr><td>oneditactivated</td><td>Provides a possibility  to assign JavaScript to be executed when edit state is activated</td></tr><tr><td>oneditactivation</td><td>Provides a possibility to assign JavaScript on edit state activation</td></tr><tr><td>onfocus</td><td>HTML: script expression; the element got the focus</td></tr><tr><td>oninputclick</td><td>HTML: a script expression; a pointer button is clicked</td></tr><tr><td>oninputdblclick</td><td>HTML: a script expression; a pointer button is double-clicked</td></tr><tr><td>oninputkeydown</td><td>HTML: a script expression; a key is pressed down</td></tr><tr><td>oninputkeypress</td><td>HTML: a script expression; a key is pressed and released</td></tr><tr><td>oninputkeyup</td><td>HTML: a script expression; a key is released</td></tr><tr><td>oninputmousedown</td><td>HTML: script expression; a pointer button is pressed down</td></tr><tr><td>oninputmousemove</td><td>HTML: a script expression; a pointer is moved within</td></tr><tr><td>oninputmouseout</td><td>HTML: a script expression; a pointer is moved away</td></tr><tr><td>oninputmouseover</td><td>HTML: a script expression; a pointer is moved onto</td></tr><tr><td>oninputmouseup</td><td>HTML: script expression; a pointer button is released</td></tr><tr><td>onkeydown</td><td>HTML: a script expression; a key is pressed down</td></tr><tr><td>onkeypress</td><td>HTML: a script expression; a key is pressed and released</td></tr><tr><td>onkeyup</td><td>HTML: a script expression; a key is released</td></tr><tr><td>onmousedown</td><td>HTML: script expression; a pointer button is pressed down</td></tr><tr><td>onmousemove</td><td>HTML: a script expression; a pointer is moved within</td></tr><tr><td>onmouseout</td><td>HTML: a script expression; a pointer is moved away</td></tr><tr><td>onmouseover</td><td>HTML: a script expression; a pointer is moved onto</td></tr><tr><td>onmouseup</td><td>HTML: script expression; a pointer button is released</td></tr><tr><td>onselect</td><td>HTML: script expression; the onselect event occurs when you select some menu item</td></tr><tr><td>onviewactivated</td><td>Provides a possibility to assign JavaScript to be executed when view state is activated</td></tr><tr><td>onviewactivation</td><td>Provides a possibility  to assign JavaScript  on view state activation</td></tr><tr><td>rendered</td><td>If "false", this component is not rendered</td></tr><tr><td>required</td><td>If "true", this component is checked for non-empty input</td></tr><tr><td>requiredMessage</td><td>A ValueExpression enabled attribute that, if present, will be used as the text of the validation message for the "required" facility, if the "required" facility is used</td></tr><tr><td>saveControlIcon</td><td>Defines custom save icon</td></tr><tr><td>selectOnEdit</td><td>Makes the input field select when switched to edit state. Default value is "false"</td></tr><tr><td>showControls</td><td>Serves to display "save" and "cancel" controls. Default value is "false".</td></tr><tr><td>styleClass</td><td>Corresponds to the HTML class attribute</td></tr><tr><td>tabindex</td><td>Serves to define the tabbing order</td></tr><tr><td>validator</td><td>MethodBinding pointing at a method that is called during
+            Process Validations phase of the request processing lifecycle,
+            to validate the current value of this component</td></tr><tr><td>validatorMessage</td><td>A ValueExpression enabled attribute that, if present, will be used as the text of the validator message, replacing any message that comes from the validator</td></tr><tr><td>value</td><td>The current value of this component</td></tr><tr><td>valueChangeListener</td><td>Listener for value changes</td></tr><tr><td>viewClass</td><td>CSS style class for view state</td></tr><tr><td>viewHoverClass</td><td>CSS style class for hovered text in view state</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e37029"/><p class="title"><b>Table 6.274. Component identification parameters</b></p><div class="table-contents"><table summary="Component identification parameters" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>component-type</td><td>org.richfaces.inplaceInput</td></tr><tr><td>component-class</td><td>org.richfaces.component.html.HtmlInplaceInput</td></tr><tr><td>component-family</td><td>org.richfaces.inplaceInput</td></tr><tr><td>renderer-type</td><td>org.richfaces.renderkit.inplaceInputRenderer</td></tr><tr><td>tag-class</td><td>org.richfaces.taglib.inplaceInputTag</td></tr></tbody></table></div></div><br class="table-break"/><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e37065"/>6.60.3. Creating the Component with a Page Tag</h3></div></div></div><p>Here is a simple example of how the component can be used on a page: </p><p>
+            <span class="bold"><strong>Example:</strong></span>
+        </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:inplaceInput</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.value}&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e37077"/>6.60.4. Creating the Component Dynamically Using Java</h3></div></div></div><p>
+            <span class="bold"><strong>Example:</strong></span>
+        </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">import</span><!-- <br/> --><span class="java_plain">&nbsp;org</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">richfaces</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">component</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">html</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">inplaceInput</span><!-- <br/> --><span class="java_separator">;</span>
+<!--  --><br/><span class="java_separator">...</span><span class="java_plain">&nbsp;</span>
+<!--  --><br/><span class="java_type">HtmlInpaceInput</span><span class="java_plain">&nbsp;myInplaceInput&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">InplaceInput</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_separator">...</span></pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e37087"/>6.60.5. Details of Usage</h3></div></div></div><p>    
+         The
+          <span class="bold"><strong>
+            <span class="property">&lt;rich:inplaceInput&gt;</span>
+         </strong></span>
+        component was designed to facilitate displaying and inputting(editing) some data.
+        </p><p>     
+        The  <span class="emphasis"><em>
+            <span class="property">"value"</span>
+         </em></span> attribute is a value-binding expression for the current value of the component.      
+      </p><p>     
+        The component has three functional states:    
+      </p><div class="itemizedlist"><ul><li><p>
+              <span class="property">View</span> state displays default label with the value taken from 
+              <span class="emphasis"><em>
+                  <span class="property">"value"</span>
+               </em></span> or <span class="emphasis"><em>
+                  <span class="property">"defaultLabel"</span>
+               </em></span> attributes. 
+            </p><p>
+              If the initial value of the <span class="emphasis"><em>
+                  <span class="property">"value"</span>
+               </em></span> 
+              attribute is "null" or <span class="property">empty string</span>
+              the <span class="emphasis"><em>
+                  <span class="property">"defaultLabel"</span>
+               </em></span> attribute is used to define default label.
+            </p><p>
+              <span class="bold"><strong>Example:</strong></span>
+            </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:inplaceInput</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.value}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">defaultLabel</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;click&nbsp;to&nbsp;edit&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...&nbsp;</span><br />
+</pre><p>
+              In the example above the <span class="emphasis"><em>
+                  <span class="property">"value"</span>
+               </em></span> attribute is not initialized
+              therefore "<code class="code">click to edit</code>" text, that  
+              <span class="emphasis"><em>
+                  <span class="property">"defaultLabel"</span>
+               </em></span>, contains is displayed.
+            </p><p>
+              This is the result:
+            </p><div class="figure"><a id="d0e37173"/><div class="figure-contents"><div class="mediaobject"><img src="images/inplaceInput2.png" alt="View state"/></div></div><p class="title"><b>Figure 6.146. View state</b></p></div><br class="figure-break"/></li><li><p>
+               <span class="property">Edit</span> state  - input representation to allow value edit
+           </p><div class="figure"><a id="d0e37185"/><div class="figure-contents"><div class="mediaobject"><img src="images/inplaceInput3.png" alt="Edit state"/></div></div><p class="title"><b>Figure 6.147. Edit state</b></p></div><br class="figure-break"/></li><li><p>
+               <span class="property">Changed</span> state - value representation after it was changed</p><div class="figure"><a id="d0e37197"/><div class="figure-contents"><div class="mediaobject"><img src="images/inplaceInput4.png" alt="Changed state"/></div></div><p class="title"><b>Figure 6.148. Changed state</b></p></div><br class="figure-break"/></li></ul></div><p>
+        The <span class="emphasis"><em>
+            <span class="property">"editEvent"</span>
+         </em></span> attribute provides an option to assign a JavaScript action 
+        to initiate the change of the state from <span class="property">view</span>/<span class="property">changed</span> to <span class="property">edit</span>. 
+        The default value is "onclick". 
+      </p><p>
+        <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:inplaceInput</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.value}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">editEvent</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;ondblclick&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain">&nbsp;</span><br />
+<span class="xml_plain">...&nbsp;</span><br />
+</pre><p>
+        The <span class="bold"><strong>
+            <span class="property">&lt;rich:inplaceInput&gt;</span>
+         </strong></span>
+        component provides specific event attributes:
+      </p><div class="itemizedlist"><ul><li><p>
+               <span class="emphasis"><em>
+                  <span class="property">"oneditactivation"</span>
+               </em></span> which is fired on <span class="property">edit</span> state activation            
+          </p></li><li><p>
+               <span class="emphasis"><em>
+                  <span class="property">"oneditactivated"</span>
+               </em></span> which is fired when <span class="property">edit</span> state is activated          
+          </p></li><li><p>
+               <span class="emphasis"><em>
+                  <span class="property">"onviewactivation"</span>
+               </em></span> which is fired on <span class="property">view</span> state activation         
+          </p></li><li><p>
+               <span class="emphasis"><em>
+                  <span class="property">"onviewactivated"</span>
+               </em></span> which is fired after the component is changed to representation state
+          </p></li></ul></div><p>
+        <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:inplaceInput</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.value}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">oneditactivation</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;if&nbsp;(!confirm('Are&nbsp;you&nbsp;sure&nbsp;you&nbsp;want&nbsp;to&nbsp;change&nbsp;the&nbsp;value?')){return&nbsp;false;}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...&nbsp;</span><br />
+</pre><p>
+        The given code illustrates how <span class="emphasis"><em>
+            <span class="property">"oneditactivation"</span>
+         </em></span> attribute works, 
+        namely when the state is being changed from <span class="property">view</span> to <span class="property">edit</span>, 
+        a confirmation window with a message <code class="code">"Are you sure you want to change value?"</code> comes up.
+      </p><p>      
+       Using the boolean <span class="emphasis"><em>
+            <span class="property">"selectOnEdit"</span>
+         </em></span> attribute set to true, 
+        the text in the input field will be selected when 
+        the  change from <span class="property">view</span>/<span class="property">changed</span> state to <span class="property">edit</span> occurs. 
+      </p><p>This is the result:</p><div class="figure"><a id="d0e37325"/><div class="figure-contents"><div class="mediaobject"><img src="images/inplaceInput5.png" alt="Usage of the &#34;selectOnEdit&#34; attribute"/></div></div><p class="title"><b>Figure 6.149. Usage of  the <span class="emphasis"><em>
+               <span class="property">"selectOnEdit"</span>
+            </em></span> attribute</b></p></div><br class="figure-break"/><p>
+        If the <span class="bold"><strong>
+            <span class="property">&lt;rich:inplaceInput&gt;</span>
+         </strong></span> loses focus, input data is saved automatically 
+        and the component displays  a new value. Additionally, the data is saved when "Enter" is pressed. 
+        Nevertheless, you can use the <span class="emphasis"><em>
+            <span class="property">"showControls"</span>
+         </em></span>
+        attribute, which makes "Save" and  "Cancel" buttons appear next to the input field.
+        If the controls are used, data is not saved automatically when the form loses focus: user has to confirm that he/she wants to save/discard the data explicitly. 
+       In both cases(with controls or without them) the input data can be discarded by pressing "Esc" key.
+      
+      </p><p>
+        <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:inplaceInput</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.value}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">showControls</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...&nbsp;</span><br />
+</pre><div class="figure"><a id="d0e37358"/><div class="figure-contents"><div class="mediaobject"><img src="images/inplaceInput6.png" alt="Usage &#34;showControls&#34; attribute"/></div></div><p class="title"><b>Figure 6.150. Usage <span class="emphasis"><em>
+               <span class="property">"showControls"</span>
+            </em></span> attribute</b></p></div><br class="figure-break"/><p>
+        You can also position the controls relatively to the input field, by means of 
+      </p><div class="itemizedlist"><ul><li><p>
+              The <span class="emphasis"><em>
+                  <span class="property">"controlsHorizontalPosition"</span>
+               </em></span> attribute 
+              with "left", "right" and  "center" definitions      
+            </p></li><li><p>
+              The <span class="emphasis"><em>
+                  <span class="property">"controlsVerticalPosition "</span>
+               </em></span> attribute
+              with "bottom", "center" and "top" definitions
+            </p></li></ul></div><p>
+        <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:inplaceInput</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.value}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">showControls</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">controlsVerticalPosition</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;bottom&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">controlsHorizontalPosition</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;left&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...&nbsp;</span><br />
+</pre><p>
+        This is the result:
+      </p><div class="figure"><a id="d0e37400"/><div class="figure-contents"><div class="mediaobject"><img src="images/inplaceInput7.png" alt="Positioning of &#34;Save&#34; and &#34;Cancel&#34; buttons"/></div></div><p class="title"><b>Figure 6.151. Positioning of "Save" and "Cancel" buttons</b></p></div><br class="figure-break"/><p>
+        It is also possible to use <span class="emphasis"><em>
+            <span class="property">"controls"</span>
+         </em></span> facet in order to replace the default controls with facets content.
+        See the example below.        
+      </p><p>
+        <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:inplaceInput</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">defaultLabel</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Click&nbsp;here&nbsp;to&nbsp;edit&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">showControls</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">controlsHorizontalPosition</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;left&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">controlsVerticalPosition</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;bottom&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;inplaceInput&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;controls&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">button</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onclick</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{rich:component('inplaceInput')}.save();&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;button&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Save</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">button</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">button</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onclick</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{rich:component('inplaceInput')}.cancel();&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;button&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Cancel</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">button</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:inplaceInput</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...&nbsp;</span><br />
+</pre><p>
+        This is the result:
+      </p><div class="figure"><a id="d0e37423"/><div class="figure-contents"><div class="mediaobject"><img src="images/inplaceInput8.png" alt="&#34;controls&#34; facet usage"/></div></div><p class="title"><b>Figure 6.152. 
+            <span class="emphasis"><em>
+               <span class="property">"controls"</span>
+            </em></span> facet usage</b></p></div><br class="figure-break"/><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note:</h2><p>
+          The <span class="emphasis"><em> 
+               <span class="property">"controls"</span>
+            </em></span>facet also implies using 
+          <span class="emphasis"><em>
+               <span class="property">"showControls"</span>
+            </em></span> 
+          attribute and it has to be defined as "true".
+        </p></div><p>
+        Redefinition of the
+        "save" and "cancel" icons can be performed using 
+        <span class="emphasis"><em>
+            <span class="property">"saveControlIcon"</span>
+         </em></span>
+        and  
+        <span class="emphasis"><em>
+            <span class="property">"cancelControlIcon"</span>
+         </em></span>
+        attributes.  You need to define the path to where your  images are located. 
+      </p><p>
+        <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:inplaceInput</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{bean.value}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">defaultLabel</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">'click&nbsp;to&nbsp;edit'</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">showControls</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;true&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">controlsHorizontalPosition</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;left&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">controlsVerticalPosition</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;top&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">saveControlIcon</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/cancel.gif&quot;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_attribute_name">cancelControlIcon</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/images/save.gif&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain">&nbsp;</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;</span><br />
+</pre><div class="figure"><a id="d0e37473"/><div class="figure-contents"><div class="mediaobject"><img src="images/inplaceInput9.png" alt="Redefining of &#34;save&#34; and &#34;cancel&#34; buttons"/></div></div><p class="title"><b>Figure 6.153. Redefining of "save" and "cancel" buttons</b></p></div><br class="figure-break"/><p>
+        The <span class="bold"><strong>
+            <span class="property">&lt;rich:inplaceInput&gt;</span>
+         </strong></span> component could be rendered with 
+        <span class="bold"><strong>
+            <span class="property">&lt;span&gt;</span>
+         </strong></span> or <span class="bold"><strong>
+            <span class="property">&lt;div&gt;</span>
+         </strong></span>  
+        elements to display its value.
+        In order to change default <span class="bold"><strong>
+            <span class="property">&lt;span&gt;</span>
+         </strong></span> output, 
+        use  <span class="emphasis"><em>
+            <span class="property">"layout"</span>
+         </em></span> attribute with "block" value.
+      </p><p>
+        The <span class="bold"><strong>
+            <span class="property">&lt;rich:inplaceInput&gt;</span>
+         </strong></span> component supports standard
+        <span class="emphasis"><em>
+            <span class="property">"tabindex"</span>
+         </em></span> attribute. 
+        When the component gets focus the <span class="property">edit</span> mode is activated.
+      </p><p>
+        The 
+        <span class="emphasis"><em>
+            <span class="property">"inputWidth"</span>
+         </em></span>, 
+        <span class="emphasis"><em>
+            <span class="property">"minInputWidth"</span>
+         </em></span>,
+        <span class="emphasis"><em>
+            <span class="property">"maxInputWidth"</span>
+         </em></span> 
+        attributes are provided to specify the width, minimal width and maximal width for the input element respectively. 
+      </p><div class="table"><a id="d0e37548"/><p class="title"><b>Table 6.275. Keyboard usage</b></p><div class="table-contents"><table summary="Keyboard usage" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Keys and combinations </th><th>Description</th></tr></thead><tbody><tr><td>ENTER</td><td>Saves the input data, and changes the state from edit to changed</td></tr><tr><td>ESC</td><td>Changes the state from edit to view or changed, value is not affected</td></tr><tr><td>TAB</td><td>Switches between the components</td></tr></tbody></table></div></div><br class="table-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e37574"/>6.60.6. JavaScript API</h3></div></div></div><div class="table"><a id="d0e37577"/><p class="title"><b>Table 6.276. JavaScript API</b></p><div class="table-contents"><table summary="JavaScript API" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Function</th><th>Description</th></tr></thead><tbody><tr><td>edit()</td><td>Changes the  state to edit </td></tr><tr><td>cancel()</td><td>Changes its state to the previous one before editing (changed or view)</td></tr><tr><td>save()</td><td>Changes its state to  changed with a new value</td></tr><tr><td>getValue()</td><td>Gets the current value</td></tr><tr><td class="tbi">setValue(newValue) </td><td class="tbi">Sets the current value (to be implemented)</td></tr></tbody></table></div></div><br class="table-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e37614"/>6.60.7. Facets</h3></div></div></div><div class="table"><a id="d0e37617"/><p class="title"><b>Table 6.277. Facets</b></p><div class="table-contents"><table summary="Facets" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Facet name</th><th>Description</th></tr></thead><tbody><tr><td>controls</td><td>Defines the contols contents. Related attributes are "saveControlIcon" and "cancelControlIcon"</td></tr></tbody></table></div></div><br class="table-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e37633"/>6.60.8. Look-and-Feel Customization</h3></div></div></div><p>For skinnability implementation, the components use a <span class="emphasis"><em>
+            <span class="property">style class redefinition method.</span>
+        </em></span> Default style classes are mapped on <span class="emphasis"><em>
+            <span class="property">skin parameters.</span>
+        </em></span>
+      </p><p>There are two ways to redefine the appearance of all <span class="bold"><strong>
+            <span class="property">&lt;rich:inplaceInput&gt;</span>
+        </strong></span> components at once: </p><div class="itemizedlist"><ul><li><p>Redefine the corresponding skin parameters</p></li><li><p> Add to your style sheets style classes used by a <span class="bold"><strong>
+                     <span class="property">&lt;rich:inplaceInput&gt;</span>
+                  </strong></span> component</p></li></ul></div><p>
+        </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e37672"/>6.60.9. Skin Parameters Redefinition</h3></div></div></div><div class="table"><a id="d0e37675"/><p class="title"><b>Table 6.278. Skin parameters redefinition for "save" and "cancel" controls</b></p><div class="table-contents"><table summary="Skin parameters redefinition for &#34;save&#34; and &#34;cancel&#34; controls" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>tabBackgroundColor</td><td>background-color</td></tr><tr><td>panelBorderColor</td><td>border-color</td></tr><tr><td>panelBorderColor</td><td>border-color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e37701"/><p class="title"><b>Table 6.279. Skin parameters redefinition for view state</b></p><div class="table-contents"><table summary="Skin parameters redefinition for view state" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>editorBackgroundColor</td><td>background-color</td></tr><tr><td>generalTextColor</td><td>border-bottom-color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e37722"/><p class="title"><b>Table 6.280. Skin parameters redefinition for "Changed" state</b></p><div class="table-contents"><table summary="Skin parameters redefinition for &#34;Changed&#34; state" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>editorBackgroundColor</td><td>background-color</td></tr><tr><td>generalTextColo</td><td>border-bottom-color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e37743"/><p class="title"><b>Table 6.281. Classes names that define input field look and feel in edit state </b></p><div class="table-contents"><table summary="Classes names that define input field look and feel in edit state " border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>editBackgroundColor</td><td>background-color</td></tr><tr><td>panelBorderColor</td><td>border-color</td></tr></tbody></table></div></div><br class="table-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e37764"/>6.60.10. Definition of Custom Style Classes</h3></div></div></div><p>On the screenshot there are classes names that define styles for component elements.</p><div class="figure"><a id="d0e37769"/><div class="figure-contents"><div class="mediaobject"><img src="images/inplaceInput_cn.png" alt="Classes names"/></div></div><p class="title"><b>Figure 6.154. Classes names</b></p></div><br class="figure-break"/><div class="table"><a id="tab_cn_iI"/><p class="title"><b>Table 6.282. Class name for the view state</b></p><div class="table-contents"><table summary="Class name for the view state" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Class name</th><th>Description</th></tr></thead><tbody><tr><td>rich-inplace-view</td><td>Defines styles for the view state</td></tr><tr><td>rich-inplace-input-view-hover</td><td>Defines styles for hovered text in  the view state  </td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e37796"/><p class="title"><b>Table 6.283. Class name for the input field in  edit state</b></p><div class="table-contents"><table summary="Class name for the input field in  edit state" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Class name</th><th>Description</th></tr></thead><tbody><tr><td>rich-inplace-field</td><td>Defines styles for input field look and feel in edit state</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e37812"/><p class="title"><b>Table 6.284. Class name for the "Changed" state</b></p><div class="table-contents"><table summary="Class name for the &#34;Changed&#34; state" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Class name</th><th>Description</th></tr></thead><tbody><tr><td>rich-inplace-changed</td><td>Defines styles for the "Changed" state</td></tr><tr><td> rich-inplace-input-changed-hover </td><td>Defines styles for the hovered text in  the "Changed" state</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e37833"/><p class="title"><b>Table 6.285. Classes names "save" and "cancel" controls in Edit state</b></p><div class="table-contents"><table summary="Classes names &#34;save&#34; and &#34;cancel&#34; controls in Edit state" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Class name</th><th>Description</th></tr></thead><tbody><tr><td>rich-inplace-control</td><td>Defines styles for the controls</td></tr><tr><td>rich-inplace-control-press</td><td>Defines styles for the controls when either of the buttons is pressed</td></tr><tr><td>rich-inplace-shadow-size</td><td>Defines size of the shadow</td></tr><tr><td>rich-inplace-shadow-tl</td><td>Defines styles for the shadow in the top left corner </td></tr><tr><td>rich-inplace-shadow-tr</td><td>Defines styles for the shadow in the top right corner</td></tr><tr><td>rich-inplace-shadow-bl</td><td>Defines styles for the shadow in the bottom left corner</td></tr><tr><td>rich-inplace-shadow-br</td><td>Defines styles for the shadow in the bottom right corner</td></tr></tbody></table></div></div><br class="table-break"/><p>
+      In order to redefine styles for all <span class="bold"><strong>
+            <span class="property">&lt;rich:inplaceInput&gt;</span>
+         </strong></span> components on a page using CSS, 
+      it's enough to create classes with the
+      same names (possible classes could be found in the tables <a href="inplaceInput.html#tab_cn_iI" title="Table 6.282. Class name for the view state"> above</a>) and define necessary properties in them. 
+    </p><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_selector">.rich-inplace-field</span><span class="css_normal">&nbsp;</span><span class="css_curly_brace">{</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">font-style</span><span class="css_colon">:</span><span class="css_normal">&nbsp;</span><span class="css_property_value">italic</span><span class="css_semi_colon">;</span><span class="css_normal"><br />
+</span><span class="css_curly_brace">}</span><span class="css_normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;<br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>This is the result:</p><div class="figure"><a id="d0e37899"/><div class="figure-contents"><div class="mediaobject"><img src="images/inplaceInput_pc.png" alt="Redefinition styles with predefined classes"/></div></div><p class="title"><b>Figure 6.155. Redefinition styles with predefined classes</b></p></div><br class="figure-break"/><p>In the shown example the font in <span class="property">edit</span> state is changed to bold.</p><p>
+      It's aslo possible to change styles of a particular <span class="bold"><strong> 
+            <span class="property">&lt;rich:inplaceInput&gt;</span>
+         </strong></span> component. 
+      In this case you should create own style classes and use them in corresponding 
+      <span class="bold"><strong>
+            <span class="property">&lt;rich:inplaceInput&gt;</span>
+         </strong></span>
+         <span class="emphasis"><em>
+            <span class="property">styleClass</span>
+         </em></span> attributes. 
+      An example is placed below:
+    </p><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_selector">.myClass</span><span class="css_normal">&nbsp;</span><span class="css_curly_brace">{</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">color</span><span class="css_colon">:</span><span class="css_normal">&nbsp;&nbsp;</span><span class="css_property_value">#008cca</span><span class="css_semi_colon">;</span><span class="css_normal"><br />
+</span><span class="css_curly_brace">}</span><span class="css_normal"><br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>
+      The <span class="emphasis"><em>
+            <span class="property">"viewClass"</span>
+         </em></span> attribute for 
+      the <span class="bold"><strong>
+            <span class="property">&lt;rich:inplaceInput&gt;</span>
+         </strong></span> is defined as it's shown in the example below:
+    </p><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:inplaceInput</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;click&nbsp;to&nbsp;edit&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">styleClass</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;myClass&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre><p>This is a result:</p><div class="figure"><a id="d0e37960"/><div class="figure-contents"><div class="mediaobject"><img src="images/inplaceInput_oc.png" alt="Modificaton of a look and feel with own classes and styleClass attributes"/></div></div><p class="title"><b>Figure 6.156. Modificaton of a look and feel with own classes and <span class="emphasis"><em>
+               <span class="property">styleClass</span>
+            </em></span> attributes</b></p></div><br class="figure-break"/><p>As it could be seen on the picture above, the font color of the text on the component was changed.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e37974"/>6.60.11. Relevant Resources Links</h3></div></div></div><p>
+         <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://livedemo.exadel.com/richfaces-demo/richfaces/inplaceInput.jsf?c=inplaceInput">Here</a>
+      you can see the example of <span class="bold"><strong>
+            <span class="property">&lt;rich:inplaceIput&gt;</span>
+         </strong></span> usage and sources for the given example. </p></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="hotKey.html"><strong>Prev</strong>6.59. 
+				&lt;
+				rich:hotKey
+				&gt;
+			</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="inplaceSelect.html"><strong>Next</strong>6.61. 
+				&lt;
+				rich:inplaceSelect
+				&gt;
+			</a></li></ul></body></html>

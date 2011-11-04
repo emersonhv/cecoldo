@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>6.69.  &lt; rich:modalPanel &gt;</title><link rel="stylesheet" href="css/html.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link xmlns="" rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/><meta name="keywords" content="rich:modalPanel"/><meta name="keywords" content="rich:modalPanel, HtmlModalPanel"/><script xmlns="" type="text/javascript" src="script/prototype-1.6.0.2.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/effects.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/scriptaculous.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><link rel="start" href="index.html" title="RichFaces Developer Guide"/><link rel="up" href="RichFacesComponentsLibrary.html" title="Chapter 6. The RichFaces Components"/><link rel="prev" href="messages.html" title="6.68.  &lt; rich:messages &gt;"/><link rel="next" href="orderingList.html" title="6.70.  &lt; rich:orderingList &gt;"/><script xmlns="http://www.w3.org/TR/xhtml1/transitional" type="text/javascript" src="script/toggle.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script></head><body><div xmlns="" id="overlay"> </div><div xmlns="" id="feedback-maincontainer" style="display:none"><div id="feedback-header">
+			Send your remarks, comments or wishes to doc team
+		</div><a href="#" onclick="$('feedback-maincontainer').hide(); return false;" id="feedback-close"><img src="images/close.png" class="feedback-images"/></a><div id="feedback-state"> </div><form id="feedback-mailform"><div class="feedback-textbox-div">
+			  Subject:<input type="text" id="subject" name="subject" title="Enter the subject of your message" class="feedback-textbox"/></div><div class="feedback-textbox-div"><span style="vertical-align: top;">Message:</span><textarea name="message" title="Type here the text of your message" id="message"> </textarea></div><div class="feedback-textbox-div">
+			  Your name:<input type="text" id="name" name="name" title="Enter your name" class="feedback-textbox"/></div><div class="feedback-textbox-div">
+			  Your email:<input type="text" id="email" name="email" title="Enter your email address" class="feedback-textbox"/></div><span class="feedback-button-container"><input type="submit" value="Send Message" name="submit" class="feedback-formbutton" title="Send Message"/></span><span class="feedback-button-container"><input type="reset" value="Clear All Fields" class="feedback-formbutton" title="Clear All Fields"/></span></form></div><div xmlns="" id="feedback-wrapper"><a id="feedback-link" href="#" onclick="$('feedback-maincontainer').appear(); return false;"><img src="images/feedback_logo.png" class="feedback-images" width="100px"/></a></div><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="messages.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="orderingList.html"><strong>Next</strong></a></li></ul><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="modalPanel"/>6.69. 
+				&lt;
+				rich:modalPanel
+				&gt;
+			</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e45000"/>6.69.1. Description</h3></div></div></div><p>The component implements a modal dialog window. All operations in
+    the main application window are locked out while this window is active.
+    Opening and closing the window is done through client JavaScript
+    code.</p><div class="figure"><a id="d0e45005"/><div class="figure-contents"><div class="mediaobject"><img src="images/modalPanel_init.png" alt="&lt;rich:modalPanel&gt; component"/></div></div><p class="title"><b>Figure 6.194. 
+            <span class="bold">
+               <span class="property">&lt;rich:modalPanel&gt;</span>
+            </span> component</b></p></div><br class="figure-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e45017"/>6.69.2. Key Features</h3></div></div></div><div class="itemizedlist"><ul><li><p>Highly customizable look and feel</p></li><li><p>Support of draggable operations and size changes by you</p></li><li><p>Easy positioning for the modal dialog window</p></li><li><p>Possibility to restore of the previous component state on a page (including position on the screen) after submitting and reloading</p></li></ul></div></div><div class="table"><a id="d0e45033"/><p class="title"><b>Table 6.353. rich
+					:
+					modalPanel
+					attributes
+				</b></p><div class="table-contents"><table summary="rich&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;:&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;modalPanel&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;attributes&#xA;&#x9;&#x9;&#x9;&#x9;" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Attribute Name</th><th>Description</th></tr></thead><tbody><tr><td>autosized</td><td>If "true" modalPanel should be autosizeable. Default value is "false".</td></tr><tr><td>binding</td><td>The attribute takes a value-binding expression for a component property of
+a backing bean</td></tr><tr><td>controlsClass</td><td>CSS style(s) is/are to be applied to component controls when this component
+				is rendered</td></tr><tr><td>domElementAttachment</td><td>domElementAttachment</td></tr><tr><td>headerClass</td><td>CSS style(s) is/are to be applied to component header when this component
+				is rendered</td></tr><tr><td>height</td><td>Attribute defines height of component. Default value is "200".</td></tr><tr><td>id</td><td>Every component may have a unique id that is automatically created if omitted</td></tr><tr><td>keepVisualState</td><td>If "true" modalPanel should save state after submission. Default value is "false".</td></tr><tr><td>label</td><td>A localized user presentable name for this component.</td></tr><tr><td>left</td><td>Attribute defines X position of component left-top corner. Default value is "auto".</td></tr><tr><td>minHeight</td><td>Attribute defines min height of component. Default value is "10". If the value is less then 10, a "IllegalArgumentException" exception is thrown.</td></tr><tr><td>minWidth</td><td>Attribute defines min width of component. Default value is "10".  If the value is less then 10, a "IllegalArgumentException" exception is thrown.</td></tr><tr><td>moveable</td><td>if "true" there is possibility to move component. Default value is "true".</td></tr><tr><td>onbeforehide</td><td>Event must occurs before panel is hiding</td></tr><tr><td>onbeforeshow</td><td>Event must occurs before panel is opening</td></tr><tr><td>onhide</td><td>Event must occurs after panel closed</td></tr><tr><td>onmaskclick</td><td>HTML: a script expression; a pointer button is clicked outside modalPanel</td></tr><tr><td>onmaskcontextmenu</td><td>JavaScript handler to be called on right click outside modalPanel</td></tr><tr><td>onmaskdblclick</td><td>HTML: a script expression; a pointer button is double-clicked outside modalPanel</td></tr><tr><td>onmaskmousedown</td><td>HTML: a script expression; a pointer button is pressed down outside modalPanel</td></tr><tr><td>onmaskmousemove</td><td>HTML: a script expression; a pointer button is moved outside modalPanel</td></tr><tr><td>onmaskmouseout</td><td>HTML: a script expression; a pointer button is moved away modalPanel</td></tr><tr><td>onmaskmouseover</td><td>HTML: a script expression; a pointer button is moved onto modalPanel</td></tr><tr><td>onmaskmouseup</td><td>HTML: a script expression; a pointer button is released outside modalPanel</td></tr><tr><td>onmove</td><td>Event must occurs before panel is moving</td></tr><tr><td>onresize</td><td>Event must occurs than panel is resizing</td></tr><tr><td>onshow</td><td>Event must occurs after panel opened</td></tr><tr><td>rendered</td><td>If "false", this component is not rendered</td></tr><tr><td>resizeable</td><td>if "true" there is possibility to change component size. Default value is "true".</td></tr><tr><td>shadowDepth</td><td>Pop-up shadow depth for suggestion content</td></tr><tr><td>shadowOpacity</td><td>HTML CSS class attribute of element for pop-up suggestion content</td></tr><tr><td>showWhenRendered</td><td>If "true" value for this attribute makes a modal panel opened as default. Default value is "false"</td></tr><tr><td>style</td><td>CSS style(s) is/are to be applied when this component is rendered</td></tr><tr><td>styleClass</td><td>Corresponds to the HTML class attribute</td></tr><tr><td>top</td><td>Attribute defines Y position of component left-top corner. Default value is "auto".</td></tr><tr><td>tridentIVEngineSelectBehavior</td><td>How to handle HTML SELECT-based controls in IE 6? - "disable" - default,
+				handle as usual, use disabled="true" to hide SELECT controls - "hide" - use
+				visibility="hidden" to hide SELECT controls</td></tr><tr><td>trimOverlayedElements</td><td>Defines whether to trim or not elements inside modalPanel. Default value is "true"</td></tr><tr><td>visualOptions</td><td>Defines options that were specified on the client side</td></tr><tr><td>width</td><td>Attribute defines width of component. Default value is "300".</td></tr><tr><td>zindex</td><td>Attribute is similar to the standard HTML attribute and can specify window. Default value is "100".
+				placement relative to the content</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e45250"/><p class="title"><b>Table 6.354. Component identification parameters</b></p><div class="table-contents"><table summary="Component identification parameters" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>component-type</td><td>org.richfaces.ModalPanel</td></tr><tr><td>component-class</td><td>org.richfaces.component.html.HtmlModalPanel</td></tr><tr><td>component-family</td><td>org.richfaces.ModalPanel</td></tr><tr><td>renderer-type</td><td>org.richfaces.ModalPanelRenderer</td></tr><tr><td>tag-class</td><td>org.richfaces.taglib.ModalPanelTag</td></tr></tbody></table></div></div><br class="table-break"/><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e45286"/>6.69.3. Creating the Component with a Page Tag</h3></div></div></div><p>Here is a simple example as it could be used on a page:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:modalPanel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;panel&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;header&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;header&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--Any&nbsp;Content&nbsp;inside--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onclick</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Richfaces.hideModalPanel('modalPanelID');&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">href</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Hide</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">a</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:modalPanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onclick</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Richfaces.showModalPanel('modalPanelID');&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">href</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Show</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">a</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e45298"/>6.69.4. Creating the Component Dynamically Using Java</h3></div></div></div><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">import</span><!-- <br/> --><span class="java_plain">&nbsp;org</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">richfaces</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">component</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">html</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_type">HtmlModalPanel</span><!-- <br/> --><span class="java_separator">;</span>
+<!--  --><br/><span class="java_separator">...</span>
+<!--  --><br/><span class="java_type">HtmlModalPanel</span><span class="java_plain">&nbsp;myPanel&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">HtmlModalPanel</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_separator">...</span>
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e45308"/>6.69.5. Details of Usage</h3></div></div></div><p>The component is defined as a panel with some content inside that displays
+                              its content as a modal dialog. To call it and to close it, the client
+                              API for the window is used.</p><div class="table"><a id="d0e45313"/><p class="title"><b>Table 6.355. Functions description</b></p><div class="table-contents"><table summary="Functions description" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Function</th><th>Description</th></tr></thead><tbody><tr><td>RichFaces.showModalPanel (client
+                                                  Id)</td><td>Opens a window with a specified
+                                                  client Id</td></tr><tr><td>RichFaces.hideModalPanel (client
+                                                  Id)</td><td>Closes a window with a specified
+                                                  client Id</td></tr></tbody></table></div></div><br class="table-break"/><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="important"><h2>Important:</h2><p>To work properly the &lt;rich:modalPanel&gt; should always be placed 
+							  outside the original &lt;h:form&gt; and must include its own &lt;h:form&gt; for such cases like 
+							  performing submissions from within the &lt;rich:modalPanel&gt;.
+							  </p></div><div xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="note"><h2>Note:</h2><p>In order to avoid a bug in IE, the root node of the dialog is moved on the top of a DOM tree.
+					    </p></div><p>It's possible to add a <span class="emphasis"><em>
+                                        <span class="property">"header"</span>
+                              </em></span> facet to the component to set the content for the header.</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:modalPanel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;panel&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">width</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;400&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">height</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;300&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;header&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Modal&nbsp;Panel&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/pages/california_large.png&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">href</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;javascript:Richfaces.hideModalPanel('form:panel')&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Close</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">a</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:modalPanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">href</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;javascript:Richfaces.showModalPanel('form:panel');&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Open</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">a</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>This defines a window with a particular size and ID. It includes one
+                              "Open" link. Clicking on this link makes the modal window content
+                              appear.</p><div class="figure"><a id="d0e45361"/><div class="figure-contents"><div class="mediaobject"><img src="images/modalPanel2.png" alt="&lt;rich:modalPanel&gt; with links"/></div></div><p class="title"><b>Figure 6.195. 
+            <span class="bold">
+                                                  <span class="property">&lt;rich:modalPanel&gt;</span>
+                                        </span> with links</b></p></div><br class="figure-break"/><p>A facet named <span class="emphasis"><em>
+                                        <span class="property">"controls"</span>
+                              </em></span> can be added to the component to place control elements on
+                              a header.</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:modalPanel</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;mp&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;header&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Modal&nbsp;Panel&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;controls&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/pages/close.png&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">style</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;cursor:pointer&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onclick</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Richfaces.hideModalPanel('mp')&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:graphicImage</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;/pages/california_large.png&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:modalPanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>The result is displayed here:</p><div class="figure"><a id="d0e45390"/><div class="figure-contents"><div class="mediaobject"><img src="images/modalPanel3.png" alt="&lt;rich:modalPanel&gt; with control element"/></div></div><p class="title"><b>Figure 6.196. 
+            <span class="bold">
+                                                  <span class="property">&lt;rich:modalPanel&gt;</span>
+                                        </span> with control element</b></p></div><br class="figure-break"/><p>To manage the placement of inserted windows, use the <span class="emphasis"><em>
+                                        <span class="property">"zindex"</span>
+                              </em></span> attribute that is similar to the standard HTML attribute
+                              and can specify window placement relative to the content.</p><p>To manage window placement relative to the component, there are <span class="emphasis"><em>
+                                        <span class="property">"left"</span>
+                              </em></span> and <span class="emphasis"><em>
+                                        <span class="property">"top"</span>
+                              </em></span> attributes defining a window shifting relative to the
+                              top-left corner of the window.</p><p>Modal windows can also support resize and move operations on the client
+                              side. To allow or disallow these operations, set the <span class="emphasis"><em>
+                                        <span class="property">"resizeable"</span>
+                              </em></span> and <span class="emphasis"><em>
+                                        <span class="property">"moveable"</span>
+                              </em></span> attributes to "true" or
+                              "false" values. Window resizing is also limited by <span class="emphasis"><em>
+                                        <span class="property">"minWidth"</span>
+                              </em></span> and <span class="emphasis"><em>
+                                        <span class="property">"minHeight"</span>
+                              </em></span> attributes specifying the minimal window sizes.</p><p>
+                              Also you can use <span class="emphasis"><em>
+                                        <span class="property">"minWidth"</span>
+                              </em></span> and <span class="emphasis"><em>
+                                        <span class="property">"minHeight"</span>
+                              </em></span> attributes used as <code class="code">showModalPanel()</code> arguments in JavaScript options.
+                    </p><p> You can pass your parameters during modalPanel opening or closing. This
+                              passing could be performed in the following way: </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">Richfaces.showModalPanel('panelId',&nbsp;{left:&nbsp;auto,&nbsp;param1:&nbsp;value1});</span><br />
+</pre><p> Thus, except the standard modalPanel parameters you can pass any of your
+                              own parameters. </p><p> Also modalPanel allows to handle its own opening and closing events on
+                              the client side. The <span class="emphasis"><em>
+                                        <span class="property">"onshow"</span>
+         </em></span> attribute is used in this case. </p><p> The following example shows how on the client side to define opening and
+                              closing event handling in such a way that your own parameters could
+                              also be obtained: </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">onshow=&quot;alert(event.parameters.param1)&quot;</span><br />
+</pre><p> Here, during modalPanel opening the value of a passing parameter is
+                              output. </p><p> More information about this problem could be found on the <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jboss.com/index.html?module=bb&amp;op=viewtopic&amp;t=111804">RichFaces Development Forum</a>.</p><p> There is a possibility to restore of the previous component state on a
+                              page (including position on the screen) after submitting and
+                              reloading. The modalPanel has some special attributes like <span class="emphasis"><em>
+                                        <span class="property">"showWhenRendered"</span>
+                              </em></span> and <span class="emphasis"><em>
+                                        <span class="property">"keepVisualState"</span>
+                              </em></span>. </p><p>
+                              <span class="emphasis"><em>
+                                        <span class="property">"showWhenRendered"</span>
+                              </em></span> - This boolean attribute is used if modalPanel should be
+                              rendered after first page loading. </p><p>
+         <span class="emphasis"><em>
+                                        <span class="property"> "keepVisualState"</span>
+                              </em></span> - Used if modalPanel should save state after submission.
+                              If <code class="code">keepVisualState="true"</code> then
+                              parameters which modalPanel has during opening should be submitted and
+                              passed to new page. </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">href</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;javascript:Richfaces.showModalPanel('_panel',&nbsp;{top:'10px',&nbsp;left:'10px',&nbsp;height:'400'});&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain">Show</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">a</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p> Here, if you open modal dialog window using current link and after
+                              submits data then modalPanel destination and height on new loaded page
+                              is restored. </p><p>if you need the content of the modalPanel to be submitted - you need to
+                              remember two important rules: </p><div class="itemizedlist"><ul><li><p>modalPanel must have its own form if it has form
+                                                  elements (input or/and command components) inside
+                                                  (as it was shown in the example above) </p></li><li><p>modalPanel must not be included into the form (on any
+                                                  level up) if it has the form inside.</p></li></ul></div><p>Simple example of using commandButton within modalPanel is placed below.</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:modalPanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;header&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:outputText</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Test&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">f:facet</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;controls&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:commandLink</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Close&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">style</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;cursor:pointer&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onclick</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Richfaces.hideModalPanel('mp')&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">f:facet</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:commandButton</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Test&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">action</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;#{TESTCONTROLLER.test}&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:modalPanel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_comment">&lt;!--Some&nbsp;other&nbsp;Page&nbsp;content--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">h:form</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p>See also discussion about this problem on the <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jboss.com/index.html?module=bb&amp;op=viewtopic&amp;p=4064191">RichFaces Users Forum</a>.</p><p> The <span class="emphasis"><em>
+                                        <span class="property">"label"</span>
+                              </em></span> attribute is a generic attribute. The <span class="emphasis"><em>
+                                        <span class="property">"label"</span>
+                              </em></span> attribute provides an association between a component, and
+                              the message that the component (indirectly) produced. This attribute
+                              defines the parameters of localized error and informational messages
+                              that occur as a result of conversion, validation, or other application
+                              actions during the request processing lifecycle. With the help of this
+                              attribute you can replace the last parameter substitution token shown
+                              in the messages. For example, {1} for
+                                        <code class="code">"DoubleRangeValidator.MAXIMUM"</code>,
+                              {2} for <code class="code">"ShortConverter.SHORT"</code>. </p><p>
+                              <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://wiki.jboss.org/auth/wiki/RichFacesCookbook/DetailModalPanelFromTable"> Here </a> there is information for those of you who
+                              would like to click on a details link in table and have it show a
+                              modal panel with information loaded from the server. </p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e45592"/>6.69.6. JavaScript API</h3></div></div></div><div class="table"><a id="d0e45595"/><p class="title"><b>Table 6.356. JavaScript API</b></p><div class="table-contents"><table summary="JavaScript API" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Function</th><th>Description</th></tr></thead><tbody><tr><td>show()</td><td>Opens the corresponding
+                                                  modalPanel</td></tr><tr><td>hide()</td><td>Closes the corresponding
+                                                  modalPanel</td></tr></tbody></table></div></div><br class="table-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e45616"/>6.69.7. Facets</h3></div></div></div><div class="table"><a id="d0e45619"/><p class="title"><b>Table 6.357. Facets</b></p><div class="table-contents"><table summary="Facets" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Facet</th><th>Description</th></tr></thead><tbody><tr><td>header</td><td>Define the header content</td></tr><tr><td>controls</td><td>Defines the control elements on the header</td></tr></tbody></table></div></div><br class="table-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e45640"/>6.69.8. Look-and-Feel Customization</h3></div></div></div><p>For skinnability implementation, the components use a <span class="emphasis"><em>
+                                        <span class="property">style class redefinition method.</span>
+                              </em></span> Default style classes are mapped on <span class="emphasis"><em>
+                                        <span class="property">skin parameters.</span>
+                              </em></span>
+      </p><p>There are two ways to redefine the appearance of all <span class="bold"><strong>
+                                        <span class="property">&lt;rich:modalPanel&gt;</span>
+                              </strong></span> components at once:</p><div class="itemizedlist"><ul><li><p>Redefine the corresponding skin parameters</p></li><li><p>Add to your style sheets <span class="emphasis"><em>
+                                                  <span class="property">style classes</span>
+                                                  </em></span> used by a <span class="bold"><strong>
+                                                  <span class="property">&lt;rich:modalPanel&gt;</span>
+                                                  </strong></span> component</p></li></ul></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e45684"/>6.69.9. Skin Parameters Redefinition</h3></div></div></div><div class="table"><a id="d0e45687"/><p class="title"><b>Table 6.358. Skin parameters for a component</b></p><div class="table-contents"><table summary="Skin parameters for a component" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>generalBackgroundColor</td><td>background-color</td></tr><tr><td>panelBorderColor</td><td>border-color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e45708"/><p class="title"><b>Table 6.359. Skin parameters redefinition for a header element</b></p><div class="table-contents"><table summary="Skin parameters redefinition for a header element" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>headerBackgroundColor</td><td>background-color</td></tr><tr><td>headerBackgroundColor</td><td>border-color</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e45729"/><p class="title"><b>Table 6.360. Skin parameters redefinition for a header content</b></p><div class="table-contents"><table summary="Skin parameters redefinition for a header content" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>headerSizeFont</td><td>background-color</td></tr><tr><td>headerTextColor</td><td>font-size</td></tr><tr><td>headerWeightFont</td><td>color</td></tr><tr><td>headerFamilyFont</td><td>font-family</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e45760"/><p class="title"><b>Table 6.361. Skin parameters redefinition for a body element</b></p><div class="table-contents"><table summary="Skin parameters redefinition for a body element" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Skin parameters</th><th>CSS properties</th></tr></thead><tbody><tr><td>generalSizeFont</td><td>font-size</td></tr><tr><td>generalTextColor</td><td>color</td></tr><tr><td>generalFamilyFont</td><td>font-family</td></tr></tbody></table></div></div><br class="table-break"/></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e45786"/>6.69.10. Definition of Custom Style Classes</h3></div></div></div><div class="figure"><a id="d0e45789"/><div class="figure-contents"><div class="mediaobject"><img src="images/modalPanel_cn.png" alt="&lt;rich:modalPanel&gt; class name"/></div></div><p class="title"><b>Figure 6.197. 
+            <span class="bold">
+                                                  <span class="property">&lt;rich:modalPanel&gt;</span>
+                                        </span> class name</b></p></div><br class="figure-break"/><p>The screenshot shows the classes names for defining different elements.</p><div class="table"><a id="mPC"/><p class="title"><b>Table 6.362. Classes names that define a component appearance</b></p><div class="table-contents"><table summary="Classes names that define a component appearance" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Class name</th><th>Description</th></tr></thead><tbody><tr><td>rich-modalpanel</td><td>Defines styles for a wrapper
+                                                  &lt;div&gt; element of
+                                                  a modalpanel</td></tr><tr><td>rich-mpnl_panel</td><td>Defines styles for a
+                                                  modalpanel</td></tr><tr><td>rich-mpnl-mask-div</td><td>Defines styles for a wrapper
+                                                  &lt;div&gt; element of
+                                                  a mask</td></tr><tr><td>rich-mpnl-resizer</td><td>Defines styles for a wrapper
+                                                  &lt;div&gt; element of
+                                                  a resizing element</td></tr><tr><td>rich-mpnl-shadow</td><td>Defines styles for a modalpanel
+                                                  shadow</td></tr><tr><td>rich-mpnl-header</td><td>Defines styles for a modalpanel
+                                                  header</td></tr><tr><td>rich-mpnl-header-cell</td><td>Defines styles for a header
+                                                  cell</td></tr><tr><td>rich-mpnl-text</td><td>Defines styles for a wrapper
+                                                  &lt;div&gt; element of
+                                                  a header text</td></tr><tr><td>rich-mpnl-body</td><td>Defines styles for a content
+                                                  inside a modalpanel</td></tr><tr><td>rich-mpnl-controls</td><td>Defines styles for a wrapper
+                                                  &lt;div&gt; element of
+                                                  a modalpanel control</td></tr></tbody></table></div></div><br class="table-break"/><p>In order to redefine styles for all <span class="bold"><strong>
+                                        <span class="property">&lt;rich:modalPanel&gt;</span>
+                              </strong></span> components on a page using CSS, it's enough to
+                              create classes with the same names (possible classes could be found in
+                              the tables <a href="modalPanel.html#mPC" title="Table 6.362. Classes names that define a component appearance"> above</a>) and define necessary
+                              properties in them. </p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_selector">.rich-mpnl-mask-div</span><span class="css_curly_brace">{</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">background-color</span><span class="css_colon">:</span><span class="css_property_value">#fae6b0</span><span class="css_semi_colon">;</span><span class="css_normal"><br />
+</span><span class="css_curly_brace">}</span><span class="css_normal"><br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>This is a result:</p><div class="figure"><a id="d0e45884"/><div class="figure-contents"><div class="mediaobject"><img src="images/modalPanel_pc.png" alt="Redefinition styles with predefined classes"/></div></div><p class="title"><b>Figure 6.198. Redefinition styles with predefined classes</b></p></div><br class="figure-break"/><p>In the example the background color for mask was changed.</p><p>Also it's possible to change styles of particular <span class="bold"><strong>
+                                        <span class="property">&lt;rich:modalPanel&gt;</span>
+                              </strong></span> component. In this case you should create own style
+                              classes and use them in corresponding <span class="bold"><strong>
+                                        <span class="property">&lt;rich:modalPanel&gt;</span>
+                              </strong></span>
+                              <span class="emphasis"><em>
+                                        <span class="property">styleClass</span>
+                              </em></span> attributes. An example is placed below:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="CSS"><!-- CSS : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_normal"><br />
+</span><span class="css_selector">.myClass</span><span class="css_curly_brace">{</span><span class="css_normal"><br />
+&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="css_property_name">font-style</span><span class="css_colon">:</span><span class="css_property_value">italic</span><span class="css_semi_colon">;</span><span class="css_normal"><br />
+</span><span class="css_curly_brace">}</span><span class="css_normal"><br />
+</span><span class="css_null">.</span><span class="css_null">.</span><span class="css_null">.</span></pre><p>The <span class="emphasis"><em>
+                                        <span class="property">"headerClass"</span>
+                              </em></span> attribute for <span class="bold"><strong>
+                                        <span class="property">&lt;rich:modalPanel&gt;</span>
+                              </strong></span> is defined as it's shown in the example below:</p><p>
+                              <span class="bold"><strong>Example:</strong></span>
+                    </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:modalPanel</span><span class="xml_plain">&nbsp;...&nbsp;</span><span class="xml_attribute_name">headerClass</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;myClass&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+</pre><p>This is a result:</p><div class="figure"><a id="d0e45942"/><div class="figure-contents"><div class="mediaobject"><img src="images/modalPanel_oc.png" alt="Redefinition styles with own classes and styleClass attributes"/></div></div><p class="title"><b>Figure 6.199. Redefinition styles with own classes and <span class="emphasis"><em>
+                                                  <span class="property">styleClass</span>
+                                        </em></span> attributes</b></p></div><br class="figure-break"/><p>As it could be seen on the picture above,the font style for header was
+                              changed.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e45956"/>6.69.11. Relevant Resources Links</h3></div></div></div><p>Vizit <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://livedemo.exadel.com/richfaces-demo/richfaces/modalPanel.jsf?c=modalPanel">
+					ModalPanel page</a> at RichFaces Livedemo for examples of component usage and their sources.
+					</p><p>Read the "<a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://eclipse.dzone.com/articles/an-introduction-to-jboss-richf?page=0%2C0">
+					An Introduction To JBoss RichFaces</a>" tutorial by Max Katz to find out how 
+					the <span class="bold"><strong>
+            <span class="property">&lt;rich:modalPanel&gt;</span>
+         </strong></span> 
+					helps to edit and save changes for table entries. 
+					</p><p>Some articles at JBoss portal describing different aspects of <span class="bold"><strong>
+            <span class="property">&lt;rich:modalPanel&gt;</span>
+         </strong></span> usage:
+					</p><div class="itemizedlist"><ul><li><p>
+							   "<a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jboss.org/community/docs/DOC-11436">ModalPanelWizards</a>" article describes 
+							   how to create a typical wizard with the help of <span class="bold"><strong>
+                  <span class="property">&lt;rich:modalPanel&gt;</span>
+               </strong></span> component 
+							   (the same could also be found in the "<a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jboss.org/file-access/default/members/jbossrichfaces/freezone/docs/devguide/en/faq/faq.html#Organizewizards">
+							   How to organize wizards using the &lt;rich:modalPanel&gt; component?</a>" chapter of RichFaces FAQ guide);
+							</p></li><li><p>
+							    "<a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jboss.org/community/docs/DOC-11435">ModalPanelValidation</a>" article 
+								gives examples of validation in <span class="bold"><strong>
+                  <span class="property">&lt;rich:modalPanel&gt;</span>
+               </strong></span> 
+								(the same in the <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jboss.com/index.html?module=bb&amp;op=viewtopic&amp;p=4061517">corresponding topic</a> 
+								at RichFaces Users Forum);
+                            </p></li><li><p>
+							    "<a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jboss.org/community/docs/DOC-11863">RichFacesPleaseWaitBox</a>" article 
+								describes how to show a "Please wait" box and block the input while the Ajax request is being processed 
+								using combination of <span class="bold"><strong>
+                  <span class="property">&lt;a4j:status&gt;</span>
+               </strong></span> and 
+								<span class="bold"><strong>
+                  <span class="property">&lt;rich:modalPanel&gt;</span>
+               </strong></span> components.
+                            </p></li></ul></div></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="messages.html"><strong>Prev</strong>6.68. 
+				&lt;
+				rich:messages
+				&gt;
+			</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="orderingList.html"><strong>Next</strong>6.70. 
+				&lt;
+				rich:orderingList
+				&gt;
+			</a></li></ul></body></html>

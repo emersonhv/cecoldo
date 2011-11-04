@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+<faces-config version="1.2" 
+    xmlns="http://java.sun.com/xml/ns/javaee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd">
+    <managed-bean>
+        <managed-bean-name>MappinWEbJSFManagedBean</managed-bean-name>
+        <managed-bean-class>com.dimar.cecoldo.webmapping.MappingManagedBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        <managed-property>
+            <property-name>idArchivo</property-name>
+            <value>#{param.idArchivo}</value>
+        </managed-property>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>dictionaryManagedBean</managed-bean-name>
+        <managed-bean-class>com.dimar.cecoldo.dictionary.DictionaryBackendBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>newParameterBackendBean</managed-bean-name>
+        <managed-bean-class>com.dimar.cecoldo.dictionary.NewParameterBackendBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>cruiseManagedBean</managed-bean-name>
+        <managed-bean-class>com.dimar.cecoldo.cruise.CruiseInventoryBackendBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <application>
+        <message-bundle>
+            ApplicationMessages
+        </message-bundle>
+        <locale-config>
+            <default-locale>es</default-locale>
+            <supported-locale>en</supported-locale>
+        </locale-config>
+    </application>
+</faces-config>

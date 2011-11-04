@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 1. Introduction</title><link rel="stylesheet" href="css/html.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link xmlns="" rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/><meta name="keywords" content="RichFaces, CDK, Guide"/><script xmlns="" type="text/javascript" src="script/prototype-1.6.0.2.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/effects.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/scriptaculous.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><link rel="start" href="index.html" title="RichFaces CDK Developer Guide"/><link rel="up" href="index.html" title="RichFaces CDK Developer Guide"/><link rel="prev" href="index.html" title="RichFaces CDK Developer Guide"/><link rel="next" href="roadmap.html" title="Chapter 2. Roadmap document"/><script xmlns="http://www.w3.org/TR/xhtml1/transitional" type="text/javascript" src="script/toggle.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script></head><body><div xmlns="" id="overlay"> </div><div xmlns="" id="feedback-maincontainer" style="display:none"><div id="feedback-header">
+			Send your remarks, comments or wishes to doc team
+		</div><a href="#" onclick="$('feedback-maincontainer').hide(); return false;" id="feedback-close"><img src="images/close.png" class="feedback-images"/></a><div id="feedback-state"> </div><form id="feedback-mailform"><div class="feedback-textbox-div">
+			  Subject:<input type="text" id="subject" name="subject" title="Enter the subject of your message" class="feedback-textbox"/></div><div class="feedback-textbox-div"><span style="vertical-align: top;">Message:</span><textarea name="message" title="Type here the text of your message" id="message"> </textarea></div><div class="feedback-textbox-div">
+			  Your name:<input type="text" id="name" name="name" title="Enter your name" class="feedback-textbox"/></div><div class="feedback-textbox-div">
+			  Your email:<input type="text" id="email" name="email" title="Enter your email address" class="feedback-textbox"/></div><span class="feedback-button-container"><input type="submit" value="Send Message" name="submit" class="feedback-formbutton" title="Send Message"/></span><span class="feedback-button-container"><input type="reset" value="Clear All Fields" class="feedback-formbutton" title="Clear All Fields"/></span></form></div><div xmlns="" id="feedback-wrapper"><a id="feedback-link" href="#" onclick="$('feedback-maincontainer').appear(); return false;"><img src="images/feedback_logo.png" class="feedback-images" width="100px"/></a></div><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="index.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="roadmap.html"><strong>Next</strong></a></li></ul><div class="chapter" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="introduction"/>Chapter 1. Introduction</h2></div></div></div><p>
+        The major benefit of the JSF framework is a component based architecture. 
+        The component in JSF is not just a set of HTML code rendered and interpreted by a browser. 
+        The JSF component is a combination of a client-side widget coupled with the server-side object 
+        that represents component behavior including data validation, events handling, business layers bean binding, etc. 
+    </p><p>   
+        Comparing to a page-oriented development approach, 
+        JSF allows to use a component-oriented paradigm to build a well-designed, 
+        highly customizable UI interface based on reusable components.
+    </p><p>
+        However, there is not yet enough sets of rich components on the market that might enable the rapid application development. 
+        One of the most important problems is a time-consuming and very complicated process of the component creation. 
+        Even the very primitive JSF component requires the <span class="property">UIComponent</span> class, 
+        <span class="property">Renderer class</span>, <span class="property">Tag class</span>
+        and a faces configuration file (<span class="property">faces-config.xml</span>) to be written. 
+    </p><p>
+        In order to use the component library in a Facelets environment, 
+        you should add the <span class="property">*.taglib.xml</span> file to this checklist.
+    </p><p> 
+        Creation of the rich component takes even more time. 
+        You have to provide the <span class="property">ListenerTagHandler class</span>, a class for creating a listener interface,
+        an event processing method name in a listener interface, 
+        an event class, render specific classes for each possible render kit used with the component.
+    </p><p>
+        Therefore, the process of JSF component creation is pretty complicated but repeatable. 
+        Jonas Jacobi and John R. Fallows in their "Pro JSF and Ajax Bulling Rich Internet Components" book describe 
+        the process in details. 
+        This description and used approaches are very similar to our own experience and have been used as a methodology 
+        for <span class="property">Component Development Kit (CDK)</span> - a sub-project of <span class="property">RichFaces</span>
+        that allows you to easily create rich components with built-in Ajax support. 
+        
+        
+    </p><p>
+        The significant features of the <span class="property">Component Development Kit (CDK)</span> are:
+    </p><div class="itemizedlist"><ul><li><p>
+                Quick development start. 
+                A new component development starts from a pre-generated component project template. 
+                It contains the whole required infrastructure and necessary files generated.
+                It's necessary only to have a <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://maven.apache.org">Maven</a> installed. 
+                All other required stuff will be loaded and configured automatically. For more information about how to 
+				work with Maven on JBoss projects explore corresponding <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jboss.org/community/docs/DOC-11358">articles</a> 
+				at JBoss portal.
+            </p></li><li><p>
+                Declarative approach for a component development. 
+                It's necessary only to specify meta-data and a code specific for your component. 
+                All other required artifacts are generated for you.
+            </p></li><li><p>
+                Independent development life-cycle. <span class="property">Component Development Kit (CDK)</span> presumes 
+                development of each component isolated from each other with further assembling them into the component library. 
+                Hence, this allows to organize a continuous process when one component is already in production condition, 
+                but another is just started.
+            </p></li><li><p>
+                Possibility to create a first-class rich components 
+                with built-in Ajax functionality
+                and add Ajax capability to the existing JSF applications.
+            </p></li><li><p>
+                Facility for automatic testing. 
+                At the moment of generating the initial project structure, 
+                the <span class="property">Unit Test classes</span> are also generated. 
+                The <span class="property">RichFaces</span> also provides the Mock-test facility that allows to emulate 
+                a run-time environment and automatically test components before their are gathered into the result library.
+            </p></li><li><p>
+                Optimization for different JSF implementations. 
+                As soon as the most part of a result code is generated, the <span class="property">Component Development Kit (CDK)</span> 
+                becomes able to generate an implementation specific code along with a universal code. 
+                It makes sense if it's necessary to optimize a result code using features specific for 
+                the particular implementation. For example, for using with JSF 1.2 only.
+            </p></li><li><p>
+                Create a modern rich user interface look-and-feel with JSP-like templates and skins-based technology.
+                RichFaces comes with a number of predefined skins to get you started, 
+                but you can also easily create your own custom skins. 
+            </p></li></ul></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="index.html"><strong>Prev</strong>RichFaces CDK Developer Guide</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="roadmap.html"><strong>Next</strong>Chapter 2. Roadmap document</a></li></ul></body></html>

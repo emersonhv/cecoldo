@@ -1,0 +1,323 @@
+<html xmlns:javaee="http://java.sun.com/xml/ns/javaee" xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>scrollableDataTable
+          (RichFaces JSF components library Tag library documentation)
+        </title>
+<meta name="keywords" content="$title">
+<link rel="stylesheet" type="text/css" href="../stylesheet.css" title="Style">
+</head>
+<script>
+            function asd()
+            {
+            parent.document.title="scrollableDataTable (RichFaces JSF components library Tag library documentation)";
+            }
+          </script>
+<body bgcolor="white" onload="asd();">
+<a name="navbar_top"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_top_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="scrollableDataTable.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<h2>
+<font size="-1">RichFaces ( Legacy URL )</font>
+<br>
+            Tag scrollableDataTable</h2>
+<hr>The &lt;rich:scrollableDataTable&gt; component is used for the table-like component creation. The component just adds the set of additional features described below in comparison with the standard table.<br>
+<p></p>
+<hr>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="2"><font size="+2"><b>Tag Information</b></font></td>
+</tr>
+<tr>
+<td>Tag Class</td><td>org.richfaces.taglib.ScrollableDataTableTag</td>
+</tr>
+<tr>
+<td>TagExtraInfo Class</td><td><i>None</i></td>
+</tr>
+<tr>
+<td>Body Content</td><td>JSP</td>
+</tr>
+<tr>
+<td>Display Name</td><td><i>None</i></td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Attributes</b></font></td>
+</tr>
+<tr>
+<td><b>Name</b></td><td><b>Required</b></td><td><b>Request-time</b></td><td><b>Type</b></td><td><b>Description</b></td>
+</tr>
+<tr valign="top">
+<td>activeClass</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>A CSS class to be applied to an active row</td>
+</tr>
+<tr valign="top">
+<td>activeRowKey</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.Object</code>)
+                    </td><td>Request scope attribute under which the activeRowKey will be accessible</td>
+</tr>
+<tr valign="top">
+<td>ajaxKeys</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.util.Set</code>)
+                    </td><td>This attribute defines row keys that are updated after an AJAX request</td>
+</tr>
+<tr valign="top">
+<td>binding</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>javax.faces.component.UIComponent</code>)
+                    </td><td>The attribute takes a value-binding expression for a component property of a backing bean</td>
+</tr>
+<tr valign="top">
+<td>bypassUpdates</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>If "true", after process validations phase it skips updates of model beans on a force render response. It can be used for validating components input</td>
+</tr>
+<tr valign="top">
+<td>columnClasses</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Comma-delimited list of CSS style classes that are be applied to the columns of this table. A space separated list of classes may also be specified for any individual column. If the number of elements in this list is less than the number of columns specified in the "columns" attribute, no "class" attribute is output for each column greater than the number of elements in the list. If the number of elements in the list is greater than the number of columns specified in the "columns" attribute, the elements at the position in the list after the value of the "columns" attribute are ignored</td>
+</tr>
+<tr valign="top">
+<td>componentState</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>org.ajax4jsf.model.DataComponentState</code>)
+                    </td><td>It defines EL-binding for a component state for saving or redefinition</td>
+</tr>
+<tr valign="top">
+<td>data</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.Object</code>)
+                    </td><td>Serialized (on default with JSON) data passed on the client by a developer on AJAX request. It's accessible via "data.foo" syntax</td>
+</tr>
+<tr valign="top">
+<td>eventsQueue</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Name of requests queue to avoid send next request before complete other from same event. Can be used to reduce number of requests of frequently events (key press, mouse move etc.)</td>
+</tr>
+<tr valign="top">
+<td>first</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>int</code>)
+                    </td><td>A zero-relative row number of the first row to display</td>
+</tr>
+<tr valign="top">
+<td>footerClass</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Space-separated list of CSS style class(es) that are be applied to any footer generated for this table</td>
+</tr>
+<tr valign="top">
+<td>frozenColCount</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>int</code>)
+                    </td><td>Defines the number of the fixed columns from the left side that will not be scrolled via horizontal scroll. Default value is "0".</td>
+</tr>
+<tr valign="top">
+<td>headerClass</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Space-separated list of CSS style class(es) that are be applied to any header generated for this table</td>
+</tr>
+<tr valign="top">
+<td>height</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Defines a height of the component. Default value is "500px".</td>
+</tr>
+<tr valign="top">
+<td>hideWhenScrolling</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>If "true" data will be hidden during scrolling. Can be used for increase performance. Default value is "false".</td>
+</tr>
+<tr valign="top">
+<td>id</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>Every component may have a unique id that is automatically created if omitted</td>
+</tr>
+<tr valign="top">
+<td>ignoreDupResponses</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>Attribute allows to ignore an Ajax Response produced by a request if the newest 'similar' request is in a queue already. ignoreDupResponses="true" does not cancel the request while it is processed on the server, but just allows to avoid unnecessary updates on the client side if the response isn't actual now</td>
+</tr>
+<tr valign="top">
+<td>onRowClick</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: a script expression; a pointer button is clicked on row</td>
+</tr>
+<tr valign="top">
+<td>onRowDblClick</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: a script expression; a pointer button is double-clicked on row</td>
+</tr>
+<tr valign="top">
+<td>onRowMouseDown</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: script expression; a pointer button is pressed down on row</td>
+</tr>
+<tr valign="top">
+<td>onRowMouseUp</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: script expression; a pointer button is released on row</td>
+</tr>
+<tr valign="top">
+<td>onselectionchange</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>HTML: script expression to invoke on changing of rows selection</td>
+</tr>
+<tr valign="top">
+<td>reRender</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.Object</code>)
+                    </td><td>Id['s] (in format of call UIComponent.findComponent()) of components, rendered in case of AjaxRequest caused by this component. Can be single id, comma-separated list of Id's, or EL Expression with array or Collection</td>
+</tr>
+<tr valign="top">
+<td>rendered</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>boolean</code>)
+                    </td><td>If "false", this component is not rendered</td>
+</tr>
+<tr valign="top">
+<td>requestDelay</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>int</code>)
+                    </td><td>Attribute defines the time (in ms.) that the request will be wait in the queue before it is ready to send. When the delay time is over, the request will be sent to the server or removed if the newest 'similar' request is in a queue already</td>
+</tr>
+<tr valign="top">
+<td>rowClasses</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>A comma-delimited list of CSS style classes that is applied to popup table rows. A space separated list of classes may also be specified for any individual row. The styles are applied, in turn, to each row in the table. For example, if the list has two elements, the first style class in the list is applied to the first row, the second to the second row, the first to the third row, the second to the fourth row, etc. In other words, we keep iterating through the list until we reach the end, and then we start at the beginning again</td>
+</tr>
+<tr valign="top">
+<td>rowKeyConverter</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>javax.faces.convert.Converter</code>)
+                    </td><td>Converter for a row key object</td>
+</tr>
+<tr valign="top">
+<td>rowKeyVar</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>The attribute provides access to a row key in a Request scope</td>
+</tr>
+<tr valign="top">
+<td>rows</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>int</code>)
+                    </td><td>A number of rows to display, or zero for all remaining rows in the table</td>
+</tr>
+<tr valign="top">
+<td>scriptVar</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>Name of JavaScript variable corresponding to component</td>
+</tr>
+<tr valign="top">
+<td>selectedClass</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Name of the CSS class for a selected row</td>
+</tr>
+<tr valign="top">
+<td>selection</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>org.richfaces.model.selection.Selection</code>)
+                    </td><td>Value binding representing selected rows</td>
+</tr>
+<tr valign="top">
+<td>similarityGroupingId</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>If there are any component requests with identical IDs then these requests will be grouped.</td>
+</tr>
+<tr valign="top">
+<td>sortMode</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Defines mode of sorting. Possible values are 'single' for sorting of one column and 'multi' for some.</td>
+</tr>
+<tr valign="top">
+<td>sortOrder</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>org.richfaces.model.SortOrder</code>)
+                    </td><td>ValueBinding pointing at a property of a class to manage rows sorting</td>
+</tr>
+<tr valign="top">
+<td>stateVar</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>The attribute provides access to a component state on the client side</td>
+</tr>
+<tr valign="top">
+<td>status</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>ID (in format of call UIComponent.findComponent()) of Request status component</td>
+</tr>
+<tr valign="top">
+<td>style</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>CSS style(s) is/are to be applied when this component is rendered</td>
+</tr>
+<tr valign="top">
+<td>styleClass</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Corresponds to the HTML class attribute</td>
+</tr>
+<tr valign="top">
+<td>timeout</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>int</code>)
+                    </td><td>Response waiting time on a particular request. If a response is not received during this time, the request is aborted</td>
+</tr>
+<tr valign="top">
+<td>value</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.Object</code>)
+                    </td><td>The current value for this component</td>
+</tr>
+<tr valign="top">
+<td>var</td><td>false</td><td>false</td><td><code>java.lang.String</code></td><td>A request-scope attribute via which the data object for the current row will be used when iterating</td>
+</tr>
+<tr valign="top">
+<td>width</td><td>false</td><td>false</td><td><code>javax.el.ValueExpression</code>
+<br>(<i>must evaluate to </i><code>java.lang.String</code>)
+                    </td><td>Defines a width of the component. Default value is "700px".</td>
+</tr>
+</table>
+<br>
+<p></p>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#CCCCFF" class="TableHeadingColor">
+<td colspan="5"><font size="+2"><b>Variables</b></font></td>
+</tr>
+<td colspan="2"><i>No Variables Defined.</i></td>
+</table>
+<br>
+<p></p>
+<a name="navbar_bottom"></a>
+<table border="0" width="100%" cellpadding="1" cellspacing="0">
+<tr>
+<td COLSPAN="3" BGCOLOR="#EEEEFF" CLASS="NavBarCell1"><a NAME="navbar_bottom_firstrow"></a>
+<table BORDER="0" CELLPADDING="0" CELLSPACING="3">
+<tr ALIGN="center" VALIGN="top">
+<td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="../overview-summary.html"><font CLASS="NavBarFont1"><b>Overview</b></font></a>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a href="tld-summary.html"><font CLASS="NavBarFont1"><b>Library</b></font></a>&nbsp;</td><td BGCOLOR="#FFFFFF" CLASS="NavBarCell1Rev"> &nbsp;<font CLASS="NavBarFont1Rev">&nbsp;Tag&nbsp;</font>&nbsp;</td><td BGCOLOR="#EEEEFF" CLASS="NavBarCell1">    &nbsp;<a HREF="../help-doc.html"><font CLASS="NavBarFont1"><b>Help</b></font></a>&nbsp;</td>
+</tr>
+</table>
+</td><td ALIGN="right" VALIGN="top" ROWSPAN="3"><em></em></td>
+</tr>
+<tr>
+<td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2"></font></td><td BGCOLOR="white" CLASS="NavBarCell2"><font SIZE="-2">
+                &nbsp;<a HREF="../index.html" TARGET="_top"><b>FRAMES</b></a>&nbsp;
+                &nbsp;<a href="scrollableDataTable.html" target="_top"><b>NO FRAMES</b></a>&nbsp;
+                <script></script>
+<noscript>
+<a HREF="../alltags-noframe.html" TARGET=""><b>All Tags</b></a>
+</noscript>
+</font></td>
+</tr>
+</table>
+<hr>
+<small><i>
+            Output Generated by 
+            <a href="http://taglibrarydoc.dev.java.net/" target="_blank">Tag Library Documentation Generator</a>.
+            Java, JSP, and JavaServer Pages are trademarks or 
+            registered trademarks of Sun Microsystems, Inc. in the US and other
+            countries.  Copyright 2002-4 Sun Microsystems, Inc.
+            4150 Network Circle
+            Santa Clara, CA 95054, U.S.A.
+            All Rights Reserved. 
+            </i></small>
+</body>
+</html>

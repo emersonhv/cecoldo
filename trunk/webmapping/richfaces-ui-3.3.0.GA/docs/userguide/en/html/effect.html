@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>6.55.  &lt; rich:effect &gt;</title><link rel="stylesheet" href="css/html.css" type="text/css"/><meta name="generator" content="DocBook XSL Stylesheets V1.72.0"/><link xmlns="" rel="shortcut icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/><meta name="keywords" content="rich:effect"/><meta name="keywords" content="effect, rich:effect, HtmlEffect"/><script xmlns="" type="text/javascript" src="script/prototype-1.6.0.2.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/effects.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><script xmlns="" type="text/javascript" src="script/scriptaculous.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script><link rel="start" href="index.html" title="RichFaces Developer Guide"/><link rel="up" href="RichFacesComponentsLibrary.html" title="Chapter 6. The RichFaces Components"/><link rel="prev" href="menuSeparator.html" title="6.54.  &lt; rich:menuSeparator &gt;"/><link rel="next" href="fileUpload.html" title="6.56.  &lt; rich:fileUpload &gt;"/><script xmlns="http://www.w3.org/TR/xhtml1/transitional" type="text/javascript" src="script/toggle.js"><!--If you see this message, your web browser doesn't support JavaScript or JavaScript is disabled.--></script></head><body><div xmlns="" id="overlay"> </div><div xmlns="" id="feedback-maincontainer" style="display:none"><div id="feedback-header">
+			Send your remarks, comments or wishes to doc team
+		</div><a href="#" onclick="$('feedback-maincontainer').hide(); return false;" id="feedback-close"><img src="images/close.png" class="feedback-images"/></a><div id="feedback-state"> </div><form id="feedback-mailform"><div class="feedback-textbox-div">
+			  Subject:<input type="text" id="subject" name="subject" title="Enter the subject of your message" class="feedback-textbox"/></div><div class="feedback-textbox-div"><span style="vertical-align: top;">Message:</span><textarea name="message" title="Type here the text of your message" id="message"> </textarea></div><div class="feedback-textbox-div">
+			  Your name:<input type="text" id="name" name="name" title="Enter your name" class="feedback-textbox"/></div><div class="feedback-textbox-div">
+			  Your email:<input type="text" id="email" name="email" title="Enter your email address" class="feedback-textbox"/></div><span class="feedback-button-container"><input type="submit" value="Send Message" name="submit" class="feedback-formbutton" title="Send Message"/></span><span class="feedback-button-container"><input type="reset" value="Clear All Fields" class="feedback-formbutton" title="Clear All Fields"/></span></form></div><div xmlns="" id="feedback-wrapper"><a id="feedback-link" href="#" onclick="$('feedback-maincontainer').appear(); return false;"><img src="images/feedback_logo.png" class="feedback-images" width="100px"/></a></div><p id="title"><a href="http://www.jboss.org" class="site_href"><strong>JBoss.org</strong></a><a href="http://docs.jboss.org/" class="doc_href"><strong>Community Documentation</strong></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="menuSeparator.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="fileUpload.html"><strong>Next</strong></a></li></ul><div class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="effect"/>6.55. 
+				&lt;
+				rich:effect
+				&gt;
+			</h2></div></div></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e32839"/>6.55.1. Description</h3></div></div></div><p>
+		The <span class="bold"><strong>
+            <span class="property">&lt;rich:effect&gt;</span>
+         </strong></span> utilizes a set of effects provided by the scriptaculous JavaScript library.
+		It allows to attach effects to JSF components and html tags.
+		</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e32850"/>6.55.2. Key Features</h3></div></div></div><div class="itemizedlist"><ul><li><p>No developers JavaScript writing needed to use it on pages</p></li><li><p>Presents scriptaculous JavaScript library functionality</p></li></ul></div></div><div class="table"><a id="d0e32860"/><p class="title"><b>Table 6.240. rich
+					:
+					effect
+					attributes
+				</b></p><div class="table-contents"><table summary="rich&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;:&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;effect&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;attributes&#xA;&#x9;&#x9;&#x9;&#x9;" border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Attribute Name</th><th>Description</th></tr></thead><tbody><tr><td>binding</td><td>The attribute takes a value-binding expression for a component property of
+a backing bean</td></tr><tr><td>disableDefault</td><td>Disable default action for target event ( append "return false;" to JavaScript ). Default value is "false".</td></tr><tr><td>event</td><td>Event on the component or html tag the effect is attached to</td></tr><tr><td>for</td><td>Id of the target component.</td></tr><tr><td>id</td><td>Every component may have a unique id that is automatically created if omitted</td></tr><tr><td>name</td><td>Generated JavaScript name.</td></tr><tr><td>params</td><td>Parameters passed to the effect function.
+			  Example params="{duration:0.2,from:1.0,to:0.1}"</td></tr><tr><td>rendered</td><td>If "false", this component is not rendered</td></tr><tr><td>targetId</td><td>The id of the element the effect apply to. Might be component id
+			  or client id of jsf component or html tag. If targetId is not defined
+			  the value of the attribute 'for' or the 'targetId' option effect
+			  play its role</td></tr><tr><td>type</td><td>Defines the type of effect. Possible values: "Fade", "Blind", "Opacity".</td></tr></tbody></table></div></div><br class="table-break"/><div class="table"><a id="d0e32929"/><p class="title"><b>Table 6.241. Component identification parameters </b></p><div class="table-contents"><table summary="Component identification parameters " border="1"><colgroup><col/><col/></colgroup><thead><tr><th>Name</th><th>Value</th></tr></thead><tbody><tr><td>component-type</td><td>org.richfaces.Effect</td></tr><tr><td>component-class</td><td>org.richfaces.component.html.HtmlEffect</td></tr><tr><td>component-family</td><td>org.richfaces.Effect</td></tr><tr><td>renderer-type</td><td>org.richfaces.EffectRenderer</td></tr><tr><td>tag-class</td><td>org.richfaces.taglib.EffectTag</td></tr></tbody></table></div></div><br class="table-break"/><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e32965"/>6.55.3. Creating the Component with a Page Tag</h3></div></div></div><p>To create the simplest variant of <span class="bold"><strong>
+            <span class="property">&lt;rich:effect&gt;</span>
+         </strong></span> on a page, use the
+      following syntax:</p><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:effect</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">for</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;componentId&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Appear&quot;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e32983"/>6.55.4. Creating the Component Dynamically Using Java</h3></div></div></div><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="JAVA"><!-- <br/> --><span class="java_keyword">import</span><!-- <br/> --><span class="java_plain">&nbsp;org</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">richfaces</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">component</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_plain">html</span><!-- <br/> --><span class="java_separator">.</span><!-- <br/> --><span class="java_type">HtmlRichEffect</span><!-- <br/> --><span class="java_separator">;</span>
+<!--  --><br/><span class="java_separator">...</span>
+<!--  --><br/><span class="java_type">HtmlRichEffect</span><span class="java_plain">&nbsp;myEffect&nbsp;</span><span class="java_operator">=</span><span class="java_plain">&nbsp;</span><span class="java_keyword">new</span><span class="java_plain">&nbsp;</span><span class="java_type">HtmlRichEffect</span><span class="java_separator">();</span>
+<!--  --><br/><span class="java_separator">...</span>
+</pre></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e32993"/>6.55.5. Details of Usage</h3></div></div></div><p> It is possible to use <span class="bold"><strong>
+            <span class="property">&lt;rich:effect&gt;</span>
+         </strong></span> in two modes: </p><div class="itemizedlist"><ul><li><p>attached to the JSF components or html tags and triggered by a particular event.
+          Wiring effect with JSF components might occur on the server or client. Wiring with html
+          tag is possible only on the client side </p></li><li><p>invoking from the JavaScript code by an effect name. During the rendering,
+            <span class="bold"><strong>
+                     <span class="property">&lt;rich:effect&gt;</span>
+                  </strong></span> generates the JavaScript function with defined name.
+          When the function is called, the effect is applied </p></li></ul></div><p>
+      </p><p>
+         <span class="bold"><strong>Those a the typical variants of using:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_comment">&lt;!--&nbsp;attaching&nbsp;by&nbsp;event&nbsp;&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:panel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:effect</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">event</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;onmouseout&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Opacity&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">params</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;duration:0.8,from:1.0,to:0.3&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;&nbsp;&nbsp;....&nbsp;panel&nbsp;content&nbsp;....</span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">rich:panel</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_comment">&lt;!--&nbsp;&nbsp;invoking&nbsp;from&nbsp;JavaScript&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">div</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">id</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;contentDiv&quot;</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">&nbsp;&nbsp;.....&nbsp;div&nbsp;content&nbsp;......</span><br />
+<span class="xml_tag_symbols">&lt;/</span><span class="xml_tag_name">div</span><span class="xml_tag_symbols">&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">input</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;button&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onclick</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;hideDiv({duration:0.7})&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Hide&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">input</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;button&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">onclick</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;showDiv()&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">value</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Show&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:effect</span><span class="xml_plain">&nbsp;&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;hideDiv&quot;</span><span class="xml_plain">&nbsp;&nbsp;</span><span class="xml_attribute_name">for</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;contentDiv&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Fade&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:effect</span><span class="xml_plain">&nbsp;&nbsp;</span><span class="xml_attribute_name">name</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;showDiv&quot;</span><span class="xml_plain">&nbsp;&nbsp;</span><span class="xml_attribute_name">for</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;contentDiv&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Appear&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain"></span><br />
+<span class="xml_comment">&lt;!--&nbsp;attaching&nbsp;to&nbsp;window&nbsp;on&nbsp;load&nbsp;and&nbsp;applying&nbsp;on&nbsp;particular&nbsp;page&nbsp;element&nbsp;--&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">rich:effect</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">for</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;window&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">event</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;onload&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">type</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;Appear&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">params</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;targetId:'contentDiv',duration:0.8,from:0.3,to:1.0&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><div class="figure"><a id="d0e33025"/><div class="figure-contents"><div class="mediaobject"><img src="images/effect_init.png" alt="Initial"/></div></div><p class="title"><b>Figure 6.126. Initial</b></p></div><br class="figure-break"/><div class="figure"><a id="d0e33031"/><div class="figure-contents"><div class="mediaobject"><img src="images/effect_2.png" alt="When the mouse cursor is over"/></div></div><p class="title"><b>Figure 6.127. When the mouse cursor is over</b></p></div><br class="figure-break"/><p>
+         <span class="emphasis"><em>
+            <span class="property">"name"</span>
+         </em></span> attribute defines a name of the JavaScript function that is be generated on a page
+      when the component is rendered. You can invoke this function to activate the effect. The
+      function accesses one parameter. It is a set of effect options in JSON format. </p><p>
+         <span class="emphasis"><em>
+            <span class="property">"type"</span>
+         </em></span> attribute defines the type of an effect. For example, "Fade", "Blind", "Opacity".
+      Have a look at <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://script.aculo.us">scriptaculous documentation</a> for set
+      of available effect. </p><p>
+         <span class="emphasis"><em>
+            <span class="property">"for"</span>
+         </em></span> attribute defines the id of the component or html tag, the effect is attached
+      to. RichFaces converts the <span class="emphasis"><em>
+            <span class="property">"for"</span>
+         </em></span> attribute value to the client id of the component if such component is found. If
+      not, the value is left as is for possible wiring with on the DOM element's id on the client
+      side. By default, the target of the effect is the same element that effect pointed to.
+      However, the target element is might be overridden with <span class="emphasis"><em>
+            <span class="property">"targetId"</span>
+         </em></span> option passed with <span class="emphasis"><em>
+            <span class="property">"params"</span>
+         </em></span> attribute of with function paramenter. </p><p>
+         <span class="emphasis"><em>
+            <span class="property">"params"</span>
+         </em></span> attribute allows to define the set of options possible for particurar effect. For
+      example, 'duration', 'delay', 'from', 'to'. Additionally to the options used by the effect
+      itself, there are two option that might override the <span class="bold"><strong>
+            <span class="property">&lt;rich:effect&gt;</span>
+         </strong></span>
+      attribute. Those are: </p><div class="itemizedlist"><ul><li><p>
+                  <span class="emphasis"><em>
+                     <span class="property">"targetId"</span>
+                  </em></span> allows to re-define the target of effect. The option is override the value of <span class="emphasis"><em>
+                     <span class="property">"for"</span>
+                  </em></span> attribute.</p></li><li><p>
+                  <span class="emphasis"><em>
+                     <span class="property">"type"</span>
+                  </em></span> defines the effect type. The option is override the value of <span class="emphasis"><em>
+                     <span class="property">"type"</span>
+                  </em></span> attribute.</p></li></ul></div><p>
+      </p><p> You can use a set of effects directly without defining the <span class="bold"><strong>
+            <span class="property">&lt;rich:effect&gt;</span>
+         </strong></span> component on a page if it's convenient for you. For that, load the
+      scriptaculous library to the page with the following code: </p><p>
+         <span class="bold"><strong>Example:</strong></span>
+      </p><pre xmlns="" xmlns:rf="java:org.jboss.highlight.XhtmlRendererFactory" class="XML"><!-- XML : generated by JHighlight v1.0 (http://jhighlight.dev.java.net) -->
+<span class="xml_plain">...</span><br />
+<span class="xml_tag_symbols">&lt;</span><span class="xml_tag_name">a4j:loadScript</span><span class="xml_plain">&nbsp;</span><span class="xml_attribute_name">src</span><span class="xml_tag_symbols">=</span><span class="xml_attribute_value">&quot;resource://scriptaculous/effect.js&quot;</span><span class="xml_plain">&nbsp;</span><span class="xml_tag_symbols">/&gt;</span><span class="xml_plain"></span><br />
+<span class="xml_plain">...</span><br />
+</pre><p> If you do use the <span class="bold"><strong>
+            <span class="property">&lt;rich:effect&gt;</span>
+         </strong></span>component, there is no need to include this library because it's already here. </p><p>For more information look at <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://jboss.com/index.html?module=bb&amp;op=viewtopic&amp;t=119044">RichFaces
+        Users Forum</a>.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e33156"/>6.55.6. Look-and-Feel Customization</h3></div></div></div><p>
+         <span class="bold"><strong>
+            <span class="property">&lt;rich:effect&gt;</span>
+         </strong></span> has no skin parameters and custom <span class="property">style classes</span>, as the
+      component isn't visual.</p></div><div class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="d0e33170"/>6.55.7. Relevant Resources Links</h3></div></div></div><p>
+    	    <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://wiki.jboss.org/wiki/CreateABannerUsingEffectsAndPoll">
+    		Here
+    	</a>
+    	you can get additional information how to create an image banner
+    	using
+    	<span class="bold"><strong>
+    		      <span class="property">&lt;rich:effect&gt;</span>
+    	    </strong></span>
+    	and
+    	<span class="bold"><strong>
+    		      <span class="property">&lt;a4j:poll&gt;</span>
+    	    </strong></span>
+    	components and
+    	<a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://wiki.jboss.org/auth/wiki/CreateAHTMLBannerUsingEffectsAndPoll">
+    		here
+    	</a>
+    	how to create a HTML banner.
+    </p><p>
+         <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://wiki.jboss.org/auth/wiki/RichFacesCookbook/SlideShow">Here</a>
+      you can find information how to make a Slide Show with help of the
+      <span class="bold"><strong>
+            <span class="property">&lt;rich:effect&gt;</span>
+         </strong></span>
+      and <span class="bold"><strong>
+            <span class="property">&lt;a4j:poll&gt;</span>
+         </strong></span> components.
+    </p><p>
+         <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://livedemo.exadel.com/richfaces-demo/richfaces/effect.jsf?c=effect">Here</a> you can see the example of <span class="bold"><strong>
+            <span class="property">&lt;rich:effect&gt;</span>
+         </strong></span> usage. </p><p>How to save <span class="bold"><strong>
+            <span class="property">&lt;rich:effect&gt;</span>
+         </strong></span>status see on the <a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.jboss.com/index.html?module=bb&amp;op=viewtopic&amp;t=118833">RichFaces Users Forum</a>.</p></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="menuSeparator.html"><strong>Prev</strong>6.54. 
+				&lt;
+				rich:menuSeparator
+				&gt;
+			</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="fileUpload.html"><strong>Next</strong>6.56. 
+				&lt;
+				rich:fileUpload
+				&gt;
+			</a></li></ul></body></html>
