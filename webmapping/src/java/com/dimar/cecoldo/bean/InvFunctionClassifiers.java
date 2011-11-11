@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.dimar.cecoldo.bean;
 
 import java.io.Serializable;
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,15 +15,19 @@ import javax.persistence.Table;
 
 /**
  *
- * @author user
+ * @author Administrador
  */
 @Entity
 @Table(name = "inv_function_classifiers")
-@NamedQueries({@NamedQuery(name = "InvFunctionClassifiers.findByFunctionCode", query = "SELECT i FROM InvFunctionClassifiers i WHERE i.functionCode = :functionCode"), @NamedQuery(name = "InvFunctionClassifiers.findByFunctionDescription", query = "SELECT i FROM InvFunctionClassifiers i WHERE i.functionDescription = :functionDescription")})
+@NamedQueries({
+    @NamedQuery(name = "InvFunctionClassifiers.findAll", query = "SELECT i FROM InvFunctionClassifiers i"),
+    @NamedQuery(name = "InvFunctionClassifiers.findByFunctionCode", query = "SELECT i FROM InvFunctionClassifiers i WHERE i.functionCode = :functionCode"),
+    @NamedQuery(name = "InvFunctionClassifiers.findByFunctionDescription", query = "SELECT i FROM InvFunctionClassifiers i WHERE i.functionDescription = :functionDescription")})
 public class InvFunctionClassifiers implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @Column(name = "FunctionCode", nullable = false)
+    @Basic(optional = false)
+    @Column(name = "FunctionCode")
     private String functionCode;
     @Column(name = "FunctionDescription")
     private String functionDescription;
@@ -73,7 +77,7 @@ public class InvFunctionClassifiers implements Serializable {
 
     @Override
     public String toString() {
-        return "com.dimar.cecoldo.bean1.InvFunctionClassifiers[functionCode=" + functionCode + "]";
+        return "com.dimar.cecoldo.bean.InvFunctionClassifiers[ functionCode=" + functionCode + " ]";
     }
-
+    
 }

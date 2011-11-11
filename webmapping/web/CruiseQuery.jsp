@@ -42,7 +42,7 @@
                                     <td class="banner-menu" align="left">
                                         <a class="banner" href="CruiseQuery.jsp">Inicio</a>
                                         |
-                                        <a class="banner" href="#">Contáctenos</a>
+                                        <a class="banner" href="http://www.cccp.org.co/index.php/component/content/article/997">Contáctenos</a>
                                         |
                                         <a class="banner" href="#">Preguntas Frecuentes</a>
                                         |
@@ -486,7 +486,7 @@
                                                                         <h:outputText value="#{msg.cruise_port_of_return}"/>
                                                                     </th>
                                                                     <td>
-                                                                        <h:outputText value="#{cruiseManagedBean.selectedInventory.portOfReturn.name}"/>
+                                                                        <h:outputText value="#{cruiseManagedBean.selectedInventory.unlocodePort1.name}"/>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
@@ -494,8 +494,8 @@
                                                                         <h:outputText value="#{msg.cruise_chief_scientist}"/>
                                                                     </th>
                                                                     <td>
-                                                                        <a4j:repeat value="#{cruiseManagedBean.selectedInventory.idChiefScientistCollection}" var="chiefScientist">
-                                                                            <h:outputText value="#{chiefScientist.firstName}"/> <b><h:outputText value="#{chiefScientist.lastName}"/></b> - 
+                                                                        <a4j:repeat value="#{cruiseManagedBean.selectedInventory.invChiefScientistCruiseCollection}" var="chiefScientist">
+                                                                            <h:outputText value="#{chiefScientist.invChiefScientist.firstName}"/> <b><h:outputText value="#{chiefScientist.invChiefScientist.lastName}"/></b> - 
                                                                         </a4j:repeat>
                                                                     </td>
                                                                 </tr>
@@ -511,12 +511,23 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <th>
+                                                                        <h:outputText value="#{msg.cruise_laboratories}"/>
+                                                                    </th>
+                                                                    <td>
+                                                                        <a4j:repeat value="#{cruiseManagedBean.selectedInventory.invLaboratoriesCruisesCollection}" var="laboratories">
+                                                                            <b><h:outputText value="#{laboratories.invLaboratories.country.paiNombrePais}"/></b>
+                                                                            <h:outputText value="#{laboratories.invLaboratories.nameLab}"/><br>
+                                                                        </a4j:repeat>                                      
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>
                                                                         <h:outputText value="#{msg.cruise_measurements}"/>
                                                                     </th>
                                                                     <td>
-                                                                        <a4j:repeat value="#{cruiseManagedBean.selectedInventory.categoryCodeCollection}" var="category">
-                                                                            <b><h:outputText value="#{category.code}"/></b>
-                                                                            <h:outputText value="#{category.title}"/><br>
+                                                                        <a4j:repeat value="#{cruiseManagedBean.selectedInventory.invCruiseBodcCategoryCollection}" var="category">
+                                                                            <b><h:outputText value="#{category.bodcCategory.code}"/></b>
+                                                                            <h:outputText value="#{category.bodcCategory.title}"/><br>
                                                                         </a4j:repeat>                                      
                                                                     </td>
                                                                 </tr>
@@ -525,9 +536,11 @@
                                                                         <h:outputText value="#{msg.uri_metadata}"/>
                                                                     </th>
                                                                     <td>
-                                                                        <a class="naranja" href="<h:outputText value="#{cruiseManagedBean.selectedInventory.uriMetadata}"/>" target="blank_">
-                                                                            <h:outputText value="#{cruiseManagedBean.selectedInventory.uriMetadata}"/>
-                                                                        </a>
+                                                                        <a4j:repeat value="#{cruiseManagedBean.selectedInventory.invMetadataCollection}" var="metadata">
+                                                                            <a class="naranja" href="<h:outputText value="#{metadata.uri}"/>" target="blank_">
+                                                                                <h:outputText value="#{metadata.title}"/>
+                                                                            </a><br>
+                                                                        </a4j:repeat>                                                                         
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
@@ -535,9 +548,11 @@
                                                                         <h:outputText value="#{msg.uri_project}"/>
                                                                     </th>
                                                                     <td>
-                                                                        <a class="naranja" href="<h:outputText value="#{cruiseManagedBean.selectedInventory.uriProject}"/>" target="blank_">
-                                                                            <h:outputText value="#{cruiseManagedBean.selectedInventory.uriProject}"/>
-                                                                        </a>
+                                                                        <a4j:repeat value="#{cruiseManagedBean.selectedInventory.invProjectCollection}" var="project">
+                                                                            <a class="naranja" href="<h:outputText value="#{project.uriProject}"/>" target="blank_">
+                                                                                <h:outputText value="#{project.projectName}"/>
+                                                                            </a><br>
+                                                                        </a4j:repeat>                                                                         
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
@@ -545,8 +560,8 @@
                                                                         <h:outputText value="#{msg.uri_report}"/>
                                                                     </th>
                                                                     <td>
-                                                                        <a class="naranja" href="<h:outputText value="#{cruiseManagedBean.selectedInventory.uriReport}"/>" target="blank_">
-                                                                            <h:outputText value="#{cruiseManagedBean.selectedInventory.uriReport}"/>
+                                                                        <a class="naranja" href="<h:outputText value="#{cruiseManagedBean.selectedInventory.idReport.uri}"/>" target="blank_">
+                                                                            <h:outputText value="#{cruiseManagedBean.selectedInventory.idReport.title}"/>
                                                                         </a>
                                                                     </td>
                                                                 </tr>
@@ -570,35 +585,44 @@
                             <table width="100%" class="footer">
                                 <tr>
                                     <td class="borde_derecho" align="center">
-                                        <table>
-                                            <tr valign="middle">
+                                        <table cellpadding="5">
+                                            <tr valign="middle" style="vertical-align: middle;">
                                                 <td>
-                                                    <img src="{/root/gui/url}/images/cco.png"/>
+                                                    <a target="_blank" href="http://ioc-unesco.org/">
+                                                        <img src="images/enlace_coi.png" width="60px"/>
+                                                    </a>
                                                 </td>
                                                 <td>
-                                                    <img src="{/root/gui/url}/images/cpps.png"/>
+                                                    <a target="_blank" href="http://www.wmo.int/pages/index_es.html">
+                                                        <img src="images/enlace_omm.png" width="60px"/>
+                                                    </a>
                                                 </td>
                                                 <td>
-                                                    <img src="{/root/gui/url}/images/grasp.png"/>
+                                                    <a target="_blank" href="http://www.iode.org/">
+                                                        <img src="images/enlace_iode.png" width="60px"/>
+                                                    </a>
                                                 </td>
                                                 <td>
-                                                    <img src="{/root/gui/url}/images/iode.png"/>
+                                                    <a target="_blank" href="http://www.odincarsa.org/">
+                                                        <img src="images/enlace_odincarsa.png" width="60px"/>
+                                                    </a>
                                                 </td>
                                                 <td>
-                                                    <img src="{/root/gui/url}/images/nacionesUnidas.png"/>
-                                                </td>
-                                                <td>
-                                                    <img src="{/root/gui/url}/images/odincarsa.png"/>
+                                                    <a target="_blank" href="http://www.cpps-int.org/">
+                                                        <img src="images/enlace_cpps.png" width="60px"/>
+                                                    </a>
                                                 </td>
                                             </tr>
                                         </table>
                                     </td>
                                     <td class="borde_derecho" align="center">
-                                        CECOLDO  |  Todos los derechos reservados  |  Políticas de privacidad  |  DIMAR  |  Resolución Óptima 1024 x 768 
+                                        CECOLDO  |  <a href="http://www.cccp.org.co/index.php/component/content/article/945" style="color:#999999;">Política de privacidad</a>  |  Resolución Óptima 1024 x 768 
                                     </td>
-                                    <td align="center">
-                                        <img src="images/gobiernoEnLinea.png">
-                                        <img src="images/repDeColombia.png">
+                                    <td align="center" valign="middle">
+                                        <a target="_blank" href="http://www.gobiernoenlinea.gov.co"><img src="images/gobiernoEnLinea.png" alt="Gobierno en Línea"></a>
+                                    </td>
+                                    <td align="center" valign="middle">
+                                        <a target="_blank" href="http://wsp.presidencia.gov.co/Paginas/Presidencia.aspx"><img src="images/repDeColombia.png" alt="República de Colombia"></a>
                                     </td>
                                 </tr>
                             </table>

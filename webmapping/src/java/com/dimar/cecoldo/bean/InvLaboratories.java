@@ -2,32 +2,48 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.dimar.cecoldo.bean;
 
 import java.io.Serializable;
 import java.util.Collection;
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
  *
- * @author user
+ * @author Administrador
  */
 @Entity
 @Table(name = "inv_laboratories")
-@NamedQueries({@NamedQuery(name = "InvLaboratories.findByIdLab", query = "SELECT i FROM InvLaboratories i WHERE i.idLab = :idLab"), @NamedQuery(name = "InvLaboratories.findByNameLab", query = "SELECT i FROM InvLaboratories i WHERE i.nameLab = :nameLab"), @NamedQuery(name = "InvLaboratories.findByCreditedSince", query = "SELECT i FROM InvLaboratories i WHERE i.creditedSince = :creditedSince"), @NamedQuery(name = "InvLaboratories.findByCreditedProcedures", query = "SELECT i FROM InvLaboratories i WHERE i.creditedProcedures = :creditedProcedures"), @NamedQuery(name = "InvLaboratories.findByContact", query = "SELECT i FROM InvLaboratories i WHERE i.contact = :contact"), @NamedQuery(name = "InvLaboratories.findByContactJob", query = "SELECT i FROM InvLaboratories i WHERE i.contactJob = :contactJob"), @NamedQuery(name = "InvLaboratories.findByAddress", query = "SELECT i FROM InvLaboratories i WHERE i.address = :address"), @NamedQuery(name = "InvLaboratories.findByPhone", query = "SELECT i FROM InvLaboratories i WHERE i.phone = :phone"), @NamedQuery(name = "InvLaboratories.findByFax", query = "SELECT i FROM InvLaboratories i WHERE i.fax = :fax"), @NamedQuery(name = "InvLaboratories.findByAa", query = "SELECT i FROM InvLaboratories i WHERE i.aa = :aa"), @NamedQuery(name = "InvLaboratories.findByWebpage", query = "SELECT i FROM InvLaboratories i WHERE i.webpage = :webpage"), @NamedQuery(name = "InvLaboratories.findByEmail1", query = "SELECT i FROM InvLaboratories i WHERE i.email1 = :email1"), @NamedQuery(name = "InvLaboratories.findByEmail2", query = "SELECT i FROM InvLaboratories i WHERE i.email2 = :email2")})
+@NamedQueries({
+    @NamedQuery(name = "InvLaboratories.findAll", query = "SELECT i FROM InvLaboratories i"),
+    @NamedQuery(name = "InvLaboratories.findByIdLab", query = "SELECT i FROM InvLaboratories i WHERE i.idLab = :idLab"),
+    @NamedQuery(name = "InvLaboratories.findByNameLab", query = "SELECT i FROM InvLaboratories i WHERE i.nameLab = :nameLab"),
+    @NamedQuery(name = "InvLaboratories.findByCreditedSince", query = "SELECT i FROM InvLaboratories i WHERE i.creditedSince = :creditedSince"),
+    @NamedQuery(name = "InvLaboratories.findByCreditedProcedures", query = "SELECT i FROM InvLaboratories i WHERE i.creditedProcedures = :creditedProcedures"),
+    @NamedQuery(name = "InvLaboratories.findByContact", query = "SELECT i FROM InvLaboratories i WHERE i.contact = :contact"),
+    @NamedQuery(name = "InvLaboratories.findByContactJob", query = "SELECT i FROM InvLaboratories i WHERE i.contactJob = :contactJob"),
+    @NamedQuery(name = "InvLaboratories.findByAddress", query = "SELECT i FROM InvLaboratories i WHERE i.address = :address"),
+    @NamedQuery(name = "InvLaboratories.findByPhone", query = "SELECT i FROM InvLaboratories i WHERE i.phone = :phone"),
+    @NamedQuery(name = "InvLaboratories.findByFax", query = "SELECT i FROM InvLaboratories i WHERE i.fax = :fax"),
+    @NamedQuery(name = "InvLaboratories.findByAa", query = "SELECT i FROM InvLaboratories i WHERE i.aa = :aa"),
+    @NamedQuery(name = "InvLaboratories.findByWebpage", query = "SELECT i FROM InvLaboratories i WHERE i.webpage = :webpage"),
+    @NamedQuery(name = "InvLaboratories.findByEmail1", query = "SELECT i FROM InvLaboratories i WHERE i.email1 = :email1"),
+    @NamedQuery(name = "InvLaboratories.findByEmail2", query = "SELECT i FROM InvLaboratories i WHERE i.email2 = :email2")})
 public class InvLaboratories implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @Column(name = "id_lab", nullable = false)
+    @Basic(optional = false)
+    @Column(name = "id_lab")
     private Integer idLab;
     @Column(name = "name_lab")
     private String nameLab;
@@ -53,14 +69,14 @@ public class InvLaboratories implements Serializable {
     private String email1;
     @Column(name = "Email_2")
     private String email2;
-    @ManyToMany(mappedBy = "idLaboratoryCollection")
-    private Collection<InvCruiseInventory> idCruiseCollection;
     @JoinColumn(name = "country", referencedColumnName = "pai_id")
     @ManyToOne
     private Paises0101 country;
     @JoinColumn(name = "institution_lab", referencedColumnName = "Id_institution")
     @ManyToOne
     private InvInstitutions institutionLab;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "invLaboratories")
+    private Collection<InvLaboratoriesCruises> invLaboratoriesCruisesCollection;
 
     public InvLaboratories() {
     }
@@ -173,14 +189,6 @@ public class InvLaboratories implements Serializable {
         this.email2 = email2;
     }
 
-    public Collection<InvCruiseInventory> getIdCruiseCollection() {
-        return idCruiseCollection;
-    }
-
-    public void setIdCruiseCollection(Collection<InvCruiseInventory> idCruiseCollection) {
-        this.idCruiseCollection = idCruiseCollection;
-    }
-
     public Paises0101 getCountry() {
         return country;
     }
@@ -195,6 +203,14 @@ public class InvLaboratories implements Serializable {
 
     public void setInstitutionLab(InvInstitutions institutionLab) {
         this.institutionLab = institutionLab;
+    }
+
+    public Collection<InvLaboratoriesCruises> getInvLaboratoriesCruisesCollection() {
+        return invLaboratoriesCruisesCollection;
+    }
+
+    public void setInvLaboratoriesCruisesCollection(Collection<InvLaboratoriesCruises> invLaboratoriesCruisesCollection) {
+        this.invLaboratoriesCruisesCollection = invLaboratoriesCruisesCollection;
     }
 
     @Override
@@ -219,7 +235,7 @@ public class InvLaboratories implements Serializable {
 
     @Override
     public String toString() {
-        return "com.dimar.cecoldo.bean1.InvLaboratories[idLab=" + idLab + "]";
+        return "com.dimar.cecoldo.bean.InvLaboratories[ idLab=" + idLab + " ]";
     }
-
+    
 }

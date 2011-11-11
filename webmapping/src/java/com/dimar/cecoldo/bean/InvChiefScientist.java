@@ -2,32 +2,48 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.dimar.cecoldo.bean;
 
 import java.io.Serializable;
 import java.util.Collection;
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
  *
- * @author user
+ * @author Administrador
  */
 @Entity
 @Table(name = "inv_chief_scientist")
-@NamedQueries({@NamedQuery(name = "InvChiefScientist.findById", query = "SELECT i FROM InvChiefScientist i WHERE i.id = :id"), @NamedQuery(name = "InvChiefScientist.findByInitials", query = "SELECT i FROM InvChiefScientist i WHERE i.initials = :initials"), @NamedQuery(name = "InvChiefScientist.findByFirstName", query = "SELECT i FROM InvChiefScientist i WHERE i.firstName = :firstName"), @NamedQuery(name = "InvChiefScientist.findByLastName", query = "SELECT i FROM InvChiefScientist i WHERE i.lastName = :lastName"), @NamedQuery(name = "InvChiefScientist.findByCvLac", query = "SELECT i FROM InvChiefScientist i WHERE i.cvLac = :cvLac"), @NamedQuery(name = "InvChiefScientist.findByJob", query = "SELECT i FROM InvChiefScientist i WHERE i.job = :job"), @NamedQuery(name = "InvChiefScientist.findByActive", query = "SELECT i FROM InvChiefScientist i WHERE i.active = :active"), @NamedQuery(name = "InvChiefScientist.findByActiveUntil", query = "SELECT i FROM InvChiefScientist i WHERE i.activeUntil = :activeUntil"), @NamedQuery(name = "InvChiefScientist.findByPhone", query = "SELECT i FROM InvChiefScientist i WHERE i.phone = :phone"), @NamedQuery(name = "InvChiefScientist.findByFax", query = "SELECT i FROM InvChiefScientist i WHERE i.fax = :fax"), @NamedQuery(name = "InvChiefScientist.findByPersonalWebPage", query = "SELECT i FROM InvChiefScientist i WHERE i.personalWebPage = :personalWebPage"), @NamedQuery(name = "InvChiefScientist.findByEMail1", query = "SELECT i FROM InvChiefScientist i WHERE i.eMail1 = :eMail1"), @NamedQuery(name = "InvChiefScientist.findByEMail2", query = "SELECT i FROM InvChiefScientist i WHERE i.eMail2 = :eMail2")})
+@NamedQueries({
+    @NamedQuery(name = "InvChiefScientist.findAll", query = "SELECT i FROM InvChiefScientist i"),
+    @NamedQuery(name = "InvChiefScientist.findById", query = "SELECT i FROM InvChiefScientist i WHERE i.id = :id"),
+    @NamedQuery(name = "InvChiefScientist.findByInitials", query = "SELECT i FROM InvChiefScientist i WHERE i.initials = :initials"),
+    @NamedQuery(name = "InvChiefScientist.findByFirstName", query = "SELECT i FROM InvChiefScientist i WHERE i.firstName = :firstName"),
+    @NamedQuery(name = "InvChiefScientist.findByLastName", query = "SELECT i FROM InvChiefScientist i WHERE i.lastName = :lastName"),
+    @NamedQuery(name = "InvChiefScientist.findByCvLac", query = "SELECT i FROM InvChiefScientist i WHERE i.cvLac = :cvLac"),
+    @NamedQuery(name = "InvChiefScientist.findByJob", query = "SELECT i FROM InvChiefScientist i WHERE i.job = :job"),
+    @NamedQuery(name = "InvChiefScientist.findByActive", query = "SELECT i FROM InvChiefScientist i WHERE i.active = :active"),
+    @NamedQuery(name = "InvChiefScientist.findByActiveUntil", query = "SELECT i FROM InvChiefScientist i WHERE i.activeUntil = :activeUntil"),
+    @NamedQuery(name = "InvChiefScientist.findByPhone", query = "SELECT i FROM InvChiefScientist i WHERE i.phone = :phone"),
+    @NamedQuery(name = "InvChiefScientist.findByFax", query = "SELECT i FROM InvChiefScientist i WHERE i.fax = :fax"),
+    @NamedQuery(name = "InvChiefScientist.findByPersonalWebPage", query = "SELECT i FROM InvChiefScientist i WHERE i.personalWebPage = :personalWebPage"),
+    @NamedQuery(name = "InvChiefScientist.findByEMail1", query = "SELECT i FROM InvChiefScientist i WHERE i.eMail1 = :eMail1"),
+    @NamedQuery(name = "InvChiefScientist.findByEMail2", query = "SELECT i FROM InvChiefScientist i WHERE i.eMail2 = :eMail2")})
 public class InvChiefScientist implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @Column(name = "Id", nullable = false)
+    @Basic(optional = false)
+    @Column(name = "Id")
     private String id;
     @Column(name = "initials")
     private String initials;
@@ -53,17 +69,17 @@ public class InvChiefScientist implements Serializable {
     private String eMail1;
     @Column(name = "e_mail_2")
     private String eMail2;
-    @ManyToMany(mappedBy = "idChiefScientistCollection")
-    private Collection<InvCruiseInventory> idCruiseCollection;
-    @JoinColumn(name = "institution", referencedColumnName = "Id_institution")
-    @ManyToOne
-    private InvInstitutions institution;
-    @JoinColumn(name = "country", referencedColumnName = "pai_id")
-    @ManyToOne
-    private Paises0101 country;
     @JoinColumn(name = "profession", referencedColumnName = "id_profesion")
     @ManyToOne
     private GenProfesion profession;
+    @JoinColumn(name = "country", referencedColumnName = "pai_id")
+    @ManyToOne
+    private Paises0101 country;
+    @JoinColumn(name = "institution", referencedColumnName = "Id_institution")
+    @ManyToOne
+    private InvInstitutions institution;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "invChiefScientist")
+    private Collection<InvChiefScientistCruise> invChiefScientistCruiseCollection;
 
     public InvChiefScientist() {
     }
@@ -176,20 +192,12 @@ public class InvChiefScientist implements Serializable {
         this.eMail2 = eMail2;
     }
 
-    public Collection<InvCruiseInventory> getIdCruiseCollection() {
-        return idCruiseCollection;
+    public GenProfesion getProfession() {
+        return profession;
     }
 
-    public void setIdCruiseCollection(Collection<InvCruiseInventory> idCruiseCollection) {
-        this.idCruiseCollection = idCruiseCollection;
-    }
-
-    public InvInstitutions getInstitution() {
-        return institution;
-    }
-
-    public void setInstitution(InvInstitutions institution) {
-        this.institution = institution;
+    public void setProfession(GenProfesion profession) {
+        this.profession = profession;
     }
 
     public Paises0101 getCountry() {
@@ -200,12 +208,20 @@ public class InvChiefScientist implements Serializable {
         this.country = country;
     }
 
-    public GenProfesion getProfession() {
-        return profession;
+    public InvInstitutions getInstitution() {
+        return institution;
     }
 
-    public void setProfession(GenProfesion profession) {
-        this.profession = profession;
+    public void setInstitution(InvInstitutions institution) {
+        this.institution = institution;
+    }
+
+    public Collection<InvChiefScientistCruise> getInvChiefScientistCruiseCollection() {
+        return invChiefScientistCruiseCollection;
+    }
+
+    public void setInvChiefScientistCruiseCollection(Collection<InvChiefScientistCruise> invChiefScientistCruiseCollection) {
+        this.invChiefScientistCruiseCollection = invChiefScientistCruiseCollection;
     }
 
     @Override
@@ -230,7 +246,7 @@ public class InvChiefScientist implements Serializable {
 
     @Override
     public String toString() {
-        return "com.dimar.cecoldo.bean1.InvChiefScientist[id=" + id + "]";
+        return "com.dimar.cecoldo.bean.InvChiefScientist[ id=" + id + " ]";
     }
-
+    
 }

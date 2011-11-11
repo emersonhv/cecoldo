@@ -2,7 +2,6 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.dimar.cecoldo.bean;
 
 import java.io.Serializable;
@@ -16,20 +15,24 @@ import javax.persistence.Table;
 
 /**
  *
- * @author user
+ * @author Administrador
  */
 @Entity
 @Table(name = "inv_cruise_institutions")
-@NamedQueries({@NamedQuery(name = "InvCruiseInstitutions.findByIdinstitution", query = "SELECT i FROM InvCruiseInstitutions i WHERE i.invCruiseInstitutionsPK.idinstitution = :idinstitution"), @NamedQuery(name = "InvCruiseInstitutions.findByIdCruise", query = "SELECT i FROM InvCruiseInstitutions i WHERE i.invCruiseInstitutionsPK.idCruise = :idCruise"), @NamedQuery(name = "InvCruiseInstitutions.findByRelationType", query = "SELECT i FROM InvCruiseInstitutions i WHERE i.invCruiseInstitutionsPK.relationType = :relationType")})
+@NamedQueries({
+    @NamedQuery(name = "InvCruiseInstitutions.findAll", query = "SELECT i FROM InvCruiseInstitutions i"),
+    @NamedQuery(name = "InvCruiseInstitutions.findByIdinstitution", query = "SELECT i FROM InvCruiseInstitutions i WHERE i.invCruiseInstitutionsPK.idinstitution = :idinstitution"),
+    @NamedQuery(name = "InvCruiseInstitutions.findByIdCruise", query = "SELECT i FROM InvCruiseInstitutions i WHERE i.invCruiseInstitutionsPK.idCruise = :idCruise"),
+    @NamedQuery(name = "InvCruiseInstitutions.findByRelationType", query = "SELECT i FROM InvCruiseInstitutions i WHERE i.invCruiseInstitutionsPK.relationType = :relationType")})
 public class InvCruiseInstitutions implements Serializable {
     private static final long serialVersionUID = 1L;
     @EmbeddedId
     protected InvCruiseInstitutionsPK invCruiseInstitutionsPK;
     @JoinColumn(name = "id_cruise", referencedColumnName = "id_cruise", insertable = false, updatable = false)
-    @ManyToOne
+    @ManyToOne(optional = false)
     private InvCruiseInventory invCruiseInventory;
     @JoinColumn(name = "Id_institution", referencedColumnName = "Id_institution", insertable = false, updatable = false)
-    @ManyToOne
+    @ManyToOne(optional = false)
     private InvInstitutions invInstitutions;
 
     public InvCruiseInstitutions() {
@@ -39,7 +42,7 @@ public class InvCruiseInstitutions implements Serializable {
         this.invCruiseInstitutionsPK = invCruiseInstitutionsPK;
     }
 
-    public InvCruiseInstitutions(int idinstitution, String idCruise, String relationType) {
+    public InvCruiseInstitutions(int idinstitution, int idCruise, String relationType) {
         this.invCruiseInstitutionsPK = new InvCruiseInstitutionsPK(idinstitution, idCruise, relationType);
     }
 
@@ -89,7 +92,7 @@ public class InvCruiseInstitutions implements Serializable {
 
     @Override
     public String toString() {
-        return "com.dimar.cecoldo.bean1.InvCruiseInstitutions[invCruiseInstitutionsPK=" + invCruiseInstitutionsPK + "]";
+        return "com.dimar.cecoldo.bean.InvCruiseInstitutions[ invCruiseInstitutionsPK=" + invCruiseInstitutionsPK + " ]";
     }
-
+    
 }

@@ -44,9 +44,7 @@ public class BodcCategory implements Serializable {
     private Collection<ReportGroup> groupIdCollection;   
     @JoinColumn(name = "DISCIPLINE", referencedColumnName = "id_discipline")
     @ManyToOne
-    private InvDiscipline discipline;    
-    @ManyToMany(mappedBy = "categoryCodeCollection")
-    private Collection<InvCruiseInventory> idCruiseCollection;    
+    private InvDiscipline discipline;      
 
     public BodcCategory() {
     }
@@ -143,13 +141,4 @@ public class BodcCategory implements Serializable {
     public void setDiscipline(InvDiscipline discipline) {
         this.discipline = discipline;
     }
-
-    public Collection<InvCruiseInventory> getIdCruiseCollection() {
-        return idCruiseCollection;
-    }
-
-    public void setIdCruiseCollection(Collection<InvCruiseInventory> idCruiseCollection) {
-        this.idCruiseCollection = idCruiseCollection;
-    }
-
 }

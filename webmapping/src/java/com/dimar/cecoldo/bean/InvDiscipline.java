@@ -2,13 +2,15 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.dimar.cecoldo.bean;
 
 import java.io.Serializable;
 import java.util.Collection;
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -17,21 +19,27 @@ import javax.persistence.Table;
 
 /**
  *
- * @author user
+ * @author Administrador
  */
 @Entity
 @Table(name = "inv_discipline")
-@NamedQueries({@NamedQuery(name = "InvDiscipline.findByIdDiscipline", query = "SELECT i FROM InvDiscipline i WHERE i.idDiscipline = :idDiscipline"), @NamedQuery(name = "InvDiscipline.findByDiscipline", query = "SELECT i FROM InvDiscipline i WHERE i.discipline = :discipline")})
+@NamedQueries({
+    @NamedQuery(name = "InvDiscipline.findAll", query = "SELECT i FROM InvDiscipline i"),
+    @NamedQuery(name = "InvDiscipline.findByIdDiscipline", query = "SELECT i FROM InvDiscipline i WHERE i.idDiscipline = :idDiscipline"),
+    @NamedQuery(name = "InvDiscipline.findByDiscipline", query = "SELECT i FROM InvDiscipline i WHERE i.discipline = :discipline")})
 public class InvDiscipline implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @Column(name = "id_discipline", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "id_discipline")
     private Integer idDiscipline;
-    @Column(name = "discipline", nullable = false)
+    @Basic(optional = false)
+    @Column(name = "discipline")
     private String discipline;
     @OneToMany(mappedBy = "discipline")
     private Collection<BodcCategory> bodcCategoryCollection;
-    
+
     public InvDiscipline() {
     }
 
@@ -60,6 +68,14 @@ public class InvDiscipline implements Serializable {
         this.discipline = discipline;
     }
 
+    public Collection<BodcCategory> getBodcCategoryCollection() {
+        return bodcCategoryCollection;
+    }
+
+    public void setBodcCategoryCollection(Collection<BodcCategory> bodcCategoryCollection) {
+        this.bodcCategoryCollection = bodcCategoryCollection;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -82,15 +98,7 @@ public class InvDiscipline implements Serializable {
 
     @Override
     public String toString() {
-        return "com.dimar.cecoldo.bean.InvDiscipline[idDiscipline=" + idDiscipline + "]";
+        return "com.dimar.cecoldo.bean.InvDiscipline[ idDiscipline=" + idDiscipline + " ]";
     }
-
-    public Collection<BodcCategory> getBodcCategoryCollection() {
-        return bodcCategoryCollection;
-    }
-
-    public void setBodcCategoryCollection(Collection<BodcCategory> bodcCategoryCollection) {
-        this.bodcCategoryCollection = bodcCategoryCollection;
-    }
-
+    
 }

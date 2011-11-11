@@ -2,30 +2,33 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.dimar.cecoldo.bean;
 
 import java.io.Serializable;
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 /**
  *
- * @author user
+ * @author Administrador
  */
 @Embeddable
 public class InvCruiseInstitutionsPK implements Serializable {
-    @Column(name = "Id_institution", nullable = false)
+    @Basic(optional = false)
+    @Column(name = "Id_institution")
     private int idinstitution;
-    @Column(name = "id_cruise", nullable = false)
-    private String idCruise;
-    @Column(name = "relation_type", nullable = false)
+    @Basic(optional = false)
+    @Column(name = "id_cruise")
+    private int idCruise;
+    @Basic(optional = false)
+    @Column(name = "relation_type")
     private String relationType;
 
     public InvCruiseInstitutionsPK() {
     }
 
-    public InvCruiseInstitutionsPK(int idinstitution, String idCruise, String relationType) {
+    public InvCruiseInstitutionsPK(int idinstitution, int idCruise, String relationType) {
         this.idinstitution = idinstitution;
         this.idCruise = idCruise;
         this.relationType = relationType;
@@ -39,11 +42,11 @@ public class InvCruiseInstitutionsPK implements Serializable {
         this.idinstitution = idinstitution;
     }
 
-    public String getIdCruise() {
+    public int getIdCruise() {
         return idCruise;
     }
 
-    public void setIdCruise(String idCruise) {
+    public void setIdCruise(int idCruise) {
         this.idCruise = idCruise;
     }
 
@@ -59,7 +62,7 @@ public class InvCruiseInstitutionsPK implements Serializable {
     public int hashCode() {
         int hash = 0;
         hash += (int) idinstitution;
-        hash += (idCruise != null ? idCruise.hashCode() : 0);
+        hash += (int) idCruise;
         hash += (relationType != null ? relationType.hashCode() : 0);
         return hash;
     }
@@ -74,7 +77,7 @@ public class InvCruiseInstitutionsPK implements Serializable {
         if (this.idinstitution != other.idinstitution) {
             return false;
         }
-        if ((this.idCruise == null && other.idCruise != null) || (this.idCruise != null && !this.idCruise.equals(other.idCruise))) {
+        if (this.idCruise != other.idCruise) {
             return false;
         }
         if ((this.relationType == null && other.relationType != null) || (this.relationType != null && !this.relationType.equals(other.relationType))) {
@@ -85,7 +88,7 @@ public class InvCruiseInstitutionsPK implements Serializable {
 
     @Override
     public String toString() {
-        return "com.dimar.cecoldo.bean1.InvCruiseInstitutionsPK[idinstitution=" + idinstitution + ", idCruise=" + idCruise + ", relationType=" + relationType + "]";
+        return "com.dimar.cecoldo.bean.InvCruiseInstitutionsPK[ idinstitution=" + idinstitution + ", idCruise=" + idCruise + ", relationType=" + relationType + " ]";
     }
-
+    
 }

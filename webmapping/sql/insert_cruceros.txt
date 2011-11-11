@@ -1,0 +1,4 @@
+INSERT INTO `inv_cruise_inventory` (`id_cruise`,`ocean_area`,`country`,`year`,`begin_date`,`end_date`,`ship_name`,`cruise_name`,`cruise_objetives`,`status`,`port_of_departure`,`port_of_return`,`uri_metadata`,`uri_project`,`uri_report`,`countryPort`,`id_project`,`return_country_port`) VALUES 
+ ('1',1,'22',1970,'1970-03-01 00:00:00','1970-03-30 00:00:00',152,'PACÍFICO I',NULL,'0','TCO','TCO',NULL,NULL,NULL,'22',NULL,'22'),
+ 
+ INSERT INTO `cecoldo`.`inv_cruise_inventory` (`id_cruise`,`ocean_area`,`country`,`year`,`begin_date`,`end_date`,`ship_name`,`cruise_name`,`cruise_objetives`,`status`,`port_of_departure`,`port_of_return`,`uri_report`,`countryPort`,`return_country_port`,`id_report`) VALUES ('1',1,'22',1970,'1970-03-01 00:00:00','1970-03-30 00:00:00',152,'PACÍFICO I','Objetivos del crucero','0','TCO','TCO',NULL,'22','22',NULL);
