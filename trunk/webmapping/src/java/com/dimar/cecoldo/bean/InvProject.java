@@ -2,47 +2,64 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.dimar.cecoldo.bean;
 
 import java.io.Serializable;
 import java.util.Collection;
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
  *
- * @author user
+ * @author Administrador
  */
 @Entity
 @Table(name = "inv_project")
-@NamedQueries({@NamedQuery(name = "InvProject.findByIdProject", query = "SELECT i FROM InvProject i WHERE i.idProject = :idProject"), @NamedQuery(name = "InvProject.findByProjectName", query = "SELECT i FROM InvProject i WHERE i.projectName = :projectName"), @NamedQuery(name = "InvProject.findByProjectBoss", query = "SELECT i FROM InvProject i WHERE i.projectBoss = :projectBoss"), @NamedQuery(name = "InvProject.findByUriProject", query = "SELECT i FROM InvProject i WHERE i.uriProject = :uriProject")})
+@NamedQueries({
+    @NamedQuery(name = "InvProject.findAll", query = "SELECT i FROM InvProject i"),
+    @NamedQuery(name = "InvProject.findByIdProject", query = "SELECT i FROM InvProject i WHERE i.idProject = :idProject"),
+    @NamedQuery(name = "InvProject.findByProjectName", query = "SELECT i FROM InvProject i WHERE i.projectName = :projectName"),
+    @NamedQuery(name = "InvProject.findByProjectBoss", query = "SELECT i FROM InvProject i WHERE i.projectBoss = :projectBoss"),
+    @NamedQuery(name = "InvProject.findByUriProject", query = "SELECT i FROM InvProject i WHERE i.uriProject = :uriProject"),
+    @NamedQuery(name = "InvProject.findByDescription", query = "SELECT i FROM InvProject i WHERE i.description = :description")})
 public class InvProject implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @Column(name = "id_project", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "id_project")
     private Integer idProject;
-    @Column(name = "project_name", nullable = false)
+    @Basic(optional = false)
+    @Column(name = "project_name")
     private String projectName;
     @Column(name = "project_boss")
     private String projectBoss;
     @Column(name = "uri_project")
     private String uriProject;
+    @Column(name = "description")
+    private String description;
+    @JoinTable(name = "inv_cruise_to_project", joinColumns = {
+        @JoinColumn(name = "inv_project_id_project", referencedColumnName = "id_project")}, inverseJoinColumns = {
+        @JoinColumn(name = "inv_cruise_inventory_id_cruise", referencedColumnName = "id_cruise")})
+    @ManyToMany
+    private Collection<InvCruiseInventory> invCruiseInventoryCollection;
     @JoinColumn(name = "id_status", referencedColumnName = "id_status")
     @ManyToOne
     private InvStatus idStatus;
     @JoinColumn(name = "id_institution", referencedColumnName = "Id_institution")
     @ManyToOne
     private InvInstitutions idInstitution;
-    @OneToMany(mappedBy = "idProject")
-    private Collection<InvCruiseInventory> invCruiseInventoryCollection;    
 
     public InvProject() {
     }
@@ -88,6 +105,22 @@ public class InvProject implements Serializable {
         this.uriProject = uriProject;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Collection<InvCruiseInventory> getInvCruiseInventoryCollection() {
+        return invCruiseInventoryCollection;
+    }
+
+    public void setInvCruiseInventoryCollection(Collection<InvCruiseInventory> invCruiseInventoryCollection) {
+        this.invCruiseInventoryCollection = invCruiseInventoryCollection;
+    }
+
     public InvStatus getIdStatus() {
         return idStatus;
     }
@@ -126,15 +159,7 @@ public class InvProject implements Serializable {
 
     @Override
     public String toString() {
-        return "com.dimar.cecoldo.bean.InvProject[idProject=" + idProject + "]";
+        return "com.dimar.cecoldo.bean.InvProject[ idProject=" + idProject + " ]";
     }
-
-    public Collection<InvCruiseInventory> getInvCruiseInventoryCollection() {
-        return invCruiseInventoryCollection;
-    }
-
-    public void setInvCruiseInventoryCollection(Collection<InvCruiseInventory> invCruiseInventoryCollection) {
-        this.invCruiseInventoryCollection = invCruiseInventoryCollection;
-    }
-
+    
 }

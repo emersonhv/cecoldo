@@ -41,6 +41,9 @@ import com.dimar.cecoldo.bean.InvStatus;
 import com.dimar.cecoldo.bean.Regionsdes;
 import com.dimar.cecoldo.util.CecoldoPropertiesProvider;
 import com.dimar.cecoldo.util.MailService;
+import java.util.Comparator;
+import java.util.Set;
+import java.util.TreeSet;
 import javax.persistence.TemporalType;
 
 /**
@@ -78,16 +81,16 @@ public class Controller {
         String scientistSql = "";
         String shipNameSql = "";
         if (bean.getLaboratoriesSelected().size() > 0) {
-            labSql = ", IN (i.idLaboratoryCollection) l";
+            labSql = ", IN (i.invLaboratoriesCruisesCollection) l";
         }
         if (bean.getDataTypesSelected().size() > 0 || bean.getDisciplineSelected() != -1) {
-            categorySql = ", IN (i.categoryCodeCollection) c";
+            categorySql = ", IN (i.invCruiseBodcCategoryCollection) c";
         }
         if (bean.getInstitutionsSelected().size() > 0) {
             institutionsSql = ", IN (i.invCruiseInstitutionsCollection) inst";
         }
         if (bean.getScientistSelected().size() > 0) {
-            scientistSql = ", IN (i.idChiefScientistCollection) scientist";
+            scientistSql = ", IN (i.invChiefScientistCruiseCollection) scientist";
         }
         String sql = "select distinct i from InvCruiseInventory i" + labSql + institutionsSql + categorySql + scientistSql + " where 1=1 ";
         if (bean.getShipNameSelected() != -1) {
@@ -114,10 +117,10 @@ public class Controller {
             sql += ")";
         }
         if (bean.getDisciplineSelected() != -1 && bean.getDataTypesSelected().size() == 0) {
-            sql += " and c.discipline.idDiscipline = " + bean.getDisciplineSelected();
+            sql += " and c.bodcCategory.discipline.idDiscipline = " + bean.getDisciplineSelected();
         }
         if (bean.getLaboratoriesSelected().size() > 0) {
-            sql += " and l.idLab in (" + bean.getLaboratoriesSelected().get(0);
+            sql += " and l.invLaboratories.idLab in (" + bean.getLaboratoriesSelected().get(0);
             for (int i = 1; i < bean.getLaboratoriesSelected().size(); i++) {
                 sql += ", " + bean.getLaboratoriesSelected().get(i);
             }
@@ -131,14 +134,14 @@ public class Controller {
             sql += ")";
         }
         if (bean.getScientistSelected().size() > 0) {
-            sql += " and scientist.id in (" + bean.getScientistSelected().get(0);
+            sql += " and scientist.invChiefScientist.id in (" + bean.getScientistSelected().get(0);
             for (int i = 1; i < bean.getScientistSelected().size(); i++) {
                 sql += ", " + bean.getScientistSelected().get(i);
             }
             sql += ")";
         }
         if (bean.getDataTypesSelected().size() > 0) {
-            sql += " and c.code in ('" + bean.getDataTypesSelected().get(0);
+            sql += " and c.bodcCategory.code in ('" + bean.getDataTypesSelected().get(0);
             for (int i = 1; i < bean.getDataTypesSelected().size(); i++) {
                 sql += "', '" + bean.getDataTypesSelected().get(i);
             }
@@ -150,7 +153,7 @@ public class Controller {
             query.setParameter("beginDate", bean.getBeginDate(), TemporalType.DATE);
         }
         if (bean.getEndDate() != null) {
-            query.setParameter("beginDate", bean.getEndDate(), TemporalType.DATE);
+            query.setParameter("endDate", bean.getEndDate(), TemporalType.DATE);
         }
         results = query.getResultList();
         //cruiseNameSelected, beginDate, endDate, statusSelected, areasSelected, disciplineSelected, dataTypesSelected, laboratoriesSelected, orderBySelected
@@ -431,19 +434,19 @@ public class Controller {
         List<SelectItem> items = new ArrayList<SelectItem>();
         SelectItem item = new SelectItem();
         item.setValue("beginDate");
-        item.setLabel("Cruise Date");
+        item.setLabel("Fecha del Crucero");
         items.add(item);
         item = new SelectItem();
         item.setValue("shipName");
-        item.setLabel("Ship Name");
+        item.setLabel("Nombre del Navío");
         items.add(item);
         item = new SelectItem();
         item.setValue("cruiseName");
-        item.setLabel("Cruise Name");
+        item.setLabel("Nombre del Crucero");
         items.add(item);
         item = new SelectItem();
         item.setValue("idProject.projectName");
-        item.setLabel("Project");
+        item.setLabel("Nombre del Proyecto");
         items.add(item);
 
         return items;
@@ -549,7 +552,8 @@ public class Controller {
     }
 
     public List<InvCruiseInventory> simpleSearchInventory(String freeSearch) {
-        List<InvCruiseInventory> results = null;
+        
+        Set<InvCruiseInventory> results = new TreeSet<InvCruiseInventory>(new InventoryComparator());
         String yearSql = "";
         if (isNumber(freeSearch)) {
             yearSql += "or i.year = :year";
@@ -560,7 +564,7 @@ public class Controller {
         if (isNumber(freeSearch)) {
             query.setParameter("year", Short.valueOf(freeSearch));
         }
-        results = query.getResultList();
+        results.addAll(query.getResultList());
         //pais
         sql = "SELECT i from InvCruiseInventory i " +
                 "where i.country.paiNombrePais like :freeSearch";
@@ -570,7 +574,7 @@ public class Controller {
         //puertos
         sql = "SELECT i from InvCruiseInventory i " +
                 "where i.unlocodePort.name like :freeSearch " +
-                "or i.portOfReturn.name like :freeSearch ";
+                "or i.unlocodePort1.name like :freeSearch ";
         query = getEntityManager().createQuery(sql);
         query.setParameter("freeSearch", "%" + freeSearch + "%");
         results.addAll(query.getResultList());
@@ -582,14 +586,14 @@ public class Controller {
 //                        "or i.idProject.projectName like :freeSearch " +
 //                "or i.idProject is null " +
         //busca los cruceros donde trabajaó un cientifico con el nombre similar
-        sql = "SELECT i from InvCruiseInventory i, IN (i.idChiefScientistCollection) scientist " +
-                "where scientist.firstName like :freeSearch " +
-                "or scientist.lastName like :freeSearch";
+        sql = "SELECT i from InvCruiseInventory i, IN (i.invChiefScientistCruiseCollection) scientist " +
+                "where scientist.invChiefScientist.firstName like :freeSearch " +
+                "or scientist.invChiefScientist.lastName like :freeSearch";
         query = getEntityManager().createQuery(sql);
         query.setParameter("freeSearch", "%" + freeSearch + "%");
         results.addAll(query.getResultList());
-        results = orderByDate(results);
-        return results;
+//        results = orderByDate(results);        
+        return new ArrayList<InvCruiseInventory>(results);
     }
 
     private EntityManager getEntityManager() {
@@ -708,19 +712,20 @@ public class Controller {
         return true;
     }
 
-    private List<InvCruiseInventory> orderByDate(List<InvCruiseInventory> results) {
-        InvCruiseInventory temp;
-        for (int i = 0; i < results.size(); i++) {
-            for (int j = i + 1; j < results.size(); j++) {
-                if (results.get(i).getBeginDate().after(results.get(j).getEndDate())) {
-                    temp = results.get(i);
-                    results.set(i, results.get(j));
-                    results.set(j, temp);
-                }
-            }
-        }
-        return results;
-    }
+//    private List<InvCruiseInventory> orderByDate(Set<InvCruiseInventory> results) {
+//        
+//        InvCruiseInventory temp;
+//        for (int i = 0; i < results.size(); i++) {
+//            for (int j = i + 1; j < results.size(); j++) {
+//                if (results.).getBeginDate().after(results.get(j).getEndDate())) {
+//                    temp = results.get(i);
+//                    results.set(i, results.get(j));
+//                    results.set(j, temp);
+//                }
+//            }
+//        }
+//        return results;
+//    }
 
     private void removeDuplicates(List<MapPoint> points) {
         List<MapPoint> toRemove = new ArrayList<MapPoint>();
@@ -750,4 +755,20 @@ public class Controller {
         getEntityManager().persist(this);
 
     }
+
+}
+class InventoryComparator implements Comparator<InvCruiseInventory>{
+
+    @Override
+    public int compare(InvCruiseInventory o1, InvCruiseInventory o2) {
+        if(o1.getBeginDate().getTime() < o2.getBeginDate().getTime()){
+            return -1;
+        }else if (o1.getBeginDate().getTime() == o2.getBeginDate().getTime()){
+            return 0;
+        }else{
+            return 1;
+        }
+    }
+
+    
 }
