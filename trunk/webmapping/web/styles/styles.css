@@ -194,3 +194,19 @@ td.banner-login {
     top: 0;
     width: 100%;
 }
+.title{
+    font-size: 11pt;
+    font-weight: bold;
+}
+.content{
+    text-align: center;
+    width:600px; 
+    font-family: arial;     
+}
+.text_content{
+    font-size: 10pt;
+    text-align: justify;    
+}
+.text_content a{
+    color:#000000;
+}

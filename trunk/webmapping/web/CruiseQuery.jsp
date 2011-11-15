@@ -40,19 +40,17 @@
                                 </tr>
                                 <tr class="banner">
                                     <td class="banner-menu" align="left">
-                                        <a class="banner" href="CruiseQuery.jsp">Inicio</a>
+                                        <a class="banner" href="index.html">Inicio</a>
                                         |
-                                        <a class="banner" href="http://www.cccp.org.co/index.php/component/content/article/997">Contáctenos</a>
+                                        <a class="banner" href="contact.html">Contáctenos</a>
                                         |
-                                        <a class="banner" href="#">Preguntas Frecuentes</a>
-                                        |
-                                        <a class="banner" href="#">Mapa del Sitio</a>
+                                        <a class="banner" href="help.html">Ayuda</a>
                                         |
                                     </td>
                                     <td class="banner-menu" align="right">
                                         <a class="header_selected" href="#">Español</a>
                                         |
-                                        <a class="banner" href="#">Inglés</a>
+                                        <span class="banner">Inglés</span>
                                     </td>
                                     <!--td align="right" class="banner-menu" width="610px"><select class="banner-content content" onchange="location.replace('../' + this.options[this.selectedIndex].value + '/main.home');">
                                             <option value="en">English</option>
@@ -94,7 +92,11 @@
                                                                         </span>                                                                                    
                                                                     </td>                                                                
                                                                     <td>
-                                                                        <h:inputText value="#{cruiseManagedBean.freeSearch}"/>
+                                                                        <h:inputText value="#{cruiseManagedBean.freeSearch}" id="free_search_id">
+                                                                        </h:inputText>
+                                                                        <rich:hotKey key="return"
+                                                                            handler="#{rich:element('searchButton')}.click()"
+                                                                            selector="#free_search_id"/>                                                                        
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
@@ -106,7 +108,7 @@
                                                                         </a4j:status>
                                                                     </td>
                                                                     <td colspan="2" align="center">
-                                                                        <a4j:commandButton actionListener="#{cruiseManagedBean.simpleSearch}" value="#{msg.searchCruise}" reRender="resultsCounter, resultList" onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;"/>
+                                                                        <a4j:commandButton id="searchButton" actionListener="#{cruiseManagedBean.simpleSearch}" value="#{msg.searchCruise}" reRender="resultsCounter, resultList" onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;"/>
                                                                     </td>
                                                                 </tr>
                                                             </table>
@@ -511,7 +513,7 @@
                                                                 </tr>
                                                                 <tr>
                                                                     <th>
-                                                                        <h:outputText value="#{msg.cruise_laboratories}"/>
+                                                                        <h:outputText value="#{msg.details_laboratories}"/>
                                                                     </th>
                                                                     <td>
                                                                         <a4j:repeat value="#{cruiseManagedBean.selectedInventory.invLaboratoriesCruisesCollection}" var="laboratories">
