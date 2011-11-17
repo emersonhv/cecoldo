@@ -397,8 +397,7 @@
                                                                 <f:facet name="header">
                                                                     <h:outputText value="#{msg.t_cruiseName}" />
                                                                 </f:facet>   
-                                                                <a4j:commandLink actionListener="#{cruiseManagedBean.showDetails}" value="#{cruise.cruiseName}" reRender="details" style="color: #CC3300;">
-                                                                </a4j:commandLink>                                                            
+                                                                <span style="color: #CC3300;"> <h:outputText value="#{cruise.cruiseName}" /></span>
                                                             </rich:column>
                                                             <rich:column style="background-color: #EFF4FA; text-align: center">
                                                                 <f:facet name="header">
@@ -528,7 +527,6 @@
                                                                     </th>
                                                                     <td>
                                                                         <a4j:repeat value="#{cruiseManagedBean.selectedInventory.invCruiseBodcCategoryCollection}" var="category">
-                                                                            <b><h:outputText value="#{category.bodcCategory.code}"/></b>
                                                                             <h:outputText value="#{category.bodcCategory.title}"/><br>
                                                                         </a4j:repeat>                                      
                                                                     </td>
