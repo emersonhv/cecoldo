@@ -1,12 +1,17 @@
 package com.dimar.cecoldo.cruise;
 
+import com.dimar.cecoldo.bean.InvCruiseInstitutions;
 import com.dimar.cecoldo.bean.InvCruiseInventory;
+import com.dimar.cecoldo.bean.InvInstitutions;
 import com.dimar.cecoldo.webmapping.Controller;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import javax.faces.event.ActionEvent;
 import javax.faces.model.SelectItem;
+import org.ajax4jsf.component.html.HtmlAjaxSupport;
 import org.richfaces.component.UIDataTable;
 
 /** 
@@ -50,8 +55,7 @@ public class CruiseInventoryBackendBean {
     private List<String> institutionsSelected;
     private List<SelectItem> scientistList;
     private List<String> scientistSelected;
-    
-    
+
     public CruiseInventoryBackendBean() {
         controller = new Controller();
 //        cruiseNameList = controller.getAllShipNames(); 
@@ -75,8 +79,8 @@ public class CruiseInventoryBackendBean {
         System.out.println("buscando.,..");
 
     }
-    
-    public void changeDisciplineListener(ActionEvent e){
+
+    public void changeDisciplineListener(ActionEvent e) {
         dataTypeList = controller.getDataTypeByDiscipline(disciplineSelected);
         dataTypesSelected = new ArrayList();
     }
@@ -86,8 +90,8 @@ public class CruiseInventoryBackendBean {
         resultsCounter = "Results: " + resultList.size();
         System.out.println("buscando...........freesearch" + resultsCounter);
     }
-    
-    public void showDetails(ActionEvent e){
+
+    public void showDetails(ActionEvent e) {
         selectedInventory = (InvCruiseInventory) resultsTable.getRowData();
     }
 
@@ -105,6 +109,21 @@ public class CruiseInventoryBackendBean {
         this.retrieveSelected = null;
         this.statusSelected = null;
         this.institutionsSelected = null;
+        this.scientistSelected = null;
+        this.shipNameSelected = null;
+        if (e.getSource() instanceof HtmlAjaxSupport) {
+            this.resultList.clear();
+            this.resultsCounter = "Results: 0";
+        }
+    }
+
+    public List<InvInstitutions> getInstitutions() {
+        List<InvCruiseInstitutions> institutions = controller.getInstitutions(selectedInventory);
+        Set<InvInstitutions> institutionSet = new HashSet<InvInstitutions>();
+        for (int i = 0; i < institutions.size(); i++) {
+            institutionSet.add(institutions.get(i).getInvInstitutions());
+        }
+        return new ArrayList<InvInstitutions>(institutionSet);
     }
 
     public UIDataTable getResultsTable() {
