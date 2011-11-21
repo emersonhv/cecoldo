@@ -439,11 +439,11 @@
                                                                         <h:outputText value="#{msg.ship_name}"/>
                                                                     </th>
                                                                     <td>
-                                                                        <a class="naranja" href="<h:outputText value="#{cruiseManagedBean.selectedInventory.shipName.shipUri}"/>">
+                                                                        <a target="_blank" class="naranja" href="<h:outputText value="#{cruiseManagedBean.selectedInventory.shipName.shipUri}"/>">
                                                                             <h:outputText value="#{cruiseManagedBean.selectedInventory.shipName.shipName}"/>
                                                                         </a>
                                                                         <br>
-                                                                        <a href="<h:outputText value="#{cruiseManagedBean.selectedInventory.shipName.shipUri}"/>">
+                                                                        <a target="_blank" href="<h:outputText value="#{cruiseManagedBean.selectedInventory.shipName.shipUri}"/>">
                                                                             <h:graphicImage value="#{cruiseManagedBean.selectedInventory.shipName.shipPicture}" height="100" style="border: 0"/>
                                                                         </a>
                                                                     </td>
