@@ -108,6 +108,7 @@
                                                                         </a4j:status>
                                                                     </td>
                                                                     <td colspan="2" align="center">
+                                                                        <a4j:commandButton actionListener="#{cruiseManagedBean.clean}" value="#{msg.clean}" reRender="resultsCounter, resultList, advancedPanel" onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;"/>                                                                        
                                                                         <a4j:commandButton id="searchButton" actionListener="#{cruiseManagedBean.simpleSearch}" value="#{msg.searchCruise}" reRender="resultsCounter, resultList" onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;"/>
                                                                     </td>
                                                                 </tr>
@@ -115,6 +116,7 @@
                                                         </a4j:region>
                                                     </rich:tab>
                                                     <rich:tab label="Consulta Avanzada" id="advancedTab">
+                                                        <a4j:support event="onlabelclick" actionListener="#{cruiseManagedBean.clean}" reRender="resultsCounter, resultList, advancedPanel"/>
                                                         <a4j:outputPanel id="advancedPanel">
                                                             <a4j:region id="advancedRegion">
                                                                 <table>
@@ -468,9 +470,9 @@
                                                                         <h:outputText value="#{msg.cruise_institutions}"/>
                                                                     </th>
                                                                     <td>
-                                                                        <a4j:repeat value="#{cruiseManagedBean.selectedInventory.invCruiseInstitutionsCollection}" var="institution">
-                                                                            <b><h:outputText value="#{institution.invInstitutions.abbreviation}"/></b>
-                                                                            <h:outputText value="#{institution.invInstitutions.institution}"/><br>
+                                                                        <a4j:repeat value="#{cruiseManagedBean.institutions}" var="institution">
+                                                                            <b><h:outputText value="#{institution.abbreviation}"/></b>
+                                                                            <h:outputText value="#{institution.institution}"/><br>
                                                                         </a4j:repeat>   
                                                                     </td>
                                                                 </tr>

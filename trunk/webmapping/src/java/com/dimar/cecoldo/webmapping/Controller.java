@@ -33,6 +33,7 @@ import com.dimar.cecoldo.bean.TempMalla;
 import com.dimar.cecoldo.bean.BodcRequiredParameter;
 import com.dimar.cecoldo.bean.CecoldoProperties;
 import com.dimar.cecoldo.bean.InvChiefScientist;
+import com.dimar.cecoldo.bean.InvCruiseInstitutions;
 import com.dimar.cecoldo.bean.InvDiscipline;
 import com.dimar.cecoldo.bean.InvInstitutions;
 import com.dimar.cecoldo.bean.InvLaboratories;
@@ -56,7 +57,6 @@ public class Controller {
     private EntityManagerFactory emf;
     public static Map<Integer, String> COLORS;
     public final int MAX_RESULTS = 200;
-    
 
     static {
         COLORS = new HashMap<Integer, String>();
@@ -95,15 +95,15 @@ public class Controller {
         String sql = "select distinct i from InvCruiseInventory i" + labSql + institutionsSql + categorySql + scientistSql + " where 1=1 ";
         if (bean.getShipNameSelected() != -1) {
             sql += " and i.shipName.id = " + bean.getShipNameSelected();
-        }        
+        }
         if (bean.getCruiseNameSelected() != -1) {
             sql += " and i.idCruise = " + bean.getCruiseNameSelected();
         }
         if (bean.getBeginDate() != null) {
-            sql += " and i.beginDate = :beginDate";
+            sql += " and i.beginDate > :beginDate";
         }
         if (bean.getEndDate() != null) {
-            sql += " and i.endDate = :endDate";
+            sql += " and i.endDate < :endDate";
         }
 //        if (bean.getStatusSelected() != -1) {
 //            System.out.println("status --->" + bean.getStatusSelected());
@@ -552,7 +552,7 @@ public class Controller {
     }
 
     public List<InvCruiseInventory> simpleSearchInventory(String freeSearch) {
-        
+
         Set<InvCruiseInventory> results = new TreeSet<InvCruiseInventory>(new InventoryComparator());
         String yearSql = "";
         if (isNumber(freeSearch)) {
@@ -566,15 +566,15 @@ public class Controller {
         }
         results.addAll(query.getResultList());
         //pais
-        sql = "SELECT i from InvCruiseInventory i " +
-                "where i.country.paiNombrePais like :freeSearch";
+        sql = "SELECT i from InvCruiseInventory i "
+                + "where i.country.paiNombrePais like :freeSearch";
         query = getEntityManager().createQuery(sql);
         query.setParameter("freeSearch", "%" + freeSearch + "%");
         results.addAll(query.getResultList());
         //puertos
-        sql = "SELECT i from InvCruiseInventory i " +
-                "where i.unlocodePort.name like :freeSearch " +
-                "or i.unlocodePort1.name like :freeSearch ";
+        sql = "SELECT i from InvCruiseInventory i "
+                + "where i.unlocodePort.name like :freeSearch "
+                + "or i.unlocodePort1.name like :freeSearch ";
         query = getEntityManager().createQuery(sql);
         query.setParameter("freeSearch", "%" + freeSearch + "%");
         results.addAll(query.getResultList());
@@ -586,9 +586,9 @@ public class Controller {
 //                        "or i.idProject.projectName like :freeSearch " +
 //                "or i.idProject is null " +
         //busca los cruceros donde trabajaó un cientifico con el nombre similar
-        sql = "SELECT i from InvCruiseInventory i, IN (i.invChiefScientistCruiseCollection) scientist " +
-                "where scientist.invChiefScientist.firstName like :freeSearch " +
-                "or scientist.invChiefScientist.lastName like :freeSearch";
+        sql = "SELECT i from InvCruiseInventory i, IN (i.invChiefScientistCruiseCollection) scientist "
+                + "where scientist.invChiefScientist.firstName like :freeSearch "
+                + "or scientist.invChiefScientist.lastName like :freeSearch";
         query = getEntityManager().createQuery(sql);
         query.setParameter("freeSearch", "%" + freeSearch + "%");
         results.addAll(query.getResultList());
@@ -623,9 +623,9 @@ public class Controller {
         categoryColorList = new ArrayList<CategoryColor>();
         int i = 0;
         ArrayList<MapPoint> points = new ArrayList<MapPoint>();
-        String consulta = "SELECT b.latitud, b.longitud FROM BodcDatos b " +
-                "WHERE b.idArchivo.idArchivo = :idArchivo " +
-                "GROUP BY b.latitud, b.longitud";
+        String consulta = "SELECT b.latitud, b.longitud FROM BodcDatos b "
+                + "WHERE b.idArchivo.idArchivo = :idArchivo "
+                + "GROUP BY b.latitud, b.longitud";
         Query query = getEntityManager().createQuery(consulta);
         query.setParameter("idArchivo", idArchivo);
         List<Object[]> result = query.getResultList();
@@ -636,14 +636,14 @@ public class Controller {
 
             System.out.println("objects[0] " + objects[0] + "," + objects[1]);
             //obtengo las diferentes categorias que van en esos puntos lat, lon
-            consulta = "select l.category_code, c.title from bodc_detalle_datos d, bodc_datos b, bodc_parameter p, bodc_category_link l, bodc_category c, archivo_datos a " +
-                    "where b.id = d.id_datos " +
-                    "and l.category_code = c.code " +
-                    "and p.code = d.bodc " +
-                    "and p.group_code = l.group_code " +
-                    "and b.latitud = :latitud and b.longitud = :longitud " +
-                    "and a.id_archivo = :idArchivo " +
-                    "and a.id_archivo = b.id_archivo";
+            consulta = "select l.category_code, c.title from bodc_detalle_datos d, bodc_datos b, bodc_parameter p, bodc_category_link l, bodc_category c, archivo_datos a "
+                    + "where b.id = d.id_datos "
+                    + "and l.category_code = c.code "
+                    + "and p.code = d.bodc "
+                    + "and p.group_code = l.group_code "
+                    + "and b.latitud = :latitud and b.longitud = :longitud "
+                    + "and a.id_archivo = :idArchivo "
+                    + "and a.id_archivo = b.id_archivo";
             query = getEntityManager().createNativeQuery(consulta);
             query.setParameter("latitud", objects[0]);
             query.setParameter("longitud", objects[1]);
@@ -673,14 +673,14 @@ public class Controller {
                 points.add(point);
                 i++;
             }
-        //select l.category_code from bodc_detalle_datos d, bodc_datos b, bodc_parameter p, bodc_category_link l
-        //where b.id = d.id_datos
-        //and p.code = d.bodc
-        //and p.group_code = l.group_code
-        //and b.latitud = 3.3 and b.longitud = -77.45  group by d.bodc;
-        //recorro las categorias y creo un punto con cada una.
-        //meter en un hash la categoria y el numero que le corresponde 
-        //si no tiene numero creamos uno nuevo.
+            //select l.category_code from bodc_detalle_datos d, bodc_datos b, bodc_parameter p, bodc_category_link l
+            //where b.id = d.id_datos
+            //and p.code = d.bodc
+            //and p.group_code = l.group_code
+            //and b.latitud = 3.3 and b.longitud = -77.45  group by d.bodc;
+            //recorro las categorias y creo un punto con cada una.
+            //meter en un hash la categoria y el numero que le corresponde 
+            //si no tiene numero creamos uno nuevo.
         }
         removeDuplicates(points);
         return points;
@@ -726,14 +726,13 @@ public class Controller {
 //        }
 //        return results;
 //    }
-
     private void removeDuplicates(List<MapPoint> points) {
         List<MapPoint> toRemove = new ArrayList<MapPoint>();
-        for (int i = 0; i <
-                points.size() - 1; i++) {
+        for (int i = 0; i
+                < points.size() - 1; i++) {
             MapPoint a = points.get(i);
-            for (int j = i + 1; j <
-                    points.size(); j++) {
+            for (int j = i + 1; j
+                    < points.size(); j++) {
                 MapPoint b = points.get(j);
                 if (a.getColor().intValue() == b.getColor().intValue() && a.getLat() == b.getLat() && a.getLon() == b.getLon()) {
                     toRemove.add(b);
@@ -756,19 +755,28 @@ public class Controller {
 
     }
 
+    public List<InvCruiseInstitutions> getInstitutions(InvCruiseInventory inventory) {
+        if (inventory != null) {
+            String sql = "select distinct i from InvCruiseInstitutions i where i.invCruiseInventory.idCruise = :idCruise";
+            Query query = getEntityManager().createQuery(sql);
+            query.setParameter("idCruise", inventory.getIdCruise());
+            return query.getResultList();
+        }else{
+            return new ArrayList<InvCruiseInstitutions>();
+        }
+    }
 }
-class InventoryComparator implements Comparator<InvCruiseInventory>{
+
+class InventoryComparator implements Comparator<InvCruiseInventory> {
 
     @Override
     public int compare(InvCruiseInventory o1, InvCruiseInventory o2) {
-        if(o1.getBeginDate().getTime() < o2.getBeginDate().getTime()){
+        if (o1.getBeginDate().getTime() < o2.getBeginDate().getTime()) {
             return -1;
-        }else if (o1.getBeginDate().getTime() == o2.getBeginDate().getTime()){
+        } else if (o1.getBeginDate().getTime() == o2.getBeginDate().getTime()) {
             return 0;
-        }else{
+        } else {
             return 1;
         }
     }
-
-    
 }
