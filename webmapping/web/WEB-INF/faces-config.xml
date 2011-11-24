@@ -29,6 +29,11 @@
         <managed-bean-class>com.dimar.cecoldo.cruise.CruiseInventoryBackendBean</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
+    <managed-bean>
+        <managed-bean-name>cruiseAdminManagedBean</managed-bean-name>
+        <managed-bean-class>com.dimar.cecoldo.cruise.CruiseAdminBackendBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
     <application>
         <message-bundle>
             ApplicationMessages

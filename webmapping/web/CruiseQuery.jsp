@@ -74,7 +74,8 @@
                                         <tr>
                                             <td valign="top" width="100%" colspan="2">
                                                 <rich:tabPanel switchType="client" id="tab">
-                                                    <rich:tab label="Consulta Sencilla">    
+                                                    <rich:tab label="Consulta Sencilla" id="simpleTab">
+                                                        <a4j:support event="onlabelclick" actionListener="#{cruiseManagedBean.clean}" reRender="resultsCounter, resultList, advancedPanel"/>
                                                         <a4j:region id="freeSearch">                                                
                                                             <table>
                                                                 <tr>

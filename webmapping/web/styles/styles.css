@@ -210,3 +210,10 @@ td.banner-login {
 .text_content a{
     color:#000000;
 }
+
+.scroll4
+{
+    width:800px; 
+    height:400px; 
+    overflow:auto;
+}

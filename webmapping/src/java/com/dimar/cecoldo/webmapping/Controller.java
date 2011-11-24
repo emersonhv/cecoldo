@@ -40,12 +40,14 @@ import com.dimar.cecoldo.bean.InvLaboratories;
 import com.dimar.cecoldo.bean.InvShipName;
 import com.dimar.cecoldo.bean.InvStatus;
 import com.dimar.cecoldo.bean.Regionsdes;
+import com.dimar.cecoldo.bean.UnlocodePort;
 import com.dimar.cecoldo.util.CecoldoPropertiesProvider;
 import com.dimar.cecoldo.util.MailService;
 import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
 import javax.persistence.TemporalType;
+
 
 /**
  *
@@ -761,12 +763,31 @@ public class Controller {
             Query query = getEntityManager().createQuery(sql);
             query.setParameter("idCruise", inventory.getIdCruise());
             return query.getResultList();
-        }else{
+        } else {
             return new ArrayList<InvCruiseInstitutions>();
         }
     }
-}
 
+    public List<InvCruiseInventory> getAllCruiseInventorys() {
+        String sql = "from InvCruiseInventory i";
+        Query query = getEntityManager().createQuery(sql);
+        return query.getResultList();
+    }
+
+    public List<SelectItem> getAllUnlocodePorts() {
+        List<SelectItem> items = new ArrayList<SelectItem>();
+        String sql = "from UnlocodePort order by name";
+        Query query = getEntityManager().createQuery(sql);
+        List<UnlocodePort> unlocodePorts = query.getResultList();
+        for (UnlocodePort unlocodePort : unlocodePorts) {
+            SelectItem item = new SelectItem();
+            item.setValue(unlocodePort.getUnlocodePortPK().getCountry() + unlocodePort.getUnlocodePortPK().getLocation());
+            item.setLabel(unlocodePort.getName());
+            items.add(item);
+        }
+        return items;        
+    }
+}
 class InventoryComparator implements Comparator<InvCruiseInventory> {
 
     @Override
