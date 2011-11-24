@@ -1,6 +1,8 @@
 package com.dimar.cecoldo.cruise;
 
+import com.dimar.cecoldo.bean.InvChiefScientist;
 import com.dimar.cecoldo.bean.InvChiefScientistCruise;
+import com.dimar.cecoldo.bean.InvChiefScientistCruisePK;
 import com.dimar.cecoldo.bean.InvCruiseBodcCategory;
 import com.dimar.cecoldo.bean.InvCruiseInstitutions;
 import com.dimar.cecoldo.bean.InvCruiseInventory;
@@ -8,8 +10,9 @@ import com.dimar.cecoldo.bean.InvInstitutions;
 import com.dimar.cecoldo.bean.InvLaboratoriesCruises;
 import com.dimar.cecoldo.bean.InvMetadata;
 import com.dimar.cecoldo.bean.InvProject;
-import com.dimar.cecoldo.bean.Paises0101;
+import com.dimar.cecoldo.bean.InvReport;
 import com.dimar.cecoldo.bean.Regions;
+import com.dimar.cecoldo.bean.UnlocodePortPK;
 import com.dimar.cecoldo.webmapping.Controller;
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,6 +22,7 @@ import java.util.Set;
 import javax.faces.event.ActionEvent;
 import javax.faces.model.SelectItem;
 import org.ajax4jsf.component.UIRepeat;
+import org.ajax4jsf.component.html.HtmlAjaxCommandButton;
 import org.richfaces.component.UIDataTable;
 
 /** 
@@ -33,10 +37,10 @@ public class CruiseAdminBackendBean {
     private UIDataTable cruiseInventorysTable;
     private UIRepeat metadataRepeater;
     private UIRepeat projectRepeater;
+    private HtmlAjaxCommandButton updateLink;
     private List<SelectItem> shipNameList;
     private Short shipNameSelected;
     private List<SelectItem> cruiseNameList;
-    private Integer cruiseNameSelected;
     private String freeSearch;
     private String resultsCounter;
     private List<InvCruiseInventory> cruiseInventories;
@@ -51,25 +55,26 @@ public class CruiseAdminBackendBean {
     private List<SelectItem> retrieveList;
     private String retrieveSelected;
     private List<SelectItem> dataTypeList;
-    private List<String> dataTypesSelected;
+    private List<String> dataTypesSelected = new ArrayList<String>();
     private List<SelectItem> laboratoryList;
-    private List<String> laboratoriesSelected;
+    private List<String> laboratoriesSelected = new ArrayList<String>();
     private List<SelectItem> areaList;
-    private List<String> areasSelected;
+    private List<String> areasSelected = new ArrayList<String>();
     private List<SelectItem> unlocodePortList;
     private String unlocodePortSelected;
+    private List<SelectItem> countryList;
     private String unlocodePort1Selected;
     private String lang = "es";
     private List<InvCruiseInventory> allCruiseInventorys;
     private Controller controller;
     private InvCruiseInventory selectedInventory;
     private List<SelectItem> institutionList;
-    private List<String> institutionsSelected;
+    private List<String> institutionsSelected = new ArrayList<String>();
     private List<SelectItem> scientistList;
-    private List<String> scientistSelected;
+    private List<String> scientistSelected = new ArrayList<String>();
     private List<InvMetadata> metadataList;
     //Campos del formulario
-    private Paises0101 country;
+    private String countrySelected;
     private String cruiseName;
     private String cruiseObjetives;
     private Regions oceanArea;
@@ -78,9 +83,10 @@ public class CruiseAdminBackendBean {
     private Short year;
     private List<InvProject> projectList;
     private String reportTitle;
-    private String reportDescription;
     private String reportUri;
-    
+    private String metadataTitle;
+    private String metadataUri;
+    private boolean editable;
 
     public CruiseAdminBackendBean() {
         controller = new Controller();
@@ -98,13 +104,15 @@ public class CruiseAdminBackendBean {
         shipNameList = controller.getAllShipNames();
         allCruiseInventorys = controller.getAllCruiseInventorys();
         unlocodePortList = controller.getAllUnlocodePorts();
+        countryList = controller.getAllCountries();
+        countrySelected = "22";
     }
-    
-    public void editCruiseInventory(ActionEvent e){
+
+    public void editCruiseInventory(ActionEvent e) {
         selectedInventory = (InvCruiseInventory) cruiseInventorysTable.getRowData();
         beginDate = selectedInventory.getBeginDate();
         endDate = selectedInventory.getEndDate();
-        country = selectedInventory.getCountry();
+        countrySelected = selectedInventory.getCountry().getPaiNombrePais();
         cruiseName = selectedInventory.getCruiseName();
         cruiseObjetives = selectedInventory.getCruiseObjetives();
         oceanArea = selectedInventory.getOceanArea();
@@ -113,35 +121,80 @@ public class CruiseAdminBackendBean {
         year = selectedInventory.getYear();
         shipNameSelected = selectedInventory.getShipName().getId();
         institutionsSelected = new ArrayList<String>();
-        List<InvCruiseInstitutions> cruiseInstitutions = (List<InvCruiseInstitutions>)selectedInventory.getInvCruiseInstitutionsCollection();
+        List<InvCruiseInstitutions> cruiseInstitutions = (List<InvCruiseInstitutions>) selectedInventory.getInvCruiseInstitutionsCollection();
         for (InvCruiseInstitutions cruiseInstitution : cruiseInstitutions) {
             institutionsSelected.add(cruiseInstitution.getInvInstitutions().getIdinstitution() + "");
         }
-        unlocodePortSelected = selectedInventory.getUnlocodePort().getUnlocodePortPK().getCountry() + selectedInventory.getUnlocodePort().getUnlocodePortPK().getLocation();
-        unlocodePort1Selected = selectedInventory.getUnlocodePort1().getUnlocodePortPK().getCountry() + selectedInventory.getUnlocodePort1().getUnlocodePortPK().getLocation();
+        unlocodePortSelected = selectedInventory.getUnlocodePort().getUnlocodePortPK().getCountry() + ";" +selectedInventory.getUnlocodePort().getUnlocodePortPK().getLocation();
+        unlocodePort1Selected = selectedInventory.getUnlocodePort1().getUnlocodePortPK().getCountry() + ";" + selectedInventory.getUnlocodePort1().getUnlocodePortPK().getLocation();
         scientistSelected = new ArrayList<String>();
-        List<InvChiefScientistCruise> scientists = (List<InvChiefScientistCruise>)selectedInventory.getInvChiefScientistCruiseCollection();
+        List<InvChiefScientistCruise> scientists = (List<InvChiefScientistCruise>) selectedInventory.getInvChiefScientistCruiseCollection();
         for (InvChiefScientistCruise scientist : scientists) {
             scientistSelected.add(scientist.getInvChiefScientist().getId());
         }
         laboratoriesSelected = new ArrayList<String>();
-        List<InvLaboratoriesCruises> laboratories = (List<InvLaboratoriesCruises>)selectedInventory.getInvLaboratoriesCruisesCollection();
+        List<InvLaboratoriesCruises> laboratories = (List<InvLaboratoriesCruises>) selectedInventory.getInvLaboratoriesCruisesCollection();
         for (InvLaboratoriesCruises laboratory : laboratories) {
-            laboratoriesSelected.add(laboratory.getInvLaboratories().getIdLab() + "" );
+            laboratoriesSelected.add(laboratory.getInvLaboratories().getIdLab() + "");
         }
         dataTypesSelected = new ArrayList<String>();
-        List<InvCruiseBodcCategory> bodcCategories = (List<InvCruiseBodcCategory>)selectedInventory.getInvCruiseBodcCategoryCollection();
+        List<InvCruiseBodcCategory> bodcCategories = (List<InvCruiseBodcCategory>) selectedInventory.getInvCruiseBodcCategoryCollection();
         for (InvCruiseBodcCategory bodcCatgegory : bodcCategories) {
-            dataTypesSelected.add(bodcCatgegory.getBodcCategory().getCode() + "" );
+            dataTypesSelected.add(bodcCatgegory.getBodcCategory().getCode() + "");
         }
         metadataList = (List<InvMetadata>) selectedInventory.getInvMetadataCollection();
-        projectList = (List<InvProject>) selectedInventory.getInvProjectCollection();
-        reportTitle = selectedInventory.getIdReport().getTitle();
-        reportDescription = selectedInventory.getIdReport().getDescription();
-        reportUri = selectedInventory.getIdReport().getUri();
+        reportTitle = selectedInventory.getIdReport() != null ? selectedInventory.getIdReport().getTitle() : "";
+        reportUri = selectedInventory.getIdReport() != null ? selectedInventory.getIdReport().getUri() : "";
+        metadataTitle = selectedInventory.getMetadataTitle();
+        metadataUri = selectedInventory.getMetadataUrl();
+        countrySelected = selectedInventory.getCountry().getPaiId();
+        this.setEditable(true);
+        this.updateLink.setRendered(true);
     }
-    public void deleteCruiseInventory(ActionEvent e){
+
+    public void deleteCruiseInventory(ActionEvent e) {
         selectedInventory = (InvCruiseInventory) cruiseInventorysTable.getRowData();
+        controller.deleteCruiseInventory(selectedInventory);
+        this.clearFields();
+        updateLink.setRendered(false);
+        allCruiseInventorys = controller.getAllCruiseInventorys();
+    }
+
+    public void insertAction(ActionEvent e) {
+        InvCruiseInventory newInventory = new InvCruiseInventory();        
+        newInventory.setBeginDate(beginDate);
+        newInventory.setCountry(controller.getCountryById(countrySelected));
+        newInventory.setCruiseName(cruiseName);
+        newInventory.setCruiseObjetives(cruiseObjetives);
+        newInventory.setEndDate(endDate);
+        InvReport report = new InvReport();
+        report.setTitle(reportTitle);
+        report.setUri(reportUri);
+        newInventory.setIdReport(report);
+        newInventory.setMetadataTitle(metadataTitle);
+        newInventory.setMetadataUrl(metadataUri);
+        newInventory.setShipName(controller.getInvShipName(shipNameSelected));
+        newInventory.setStatus("0");
+        String[] unlocodePKData = unlocodePortSelected.split(";");
+        newInventory.setUnlocodePort(controller.getUnlocodePort(new UnlocodePortPK(unlocodePKData[0], unlocodePKData[1])));
+        String[] unlocode1PKData = unlocodePort1Selected.split(";");
+        newInventory.setUnlocodePort1(controller.getUnlocodePort(new UnlocodePortPK(unlocode1PKData[0], unlocode1PKData[1])));
+        newInventory.setYear(year);
+        controller.insertInvCruiseInventory(newInventory, scientistSelected, institutionsSelected, laboratoriesSelected, dataTypesSelected);
+        this.clearFields();
+        allCruiseInventorys = controller.getAllCruiseInventorys();
+    }
+
+    public void updateAction(ActionEvent e) {
+        this.clearFields();
+        this.setEditable(false);
+        this.updateLink.setRendered(false);
+    }
+
+    public void cancelAction(ActionEvent e) {
+        this.clearFields();
+        this.setEditable(false);
+        this.updateLink.setRendered(false);
     }
 
     public List<InvInstitutions> getInstitutions() {
@@ -317,14 +370,6 @@ public class CruiseAdminBackendBean {
         this.cruiseNameList = cruiseNameList;
     }
 
-    public Integer getCruiseNameSelected() {
-        return cruiseNameSelected;
-    }
-
-    public void setCruiseNameSelected(Integer cruiseNameSelected) {
-        this.cruiseNameSelected = cruiseNameSelected;
-    }
-
     public String getResultsCounter() {
         return resultsCounter;
     }
@@ -392,15 +437,15 @@ public class CruiseAdminBackendBean {
     /**
      * @return the country
      */
-    public Paises0101 getCountry() {
-        return country;
+    public String getCountrySelected() {
+        return countrySelected;
     }
 
     /**
      * @param country the country to set
      */
-    public void setCountry(Paises0101 country) {
-        this.country = country;
+    public void setCountrySelected(String country) {
+        this.countrySelected = country;
     }
 
     /**
@@ -528,8 +573,7 @@ public class CruiseAdminBackendBean {
     public void setUnlocodePort1Selected(String unlocodePort1Selected) {
         this.unlocodePort1Selected = unlocodePort1Selected;
     }
-    
-    
+
     public void setMetadataRepeater(UIRepeat repeater) {
         this.metadataRepeater = repeater;
     }
@@ -595,20 +639,6 @@ public class CruiseAdminBackendBean {
     }
 
     /**
-     * @return the reportDescription
-     */
-    public String getReportDescription() {
-        return reportDescription;
-    }
-
-    /**
-     * @param reportDescription the reportDescription to set
-     */
-    public void setReportDescription(String reportDescription) {
-        this.reportDescription = reportDescription;
-    }
-
-    /**
      * @return the reportUri
      */
     public String getReportUri() {
@@ -620,5 +650,94 @@ public class CruiseAdminBackendBean {
      */
     public void setReportUri(String reportUri) {
         this.reportUri = reportUri;
+    }
+
+    /**
+     * @return the metadataTitle
+     */
+    public String getMetadataTitle() {
+        return metadataTitle;
+    }
+
+    /**
+     * @param metadataTitle the metadataTitle to set
+     */
+    public void setMetadataTitle(String metadataTitle) {
+        this.metadataTitle = metadataTitle;
+    }
+
+    /**
+     * @return the metadataUri
+     */
+    public String getMetadataUri() {
+        return metadataUri;
+    }
+
+    /**
+     * @param metadataUri the metadataUri to set
+     */
+    public void setMetadataUri(String metadataUri) {
+        this.metadataUri = metadataUri;
+    }
+
+    /**
+     * @return the editable
+     */
+    public boolean isEditable() {
+        return editable;
+    }
+
+    /**
+     * @param editable the editable to set
+     */
+    public void setEditable(boolean editable) {
+        this.editable = editable;
+    }
+
+    /**
+     * @return the updateLink
+     */
+    public HtmlAjaxCommandButton getUpdateLink() {
+        return updateLink;
+    }
+
+    /**
+     * @param updateLink the updateLink to set
+     */
+    public void setUpdateLink(HtmlAjaxCommandButton updateLink) {
+        this.updateLink = updateLink;
+    }
+
+    private void clearFields() {
+        beginDate = null;
+        this.cruiseName = "";
+        this.cruiseObjetives = "";
+        this.dataTypesSelected = new ArrayList<String>();
+        this.endDate = null;
+        this.institutionsSelected = new ArrayList<String>();
+        this.laboratoriesSelected = new ArrayList<String>();
+        this.metadataTitle = "";
+        this.metadataUri = "";
+        this.reportTitle = "";
+        this.reportUri = "";
+        this.scientistSelected = new ArrayList<String>();
+        this.shipNameSelected = 0;
+        this.unlocodePortSelected = "";
+        this.unlocodePort1Selected = "";
+        this.year = null;
+    }
+
+    /**
+     * @return the countryList
+     */
+    public List<SelectItem> getCountryList() {
+        return countryList;
+    }
+
+    /**
+     * @param countryList the countryList to set
+     */
+    public void setCountryList(List<SelectItem> countryList) {
+        this.countryList = countryList;
     }
 }
