@@ -1,0 +1,555 @@
+<%@page contentType="text/html"%>
+<%@page pageEncoding="UTF-8"%>
+
+<%@taglib uri="http://richfaces.org/a4j" prefix="a4j"%>
+<%@taglib uri="http://richfaces.org/rich" prefix="rich"%>
+
+<%@taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@taglib prefix="f" uri="http://java.sun.com/jsf/core"%>
+<%@taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+
+<%--
+    This file is an entry point for JavaServer Faces application.
+--%>
+
+<html>
+    <f:view>
+        <f:loadBundle basename="ApplicationMessages" var="msg"/>
+        <head>
+            <script src="javascript/dictionary.js"></script>
+            <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <title><h:outputText value="#{msg.admin_cruise_title}"/></title>
+        </head>
+        <body>
+            <div class="panel_banner">
+                <table border="0" width="100%" class="header1" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td colspan="3" width="100%">
+                            <table width="100%" cellspacing="0">
+                                <tr class="banner">
+                                    <td align="left" class="banner">
+                                        <img src="images/header-left.jpg" alt="DIMAR" align="top" />
+                                    </td>
+                                    <td align="right" class="banner">
+                                        <img src="images/header-right.jpg" alt="Servicio de Inventario de Cruceros" align="top" />
+                                    </td>
+                                </tr>
+                                <tr class="banner">
+                                    <td class="banner-menu" align="left">
+                                        <a class="banner" href="index.html">Inicio</a>
+                                        |
+                                        <a class="banner" href="contact.html">Contáctenos</a>
+                                        |
+                                        <a class="banner" href="help.html">Ayuda</a>
+                                        |
+                                    </td>
+                                    <td class="banner-menu" align="right">
+                                        <a class="header_selected" href="#">Español</a>
+                                        |
+                                        <span class="banner">Inglés</span>
+                                    </td>
+                                    <!--td align="right" class="banner-menu" width="610px"><select class="banner-content content" onchange="location.replace('../' + this.options[this.selectedIndex].value + '/main.home');">
+                                            <option value="en">English</option>
+                                            <option value="es" selected="">Español</option></select></td-->
+                                </tr>                            
+                                <tr class="banner">
+                                    <td class="banner-login" align="right" colspan="2"></td>
+                                </tr>                            
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <h:form id="myform">
+
+                    <div align="center">
+                        <table width="100%" align="center" class="main">
+                            <tr>
+                                <td align="left">
+
+                                    <table width="100%">
+                                        <tr>
+                                            <td valign="top" width="100%" colspan="2">
+                                                <rich:panel id="rootPane">
+                                                    <div>
+                                                        <rich:dataTable var="cruise" value="#{cruiseAdminManagedBean.allCruiseInventorys}" width="100%" cellpadding="1"
+                                                                        binding="#{cruiseAdminManagedBean.cruiseInventorysTable}" 
+                                                                        rows="10">
+                                                            <rich:column style="background-color: #EFF4FA; text-align: center">
+                                                                <f:facet name="header">
+                                                                    <h:outputText value="#{msg.t_begin_date}" />
+                                                                </f:facet>   
+                                                                <h:outputText value="#{cruise.beginDate}">
+                                                                    <f:convertDateTime pattern="yyyy-MM-dd"/>
+                                                                </h:outputText> 
+                                                            </rich:column>
+                                                            <rich:column style="background-color: #EFF4FA; text-align: center">
+                                                                <f:facet name="header">
+                                                                    <h:outputText value="#{msg.t_end_date}" />
+                                                                </f:facet>   
+                                                                <span class="gris">  
+                                                                    <h:outputText value="#{cruise.beginDate}" styleClass="gris">
+                                                                        <f:convertDateTime pattern="yyyy-MM-dd"/>
+                                                                    </h:outputText> 
+                                                                </span>
+                                                            </rich:column>
+                                                            <rich:column style="background-color: #EFF4FA;">
+                                                                <f:facet name="header">
+                                                                    <h:outputText value="#{msg.t_cruiseName}" />
+                                                                </f:facet>   
+                                                                <span style="color: #CC3300;"> <h:outputText value="#{cruise.cruiseName}" /></span>
+                                                            </rich:column>
+                                                            <rich:column style="background-color: #EFF4FA; text-align: center" width="50px">
+                                                                <f:facet name="header">
+                                                                    <h:outputText value="#{msg.t_edit}" />
+                                                                </f:facet>   
+                                                                <span class="gris">
+                                                                    <a4j:commandLink actionListener="#{cruiseAdminManagedBean.editCruiseInventory}" oncomplete="#{rich:component('editPanel')}.show() " reRender="details">
+                                                                        <h:graphicImage alt="show" url="images/edit.gif" style="border: 0"/>
+                                                                    </a4j:commandLink>
+                                                                </span>
+                                                            </rich:column>
+                                                            <rich:column style="background-color: #EFF4FA; text-align: center" width="50px">
+                                                                <f:facet name="header">
+                                                                    <h:outputText value="#{msg.t_delete}" />
+                                                                </f:facet>   
+                                                                <span class="gris">
+                                                                    <a4j:commandLink actionListener="#{cruiseAdminManagedBean.deleteCruiseInventory}" reRender="rootPane" onclick="if(confirm('#{msg.confirm_delete}') == false )  return false;" >
+                                                                        <h:graphicImage alt="show" url="images/delete.gif" style="border: 0"/>
+                                                                    </a4j:commandLink>
+                                                                </span>
+                                                            </rich:column>
+                                                            <f:facet name="footer">
+                                                                <rich:datascroller />
+                                                            </f:facet>                                                                
+                                                        </rich:dataTable>
+                                                    </div>
+                                                </rich:panel>
+                                                <a4j:form>
+                                                    <rich:panel id="editPanel">
+                                                        <f:facet name="header">
+                                                            <h:panelGroup>
+                                                                <h:outputText value="#{msg.detail_title}"></h:outputText>
+                                                            </h:panelGroup>
+                                                        </f:facet>                                                    
+                                                        <rich:panel id="details">
+                                                            <div>
+                                                                <table width="100%" style="text-align: left;">
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.cruise_name}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <span id="h.beginDate">
+                                                                                <img src="images/help_icon.gif" alt="help"/> 
+                                                                                <rich:toolTip for="h.beginDate">
+                                                                                    <div style="width: 350px">
+                                                                                        <h:outputText value="#{msg.h_beginDate}"/>
+                                                                                    </div>
+                                                                                </rich:toolTip>
+                                                                            </span>                                                                                    
+                                                                        </td>                                                                
+                                                                        <td>
+                                                                            <h:inputText value="#{cruiseAdminManagedBean.cruiseName}" />
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th width="30%">
+                                                                            <h:outputText value="#{msg.ship_name}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <span id="h.beginDate">
+                                                                                <img src="images/help_icon.gif" alt="help"/> 
+                                                                                <rich:toolTip for="h.beginDate">
+                                                                                    <div style="width: 350px">
+                                                                                        <h:outputText value="#{msg.h_beginDate}"/>
+                                                                                    </div>
+                                                                                </rich:toolTip>
+                                                                            </span>                                                                                    
+                                                                        </td>                                                                
+                                                                        <td>
+                                                                            <h:selectOneMenu id="shipNames" value="#{cruiseAdminManagedBean.shipNameSelected}">
+                                                                                <f:selectItems value="#{cruiseAdminManagedBean.shipNameList}" />
+                                                                            </h:selectOneMenu>                                                            
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.cruise_year}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <span id="h.beginDate">
+                                                                                <img src="images/help_icon.gif" alt="help"/> 
+                                                                                <rich:toolTip for="h.beginDate">
+                                                                                    <div style="width: 350px">
+                                                                                        <h:outputText value="#{msg.h_beginDate}"/>
+                                                                                    </div>
+                                                                                </rich:toolTip>
+                                                                            </span>                                                                                    
+                                                                        </td>                                                                
+                                                                        <td>
+                                                                            <h:inputText value="#{cruiseAdminManagedBean.year}"/>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.cruise_beginDate}"/>
+                                                                        </th>                                                                
+                                                                        <td>
+                                                                            <span id="h.beginDate">
+                                                                                <img src="images/help_icon.gif" alt="help"/> 
+                                                                                <rich:toolTip for="h.beginDate">
+                                                                                    <div style="width: 350px">
+                                                                                        <h:outputText value="#{msg.h_beginDate}"/>
+                                                                                    </div>
+                                                                                </rich:toolTip>
+                                                                            </span>                                                                                    
+                                                                        </td>                                                                
+                                                                        <td>
+                                                                            <a4j:outputPanel id="beginDatePanel" layout="block">
+                                                                                <rich:calendar value="#{cruiseAdminManagedBean.beginDate}"
+                                                                                               popup="true"
+                                                                                               datePattern="dd/MM/yyyy"
+                                                                                               showApplyButton="false" cellWidth="24px" cellHeight="22px" style="width:200px"/>
+                                                                            </a4j:outputPanel>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.cruise_endDate}"/>
+                                                                        </th>                                                                
+                                                                        <td>
+                                                                            <span id="h.endDate">
+                                                                                <img src="images/help_icon.gif" alt="help"/> 
+                                                                                <rich:toolTip for="h.endDate">
+                                                                                    <div style="width: 350px">
+                                                                                        <h:outputText value="#{msg.h_endDate}"/>
+                                                                                    </div>
+                                                                                </rich:toolTip>
+                                                                            </span>                                                                                    
+                                                                        </td>                                                                
+                                                                        <td>
+                                                                            <a4j:outputPanel id="endDatePanel" layout="block">
+                                                                                <rich:calendar value="#{cruiseAdminManagedBean.endDate}"
+                                                                                               popup="true"
+                                                                                               datePattern="dd/MM/yyyy"
+                                                                                               showApplyButton="false" cellWidth="24px" cellHeight="22px" style="width:200px"/>
+                                                                            </a4j:outputPanel>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.cruise_port_of_departure}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <span id="h.endDate">
+                                                                                <img src="images/help_icon.gif" alt="help"/> 
+                                                                                <rich:toolTip for="h.endDate">
+                                                                                    <div style="width: 350px">
+                                                                                        <h:outputText value="#{msg.h_endDate}"/>
+                                                                                    </div>
+                                                                                </rich:toolTip>
+                                                                            </span>                                                                                    
+                                                                        </td>                                                                         
+                                                                        <td>
+                                                                            <h:selectOneMenu id="unlocodePort" value="#{cruiseAdminManagedBean.unlocodePortSelected}">
+                                                                                <f:selectItems value="#{cruiseAdminManagedBean.unlocodePortList}" />
+                                                                            </h:selectOneMenu>                                                                              
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.cruise_port_of_return}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <span id="h.endDate">
+                                                                                <img src="images/help_icon.gif" alt="help"/> 
+                                                                                <rich:toolTip for="h.endDate">
+                                                                                    <div style="width: 350px">
+                                                                                        <h:outputText value="#{msg.h_endDate}"/>
+                                                                                    </div>
+                                                                                </rich:toolTip>
+                                                                            </span>                                                                                    
+                                                                        </td>                                                                        
+                                                                        <td>
+                                                                            <h:selectOneMenu id="unlocodePort1" value="#{cruiseAdminManagedBean.unlocodePort1Selected}">
+                                                                                <f:selectItems value="#{cruiseAdminManagedBean.unlocodePortList}" />
+                                                                            </h:selectOneMenu>                                                                              
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.cruise_institutions}"/>
+                                                                        </th>                                                                
+                                                                        <td>
+                                                                            <span id="h.cruiseInstitutions">
+                                                                                <img src="images/help_icon.gif" alt="help"/> 
+                                                                                <rich:toolTip for="h.cruiseInstitutions">
+                                                                                    <div style="width: 350px">
+                                                                                        <h:outputText value="#{msg.h_cruiseInstitutions}"/>
+                                                                                    </div>
+                                                                                </rich:toolTip>
+                                                                            </span>                                                                                    
+                                                                        </td>                                                                
+                                                                        <td>
+                                                                            <rich:pickList id="institutionList" value="#{cruiseAdminManagedBean.institutionsSelected}" copyControlLabel="#{msg.add}" copyAllControlLabel="#{msg.add_all}" removeAllControlLabel="#{msg.remove_all}" removeControlLabel="#{msg.remove}" sourceListWidth="180" targetListWidth="180">
+                                                                                <f:selectItems value="#{cruiseAdminManagedBean.institutionList}" />
+                                                                            </rich:pickList>
+                                                                        </td>
+                                                                    </tr>                                                            
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.cruise_chief_scientist}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <span id="h.cruiseScientist">
+                                                                                <img src="images/help_icon.gif" alt="help"/> 
+                                                                                <rich:toolTip for="h.cruiseScientist">
+                                                                                    <div style="width: 350px">
+                                                                                        <h:outputText value="#{msg.h_cruiseScientist}"/>
+                                                                                    </div>
+                                                                                </rich:toolTip>
+                                                                            </span>                                                                                    
+                                                                        </td>                                                                
+                                                                        <td>
+                                                                            <rich:pickList id="scientistList" value="#{cruiseAdminManagedBean.scientistSelected}" copyControlLabel="#{msg.add}" copyAllControlLabel="#{msg.add_all}" removeAllControlLabel="#{msg.remove_all}" removeControlLabel="#{msg.remove}" sourceListWidth="180" targetListWidth="180">
+                                                                                <f:selectItems value="#{cruiseAdminManagedBean.scientistList}" />
+                                                                            </rich:pickList>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.cruise_ocean_sea_areas}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <span id="h.endDate">
+                                                                                <img src="images/help_icon.gif" alt="help"/> 
+                                                                                <rich:toolTip for="h.endDate">
+                                                                                    <div style="width: 350px">
+                                                                                        <h:outputText value="#{msg.h_endDate}"/>
+                                                                                    </div>
+                                                                                </rich:toolTip>
+                                                                            </span>                                                                                    
+                                                                        </td>                                                           
+                                                                        <td>
+                                                                            <a4j:repeat value="#{cruiseAdminManagedBean.selectedInventory.oceanArea.regionsdesCollection}" var="region" rows="1">
+                                                                                <b><h:outputText value="#{region.label}"/></b><br/>
+                                                                            </a4j:repeat>                                                                       
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.details_laboratories}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <span id="h.laboratory">
+                                                                                <img src="images/help_icon.gif" alt="help"/> 
+                                                                                <rich:toolTip for="h.laboratory">
+                                                                                    <div style="width: 350px">
+                                                                                        <h:outputText value="#{msg.h_laboratory}"/>
+                                                                                    </div>
+                                                                                </rich:toolTip>
+                                                                            </span>                                                                                    
+                                                                        </td>                                                                
+                                                                        <td>
+                                                                            <rich:pickList id="laboratoryList" value="#{cruiseAdminManagedBean.laboratoriesSelected}" copyControlLabel="#{msg.add}" copyAllControlLabel="#{msg.add_all}" removeAllControlLabel="#{msg.remove_all}" removeControlLabel="#{msg.remove}" sourceListWidth="180" targetListWidth="180">
+                                                                                <f:selectItems value="#{cruiseAdminManagedBean.laboratoryList}" />
+                                                                            </rich:pickList>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.cruise_measurements}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <span id="h.dataType">
+                                                                                <img src="images/help_icon.gif" alt="help"/> 
+                                                                                <rich:toolTip for="h.dataType">
+                                                                                    <div style="width: 350px">
+                                                                                        <h:outputText value="#{msg.h_dataType}"/>
+                                                                                        <a href="DictionaryQuery.jsp" target="_blank"><h:outputText value="#{msg.h_dataTypeLink}"/></a>
+                                                                                    </div>
+                                                                                </rich:toolTip>
+                                                                            </span>                                                                                    
+                                                                        </td>                                                                
+                                                                        <td>
+                                                                            <rich:pickList id="dataTypeList" value="#{cruiseAdminManagedBean.dataTypesSelected}" copyControlLabel="#{msg.add}" copyAllControlLabel="#{msg.add_all}" removeAllControlLabel="#{msg.remove_all}" removeControlLabel="#{msg.remove}" sourceListWidth="180" targetListWidth="180">
+                                                                                <f:selectItems value="#{cruiseAdminManagedBean.dataTypeList}" />
+                                                                            </rich:pickList>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.uri_metadata}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <span id="h.endDate">
+                                                                                <img src="images/help_icon.gif" alt="help"/> 
+                                                                                <rich:toolTip for="h.endDate">
+                                                                                    <div style="width: 350px">
+                                                                                        <h:outputText value="#{msg.h_endDate}"/>
+                                                                                    </div>
+                                                                                </rich:toolTip>
+                                                                            </span>                                                                                    
+                                                                        </td> 
+                                                                        <td>
+                                                                            <table border="0" cellpadding="5" cellspacing="5" width="450px" class="dr-table rich-table">
+                                                                                <thead class="dr-table-thead">
+                                                                                    <tr class="dr-table-subheader rich-table-subheader ">
+                                                                                        <th class="dr-table-subheadercell rich-table-subheadercell" width="30%"><h:outputText value="#{msg.t_meta_title}" /></th>
+                                                                                        <th class="dr-table-subheadercell rich-table-subheadercell" width="40%"><h:outputText value="#{msg.t_meta_desc}" /></th>
+                                                                                        <th class="dr-table-subheadercell rich-table-subheadercell" width="30%"><h:outputText value="#{msg.t_meta_uri}" /></th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <a4j:repeat value="#{cruiseAdminManagedBean.metadataList}" var="item" binding="#{cruiseAdminManagedBean.metadataRepeater}">
+                                                                                        <tr class="dr-table-firstrow rich-table-firstrow">
+                                                                                            <td class="dr-table-cell rich-table-cell">
+                                                                                                <rich:inplaceInput value="#{item.title}"  />
+                                                                                            </td>
+                                                                                            <td class="dr-table-cell rich-table-cell">
+                                                                                                <rich:inplaceInput value="#{item.description}"/>
+                                                                                            </td>
+                                                                                            <td class="dr-table-cell rich-table-cell">
+                                                                                                <rich:inplaceInput value="#{item.uri}" />
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </a4j:repeat>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.uri_project}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <span id="h.endDate">
+                                                                                <img src="images/help_icon.gif" alt="help"/> 
+                                                                                <rich:toolTip for="h.endDate">
+                                                                                    <div style="width: 350px">
+                                                                                        <h:outputText value="#{msg.h_endDate}"/>
+                                                                                    </div>
+                                                                                </rich:toolTip>
+                                                                            </span>                                                                                    
+                                                                        </td> 
+                                                                        <td>
+                                                                            <table border="0" cellpadding="5" cellspacing="5" width="450px" class="dr-table rich-table">
+                                                                                <thead class="dr-table-thead">
+                                                                                    <tr class="dr-table-subheader rich-table-subheader ">
+                                                                                        <th class="dr-table-subheadercell rich-table-subheadercell" width="30%"><h:outputText value="#{msg.t_meta_title}" /></th>
+                                                                                        <th class="dr-table-subheadercell rich-table-subheadercell" width="40%"><h:outputText value="#{msg.t_meta_desc}" /></th>
+                                                                                        <th class="dr-table-subheadercell rich-table-subheadercell" width="30%"><h:outputText value="#{msg.t_meta_uri}" /></th>
+                                                                                    </tr>
+                                                                                </thead>
+                                                                                <tbody>
+                                                                                    <a4j:repeat value="#{cruiseAdminManagedBean.projectList}" var="item" binding="#{cruiseAdminManagedBean.projectRepeater}">
+                                                                                        <tr class="dr-table-firstrow rich-table-firstrow">
+                                                                                            <td class="dr-table-cell rich-table-cell">
+                                                                                                <rich:inplaceInput value="#{item.projectName}"  />
+                                                                                            </td>
+                                                                                            <td class="dr-table-cell rich-table-cell">
+                                                                                                <rich:inplaceInput value="#{item.description}"/>
+                                                                                            </td>
+                                                                                            <td class="dr-table-cell rich-table-cell">
+                                                                                                <rich:inplaceInput value="#{item.uriProject}" />
+                                                                                            </td>
+                                                                                        </tr>
+                                                                                    </a4j:repeat>
+                                                                                </tbody>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.uri_report}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <span id="h.endDate">
+                                                                                <img src="images/help_icon.gif" alt="help"/> 
+                                                                                <rich:toolTip for="h.endDate">
+                                                                                    <div style="width: 350px">
+                                                                                        <h:outputText value="#{msg.h_endDate}"/>
+                                                                                    </div>
+                                                                                </rich:toolTip>
+                                                                            </span>                                                                                    
+                                                                        </td> 
+                                                                        <td>
+                                                                            <h:inputText value="#{cruiseAdminManagedBean.reportTitle}"/>
+                                                                            <h:inputText value="#{cruiseAdminManagedBean.reportDescription}"/>
+                                                                            <h:inputText value="#{cruiseAdminManagedBean.reportUri}"/>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>      
+                                                            </div>
+                                                        </rich:panel>
+                                                    </rich:panel>
+                                                </a4j:form>
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </h:form>            
+
+                <table width="975px" align="center">
+                    <tr>
+                        <td>
+                            <table width="100%" class="footer">
+                                <tr>
+                                    <td class="borde_derecho" align="center">
+                                        <table cellpadding="5">
+                                            <tr valign="middle" style="vertical-align: middle;">
+                                                <td>
+                                                    <a target="_blank" href="http://ioc-unesco.org/">
+                                                        <img src="images/enlace_coi.png" width="60px"/>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="http://www.wmo.int/pages/index_es.html">
+                                                        <img src="images/enlace_omm.png" width="60px"/>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="http://www.iode.org/">
+                                                        <img src="images/enlace_iode.png" width="60px"/>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="http://www.odincarsa.org/">
+                                                        <img src="images/enlace_odincarsa.png" width="60px"/>
+                                                    </a>
+                                                </td>
+                                                <td>
+                                                    <a target="_blank" href="http://www.cpps-int.org/">
+                                                        <img src="images/enlace_cpps.png" width="60px"/>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td class="borde_derecho" align="center">
+                                        CECOLDO  |  <a href="http://www.cccp.org.co/index.php/component/content/article/945" style="color:#999999;">Política de privacidad</a>  |  Resolución Óptima 1024 x 768 
+                                    </td>
+                                    <td align="center" valign="middle">
+                                        <a target="_blank" href="http://www.gobiernoenlinea.gov.co"><img src="images/gobiernoEnLinea.png" alt="Gobierno en Línea"></a>
+                                    </td>
+                                    <td align="center" valign="middle">
+                                        <a target="_blank" href="http://wsp.presidencia.gov.co/Paginas/Presidencia.aspx"><img src="images/repDeColombia.png" alt="República de Colombia"></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>            
+                    </tr>
+                </table>         
+            </div>
+        </body>
+    </f:view>
+</html>
+
