@@ -75,9 +75,11 @@
                                             <td valign="top" width="100%" colspan="2">
                                                 <rich:panel id="rootPane">
                                                     <div>
-                                                        <rich:dataTable var="cruise" value="#{cruiseAdminManagedBean.allCruiseInventorys}" width="100%" cellpadding="1"
+                                                        <rich:dataTable var="cruise" value="#{cruiseAdminManagedBean.allCruiseInventorys}" 
+                                                                        width="100%" cellpadding="1"
                                                                         binding="#{cruiseAdminManagedBean.cruiseInventorysTable}" 
-                                                                        rows="10">
+                                                                        rows="10"
+                                                                        id="inventoryTable">
                                                             <rich:column style="background-color: #EFF4FA; text-align: center">
                                                                 <f:facet name="header">
                                                                     <h:outputText value="#{msg.t_begin_date}" />
@@ -117,7 +119,7 @@
                                                                     <h:outputText value="#{msg.t_delete}" />
                                                                 </f:facet>   
                                                                 <span class="gris">
-                                                                    <a4j:commandLink actionListener="#{cruiseAdminManagedBean.deleteCruiseInventory}" reRender="rootPane" onclick="if(confirm('#{msg.confirm_delete}') == false )  return false;" >
+                                                                    <a4j:commandLink actionListener="#{cruiseAdminManagedBean.deleteCruiseInventory}" reRender="rootPane" onclick="if(confirm('#{msg.confirm_delete} #{cruise.cruiseName}?') == false )  return false;" >
                                                                         <h:graphicImage alt="show" url="images/delete.gif" style="border: 0"/>
                                                                     </a4j:commandLink>
                                                                 </span>
@@ -173,6 +175,26 @@
                                                                         <td>
                                                                             <h:selectOneMenu id="shipNames" value="#{cruiseAdminManagedBean.shipNameSelected}">
                                                                                 <f:selectItems value="#{cruiseAdminManagedBean.shipNameList}" />
+                                                                            </h:selectOneMenu>                                                            
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th width="30%">
+                                                                            <h:outputText value="#{msg.country}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <span id="h.country">
+                                                                                <img src="images/help_icon.gif" alt="help"/> 
+                                                                                <rich:toolTip for="h.country">
+                                                                                    <div style="width: 350px">
+                                                                                        <h:outputText value="#{msg.h_country}"/>
+                                                                                    </div>
+                                                                                </rich:toolTip>
+                                                                            </span>                                                                                    
+                                                                        </td>                                                                
+                                                                        <td>
+                                                                            <h:selectOneMenu id="countrys" value="#{cruiseAdminManagedBean.countrySelected}">
+                                                                                <f:selectItems value="#{cruiseAdminManagedBean.countryList}" />
                                                                             </h:selectOneMenu>                                                            
                                                                         </td>
                                                                     </tr>
@@ -396,71 +418,8 @@
                                                                             </span>                                                                                    
                                                                         </td> 
                                                                         <td>
-                                                                            <table border="0" cellpadding="5" cellspacing="5" width="450px" class="dr-table rich-table">
-                                                                                <thead class="dr-table-thead">
-                                                                                    <tr class="dr-table-subheader rich-table-subheader ">
-                                                                                        <th class="dr-table-subheadercell rich-table-subheadercell" width="30%"><h:outputText value="#{msg.t_meta_title}" /></th>
-                                                                                        <th class="dr-table-subheadercell rich-table-subheadercell" width="40%"><h:outputText value="#{msg.t_meta_desc}" /></th>
-                                                                                        <th class="dr-table-subheadercell rich-table-subheadercell" width="30%"><h:outputText value="#{msg.t_meta_uri}" /></th>
-                                                                                    </tr>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                    <a4j:repeat value="#{cruiseAdminManagedBean.metadataList}" var="item" binding="#{cruiseAdminManagedBean.metadataRepeater}">
-                                                                                        <tr class="dr-table-firstrow rich-table-firstrow">
-                                                                                            <td class="dr-table-cell rich-table-cell">
-                                                                                                <rich:inplaceInput value="#{item.title}"  />
-                                                                                            </td>
-                                                                                            <td class="dr-table-cell rich-table-cell">
-                                                                                                <rich:inplaceInput value="#{item.description}"/>
-                                                                                            </td>
-                                                                                            <td class="dr-table-cell rich-table-cell">
-                                                                                                <rich:inplaceInput value="#{item.uri}" />
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                    </a4j:repeat>
-                                                                                </tbody>
-                                                                            </table>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>
-                                                                            <h:outputText value="#{msg.uri_project}"/>
-                                                                        </th>
-                                                                        <td>
-                                                                            <span id="h.endDate">
-                                                                                <img src="images/help_icon.gif" alt="help"/> 
-                                                                                <rich:toolTip for="h.endDate">
-                                                                                    <div style="width: 350px">
-                                                                                        <h:outputText value="#{msg.h_endDate}"/>
-                                                                                    </div>
-                                                                                </rich:toolTip>
-                                                                            </span>                                                                                    
-                                                                        </td> 
-                                                                        <td>
-                                                                            <table border="0" cellpadding="5" cellspacing="5" width="450px" class="dr-table rich-table">
-                                                                                <thead class="dr-table-thead">
-                                                                                    <tr class="dr-table-subheader rich-table-subheader ">
-                                                                                        <th class="dr-table-subheadercell rich-table-subheadercell" width="30%"><h:outputText value="#{msg.t_meta_title}" /></th>
-                                                                                        <th class="dr-table-subheadercell rich-table-subheadercell" width="40%"><h:outputText value="#{msg.t_meta_desc}" /></th>
-                                                                                        <th class="dr-table-subheadercell rich-table-subheadercell" width="30%"><h:outputText value="#{msg.t_meta_uri}" /></th>
-                                                                                    </tr>
-                                                                                </thead>
-                                                                                <tbody>
-                                                                                    <a4j:repeat value="#{cruiseAdminManagedBean.projectList}" var="item" binding="#{cruiseAdminManagedBean.projectRepeater}">
-                                                                                        <tr class="dr-table-firstrow rich-table-firstrow">
-                                                                                            <td class="dr-table-cell rich-table-cell">
-                                                                                                <rich:inplaceInput value="#{item.projectName}"  />
-                                                                                            </td>
-                                                                                            <td class="dr-table-cell rich-table-cell">
-                                                                                                <rich:inplaceInput value="#{item.description}"/>
-                                                                                            </td>
-                                                                                            <td class="dr-table-cell rich-table-cell">
-                                                                                                <rich:inplaceInput value="#{item.uriProject}" />
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                    </a4j:repeat>
-                                                                                </tbody>
-                                                                            </table>
+                                                                            <h:inputText value="#{cruiseAdminManagedBean.metadataTitle}"/>
+                                                                            <h:inputText value="#{cruiseAdminManagedBean.metadataUri}"/>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -478,9 +437,23 @@
                                                                             </span>                                                                                    
                                                                         </td> 
                                                                         <td>
-                                                                            <h:inputText value="#{cruiseAdminManagedBean.reportTitle}"/>
-                                                                            <h:inputText value="#{cruiseAdminManagedBean.reportDescription}"/>
+                                                                            <h:inputText value="#{cruiseAdminManagedBean.reportTitle}"/>                                                                            
                                                                             <h:inputText value="#{cruiseAdminManagedBean.reportUri}"/>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan="3" align="center">
+                                                                            <a4j:commandButton value="#{msg.action_insert}" reRender="inventoryTable,details"
+                                                                                             actionListener="#{cruiseAdminManagedBean.insertAction}"
+                                                                                             rendered="#{not cruiseAdminManagedBean.editable}"
+                                                                                             onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;"/>
+                                                                            <a4j:commandButton  value="#{msg.action_update}"  reRender="inventoryTable,details" 
+                                                                                              actionListener="#{cruiseAdminManagedBean.updateAction}"
+                                                                                              rendered="false" binding="#{cruiseAdminManagedBean.updateLink}"   
+                                                                                              onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;"/>                    
+                                                                            <a4j:commandButton value="#{msg.action_cancel}" reRender="inventoryTable,details" 
+                                                                                             actionListener="#{cruiseAdminManagedBean.cancelAction}" 
+                                                                                             onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;"/>                                                                            
                                                                         </td>
                                                                     </tr>
                                                                 </table>      

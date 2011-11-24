@@ -539,23 +539,9 @@
                                                                         <h:outputText value="#{msg.uri_metadata}"/>
                                                                     </th>
                                                                     <td>
-                                                                        <a4j:repeat value="#{cruiseManagedBean.selectedInventory.invMetadataCollection}" var="metadata">
-                                                                            <a class="naranja" href="<h:outputText value="#{metadata.uri}"/>" target="blank_">
-                                                                                <h:outputText value="#{metadata.title}"/>
-                                                                            </a><br>
-                                                                        </a4j:repeat>                                                                         
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th>
-                                                                        <h:outputText value="#{msg.uri_project}"/>
-                                                                    </th>
-                                                                    <td>
-                                                                        <a4j:repeat value="#{cruiseManagedBean.selectedInventory.invProjectCollection}" var="project">
-                                                                            <a class="naranja" href="<h:outputText value="#{project.uriProject}"/>" target="blank_">
-                                                                                <h:outputText value="#{project.projectName}"/>
-                                                                            </a><br>
-                                                                        </a4j:repeat>                                                                         
+                                                                        <a class="naranja" href="<h:outputText value="#{cruiseManagedBean.selectedInventory.metadataUrl}"/>" target="blank_">
+                                                                            <h:outputText value="#{cruiseManagedBean.selectedInventory.metadataTitle}"/>
+                                                                        </a><br>
                                                                     </td>
                                                                 </tr>
                                                                 <tr>

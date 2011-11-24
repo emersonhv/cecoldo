@@ -11,6 +11,8 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
@@ -41,19 +43,25 @@ import javax.persistence.TemporalType;
     @NamedQuery(name = "InvCruiseInventory.findByStatus", query = "SELECT i FROM InvCruiseInventory i WHERE i.status = :status"),
     @NamedQuery(name = "InvCruiseInventory.findByUriReport", query = "SELECT i FROM InvCruiseInventory i WHERE i.uriReport = :uriReport")})
 public class InvCruiseInventory implements Serializable {
-    private static final long serialVersionUID = 1L;
-    @Id
-    @Basic(optional = false)
-    @Column(name = "id_cruise")
-    private Integer idCruise;
-    @Column(name = "year")
-    private Short year;
+
     @Column(name = "begin_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date beginDate;
     @Column(name = "end_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date endDate;
+    @Column(name = "metadata_title")
+    private String metadataTitle;
+    @Column(name = "metadata_url")
+    private String metadataUrl;
+    private static final long serialVersionUID = 1L;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Basic(optional = false)
+    @Column(name = "id_cruise")
+    private Integer idCruise;
+    @Column(name = "year")
+    private Short year;
     @Column(name = "cruise_name")
     private String cruiseName;
     @Column(name = "cruise_objetives")
@@ -291,5 +299,20 @@ public class InvCruiseInventory implements Serializable {
     public String toString() {
         return "com.dimar.cecoldo.bean.InvCruiseInventory[ idCruise=" + idCruise + " ]";
     }
-    
+
+    public String getMetadataTitle() {
+        return metadataTitle;
+    }
+
+    public void setMetadataTitle(String metadataTitle) {
+        this.metadataTitle = metadataTitle;
+    }
+
+    public String getMetadataUrl() {
+        return metadataUrl;
+    }
+
+    public void setMetadataUrl(String metadataUrl) {
+        this.metadataUrl = metadataUrl;
+    }
 }

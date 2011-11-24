@@ -9,6 +9,7 @@ import com.dimar.cecoldo.bean.GenMunicipio;
 import com.dimar.cecoldo.bean.InvCruiseInventory;
 import com.dimar.cecoldo.bean.Paises0101;
 import com.dimar.cecoldo.bean.SolicitudParametros;
+import com.dimar.cecoldo.bean.UnlocodePortPK;
 import com.dimar.cecoldo.cruise.CruiseInventoryBackendBean;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -33,10 +34,17 @@ import com.dimar.cecoldo.bean.TempMalla;
 import com.dimar.cecoldo.bean.BodcRequiredParameter;
 import com.dimar.cecoldo.bean.CecoldoProperties;
 import com.dimar.cecoldo.bean.InvChiefScientist;
+import com.dimar.cecoldo.bean.InvChiefScientistCruise;
+import com.dimar.cecoldo.bean.InvChiefScientistCruisePK;
+import com.dimar.cecoldo.bean.InvCruiseBodcCategory;
+import com.dimar.cecoldo.bean.InvCruiseBodcCategoryPK;
 import com.dimar.cecoldo.bean.InvCruiseInstitutions;
+import com.dimar.cecoldo.bean.InvCruiseInstitutionsPK;
 import com.dimar.cecoldo.bean.InvDiscipline;
 import com.dimar.cecoldo.bean.InvInstitutions;
 import com.dimar.cecoldo.bean.InvLaboratories;
+import com.dimar.cecoldo.bean.InvLaboratoriesCruises;
+import com.dimar.cecoldo.bean.InvLaboratoriesCruisesPK;
 import com.dimar.cecoldo.bean.InvShipName;
 import com.dimar.cecoldo.bean.InvStatus;
 import com.dimar.cecoldo.bean.Regionsdes;
@@ -781,11 +789,57 @@ public class Controller {
         List<UnlocodePort> unlocodePorts = query.getResultList();
         for (UnlocodePort unlocodePort : unlocodePorts) {
             SelectItem item = new SelectItem();
-            item.setValue(unlocodePort.getUnlocodePortPK().getCountry() + unlocodePort.getUnlocodePortPK().getLocation());
+            item.setValue(unlocodePort.getUnlocodePortPK().getCountry() + ";" + unlocodePort.getUnlocodePortPK().getLocation());
             item.setLabel(unlocodePort.getName());
             items.add(item);
         }
         return items;        
+    }
+
+    public void deleteCruiseInventory(InvCruiseInventory inventory) {
+        EntityManager em = getEntityManager();
+        em.setFlushMode(FlushModeType.COMMIT);
+        em.getTransaction().begin();
+        InvCruiseInventory toDelete = em.find(InvCruiseInventory.class, inventory.getIdCruise());
+        em.remove(toDelete);
+        em.getTransaction().commit();
+    }
+
+    public InvShipName getInvShipName(Short shipNameSelected) {
+        return getEntityManager().find(InvShipName.class, shipNameSelected);
+    }
+
+    public UnlocodePort getUnlocodePort(UnlocodePortPK unlocodePortPK) {
+        return getEntityManager().find(UnlocodePort.class, unlocodePortPK);
+    }
+
+    public void insertInvCruiseInventory(InvCruiseInventory newInventory, List<String> scientistSelected, List<String> institutionsSelected, List<String> laboratoriesSelected, List<String> dataTypesSelected) {
+        EntityManager em = getEntityManager();
+        em.setFlushMode(FlushModeType.COMMIT);
+        em.getTransaction().begin();
+        em.persist(newInventory.getIdReport());
+        em.persist(newInventory);
+        for (String scientistId : scientistSelected) {
+            InvChiefScientistCruisePK scientistCruisePK = new InvChiefScientistCruisePK(scientistId, newInventory.getIdCruise());
+            InvChiefScientistCruise scientistCruise = new InvChiefScientistCruise(scientistCruisePK);
+            em.persist(scientistCruise);
+        }
+        for (String institutionId : institutionsSelected) {
+            InvCruiseInstitutionsPK cruiseIntitutionPK = new InvCruiseInstitutionsPK(Integer.parseInt(institutionId), newInventory.getIdCruise(), "PA");
+            InvCruiseInstitutions cruiseInstitution = new InvCruiseInstitutions(cruiseIntitutionPK);
+            em.persist(cruiseInstitution);
+        }
+        for (String laboratoriesId : laboratoriesSelected) {
+            InvLaboratoriesCruisesPK cruiseLaboPK = new InvLaboratoriesCruisesPK(Integer.parseInt(laboratoriesId), newInventory.getIdCruise());
+            InvLaboratoriesCruises cruiseLaboratory = new InvLaboratoriesCruises(cruiseLaboPK);
+            em.persist(cruiseLaboratory);
+        }
+        for (String dataTypeId : dataTypesSelected) {
+            InvCruiseBodcCategoryPK cruiseCategoryPK = new InvCruiseBodcCategoryPK(dataTypeId, newInventory.getIdCruise());
+            InvCruiseBodcCategory cruiseCategory = new InvCruiseBodcCategory(cruiseCategoryPK);
+            em.persist(cruiseCategory);
+        }
+        em.getTransaction().commit();        
     }
 }
 class InventoryComparator implements Comparator<InvCruiseInventory> {
