@@ -217,3 +217,9 @@ td.banner-login {
     height:400px; 
     overflow:auto;
 }
+.mandatory{
+    color:red;
+    font-weight: bold;
+    font-size: 18px;
+    vertical-align: middle;
+}

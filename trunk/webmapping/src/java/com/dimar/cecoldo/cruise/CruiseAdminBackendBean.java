@@ -1,8 +1,6 @@
 package com.dimar.cecoldo.cruise;
 
-import com.dimar.cecoldo.bean.InvChiefScientist;
 import com.dimar.cecoldo.bean.InvChiefScientistCruise;
-import com.dimar.cecoldo.bean.InvChiefScientistCruisePK;
 import com.dimar.cecoldo.bean.InvCruiseBodcCategory;
 import com.dimar.cecoldo.bean.InvCruiseInstitutions;
 import com.dimar.cecoldo.bean.InvCruiseInventory;
@@ -19,10 +17,17 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
+import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.SelectItem;
 import org.ajax4jsf.component.UIRepeat;
 import org.ajax4jsf.component.html.HtmlAjaxCommandButton;
+import org.hibernate.validator.Length;
+import org.hibernate.validator.NotEmpty;
+import org.hibernate.validator.Pattern;
+import org.richfaces.component.UICalendar;
 import org.richfaces.component.UIDataTable;
 
 /** 
@@ -37,6 +42,8 @@ public class CruiseAdminBackendBean {
     private UIDataTable cruiseInventorysTable;
     private UIRepeat metadataRepeater;
     private UIRepeat projectRepeater;
+    private UICalendar beginDateCalendar;
+    private UICalendar endDateCalendar;
     private HtmlAjaxCommandButton updateLink;
     private List<SelectItem> shipNameList;
     private Short shipNameSelected;
@@ -80,13 +87,15 @@ public class CruiseAdminBackendBean {
     private Regions oceanArea;
     private String status;
     private String uriReport;
-    private Short year;
     private List<InvProject> projectList;
     private String reportTitle;
+    @Pattern(regex = "(^$)|(^(http|ftp|https):\\/\\/.*)", message = "La URI no es válida")
     private String reportUri;
     private String metadataTitle;
+    @Pattern(regex = "(^$)|(^(http|ftp|https):\\/\\/.*)", message = "La URI no es válida")
     private String metadataUri;
     private boolean editable;
+    private boolean toValidate;
 
     public CruiseAdminBackendBean() {
         controller = new Controller();
@@ -102,10 +111,13 @@ public class CruiseAdminBackendBean {
         institutionList = controller.getAllInstitutions();
         scientistList = controller.getAllScientist();
         shipNameList = controller.getAllShipNames();
+        shipNameList.add(0, new SelectItem("", ""));
         allCruiseInventorys = controller.getAllCruiseInventorys();
         unlocodePortList = controller.getAllUnlocodePorts();
+        unlocodePortList.add(0, new SelectItem("", ""));
         countryList = controller.getAllCountries();
         countrySelected = "22";
+        toValidate = true;
     }
 
     public void editCruiseInventory(ActionEvent e) {
@@ -118,14 +130,13 @@ public class CruiseAdminBackendBean {
         oceanArea = selectedInventory.getOceanArea();
         status = selectedInventory.getStatus();
         uriReport = selectedInventory.getUriReport();
-        year = selectedInventory.getYear();
         shipNameSelected = selectedInventory.getShipName().getId();
         institutionsSelected = new ArrayList<String>();
         List<InvCruiseInstitutions> cruiseInstitutions = (List<InvCruiseInstitutions>) selectedInventory.getInvCruiseInstitutionsCollection();
         for (InvCruiseInstitutions cruiseInstitution : cruiseInstitutions) {
             institutionsSelected.add(cruiseInstitution.getInvInstitutions().getIdinstitution() + "");
         }
-        unlocodePortSelected = selectedInventory.getUnlocodePort().getUnlocodePortPK().getCountry() + ";" +selectedInventory.getUnlocodePort().getUnlocodePortPK().getLocation();
+        unlocodePortSelected = selectedInventory.getUnlocodePort().getUnlocodePortPK().getCountry() + ";" + selectedInventory.getUnlocodePort().getUnlocodePortPK().getLocation();
         unlocodePort1Selected = selectedInventory.getUnlocodePort1().getUnlocodePortPK().getCountry() + ";" + selectedInventory.getUnlocodePort1().getUnlocodePortPK().getLocation();
         scientistSelected = new ArrayList<String>();
         List<InvChiefScientistCruise> scientists = (List<InvChiefScientistCruise>) selectedInventory.getInvChiefScientistCruiseCollection();
@@ -149,6 +160,7 @@ public class CruiseAdminBackendBean {
         metadataUri = selectedInventory.getMetadataUrl();
         countrySelected = selectedInventory.getCountry().getPaiId();
         this.setEditable(true);
+        this.setToValidate(true);
         this.updateLink.setRendered(true);
     }
 
@@ -161,7 +173,7 @@ public class CruiseAdminBackendBean {
     }
 
     public void insertAction(ActionEvent e) {
-        InvCruiseInventory newInventory = new InvCruiseInventory();        
+        InvCruiseInventory newInventory = new InvCruiseInventory();
         newInventory.setBeginDate(beginDate);
         newInventory.setCountry(controller.getCountryById(countrySelected));
         newInventory.setCruiseName(cruiseName);
@@ -179,22 +191,57 @@ public class CruiseAdminBackendBean {
         newInventory.setUnlocodePort(controller.getUnlocodePort(new UnlocodePortPK(unlocodePKData[0], unlocodePKData[1])));
         String[] unlocode1PKData = unlocodePort1Selected.split(";");
         newInventory.setUnlocodePort1(controller.getUnlocodePort(new UnlocodePortPK(unlocode1PKData[0], unlocode1PKData[1])));
-        newInventory.setYear(year);
         controller.insertInvCruiseInventory(newInventory, scientistSelected, institutionsSelected, laboratoriesSelected, dataTypesSelected);
+        this.setToValidate(true);
         this.clearFields();
         allCruiseInventorys = controller.getAllCruiseInventorys();
     }
 
     public void updateAction(ActionEvent e) {
+        InvCruiseInventory newInventory = new InvCruiseInventory(this.getSelectedInventory().getIdCruise());
+        newInventory.setBeginDate(beginDate);
+        newInventory.setCountry(controller.getCountryById(countrySelected));
+        newInventory.setCruiseName(cruiseName);
+        newInventory.setCruiseObjetives(cruiseObjetives);
+        newInventory.setEndDate(endDate);
+        InvReport report = new InvReport();
+        report.setTitle(reportTitle);
+        report.setUri(reportUri);
+        newInventory.setIdReport(report);
+        newInventory.setMetadataTitle(metadataTitle);
+        newInventory.setMetadataUrl(metadataUri);
+        newInventory.setShipName(controller.getInvShipName(shipNameSelected));
+        newInventory.setStatus("0");
+        String[] unlocodePKData = unlocodePortSelected.split(";");
+        newInventory.setUnlocodePort(controller.getUnlocodePort(new UnlocodePortPK(unlocodePKData[0], unlocodePKData[1])));
+        String[] unlocode1PKData = unlocodePort1Selected.split(";");
+        newInventory.setUnlocodePort1(controller.getUnlocodePort(new UnlocodePortPK(unlocode1PKData[0], unlocode1PKData[1])));
+        controller.updateInvCruiseInventory(newInventory, scientistSelected, institutionsSelected, laboratoriesSelected, dataTypesSelected);
         this.clearFields();
         this.setEditable(false);
+        this.setToValidate(false);
         this.updateLink.setRendered(false);
     }
 
     public void cancelAction(ActionEvent e) {
         this.clearFields();
         this.setEditable(false);
+        this.setToValidate(true);
         this.updateLink.setRendered(false);
+    }
+
+    public void datesValidate(ValueChangeEvent event) {
+        long diff = ((Date)endDateCalendar.getValue()).getTime() - ((Date)beginDateCalendar.getValue()).getTime();
+        long diffDays = diff / (24 * 60 * 60 * 1000);
+        System.out.println("diferencia en dias " + diffDays);
+        if (diff < 0) {
+            //la fecha de inicio es mayor que la fecha fin
+            FacesMessage message = new FacesMessage("La fecha de inicio no puede ser mayor que la fecha final");
+            FacesContext.getCurrentInstance().addMessage(endDateCalendar.getClientId(FacesContext.getCurrentInstance()), message);
+        }else if (diffDays > 90) {
+            FacesMessage message = new FacesMessage("La diferencia entre la fecha de inicio y la fecha final debe ser menor a 90 días");
+            FacesContext.getCurrentInstance().addMessage(endDateCalendar.getClientId(FacesContext.getCurrentInstance()), message);
+        }
     }
 
     public List<InvInstitutions> getInstitutions() {
@@ -519,20 +566,6 @@ public class CruiseAdminBackendBean {
     }
 
     /**
-     * @return the year
-     */
-    public Short getYear() {
-        return year;
-    }
-
-    /**
-     * @param year the year to set
-     */
-    public void setYear(Short year) {
-        this.year = year;
-    }
-
-    /**
      * @return the unlocodePortList
      */
     public List<SelectItem> getUnlocodePortList() {
@@ -724,7 +757,6 @@ public class CruiseAdminBackendBean {
         this.shipNameSelected = 0;
         this.unlocodePortSelected = "";
         this.unlocodePort1Selected = "";
-        this.year = null;
     }
 
     /**
@@ -739,5 +771,47 @@ public class CruiseAdminBackendBean {
      */
     public void setCountryList(List<SelectItem> countryList) {
         this.countryList = countryList;
+    }
+
+    /**
+     * @return the endDateCalendar
+     */
+    public UICalendar getEndDateCalendar() {
+        return endDateCalendar;
+    }
+
+    /**
+     * @param endDateCalendar the endDateCalendar to set
+     */
+    public void setEndDateCalendar(UICalendar endDateCalendar) {
+        this.endDateCalendar = endDateCalendar;
+    }
+
+    /**
+     * @return the beginDateCalendar
+     */
+    public UICalendar getBeginDateCalendar() {
+        return beginDateCalendar;
+    }
+
+    /**
+     * @param beginDateCalendar the beginDateCalendar to set
+     */
+    public void setBeginDateCalendar(UICalendar beginDateCalendar) {
+        this.beginDateCalendar = beginDateCalendar;
+    }
+
+    /**
+     * @return the validate
+     */
+    public boolean isToValidate() {
+        return toValidate;
+    }
+
+    /**
+     * @param validate the validate to set
+     */
+    public void setToValidate(boolean validate) {
+        this.toValidate = validate;
     }
 }
