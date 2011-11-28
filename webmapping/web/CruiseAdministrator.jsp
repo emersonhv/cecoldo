@@ -109,7 +109,7 @@
                                                                     <h:outputText value="#{msg.t_edit}" />
                                                                 </f:facet>   
                                                                 <span class="gris">
-                                                                    <a4j:commandLink actionListener="#{cruiseAdminManagedBean.editCruiseInventory}" oncomplete="#{rich:component('editPanel')}.show() " reRender="details">
+                                                                    <a4j:commandLink actionListener="#{cruiseAdminManagedBean.editCruiseInventory}" reRender="details" >
                                                                         <h:graphicImage alt="show" url="images/edit.gif" style="border: 0"/>
                                                                     </a4j:commandLink>
                                                                 </span>
@@ -143,31 +143,36 @@
                                                                     <tr>
                                                                         <th>
                                                                             <h:outputText value="#{msg.cruise_name}"/>
+                                                                            <span class="mandatory">*</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="h.beginDate">
+                                                                            <span id="h.cruise_name">
                                                                                 <img src="images/help_icon.gif" alt="help"/> 
-                                                                                <rich:toolTip for="h.beginDate">
+                                                                                <rich:toolTip for="h.cruise_name">
                                                                                     <div style="width: 350px">
-                                                                                        <h:outputText value="#{msg.h_beginDate}"/>
+                                                                                        <h:outputText value="#{msg.h_cruise_name}"/>
                                                                                     </div>
                                                                                 </rich:toolTip>
                                                                             </span>                                                                                    
                                                                         </td>                                                                
                                                                         <td>
-                                                                            <h:inputText value="#{cruiseAdminManagedBean.cruiseName}" />
+                                                                            <h:inputText value="#{cruiseAdminManagedBean.cruiseName}" id="cruiseName">
+                                                                                <rich:ajaxValidator event="onblur"/>
+                                                                            </h:inputText>
+                                                                            <rich:message for="cruiseName" />
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <th width="30%">
                                                                             <h:outputText value="#{msg.ship_name}"/>
+                                                                            <span class="mandatory">*</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="h.beginDate">
+                                                                            <span id="h.ship_name">
                                                                                 <img src="images/help_icon.gif" alt="help"/> 
-                                                                                <rich:toolTip for="h.beginDate">
+                                                                                <rich:toolTip for="h.ship_name">
                                                                                     <div style="width: 350px">
-                                                                                        <h:outputText value="#{msg.h_beginDate}"/>
+                                                                                        <h:outputText value="#{msg.h_ship_name}"/>
                                                                                     </div>
                                                                                 </rich:toolTip>
                                                                             </span>                                                                                    
@@ -181,6 +186,7 @@
                                                                     <tr>
                                                                         <th width="30%">
                                                                             <h:outputText value="#{msg.country}"/>
+                                                                            <span class="mandatory">*</span>
                                                                         </th>
                                                                         <td>
                                                                             <span id="h.country">
@@ -200,32 +206,15 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <th>
-                                                                            <h:outputText value="#{msg.cruise_year}"/>
-                                                                        </th>
-                                                                        <td>
-                                                                            <span id="h.beginDate">
-                                                                                <img src="images/help_icon.gif" alt="help"/> 
-                                                                                <rich:toolTip for="h.beginDate">
-                                                                                    <div style="width: 350px">
-                                                                                        <h:outputText value="#{msg.h_beginDate}"/>
-                                                                                    </div>
-                                                                                </rich:toolTip>
-                                                                            </span>                                                                                    
-                                                                        </td>                                                                
-                                                                        <td>
-                                                                            <h:inputText value="#{cruiseAdminManagedBean.year}"/>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th>
                                                                             <h:outputText value="#{msg.cruise_beginDate}"/>
+                                                                            <span class="mandatory">*</span>
                                                                         </th>                                                                
                                                                         <td>
-                                                                            <span id="h.beginDate">
+                                                                            <span id="h.cruise_beginDate">
                                                                                 <img src="images/help_icon.gif" alt="help"/> 
-                                                                                <rich:toolTip for="h.beginDate">
+                                                                                <rich:toolTip for="h.cruise_beginDate">
                                                                                     <div style="width: 350px">
-                                                                                        <h:outputText value="#{msg.h_beginDate}"/>
+                                                                                        <h:outputText value="#{msg.h_cruise_beginDate}"/>
                                                                                     </div>
                                                                                 </rich:toolTip>
                                                                             </span>                                                                                    
@@ -233,7 +222,10 @@
                                                                         <td>
                                                                             <a4j:outputPanel id="beginDatePanel" layout="block">
                                                                                 <rich:calendar value="#{cruiseAdminManagedBean.beginDate}"
+                                                                                               valueChangeListener="#{cruiseAdminManagedBean.datesValidate}"
+                                                                                               binding="#{cruiseAdminManagedBean.beginDateCalendar}"
                                                                                                popup="true"
+                                                                                               id="beginDateCalendar"
                                                                                                datePattern="dd/MM/yyyy"
                                                                                                showApplyButton="false" cellWidth="24px" cellHeight="22px" style="width:200px"/>
                                                                             </a4j:outputPanel>
@@ -242,36 +234,44 @@
                                                                     <tr>
                                                                         <th>
                                                                             <h:outputText value="#{msg.cruise_endDate}"/>
+                                                                            <span class="mandatory">*</span>
                                                                         </th>                                                                
                                                                         <td>
-                                                                            <span id="h.endDate">
+                                                                            <span id="h.cruise_endDate">
                                                                                 <img src="images/help_icon.gif" alt="help"/> 
-                                                                                <rich:toolTip for="h.endDate">
+                                                                                <rich:toolTip for="h.cruise_endDate">
                                                                                     <div style="width: 350px">
-                                                                                        <h:outputText value="#{msg.h_endDate}"/>
+                                                                                        <h:outputText value="#{msg.h_cruise_endDate}"/>
                                                                                     </div>
                                                                                 </rich:toolTip>
                                                                             </span>                                                                                    
                                                                         </td>                                                                
                                                                         <td>
                                                                             <a4j:outputPanel id="endDatePanel" layout="block">
-                                                                                <rich:calendar value="#{cruiseAdminManagedBean.endDate}"
+                                                                                <rich:calendar value="#{cruiseAdminManagedBean.endDate}" 
+                                                                                               valueChangeListener="#{cruiseAdminManagedBean.datesValidate}"
+                                                                                               binding="#{cruiseAdminManagedBean.endDateCalendar}"
                                                                                                popup="true"
                                                                                                datePattern="dd/MM/yyyy"
-                                                                                               showApplyButton="false" cellWidth="24px" cellHeight="22px" style="width:200px"/>
-                                                                            </a4j:outputPanel>
+                                                                                               showApplyButton="false" cellWidth="24px" cellHeight="22px" style="width:200px" 
+                                                                                               id="endDateCalendar">
+                                                                                    <a4j:support event="onchanged" actionListener="#{cruiseAdminManagedBean.datesValidate2}"/>
+                                                                                </rich:calendar>
+                                                                                <rich:message for="endDateCalendar" />
+                                                                            </a4j:outputPanel>                                                                            
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <th>
                                                                             <h:outputText value="#{msg.cruise_port_of_departure}"/>
+                                                                            <span class="mandatory">*</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="h.endDate">
+                                                                            <span id="h.cruise_port_of_departure">
                                                                                 <img src="images/help_icon.gif" alt="help"/> 
-                                                                                <rich:toolTip for="h.endDate">
+                                                                                <rich:toolTip for="h.cruise_port_of_departure">
                                                                                     <div style="width: 350px">
-                                                                                        <h:outputText value="#{msg.h_endDate}"/>
+                                                                                        <h:outputText value="#{msg.h_cruise_port_of_departure}"/>
                                                                                     </div>
                                                                                 </rich:toolTip>
                                                                             </span>                                                                                    
@@ -285,13 +285,14 @@
                                                                     <tr>
                                                                         <th>
                                                                             <h:outputText value="#{msg.cruise_port_of_return}"/>
+                                                                            <span class="mandatory">*</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="h.endDate">
+                                                                            <span id="h.cruise_port_of_return">
                                                                                 <img src="images/help_icon.gif" alt="help"/> 
-                                                                                <rich:toolTip for="h.endDate">
+                                                                                <rich:toolTip for="h.cruise_port_of_return">
                                                                                     <div style="width: 350px">
-                                                                                        <h:outputText value="#{msg.h_endDate}"/>
+                                                                                        <h:outputText value="#{msg.h_cruise_port_of_return}"/>
                                                                                     </div>
                                                                                 </rich:toolTip>
                                                                             </span>                                                                                    
@@ -305,13 +306,14 @@
                                                                     <tr>
                                                                         <th>
                                                                             <h:outputText value="#{msg.cruise_institutions}"/>
+                                                                            <span class="mandatory">*</span>
                                                                         </th>                                                                
                                                                         <td>
-                                                                            <span id="h.cruiseInstitutions">
+                                                                            <span id="h.cruise_institutions">
                                                                                 <img src="images/help_icon.gif" alt="help"/> 
-                                                                                <rich:toolTip for="h.cruiseInstitutions">
+                                                                                <rich:toolTip for="h.cruise_institutions">
                                                                                     <div style="width: 350px">
-                                                                                        <h:outputText value="#{msg.h_cruiseInstitutions}"/>
+                                                                                        <h:outputText value="#{msg.h_cruise_institutions}"/>
                                                                                     </div>
                                                                                 </rich:toolTip>
                                                                             </span>                                                                                    
@@ -325,13 +327,14 @@
                                                                     <tr>
                                                                         <th>
                                                                             <h:outputText value="#{msg.cruise_chief_scientist}"/>
+                                                                            <span class="mandatory">*</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="h.cruiseScientist">
+                                                                            <span id="h.cruise_chief_scientist">
                                                                                 <img src="images/help_icon.gif" alt="help"/> 
-                                                                                <rich:toolTip for="h.cruiseScientist">
+                                                                                <rich:toolTip for="h.cruise_chief_scientist">
                                                                                     <div style="width: 350px">
-                                                                                        <h:outputText value="#{msg.h_cruiseScientist}"/>
+                                                                                        <h:outputText value="#{msg.h_cruise_chief_scientist}"/>
                                                                                     </div>
                                                                                 </rich:toolTip>
                                                                             </span>                                                                                    
@@ -345,13 +348,14 @@
                                                                     <tr>
                                                                         <th>
                                                                             <h:outputText value="#{msg.cruise_ocean_sea_areas}"/>
+                                                                            <span class="mandatory">*</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="h.endDate">
+                                                                            <span id="h.cruise_ocean_sea_areas">
                                                                                 <img src="images/help_icon.gif" alt="help"/> 
-                                                                                <rich:toolTip for="h.endDate">
+                                                                                <rich:toolTip for="h.cruise_ocean_sea_areas">
                                                                                     <div style="width: 350px">
-                                                                                        <h:outputText value="#{msg.h_endDate}"/>
+                                                                                        <h:outputText value="#{msg.h_cruise_ocean_sea_areas}"/>
                                                                                     </div>
                                                                                 </rich:toolTip>
                                                                             </span>                                                                                    
@@ -365,13 +369,14 @@
                                                                     <tr>
                                                                         <th>
                                                                             <h:outputText value="#{msg.details_laboratories}"/>
+                                                                            <span class="mandatory">*</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="h.laboratory">
+                                                                            <span id="h.details_laboratories">
                                                                                 <img src="images/help_icon.gif" alt="help"/> 
-                                                                                <rich:toolTip for="h.laboratory">
+                                                                                <rich:toolTip for="h.details_laboratories">
                                                                                     <div style="width: 350px">
-                                                                                        <h:outputText value="#{msg.h_laboratory}"/>
+                                                                                        <h:outputText value="#{msg.h_details_laboratories}"/>
                                                                                     </div>
                                                                                 </rich:toolTip>
                                                                             </span>                                                                                    
@@ -385,14 +390,17 @@
                                                                     <tr>
                                                                         <th>
                                                                             <h:outputText value="#{msg.cruise_measurements}"/>
+                                                                            <span class="mandatory">*</span>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="h.dataType">
+                                                                            <span id="h.cruise_measurements">
                                                                                 <img src="images/help_icon.gif" alt="help"/> 
-                                                                                <rich:toolTip for="h.dataType">
+                                                                                <rich:toolTip for="h.cruise_measurements">
                                                                                     <div style="width: 350px">
-                                                                                        <h:outputText value="#{msg.h_dataType}"/>
-                                                                                        <a href="DictionaryQuery.jsp" target="_blank"><h:outputText value="#{msg.h_dataTypeLink}"/></a>
+                                                                                        <h:outputText value="#{msg.h_cruise_measurements}"/>
+                                                                                        <a href="DictionaryQuery.jsp" target="_blank">
+                                                                                            <h:outputText value="#{msg.h_dataTypeLink}"/>
+                                                                                        </a>
                                                                                     </div>
                                                                                 </rich:toolTip>
                                                                             </span>                                                                                    
@@ -408,18 +416,38 @@
                                                                             <h:outputText value="#{msg.uri_metadata}"/>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="h.endDate">
+                                                                            <span id="h.uri_metadata">
                                                                                 <img src="images/help_icon.gif" alt="help"/> 
-                                                                                <rich:toolTip for="h.endDate">
+                                                                                <rich:toolTip for="h.uri_metadata">
                                                                                     <div style="width: 350px">
-                                                                                        <h:outputText value="#{msg.h_endDate}"/>
+                                                                                        <h:outputText value="#{msg.h_uri_metadata}"/>
                                                                                     </div>
                                                                                 </rich:toolTip>
                                                                             </span>                                                                                    
                                                                         </td> 
                                                                         <td>
-                                                                            <h:inputText value="#{cruiseAdminManagedBean.metadataTitle}"/>
-                                                                            <h:inputText value="#{cruiseAdminManagedBean.metadataUri}"/>
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <th>
+                                                                                        <h:outputText value="#{msg.metadata_title}"/>
+                                                                                    </th>
+                                                                                    <td>
+                                                                                        <h:inputText value="#{cruiseAdminManagedBean.metadataTitle}"/>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <th>
+                                                                                        <h:outputText value="#{msg.metadata_uri}"/>
+                                                                                    </th>
+                                                                                    <td>
+                                                                                        <h:inputText value="#{cruiseAdminManagedBean.metadataUri}" id="metadataUrl">
+                                                                                            <rich:ajaxValidator event="onblur"/>
+                                                                                        </h:inputText>
+                                                                                        <h:outputText value="#{msg.metadata_uri_example}"/>
+                                                                                        <br/><rich:message for="metadataUrl" /> 
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
@@ -427,33 +455,53 @@
                                                                             <h:outputText value="#{msg.uri_report}"/>
                                                                         </th>
                                                                         <td>
-                                                                            <span id="h.endDate">
+                                                                            <span id="h.uri_report">
                                                                                 <img src="images/help_icon.gif" alt="help"/> 
-                                                                                <rich:toolTip for="h.endDate">
+                                                                                <rich:toolTip for="h.uri_report">
                                                                                     <div style="width: 350px">
-                                                                                        <h:outputText value="#{msg.h_endDate}"/>
+                                                                                        <h:outputText value="#{msg.h_uri_report}"/>
                                                                                     </div>
                                                                                 </rich:toolTip>
                                                                             </span>                                                                                    
                                                                         </td> 
                                                                         <td>
-                                                                            <h:inputText value="#{cruiseAdminManagedBean.reportTitle}"/>                                                                            
-                                                                            <h:inputText value="#{cruiseAdminManagedBean.reportUri}"/>
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <th>
+                                                                                        <h:outputText value="#{msg.metadata_title}"/>
+                                                                                    </th>
+                                                                                    <td>
+                                                                                        <h:inputText value="#{cruiseAdminManagedBean.reportTitle}"/>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <th>
+                                                                                        <h:outputText value="#{msg.metadata_uri}"/>
+                                                                                    </th>
+                                                                                    <td>
+                                                                                        <h:inputText value="#{cruiseAdminManagedBean.reportUri}" id="reportUri">
+                                                                                            <rich:ajaxValidator event="onblur"/>
+                                                                                        </h:inputText>
+                                                                                        <h:outputText value="#{msg.report_uri_example}"/>
+                                                                                        <br/><rich:message for="reportUri" /> 
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td colspan="3" align="center">
                                                                             <a4j:commandButton value="#{msg.action_insert}" reRender="inventoryTable,details"
-                                                                                             actionListener="#{cruiseAdminManagedBean.insertAction}"
-                                                                                             rendered="#{not cruiseAdminManagedBean.editable}"
-                                                                                             onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;"/>
+                                                                                               actionListener="#{cruiseAdminManagedBean.insertAction}"
+                                                                                               rendered="#{not cruiseAdminManagedBean.editable}"
+                                                                                               onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;"/>
                                                                             <a4j:commandButton  value="#{msg.action_update}"  reRender="inventoryTable,details" 
-                                                                                              actionListener="#{cruiseAdminManagedBean.updateAction}"
-                                                                                              rendered="false" binding="#{cruiseAdminManagedBean.updateLink}"   
-                                                                                              onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;"/>                    
+                                                                                                actionListener="#{cruiseAdminManagedBean.updateAction}"
+                                                                                                rendered="false" binding="#{cruiseAdminManagedBean.updateLink}"   
+                                                                                                onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;"/>                    
                                                                             <a4j:commandButton value="#{msg.action_cancel}" reRender="inventoryTable,details" 
-                                                                                             actionListener="#{cruiseAdminManagedBean.cancelAction}" 
-                                                                                             onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;"/>                                                                            
+                                                                                               actionListener="#{cruiseAdminManagedBean.cancelAction}" 
+                                                                                               onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;"/>                                                                            
                                                                         </td>
                                                                     </tr>
                                                                 </table>      

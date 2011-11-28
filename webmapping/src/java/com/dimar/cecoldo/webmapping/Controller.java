@@ -841,6 +841,35 @@ public class Controller {
         }
         em.getTransaction().commit();        
     }
+
+    public void updateInvCruiseInventory(InvCruiseInventory inventory, List<String> scientistSelected, List<String> institutionsSelected, List<String> laboratoriesSelected, List<String> dataTypesSelected) {
+        EntityManager em = getEntityManager();
+        em.setFlushMode(FlushModeType.COMMIT);
+        em.getTransaction().begin();
+        em.persist(inventory.getIdReport());
+        em.persist(inventory);
+        for (String scientistId : scientistSelected) {
+            InvChiefScientistCruisePK scientistCruisePK = new InvChiefScientistCruisePK(scientistId, inventory.getIdCruise());
+            InvChiefScientistCruise scientistCruise = new InvChiefScientistCruise(scientistCruisePK);
+            em.persist(scientistCruise);
+        }
+        for (String institutionId : institutionsSelected) {
+            InvCruiseInstitutionsPK cruiseIntitutionPK = new InvCruiseInstitutionsPK(Integer.parseInt(institutionId), inventory.getIdCruise(), "PA");
+            InvCruiseInstitutions cruiseInstitution = new InvCruiseInstitutions(cruiseIntitutionPK);
+            em.persist(cruiseInstitution);
+        }
+        for (String laboratoriesId : laboratoriesSelected) {
+            InvLaboratoriesCruisesPK cruiseLaboPK = new InvLaboratoriesCruisesPK(Integer.parseInt(laboratoriesId), inventory.getIdCruise());
+            InvLaboratoriesCruises cruiseLaboratory = new InvLaboratoriesCruises(cruiseLaboPK);
+            em.persist(cruiseLaboratory);
+        }
+        for (String dataTypeId : dataTypesSelected) {
+            InvCruiseBodcCategoryPK cruiseCategoryPK = new InvCruiseBodcCategoryPK(dataTypeId, inventory.getIdCruise());
+            InvCruiseBodcCategory cruiseCategory = new InvCruiseBodcCategory(cruiseCategoryPK);
+            em.persist(cruiseCategory);
+        }
+        em.getTransaction().commit();        
+    }
 }
 class InventoryComparator implements Comparator<InvCruiseInventory> {
 

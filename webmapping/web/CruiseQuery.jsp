@@ -9,7 +9,7 @@
 <%@taglib prefix="h" uri="http://java.sun.com/jsf/html"%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+    "http://www.w3.org/TR/html4/loose.dtd">
 
 <%--
     This file is an entry point for JavaServer Faces application.
@@ -96,8 +96,8 @@
                                                                         <h:inputText value="#{cruiseManagedBean.freeSearch}" id="free_search_id">
                                                                         </h:inputText>
                                                                         <rich:hotKey key="return"
-                                                                            handler="#{rich:element('searchButton')}.click()"
-                                                                            selector="#free_search_id"/>                                                                        
+                                                                                     handler="#{rich:element('searchButton')}.click()"
+                                                                                     selector="#free_search_id"/>                                                                        
                                                                     </td>
                                                                 </tr>
                                                                 <tr>
@@ -426,135 +426,131 @@
                                                         </f:facet>   
                                                         <rich:panel id="details">
                                                             <div class="scroll3">
-                                                            <table width="100%" style="text-align: left;">
-                                                                <tr>
-                                                                    <th width="30%">
-                                                                        <h:outputText value="#{msg.cruise_name}"/>
-                                                                    </th>
-                                                                    <td>
-                                                                        <h:outputText value="#{cruiseManagedBean.selectedInventory.cruiseName}"/>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th width="30%">
-                                                                        <h:outputText value="#{msg.ship_name}"/>
-                                                                    </th>
-                                                                    <td>
-                                                                        <a target="_blank" class="naranja" href="<h:outputText value="#{cruiseManagedBean.selectedInventory.shipName.shipUri}"/>">
-                                                                            <h:outputText value="#{cruiseManagedBean.selectedInventory.shipName.shipName}"/>
-                                                                        </a>
-                                                                        <br>
-                                                                        <a target="_blank" href="<h:outputText value="#{cruiseManagedBean.selectedInventory.shipName.shipUri}"/>">
-                                                                            <h:graphicImage value="#{cruiseManagedBean.selectedInventory.shipName.shipPicture}" height="100" style="border: 0"/>
-                                                                        </a>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th>
-                                                                        <h:outputText value="#{msg.cruise_year}"/>
-                                                                    </th>
-                                                                    <td>
-                                                                        <h:outputText value="#{cruiseManagedBean.selectedInventory.year}"/>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th>
-                                                                        <h:outputText value="#{msg.cruise_period}"/>
-                                                                    </th>
-                                                                    <td>
-                                                                        <h:outputText value="#{cruiseManagedBean.selectedInventory.beginDate}"/> - 
-                                                                        <h:outputText value="#{cruiseManagedBean.selectedInventory.endDate}"/>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th>
-                                                                        <h:outputText value="#{msg.cruise_institutions}"/>
-                                                                    </th>
-                                                                    <td>
-                                                                        <a4j:repeat value="#{cruiseManagedBean.institutions}" var="institution">
-                                                                            <b><h:outputText value="#{institution.abbreviation}"/></b>
-                                                                            <h:outputText value="#{institution.institution}"/><br>
-                                                                        </a4j:repeat>   
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th>
-                                                                        <h:outputText value="#{msg.cruise_port_of_departure}"/>
-                                                                    </th>
-                                                                    <td>
-                                                                        <h:outputText value="#{cruiseManagedBean.selectedInventory.unlocodePort.name}"/>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th>
-                                                                        <h:outputText value="#{msg.cruise_port_of_return}"/>
-                                                                    </th>
-                                                                    <td>
-                                                                        <h:outputText value="#{cruiseManagedBean.selectedInventory.unlocodePort1.name}"/>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th>
-                                                                        <h:outputText value="#{msg.cruise_chief_scientist}"/>
-                                                                    </th>
-                                                                    <td>
-                                                                        <a4j:repeat value="#{cruiseManagedBean.selectedInventory.invChiefScientistCruiseCollection}" var="chiefScientist">
-                                                                            <h:outputText value="#{chiefScientist.invChiefScientist.firstName}"/> <b><h:outputText value="#{chiefScientist.invChiefScientist.lastName}"/></b> - 
-                                                                        </a4j:repeat>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th>
-                                                                        <h:outputText value="#{msg.cruise_ocean_sea_areas}"/>
-                                                                    </th>
-                                                                    <td>
-                                                                        <a4j:repeat value="#{cruiseManagedBean.selectedInventory.oceanArea.regionsdesCollection}" var="region" rows="1">
-                                                                            <b><h:outputText value="#{region.label}"/></b><br/>
-                                                                        </a4j:repeat>                                                                       
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th>
-                                                                        <h:outputText value="#{msg.details_laboratories}"/>
-                                                                    </th>
-                                                                    <td>
-                                                                        <a4j:repeat value="#{cruiseManagedBean.selectedInventory.invLaboratoriesCruisesCollection}" var="laboratories">
-                                                                            <b><h:outputText value="#{laboratories.invLaboratories.country.paiNombrePais}"/></b>
-                                                                            <h:outputText value="#{laboratories.invLaboratories.nameLab}"/><br>
-                                                                        </a4j:repeat>                                      
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th>
-                                                                        <h:outputText value="#{msg.cruise_measurements}"/>
-                                                                    </th>
-                                                                    <td>
-                                                                        <a4j:repeat value="#{cruiseManagedBean.selectedInventory.invCruiseBodcCategoryCollection}" var="category">
-                                                                            <h:outputText value="#{category.bodcCategory.title}"/><br>
-                                                                        </a4j:repeat>                                      
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th>
-                                                                        <h:outputText value="#{msg.uri_metadata}"/>
-                                                                    </th>
-                                                                    <td>
-                                                                        <a class="naranja" href="<h:outputText value="#{cruiseManagedBean.selectedInventory.metadataUrl}"/>" target="blank_">
-                                                                            <h:outputText value="#{cruiseManagedBean.selectedInventory.metadataTitle}"/>
-                                                                        </a><br>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th>
-                                                                        <h:outputText value="#{msg.uri_report}"/>
-                                                                    </th>
-                                                                    <td>
-                                                                        <a class="naranja" href="<h:outputText value="#{cruiseManagedBean.selectedInventory.idReport.uri}"/>" target="blank_">
-                                                                            <h:outputText value="#{cruiseManagedBean.selectedInventory.idReport.title}"/>
-                                                                        </a>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>      
+                                                                <table width="100%" style="text-align: left;">
+                                                                    <tr>
+                                                                        <th width="30%">
+                                                                            <h:outputText value="#{msg.cruise_name}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <h:outputText value="#{cruiseManagedBean.selectedInventory.cruiseName}"/>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th width="30%">
+                                                                            <h:outputText value="#{msg.ship_name}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <a target="_blank" class="naranja" href="<h:outputText value="#{cruiseManagedBean.selectedInventory.shipName.shipUri}"/>">
+                                                                                <h:outputText value="#{cruiseManagedBean.selectedInventory.shipName.shipName}"/>
+                                                                            </a>
+                                                                            <br>
+                                                                            <a target="_blank" href="<h:outputText value="#{cruiseManagedBean.selectedInventory.shipName.shipUri}"/>">
+                                                                                <h:graphicImage value="#{cruiseManagedBean.selectedInventory.shipName.shipPicture}" height="100" style="border: 0"/>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.cruise_period}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <h:outputText value="#{cruiseManagedBean.selectedInventory.beginDate}">
+                                                                                <f:convertDateTime type="date" pattern="dd/MM/yyyy"/>
+                                                                            </h:outputText> - 
+                                                                            <h:outputText value="#{cruiseManagedBean.selectedInventory.endDate}">
+                                                                                <f:convertDateTime type="date" pattern="dd/MM/yyyy"/>
+                                                                            </h:outputText>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.cruise_institutions}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <a4j:repeat value="#{cruiseManagedBean.institutions}" var="institution">
+                                                                                <b><h:outputText value="#{institution.abbreviation}"/></b>
+                                                                                <h:outputText value="#{institution.institution}"/><br>
+                                                                            </a4j:repeat>   
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.cruise_port_of_departure}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <h:outputText value="#{cruiseManagedBean.selectedInventory.unlocodePort.name}"/>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.cruise_port_of_return}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <h:outputText value="#{cruiseManagedBean.selectedInventory.unlocodePort1.name}"/>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.cruise_chief_scientist}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <a4j:repeat value="#{cruiseManagedBean.selectedInventory.invChiefScientistCruiseCollection}" var="chiefScientist">
+                                                                                <h:outputText value="#{chiefScientist.invChiefScientist.firstName}"/> <b><h:outputText value="#{chiefScientist.invChiefScientist.lastName}"/></b> - 
+                                                                            </a4j:repeat>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.cruise_ocean_sea_areas}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <a4j:repeat value="#{cruiseManagedBean.selectedInventory.oceanArea.regionsdesCollection}" var="region" rows="1">
+                                                                                <b><h:outputText value="#{region.label}"/></b><br/>
+                                                                            </a4j:repeat>                                                                       
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.details_laboratories}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <a4j:repeat value="#{cruiseManagedBean.selectedInventory.invLaboratoriesCruisesCollection}" var="laboratories">
+                                                                                <b><h:outputText value="#{laboratories.invLaboratories.country.paiNombrePais}"/></b>
+                                                                                <h:outputText value="#{laboratories.invLaboratories.nameLab}"/><br>
+                                                                            </a4j:repeat>                                      
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.cruise_measurements}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <a4j:repeat value="#{cruiseManagedBean.selectedInventory.invCruiseBodcCategoryCollection}" var="category">
+                                                                                <h:outputText value="#{category.bodcCategory.title}"/><br>
+                                                                            </a4j:repeat>                                      
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.uri_metadata}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <a class="naranja" href="<h:outputText value="#{cruiseManagedBean.selectedInventory.metadataUrl}"/>" target="blank_">
+                                                                                <h:outputText value="#{cruiseManagedBean.selectedInventory.metadataTitle}"/>
+                                                                            </a><br>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th>
+                                                                            <h:outputText value="#{msg.uri_report}"/>
+                                                                        </th>
+                                                                        <td>
+                                                                            <a class="naranja" href="<h:outputText value="#{cruiseManagedBean.selectedInventory.idReport.uri}"/>" target="blank_">
+                                                                                <h:outputText value="#{cruiseManagedBean.selectedInventory.idReport.title}"/>
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>      
                                                             </div>
                                                         </rich:panel>
                                                     </rich:modalPanel>
