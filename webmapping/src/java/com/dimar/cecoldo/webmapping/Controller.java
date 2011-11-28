@@ -56,7 +56,6 @@ import java.util.Set;
 import java.util.TreeSet;
 import javax.persistence.TemporalType;
 
-
 /**
  *
  * @author Administrador
@@ -793,7 +792,7 @@ public class Controller {
             item.setLabel(unlocodePort.getName());
             items.add(item);
         }
-        return items;        
+        return items;
     }
 
     public void deleteCruiseInventory(InvCruiseInventory inventory) {
@@ -839,38 +838,73 @@ public class Controller {
             InvCruiseBodcCategory cruiseCategory = new InvCruiseBodcCategory(cruiseCategoryPK);
             em.persist(cruiseCategory);
         }
-        em.getTransaction().commit();        
+        em.getTransaction().commit();
     }
 
     public void updateInvCruiseInventory(InvCruiseInventory inventory, List<String> scientistSelected, List<String> institutionsSelected, List<String> laboratoriesSelected, List<String> dataTypesSelected) {
         EntityManager em = getEntityManager();
         em.setFlushMode(FlushModeType.COMMIT);
         em.getTransaction().begin();
-        em.persist(inventory.getIdReport());
-        em.persist(inventory);
+//        em.persist(inventory.getIdReport());
+        InvCruiseInventory invToPersist = em.find(InvCruiseInventory.class, inventory.getIdCruise());
+        invToPersist.setBeginDate(inventory.getBeginDate());
+        invToPersist.setCountry(inventory.getCountry());
+        invToPersist.setCruiseName(inventory.getCruiseName());
+        invToPersist.setCruiseObjetives(inventory.getCruiseObjetives());
+        invToPersist.setEndDate(inventory.getEndDate());
+        invToPersist.setIdReport(inventory.getIdReport());
+        invToPersist.setMetadataTitle(inventory.getMetadataTitle());
+        invToPersist.setMetadataUrl(inventory.getMetadataUrl());
+        invToPersist.setShipName(inventory.getShipName());
+        invToPersist.setStatus(inventory.getStatus());
+        invToPersist.setUnlocodePort(inventory.getUnlocodePort());
+        invToPersist.setUnlocodePort1(inventory.getUnlocodePort1());
+        Query deleteQuery = em.createQuery("delete from InvChiefScientistCruise i where i.invCruiseInventory = :inventory");
+        deleteQuery.setParameter("inventory", inventory);
+        deleteQuery.executeUpdate();
+        inventory.setInvChiefScientistCruiseCollection(new ArrayList<InvChiefScientistCruise>());
         for (String scientistId : scientistSelected) {
             InvChiefScientistCruisePK scientistCruisePK = new InvChiefScientistCruisePK(scientistId, inventory.getIdCruise());
             InvChiefScientistCruise scientistCruise = new InvChiefScientistCruise(scientistCruisePK);
+            inventory.getInvChiefScientistCruiseCollection().add(scientistCruise);
             em.persist(scientistCruise);
         }
+        deleteQuery = em.createQuery("delete from InvCruiseInstitutions i where i.invCruiseInventory = :inventory");
+        deleteQuery.setParameter("inventory", inventory);
+        deleteQuery.executeUpdate();
+        inventory.setInvCruiseInstitutionsCollection(new ArrayList<InvCruiseInstitutions>());
         for (String institutionId : institutionsSelected) {
+            System.out.println("institucion seleccionada " + institutionId);
             InvCruiseInstitutionsPK cruiseIntitutionPK = new InvCruiseInstitutionsPK(Integer.parseInt(institutionId), inventory.getIdCruise(), "PA");
             InvCruiseInstitutions cruiseInstitution = new InvCruiseInstitutions(cruiseIntitutionPK);
+            inventory.getInvCruiseInstitutionsCollection().add(cruiseInstitution);
             em.persist(cruiseInstitution);
         }
+        deleteQuery = em.createQuery("delete from InvLaboratoriesCruises i where i.invCruiseInventory = :inventory");
+        deleteQuery.setParameter("inventory", inventory);
+        deleteQuery.executeUpdate();
+        inventory.setInvLaboratoriesCruisesCollection(new ArrayList<InvLaboratoriesCruises>());
         for (String laboratoriesId : laboratoriesSelected) {
             InvLaboratoriesCruisesPK cruiseLaboPK = new InvLaboratoriesCruisesPK(Integer.parseInt(laboratoriesId), inventory.getIdCruise());
             InvLaboratoriesCruises cruiseLaboratory = new InvLaboratoriesCruises(cruiseLaboPK);
+            inventory.getInvLaboratoriesCruisesCollection().add(cruiseLaboratory);
             em.persist(cruiseLaboratory);
         }
+        deleteQuery = em.createQuery("delete from InvCruiseBodcCategory i where i.invCruiseInventory = :inventory");
+        deleteQuery.setParameter("inventory", inventory);
+        deleteQuery.executeUpdate();
+        inventory.setInvCruiseBodcCategoryCollection(new ArrayList<InvCruiseBodcCategory>());
         for (String dataTypeId : dataTypesSelected) {
             InvCruiseBodcCategoryPK cruiseCategoryPK = new InvCruiseBodcCategoryPK(dataTypeId, inventory.getIdCruise());
             InvCruiseBodcCategory cruiseCategory = new InvCruiseBodcCategory(cruiseCategoryPK);
+            inventory.getInvCruiseBodcCategoryCollection().add(cruiseCategory);
             em.persist(cruiseCategory);
         }
-        em.getTransaction().commit();        
+        em.persist(inventory.getIdReport());
+        em.getTransaction().commit();
     }
 }
+
 class InventoryComparator implements Comparator<InvCruiseInventory> {
 
     @Override
