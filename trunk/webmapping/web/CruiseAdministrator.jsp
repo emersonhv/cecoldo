@@ -227,7 +227,9 @@
                                                                                                popup="true"
                                                                                                id="beginDateCalendar"
                                                                                                datePattern="dd/MM/yyyy"
-                                                                                               showApplyButton="false" cellWidth="24px" cellHeight="22px" style="width:200px"/>
+                                                                                               showApplyButton="false" cellWidth="24px" cellHeight="22px" style="width:200px">
+                                                                                    <a4j:support event="onchanged" actionListener="#{cruiseAdminManagedBean.datesValidate2}"/>
+                                                                                </rich:calendar>
                                                                             </a4j:outputPanel>
                                                                         </td>
                                                                     </tr>

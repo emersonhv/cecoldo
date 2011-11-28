@@ -243,6 +243,10 @@ public class CruiseAdminBackendBean {
             FacesContext.getCurrentInstance().addMessage(endDateCalendar.getClientId(FacesContext.getCurrentInstance()), message);
         }
     }
+    
+    public void datesValidate2(ActionEvent event){
+        //NO BORRAR PORQUE ES NECESARIO PARA QUE LOS EVENTOS DE LOS CALENDAR FUNCIONEN APROPIADAMENTE.
+    }
 
     public List<InvInstitutions> getInstitutions() {
         List<InvCruiseInstitutions> institutions = controller.getInstitutions(selectedInventory);
