@@ -18,14 +18,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import javax.faces.application.FacesMessage;
+import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.SelectItem;
+import javax.faces.validator.ValidatorException;
 import org.ajax4jsf.component.UIRepeat;
 import org.ajax4jsf.component.html.HtmlAjaxCommandButton;
-import org.hibernate.validator.Length;
-import org.hibernate.validator.NotEmpty;
 import org.hibernate.validator.Pattern;
 import org.richfaces.component.UICalendar;
 import org.richfaces.component.UIDataTable;
@@ -134,24 +134,24 @@ public class CruiseAdminBackendBean {
         institutionsSelected = new ArrayList<String>();
         List<InvCruiseInstitutions> cruiseInstitutions = (List<InvCruiseInstitutions>) selectedInventory.getInvCruiseInstitutionsCollection();
         for (InvCruiseInstitutions cruiseInstitution : cruiseInstitutions) {
-            institutionsSelected.add(cruiseInstitution.getInvInstitutions().getIdinstitution() + "");
+            institutionsSelected.add(cruiseInstitution.getInvCruiseInstitutionsPK().getIdinstitution() + "");
         }
         unlocodePortSelected = selectedInventory.getUnlocodePort().getUnlocodePortPK().getCountry() + ";" + selectedInventory.getUnlocodePort().getUnlocodePortPK().getLocation();
         unlocodePort1Selected = selectedInventory.getUnlocodePort1().getUnlocodePortPK().getCountry() + ";" + selectedInventory.getUnlocodePort1().getUnlocodePortPK().getLocation();
         scientistSelected = new ArrayList<String>();
         List<InvChiefScientistCruise> scientists = (List<InvChiefScientistCruise>) selectedInventory.getInvChiefScientistCruiseCollection();
         for (InvChiefScientistCruise scientist : scientists) {
-            scientistSelected.add(scientist.getInvChiefScientist().getId());
+            scientistSelected.add(scientist.getInvChiefScientistCruisePK().getIdChiefScientist());
         }
         laboratoriesSelected = new ArrayList<String>();
         List<InvLaboratoriesCruises> laboratories = (List<InvLaboratoriesCruises>) selectedInventory.getInvLaboratoriesCruisesCollection();
         for (InvLaboratoriesCruises laboratory : laboratories) {
-            laboratoriesSelected.add(laboratory.getInvLaboratories().getIdLab() + "");
+            laboratoriesSelected.add(laboratory.getInvLaboratoriesCruisesPK().getIdLaboratory() + "");
         }
         dataTypesSelected = new ArrayList<String>();
         List<InvCruiseBodcCategory> bodcCategories = (List<InvCruiseBodcCategory>) selectedInventory.getInvCruiseBodcCategoryCollection();
         for (InvCruiseBodcCategory bodcCatgegory : bodcCategories) {
-            dataTypesSelected.add(bodcCatgegory.getBodcCategory().getCode() + "");
+            dataTypesSelected.add(bodcCatgegory.getInvCruiseBodcCategoryPK().getCategoryCode() + "");
         }
         metadataList = (List<InvMetadata>) selectedInventory.getInvMetadataCollection();
         reportTitle = selectedInventory.getIdReport() != null ? selectedInventory.getIdReport().getTitle() : "";
@@ -191,6 +191,10 @@ public class CruiseAdminBackendBean {
         newInventory.setUnlocodePort(controller.getUnlocodePort(new UnlocodePortPK(unlocodePKData[0], unlocodePKData[1])));
         String[] unlocode1PKData = unlocodePort1Selected.split(";");
         newInventory.setUnlocodePort1(controller.getUnlocodePort(new UnlocodePortPK(unlocode1PKData[0], unlocode1PKData[1])));
+        scientistSelected = new ArrayList<String>(new HashSet<String>(scientistSelected));
+        institutionsSelected = new ArrayList<String>(new HashSet<String>(institutionsSelected));
+        laboratoriesSelected = new ArrayList<String>(new HashSet<String>(laboratoriesSelected));
+        dataTypesSelected = new ArrayList<String>(new HashSet<String>(dataTypesSelected));
         controller.insertInvCruiseInventory(newInventory, scientistSelected, institutionsSelected, laboratoriesSelected, dataTypesSelected);
         this.setToValidate(true);
         this.clearFields();
@@ -198,7 +202,10 @@ public class CruiseAdminBackendBean {
     }
 
     public void updateAction(ActionEvent e) {
-        InvCruiseInventory newInventory = new InvCruiseInventory(this.getSelectedInventory().getIdCruise());
+        if(!isDatesValid()){
+            return;
+        }
+        InvCruiseInventory newInventory = this.getSelectedInventory();
         newInventory.setBeginDate(beginDate);
         newInventory.setCountry(controller.getCountryById(countrySelected));
         newInventory.setCruiseName(cruiseName);
@@ -216,11 +223,15 @@ public class CruiseAdminBackendBean {
         newInventory.setUnlocodePort(controller.getUnlocodePort(new UnlocodePortPK(unlocodePKData[0], unlocodePKData[1])));
         String[] unlocode1PKData = unlocodePort1Selected.split(";");
         newInventory.setUnlocodePort1(controller.getUnlocodePort(new UnlocodePortPK(unlocode1PKData[0], unlocode1PKData[1])));
+        scientistSelected = new ArrayList<String>(new HashSet<String>(scientistSelected));
+        institutionsSelected = new ArrayList<String>(new HashSet<String>(institutionsSelected));
+        laboratoriesSelected = new ArrayList<String>(new HashSet<String>(laboratoriesSelected));
+        dataTypesSelected = new ArrayList<String>(new HashSet<String>(dataTypesSelected));
         controller.updateInvCruiseInventory(newInventory, scientistSelected, institutionsSelected, laboratoriesSelected, dataTypesSelected);
-        this.clearFields();
-        this.setEditable(false);
+//        this.clearFields();
+//        this.setEditable(false);
         this.setToValidate(false);
-        this.updateLink.setRendered(false);
+//        this.updateLink.setRendered(false);
     }
 
     public void cancelAction(ActionEvent e) {
@@ -231,20 +242,10 @@ public class CruiseAdminBackendBean {
     }
 
     public void datesValidate(ValueChangeEvent event) {
-        long diff = ((Date)endDateCalendar.getValue()).getTime() - ((Date)beginDateCalendar.getValue()).getTime();
-        long diffDays = diff / (24 * 60 * 60 * 1000);
-        System.out.println("diferencia en dias " + diffDays);
-        if (diff < 0) {
-            //la fecha de inicio es mayor que la fecha fin
-            FacesMessage message = new FacesMessage("La fecha de inicio no puede ser mayor que la fecha final");
-            FacesContext.getCurrentInstance().addMessage(endDateCalendar.getClientId(FacesContext.getCurrentInstance()), message);
-        }else if (diffDays > 90) {
-            FacesMessage message = new FacesMessage("La diferencia entre la fecha de inicio y la fecha final debe ser menor a 90 días");
-            FacesContext.getCurrentInstance().addMessage(endDateCalendar.getClientId(FacesContext.getCurrentInstance()), message);
-        }
+        isDatesValid();
     }
-    
-    public void datesValidate2(ActionEvent event){
+
+    public void datesValidate2(ActionEvent event) {
         //NO BORRAR PORQUE ES NECESARIO PARA QUE LOS EVENTOS DE LOS CALENDAR FUNCIONEN APROPIADAMENTE.
     }
 
@@ -817,5 +818,22 @@ public class CruiseAdminBackendBean {
      */
     public void setToValidate(boolean validate) {
         this.toValidate = validate;
+    }
+
+    private boolean isDatesValid() {
+        long diff = ((Date) endDateCalendar.getValue()).getTime() - ((Date) beginDateCalendar.getValue()).getTime();
+        long diffDays = diff / (24 * 60 * 60 * 1000);
+        System.out.println("diferencia en dias " + diffDays);
+        if (diff < 0) {
+            //la fecha de inicio es mayor que la fecha fin
+            FacesMessage message = new FacesMessage("La fecha de inicio no puede ser mayor que la fecha final");
+            FacesContext.getCurrentInstance().addMessage(endDateCalendar.getClientId(FacesContext.getCurrentInstance()), message);
+            return false;
+        } else if (diffDays > 90) {
+            FacesMessage message = new FacesMessage("La diferencia entre la fecha de inicio y la fecha final debe ser menor a 90 días");
+            FacesContext.getCurrentInstance().addMessage(endDateCalendar.getClientId(FacesContext.getCurrentInstance()), message);
+            return false;
+        }        
+        return true;
     }
 }
