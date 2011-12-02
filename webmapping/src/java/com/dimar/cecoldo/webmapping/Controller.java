@@ -247,7 +247,7 @@ public class Controller {
         List<InvInstitutions> institutions = query.getResultList();
         for (InvInstitutions institution : institutions) {
             SelectItem item = new SelectItem();
-            item.setValue(institution.getIdinstitution());
+            item.setValue(institution.getIdinstitution()+ "");
             item.setLabel(institution.getInstitution());
             items.add(item);
         }
@@ -261,7 +261,7 @@ public class Controller {
         List<InvLaboratories> laboratories = query.getResultList();
         for (InvLaboratories laboratory : laboratories) {
             SelectItem item = new SelectItem();
-            item.setValue(laboratory.getIdLab());
+            item.setValue(laboratory.getIdLab() + "");
             item.setLabel(laboratory.getNameLab());
             items.add(item);
         }

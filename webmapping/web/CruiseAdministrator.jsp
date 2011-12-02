@@ -371,7 +371,6 @@
                                                                     <tr>
                                                                         <th>
                                                                             <h:outputText value="#{msg.details_laboratories}"/>
-                                                                            <span class="mandatory">*</span>
                                                                         </th>
                                                                         <td>
                                                                             <span id="h.details_laboratories">

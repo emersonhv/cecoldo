@@ -228,8 +228,8 @@ public class CruiseAdminBackendBean {
         laboratoriesSelected = new ArrayList<String>(new HashSet<String>(laboratoriesSelected));
         dataTypesSelected = new ArrayList<String>(new HashSet<String>(dataTypesSelected));
         controller.updateInvCruiseInventory(newInventory, scientistSelected, institutionsSelected, laboratoriesSelected, dataTypesSelected);
-//        this.clearFields();
-//        this.setEditable(false);
+        this.clearFields();
+        this.setEditable(false);
         this.setToValidate(false);
 //        this.updateLink.setRendered(false);
     }
