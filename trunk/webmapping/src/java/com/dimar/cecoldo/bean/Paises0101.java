@@ -7,6 +7,7 @@ package com.dimar.cecoldo.bean;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,6 +25,12 @@ import javax.persistence.Table;
 @Table(name = "paises_0101")
 @NamedQueries({@NamedQuery(name = "Paises0101.findByPaiId", query = "SELECT p FROM Paises0101 p WHERE p.paiId = :paiId"), @NamedQuery(name = "Paises0101.findByPaiNombrePais", query = "SELECT p FROM Paises0101 p WHERE p.paiNombrePais = :paiNombrePais")})
 public class Paises0101 implements Serializable {
+    @OneToMany(mappedBy = "country")
+    private List<GenCities> genCitiesList;
+    @OneToMany(mappedBy = "country")
+    private List<InvInstitutions> invInstitutionsList;
+    @OneToMany(mappedBy = "country")
+    private Collection<GenCities> genCitiesCollection;
     private static final long serialVersionUID = 1L;
     @Id
     @Column(name = "pai_id", nullable = false)
@@ -148,6 +155,30 @@ public class Paises0101 implements Serializable {
     @Override
     public String toString() {
         return "com.dimar.cecoldo.bean1.Paises0101[paiId=" + paiId + "]";
+    }
+
+    public Collection<GenCities> getGenCitiesCollection() {
+        return genCitiesCollection;
+    }
+
+    public void setGenCitiesCollection(Collection<GenCities> genCitiesCollection) {
+        this.genCitiesCollection = genCitiesCollection;
+    }
+
+    public List<GenCities> getGenCitiesList() {
+        return genCitiesList;
+    }
+
+    public void setGenCitiesList(List<GenCities> genCitiesList) {
+        this.genCitiesList = genCitiesList;
+    }
+
+    public List<InvInstitutions> getInvInstitutionsList() {
+        return invInstitutionsList;
+    }
+
+    public void setInvInstitutionsList(List<InvInstitutions> invInstitutionsList) {
+        this.invInstitutionsList = invInstitutionsList;
     }
 
 }

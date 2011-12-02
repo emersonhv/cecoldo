@@ -50,6 +50,15 @@ public class InvCruiseInventory implements Serializable {
     @Column(name = "end_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date endDate;
+    // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
+    @Column(name = "min_lat")
+    private Double minLat;
+    @Column(name = "max_lat")
+    private Double maxLat;
+    @Column(name = "min_lon")
+    private Double minLon;
+    @Column(name = "max_lon")
+    private Double maxLon;
     @Column(name = "metadata_title")
     private String metadataTitle;
     @Column(name = "metadata_url")
@@ -314,5 +323,37 @@ public class InvCruiseInventory implements Serializable {
 
     public void setMetadataUrl(String metadataUrl) {
         this.metadataUrl = metadataUrl;
+    }
+
+    public Double getMinLat() {
+        return minLat;
+    }
+
+    public void setMinLat(Double minLat) {
+        this.minLat = minLat;
+    }
+
+    public Double getMaxLat() {
+        return maxLat;
+    }
+
+    public void setMaxLat(Double maxLat) {
+        this.maxLat = maxLat;
+    }
+
+    public Double getMinLon() {
+        return minLon;
+    }
+
+    public void setMinLon(Double minLon) {
+        this.minLon = minLon;
+    }
+
+    public Double getMaxLon() {
+        return maxLon;
+    }
+
+    public void setMaxLon(Double maxLon) {
+        this.maxLon = maxLon;
     }
 }
