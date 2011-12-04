@@ -20,9 +20,39 @@
         <f:loadBundle basename="ApplicationMessages" var="msg"/>
         <head>
             <script src="javascript/dictionary.js"></script>
+            <script src="javascript/OpenLayers.js"></script>
             <link rel="stylesheet" type="text/css" href="styles/styles.css" />
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <title><h:outputText value="#{msg.admin_cruise_title}"/></title>
+            <script type="text/javascript">
+                var map, layer;
+                function polygon(minLat, minLon, maxLat, maxLon){
+                    clearMap();
+                    var polygon = new GPolygon([
+                        new GLatLng(minLat, minLon),
+                        new GLatLng(minLat, maxLon),
+                        new GLatLng(maxLat, maxLon),
+                        new GLatLng(maxLat, minLon),
+                        new GLatLng(minLat, minLon)
+                    ], "#f33f00", 5, 1, "#ff0000", 0.2);
+                    map.addOverlay(polygon);     
+                        var sw = new GLatLng(minLat, minLon);
+                        var ne = new GLatLng(maxLat, maxLon);
+                        var bounds = new GLatLngBounds(sw, ne);
+                        var fitLevel = map.getBoundsZoomLevel(bounds);
+                        if (fitLevel > 1) {
+                                fitLevel = fitLevel -1;
+                        }
+                        var center = new GLatLng(minLat + (maxLat-minLat)/2, minLon + (maxLon-minLon)/2);
+                        map.setCenter(center, fitLevel);                    
+                    //map.panTo(new GLatLng(centerLat, centerLon));
+                }
+                
+                
+                function clearMap(){
+                    map.clearOverlays();
+                }
+            </script>            
         </head>
         <body>
             <div class="panel_banner">
@@ -109,10 +139,10 @@
                                                                     <h:outputText value="#{msg.t_edit}" />
                                                                 </f:facet>   
                                                                 <span class="gris">
-                                                                    <a4j:commandLink actionListener="#{cruiseAdminManagedBean.editCruiseInventory}" reRender="details" >
+                                                                    <a4j:commandLink actionListener="#{cruiseAdminManagedBean.editCruiseInventory}" reRender="details,details3,divMapaResult,minLat,minLon,maxLat,maxLon">
                                                                         <h:graphicImage alt="show" url="images/edit.gif" style="border: 0"/>
                                                                     </a4j:commandLink>
-                                                                </span>
+                                                                </span>                                                                
                                                             </rich:column>
                                                             <rich:column style="background-color: #EFF4FA; text-align: center" width="50px">
                                                                 <f:facet name="header">
@@ -129,6 +159,14 @@
                                                             </f:facet>                                                                
                                                         </rich:dataTable>
                                                     </div>
+                                                </rich:panel>
+                                                <rich:panel id="divMapaResult" style="visibility: hidden;">
+                                                    <script type="text/javascript">
+                                                        polygon(<h:outputText value="#{cruiseAdminManagedBean.minLat}"/>, 
+                                                        <h:outputText value="#{cruiseAdminManagedBean.minLon}"/>, 
+                                                        <h:outputText value="#{cruiseAdminManagedBean.maxLat}"/>, 
+                                                        <h:outputText value="#{cruiseAdminManagedBean.maxLon}"/>);
+                                                    </script>
                                                 </rich:panel>
                                                 <a4j:form>
                                                     <rich:panel id="editPanel">
@@ -163,7 +201,7 @@
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <th width="30%">
+                                                                        <th width="20%">
                                                                             <h:outputText value="#{msg.ship_name}"/>
                                                                             <span class="mandatory">*</span>
                                                                         </th>
@@ -184,7 +222,7 @@
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <th width="30%">
+                                                                        <th width="20%">
                                                                             <h:outputText value="#{msg.country}"/>
                                                                             <span class="mandatory">*</span>
                                                                         </th>
@@ -347,8 +385,14 @@
                                                                             </rich:pickList>
                                                                         </td>
                                                                     </tr>
+                                                                </table>      
+                                                            </div>
+                                                        </rich:panel>
+                                                        <rich:panel id="details2">           
+                                                            <div>
+                                                                <table width="100%" style="text-align: left;">
                                                                     <tr>
-                                                                        <th>
+                                                                        <th width="20%">
                                                                             <h:outputText value="#{msg.cruise_ocean_sea_areas}"/>
                                                                             <span class="mandatory">*</span>
                                                                         </th>
@@ -363,13 +407,54 @@
                                                                             </span>                                                                                    
                                                                         </td>                                                           
                                                                         <td>
-                                                                            <a4j:repeat value="#{cruiseAdminManagedBean.selectedInventory.oceanArea.regionsdesCollection}" var="region" rows="1">
-                                                                                <b><h:outputText value="#{region.label}"/></b><br/>
-                                                                            </a4j:repeat>                                                                       
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td colspan="3" align="center">
+                                                                                        <h:inputText value="#{cruiseAdminManagedBean.maxLat}" size="4" id="maxLat"/>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <h:inputText value="#{cruiseAdminManagedBean.minLon}" size="4" id="minLon"/>
+                                                                                    </td>
+                                                                                    <td width="350px">
+                                                                                        <rich:gmap  gmapVar="map" zoom="6" 
+                                                                                                    style="width:400px;height:400px" 
+                                                                                                    gmapKey="ABQIAAAAyrwFPf71xa3x2zoW0lc_JhTWNjz-vgWUbDcNxGkdsGe4sjfqJhTKKKsvdkFWjcJpEE_72_HzLrwRpg" 
+                                                                                                    id="gmap" 
+                                                                                                    lat="#{cruiseAdminManagedBean.centralLat}" 
+                                                                                                    lng="#{cruiseAdminManagedBean.centralLon}">
+                                                                                        </rich:gmap>
+
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <h:inputText value="#{cruiseAdminManagedBean.maxLon}" size="4" id="maxLon"/>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td colspan="3" align="center">
+                                                                                        <h:inputText value="#{cruiseAdminManagedBean.minLat}" size="4" id="minLat"/>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td colspan="3" align="center">
+                                                                                        <a4j:commandButton actionListener="#{cruiseAdminManagedBean.updateMap}" 
+                                                                                                           value="#{msg.update_map}"
+                                                                                                           reRender="divMapaResult">
+                                                                                        </a4j:commandButton>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
                                                                         </td>
                                                                     </tr>
+                                                                </table>      
+                                                            </div>
+                                                        </rich:panel>
+                                                        <rich:panel id="details3">           
+                                                            <div>
+                                                                <table width="100%" style="text-align: left;">
                                                                     <tr>
-                                                                        <th>
+                                                                        <th width="20%">
                                                                             <h:outputText value="#{msg.details_laboratories}"/>
                                                                         </th>
                                                                         <td>
@@ -492,17 +577,17 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <td colspan="3" align="center">
-                                                                            <a4j:commandButton value="#{msg.action_insert}" reRender="inventoryTable,details"
+                                                                            <a4j:commandButton value="#{msg.action_insert}" reRender="inventoryTable,details,details3,minLat,minLon,maxLat,maxLon"
                                                                                                actionListener="#{cruiseAdminManagedBean.insertAction}"
                                                                                                rendered="#{not cruiseAdminManagedBean.editable}"
-                                                                                               onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;"/>
-                                                                            <a4j:commandButton  value="#{msg.action_update}"  reRender="inventoryTable,details" 
+                                                                                               onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;clearMap();"/>
+                                                                            <a4j:commandButton  value="#{msg.action_update}"  reRender="inventoryTable,details,details3,minLat,minLon,maxLat,maxLon" 
                                                                                                 actionListener="#{cruiseAdminManagedBean.updateAction}"
                                                                                                 rendered="false" binding="#{cruiseAdminManagedBean.updateLink}"   
-                                                                                                onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;"/>                    
-                                                                            <a4j:commandButton value="#{msg.action_cancel}" reRender="inventoryTable,details" 
+                                                                                                onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;clearMap();"/>
+                                                                            <a4j:commandButton value="#{msg.action_cancel}" reRender="inventoryTable,details,details3,minLat,minLon,maxLat,maxLon" 
                                                                                                actionListener="#{cruiseAdminManagedBean.cancelAction}" 
-                                                                                               onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;"/>                                                                            
+                                                                                               onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;clearMap();"/>
                                                                         </td>
                                                                     </tr>
                                                                 </table>      

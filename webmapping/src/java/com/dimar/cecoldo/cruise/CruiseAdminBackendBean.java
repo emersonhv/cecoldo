@@ -18,12 +18,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import javax.faces.application.FacesMessage;
-import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.SelectItem;
-import javax.faces.validator.ValidatorException;
 import org.ajax4jsf.component.UIRepeat;
 import org.ajax4jsf.component.html.HtmlAjaxCommandButton;
 import org.hibernate.validator.Pattern;
@@ -94,6 +92,12 @@ public class CruiseAdminBackendBean {
     private String metadataTitle;
     @Pattern(regex = "(^$)|(^(http|ftp|https):\\/\\/.*)", message = "La URI no es válida")
     private String metadataUri;
+    private Double minLat;
+    private Double minLon;
+    private Double maxLat;
+    private Double maxLon;
+    private Double centralLat = 4.4;
+    private Double centralLon = -74.4;
     private boolean editable;
     private boolean toValidate;
 
@@ -159,6 +163,16 @@ public class CruiseAdminBackendBean {
         metadataTitle = selectedInventory.getMetadataTitle();
         metadataUri = selectedInventory.getMetadataUrl();
         countrySelected = selectedInventory.getCountry().getPaiId();
+        minLat = selectedInventory.getMinLat();
+        minLon = selectedInventory.getMinLon();
+        maxLat = selectedInventory.getMaxLat();
+        maxLon = selectedInventory.getMaxLon();
+        //1.79422, -78.79667, 3.99058, -77.04806
+        if (minLat != null && minLon != null && maxLat != null && maxLon != null
+                && minLat != 0 && minLon != 0 && maxLat != 0 && maxLon != 0) {
+            centralLat = minLat + (maxLat - minLat) / 2;
+            centralLon = minLon + (maxLon - minLon) / 2;
+        }
         this.setEditable(true);
         this.setToValidate(true);
         this.updateLink.setRendered(true);
@@ -191,6 +205,10 @@ public class CruiseAdminBackendBean {
         newInventory.setUnlocodePort(controller.getUnlocodePort(new UnlocodePortPK(unlocodePKData[0], unlocodePKData[1])));
         String[] unlocode1PKData = unlocodePort1Selected.split(";");
         newInventory.setUnlocodePort1(controller.getUnlocodePort(new UnlocodePortPK(unlocode1PKData[0], unlocode1PKData[1])));
+        newInventory.setMinLat(minLat);
+        newInventory.setMaxLat(maxLat);
+        newInventory.setMinLon(minLon);
+        newInventory.setMaxLon(maxLon);
         scientistSelected = new ArrayList<String>(new HashSet<String>(scientistSelected));
         institutionsSelected = new ArrayList<String>(new HashSet<String>(institutionsSelected));
         laboratoriesSelected = new ArrayList<String>(new HashSet<String>(laboratoriesSelected));
@@ -202,7 +220,7 @@ public class CruiseAdminBackendBean {
     }
 
     public void updateAction(ActionEvent e) {
-        if(!isDatesValid()){
+        if (!isDatesValid()) {
             return;
         }
         InvCruiseInventory newInventory = this.getSelectedInventory();
@@ -223,6 +241,10 @@ public class CruiseAdminBackendBean {
         newInventory.setUnlocodePort(controller.getUnlocodePort(new UnlocodePortPK(unlocodePKData[0], unlocodePKData[1])));
         String[] unlocode1PKData = unlocodePort1Selected.split(";");
         newInventory.setUnlocodePort1(controller.getUnlocodePort(new UnlocodePortPK(unlocode1PKData[0], unlocode1PKData[1])));
+        newInventory.setMinLat(minLat);
+        newInventory.setMaxLat(maxLat);
+        newInventory.setMinLon(minLon);
+        newInventory.setMaxLon(maxLon);
         scientistSelected = new ArrayList<String>(new HashSet<String>(scientistSelected));
         institutionsSelected = new ArrayList<String>(new HashSet<String>(institutionsSelected));
         laboratoriesSelected = new ArrayList<String>(new HashSet<String>(laboratoriesSelected));
@@ -247,6 +269,10 @@ public class CruiseAdminBackendBean {
 
     public void datesValidate2(ActionEvent event) {
         //NO BORRAR PORQUE ES NECESARIO PARA QUE LOS EVENTOS DE LOS CALENDAR FUNCIONEN APROPIADAMENTE.
+    }
+    
+    public void updateMap(ActionEvent e){
+        
     }
 
     public List<InvInstitutions> getInstitutions() {
@@ -762,6 +788,10 @@ public class CruiseAdminBackendBean {
         this.shipNameSelected = 0;
         this.unlocodePortSelected = "";
         this.unlocodePort1Selected = "";
+        this.minLat = null;
+        this.maxLat = null;
+        this.minLon = null;
+        this.maxLon = null;
     }
 
     /**
@@ -833,7 +863,91 @@ public class CruiseAdminBackendBean {
             FacesMessage message = new FacesMessage("La diferencia entre la fecha de inicio y la fecha final debe ser menor a 90 días");
             FacesContext.getCurrentInstance().addMessage(endDateCalendar.getClientId(FacesContext.getCurrentInstance()), message);
             return false;
-        }        
+        }
         return true;
+    }
+
+    /**
+     * @return the minLat
+     */
+    public Double getMinLat() {
+        return minLat;
+    }
+
+    /**
+     * @param minLat the minLat to set
+     */
+    public void setMinLat(Double minLat) {
+        this.minLat = minLat;
+    }
+
+    /**
+     * @return the minLon
+     */
+    public Double getMinLon() {
+        return minLon;
+    }
+
+    /**
+     * @param minLon the minLon to set
+     */
+    public void setMinLon(Double minLon) {
+        this.minLon = minLon;
+    }
+
+    /**
+     * @return the maxLat
+     */
+    public Double getMaxLat() {
+        return maxLat;
+    }
+
+    /**
+     * @param maxLat the maxLat to set
+     */
+    public void setMaxLat(Double maxLat) {
+        this.maxLat = maxLat;
+    }
+
+    /**
+     * @return the maxLon
+     */
+    public Double getMaxLon() {
+        return maxLon;
+    }
+
+    /**
+     * @param maxLon the maxLon to set
+     */
+    public void setMaxLon(Double maxLon) {
+        this.maxLon = maxLon;
+    }
+
+    /**
+     * @return the centralLat
+     */
+    public Double getCentralLat() {
+        return centralLat;
+    }
+
+    /**
+     * @param centralLat the centralLat to set
+     */
+    public void setCentralLat(Double centralLat) {
+        this.centralLat = centralLat;
+    }
+
+    /**
+     * @return the centralLon
+     */
+    public Double getCentralLon() {
+        return centralLon;
+    }
+
+    /**
+     * @param centralLon the centralLon to set
+     */
+    public void setCentralLon(Double centralLon) {
+        this.centralLon = centralLon;
     }
 }
