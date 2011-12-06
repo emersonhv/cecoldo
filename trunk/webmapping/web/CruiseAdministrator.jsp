@@ -54,7 +54,7 @@
                 }
             </script>            
         </head>
-        <body>
+        <body onload="initVars()">
             <div class="panel_banner">
                 <table border="0" width="100%" class="header1" cellspacing="0" cellpadding="0">
                     <tr>
@@ -94,7 +94,10 @@
                     </tr>
                 </table>
                 <h:form id="myform">
-
+                    <a4j:jsFunction name="initVars" 
+                                    actionListener="#{cruiseAdminManagedBean.onload}"
+                                    reRender="details,details3,rootPane">
+                    </a4j:jsFunction>
                     <div align="center">
                         <table width="100%" align="center" class="main">
                             <tr>
@@ -123,7 +126,7 @@
                                                                     <h:outputText value="#{msg.t_end_date}" />
                                                                 </f:facet>   
                                                                 <span class="gris">  
-                                                                    <h:outputText value="#{cruise.beginDate}" styleClass="gris">
+                                                                    <h:outputText value="#{cruise.endDate}" styleClass="gris">
                                                                         <f:convertDateTime pattern="yyyy-MM-dd"/>
                                                                     </h:outputText> 
                                                                 </span>
@@ -367,7 +370,6 @@
                                                                     <tr>
                                                                         <th>
                                                                             <h:outputText value="#{msg.cruise_chief_scientist}"/>
-                                                                            <span class="mandatory">*</span>
                                                                         </th>
                                                                         <td>
                                                                             <span id="h.cruise_chief_scientist">
@@ -420,7 +422,7 @@
                                                                                     <td width="350px">
                                                                                         <rich:gmap  gmapVar="map" zoom="6" 
                                                                                                     style="width:400px;height:400px" 
-                                                                                                    gmapKey="ABQIAAAAyrwFPf71xa3x2zoW0lc_JhTWNjz-vgWUbDcNxGkdsGe4sjfqJhTKKKsvdkFWjcJpEE_72_HzLrwRpg" 
+                                                                                                    gmapKey="ABQIAAAAyrwFPf71xa3x2zoW0lc_JhSCd7RKMffV5e49tgk6lSz_-7l8WBSFGD_N331e_K7cHpLoIHqaq9FYbg" 
                                                                                                     id="gmap" 
                                                                                                     lat="#{cruiseAdminManagedBean.centralLat}" 
                                                                                                     lng="#{cruiseAdminManagedBean.centralLon}">

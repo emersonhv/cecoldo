@@ -55,13 +55,20 @@ public class CruiseInventoryBackendBean {
     private List<String> institutionsSelected;
     private List<SelectItem> scientistList;
     private List<String> scientistSelected;
+    private Double minLat;
+    private Double minLon;
+    private Double maxLat;
+    private Double maxLon;
 
     public CruiseInventoryBackendBean() {
         controller = new Controller();
-//        cruiseNameList = controller.getAllShipNames(); 
+        init();
+    }
+    
+    public void init(){
         cruiseNameList = controller.getAllCruiseNames();
         statusList = controller.getAllStatus();
-        areaList = controller.getAllAreas(lang);
+        areaList = controller.getAllAreas("es");
         disciplineList = controller.getAllDisciplines();
         dataTypeList = controller.getAllCategories();
         laboratoryList = controller.getAllLaboratories();
@@ -70,6 +77,11 @@ public class CruiseInventoryBackendBean {
         institutionList = controller.getAllInstitutions();
         scientistList = controller.getAllScientist();
         shipNameList = controller.getAllShipNames();
+    }
+
+    public void onload(ActionEvent e) {
+        System.out.println("On load");
+        init();
     }
 
     public void search(ActionEvent e) {
@@ -93,6 +105,13 @@ public class CruiseInventoryBackendBean {
 
     public void showDetails(ActionEvent e) {
         selectedInventory = (InvCruiseInventory) resultsTable.getRowData();
+        minLat = selectedInventory.getMinLat();
+        minLon = selectedInventory.getMinLon();
+        maxLat = selectedInventory.getMaxLat();
+        maxLon = selectedInventory.getMaxLon();
+        if (minLat == null || minLon == null || maxLat == null || maxLon == null) {
+        } else {
+        }
     }
 
     public void clean(ActionEvent e) {
@@ -364,5 +383,61 @@ public class CruiseInventoryBackendBean {
 
     public void setShipNameSelected(Integer shipNameSelected) {
         this.shipNameSelected = shipNameSelected;
+    }
+
+    /**
+     * @return the minLat
+     */
+    public Double getMinLat() {
+        return minLat;
+    }
+
+    /**
+     * @param minLat the minLat to set
+     */
+    public void setMinLat(Double minLat) {
+        this.minLat = minLat;
+    }
+
+    /**
+     * @return the minLon
+     */
+    public Double getMinLon() {
+        return minLon;
+    }
+
+    /**
+     * @param minLon the minLon to set
+     */
+    public void setMinLon(Double minLon) {
+        this.minLon = minLon;
+    }
+
+    /**
+     * @return the maxLat
+     */
+    public Double getMaxLat() {
+        return maxLat;
+    }
+
+    /**
+     * @param maxLat the maxLat to set
+     */
+    public void setMaxLat(Double maxLat) {
+        this.maxLat = maxLat;
+    }
+
+    /**
+     * @return the maxLon
+     */
+    public Double getMaxLon() {
+        return maxLon;
+    }
+
+    /**
+     * @param maxLon the maxLon to set
+     */
+    public void setMaxLon(Double maxLon) {
+        this.maxLon = maxLon;
     }
 }

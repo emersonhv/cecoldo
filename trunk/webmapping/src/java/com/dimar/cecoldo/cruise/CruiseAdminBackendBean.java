@@ -104,6 +104,12 @@ public class CruiseAdminBackendBean {
     public CruiseAdminBackendBean() {
         controller = new Controller();
 //        cruiseNameList = controller.getAllShipNames(); 
+        init();
+        countrySelected = "CO";
+        toValidate = true;
+    }
+    
+    private void init(){
         cruiseNameList = controller.getAllCruiseNames();
         statusList = controller.getAllStatus();
         areaList = controller.getAllAreas(lang);
@@ -120,8 +126,10 @@ public class CruiseAdminBackendBean {
         unlocodePortList = controller.getAllUnlocodePorts();
         unlocodePortList.add(0, new SelectItem("", ""));
         countryList = controller.getAllCountries();
-        countrySelected = "22";
-        toValidate = true;
+    }
+    
+    public void onload(ActionEvent e){
+        init();
     }
 
     public void editCruiseInventory(ActionEvent e) {
