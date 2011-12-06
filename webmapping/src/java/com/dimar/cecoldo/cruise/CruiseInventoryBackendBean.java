@@ -9,8 +9,12 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import javax.faces.model.SelectItem;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import org.ajax4jsf.component.html.HtmlAjaxCommandButton;
 import org.ajax4jsf.component.html.HtmlAjaxSupport;
 import org.richfaces.component.UIDataTable;
 
@@ -59,16 +63,20 @@ public class CruiseInventoryBackendBean {
     private Double minLon;
     private Double maxLat;
     private Double maxLon;
+    private String name;
+    private String password;
+    private boolean adminRole;
+    private HtmlAjaxCommandButton logoutButton;
 
     public CruiseInventoryBackendBean() {
         controller = new Controller();
         init();
     }
-    
-    public void init(){
+
+    public void init() {
         cruiseNameList = controller.getAllCruiseNames();
         statusList = controller.getAllStatus();
-        areaList = controller.getAllAreas("es");
+        areaList = controller.getAllAreas(lang);
         disciplineList = controller.getAllDisciplines();
         dataTypeList = controller.getAllCategories();
         laboratoryList = controller.getAllLaboratories();
@@ -77,6 +85,46 @@ public class CruiseInventoryBackendBean {
         institutionList = controller.getAllInstitutions();
         scientistList = controller.getAllScientist();
         shipNameList = controller.getAllShipNames();
+    }
+
+    public String logout(){
+//        this.user = null;
+        getRequest().getSession().invalidate();
+        if (isAuthenticated()) {
+            try {
+                getRequest().logout();
+            } catch (ServletException ex) {
+                ex.printStackTrace();
+            }
+        }
+        System.out.println("ha salido el usuario");
+        return "logout";
+    }
+
+    public boolean isAuthenticated() {
+        return getRequest().getUserPrincipal() != null;
+    }
+
+    public static HttpServletRequest getRequest() {
+        Object request = FacesContext.getCurrentInstance().getExternalContext().getRequest();
+        return request instanceof HttpServletRequest
+                ? (HttpServletRequest) request : null;
+    }
+    public String toAdminCruisesAction(){
+        System.out.println("to admin cruise");
+        return "success";
+    }
+
+    public void validateUser(ActionEvent e) {
+        try {
+            getRequest().login(name, password);
+            adminRole = true;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            adminRole = false;
+        }
+
+        System.out.println("validando usuario");
     }
 
     public void onload(ActionEvent e) {
@@ -439,5 +487,60 @@ public class CruiseInventoryBackendBean {
      */
     public void setMaxLon(Double maxLon) {
         this.maxLon = maxLon;
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * @return the password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * @param password the password to set
+     */
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    /**
+     * @return the adminRole
+     */
+    public boolean isAdminRole() {
+        return adminRole;
+    }
+
+    /**
+     * @param adminRole the adminRole to set
+     */
+    public void setAdminRole(boolean adminRole) {
+        this.adminRole = adminRole;
+    }
+    /**
+     * @return the logoutButton
+     */
+    public HtmlAjaxCommandButton getLogoutButton() {
+        return logoutButton;
+    }
+
+    /**
+     * @param logoutButton the logoutButton to set
+     */
+    public void setLogoutButton(HtmlAjaxCommandButton logoutButton) {
+        this.logoutButton = logoutButton;
     }
 }

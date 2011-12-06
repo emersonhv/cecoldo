@@ -169,6 +169,13 @@ td.banner {
     background-image: url('../images/blue-background.jpg');
     border-bottom: 1px solid #ffffff; /* moved here from tr since IE accepts it only here */
 }
+.loginbanner{
+    font-size: 8pt;
+    color: white;
+    background: #064377;
+    padding: 0px;
+    border: 0;
+}
 td.banner-menu {
     font-size: 8pt;
     color: white;

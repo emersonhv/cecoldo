@@ -34,6 +34,22 @@
         <managed-bean-class>com.dimar.cecoldo.cruise.CruiseAdminBackendBean</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
+    <navigation-rule> 
+        <from-view-id>*</from-view-id> 
+        <navigation-case> 
+            <from-action>#{cruiseManagedBean.toAdminCruisesAction}</from-action> 
+            <from-outcome>success</from-outcome>
+            <to-view-id>/admin/CruiseAdministrator.jsp</to-view-id> 
+        </navigation-case> 
+    </navigation-rule>      
+    <navigation-rule> 
+        <from-view-id>*</from-view-id> 
+        <navigation-case> 
+            <from-action>#{cruiseManagedBean.logout}</from-action> 
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/CruiseQuery.jsp</to-view-id> 
+        </navigation-case> 
+    </navigation-rule>      
     <application>
         <message-bundle>
             ApplicationMessages

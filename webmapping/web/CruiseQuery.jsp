@@ -62,44 +62,63 @@
         </head>
         <body onload="initVars()">
             <div class="panel_banner">
-                <table border="0" width="100%" class="header1" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <td colspan="3" width="100%">
-                            <table width="100%" cellspacing="0">
-                                <tr class="banner">
-                                    <td align="left" class="banner">
-                                        <img src="images/header-left.jpg" alt="DIMAR" align="top" />
-                                    </td>
-                                    <td align="right" class="banner">
-                                        <img src="images/header-right.jpg" alt="Servicio de Inventario de Cruceros" align="top" />
-                                    </td>
-                                </tr>
-                                <tr class="banner">
-                                    <td class="banner-menu" align="left">
-                                        <a class="banner" href="index.html">Inicio</a>
-                                        |
-                                        <a class="banner" href="contact.html">Contáctenos</a>
-                                        |
-                                        <a class="banner" href="help.html">Ayuda</a>
-                                        |
-                                    </td>
-                                    <td class="banner-menu" align="right">
-                                        <a class="header_selected" href="#">Español</a>
-                                        |
-                                        <span class="banner">Inglés</span>
-                                    </td>
-                                    <!--td align="right" class="banner-menu" width="610px"><select class="banner-content content" onchange="location.replace('../' + this.options[this.selectedIndex].value + '/main.home');">
-                                            <option value="en">English</option>
-                                            <option value="es" selected="">Español</option></select></td-->
-                                </tr>                            
-                                <tr class="banner">
-                                    <td class="banner-login" align="right" colspan="2"></td>
-                                </tr>                            
-                            </table>
-                        </td>
-                    </tr>
-                </table>
                 <h:form id="myform">
+                    <table border="0" width="100%" class="header1" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td colspan="3" width="100%">
+                                <table width="100%" cellspacing="0">
+                                    <tr class="banner">
+                                        <td align="left" class="banner">
+                                            <img src="images/header-left.jpg" alt="DIMAR" align="top" />
+                                        </td>
+                                        <td align="right" class="banner">
+                                            <img src="images/header-right.jpg" alt="Servicio de Inventario de Cruceros" align="top" />
+                                        </td>
+                                    </tr>
+                                    <tr class="banner">
+                                        <td class="banner-menu" align="left">
+                                            <a class="banner" href="index.html">Inicio</a>
+                                            |
+                                            <a class="banner" href="contact.html">Contáctenos</a>
+                                            |
+                                            <a class="banner" href="help.html">Ayuda</a>
+                                            |                                            
+                                        </td>
+                                        <td class="banner-menu" align="right">
+                                            <rich:panel id="loginPanel" styleClass="loginbanner" bodyClass="loginbanner"> 
+                                                <h:inputText value="#{cruiseManagedBean.name}" rendered="#{not cruiseManagedBean.adminRole}"/>
+                                                <h:inputSecret value="#{cruiseManagedBean.password}" rendered="#{not cruiseManagedBean.adminRole}"/>
+                                                <a4j:commandButton actionListener="#{cruiseManagedBean.validateUser}" 
+                                                                   value="#{msg.b_login}" 
+                                                                   id="loginAction" 
+                                                                   reRender="loginPanel"
+                                                                   onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;"
+                                                                   rendered="#{not cruiseManagedBean.adminRole}"/>
+
+                                                <h:commandLink action="#{cruiseManagedBean.toAdminCruisesAction}" 
+                                                               value="#{msg.b_admin_cruises}"
+                                                               rendered="#{cruiseManagedBean.adminRole}"/>
+                                                <a4j:commandButton action="#{cruiseManagedBean.logout}" 
+                                                                   value="#{msg.b_logout}" id="logoutAction" 
+                                                                   rendered="#{cruiseManagedBean.adminRole}"
+                                                                   onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;"
+                                                                   reRender="loginPanel"/>
+                                                <a class="header_selected" href="#">Español</a>
+                                                |
+                                                <span class="banner">Inglés</span>
+                                            </rich:panel>
+                                        </td>
+                                        <!--td align="right" class="banner-menu" width="610px"><select class="banner-content content" onchange="location.replace('../' + this.options[this.selectedIndex].value + '/main.home');">
+                                                <option value="en">English</option>
+                                                <option value="es" selected="">Español</option></select></td-->
+                                    </tr>                            
+                                    <tr class="banner">
+                                        <td class="banner-login" align="right" colspan="2"></td>
+                                    </tr>                            
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
                     <a4j:jsFunction name="initVars" 
                                     actionListener="#{cruiseManagedBean.onload}"
                                     reRender="advancedPanel">                        
@@ -580,7 +599,7 @@
                                                                                     <td>                                                                                        
                                                                                         <rich:gmap gmapVar="map" zoom="6" 
                                                                                                    style="width:400px;height:400px" 
-                                                                                                   gmapKey="ABQIAAAAyrwFPf71xa3x2zoW0lc_JhSCd7RKMffV5e49tgk6lSz_-7l8WBSFGD_N331e_K7cHpLoIHqaq9FYbg" 
+                                                                                                   gmapKey="#{msg.key_google_maps}" 
                                                                                                    id="gmap"
                                                                                                    lat="12"                                                                                                    
                                                                                                    lng="-82">
