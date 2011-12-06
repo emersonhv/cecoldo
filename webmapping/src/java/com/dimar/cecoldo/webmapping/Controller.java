@@ -276,7 +276,8 @@ public class Controller {
         for (InvChiefScientist scientist : scientistList) {
             SelectItem item = new SelectItem();
             item.setValue(scientist.getId());
-            item.setLabel(scientist.getFirstName() + " " + scientist.getLastName());
+            String profession = scientist.getProfession() != null ? scientist.getProfession().getProfesion() : "No registra" ;
+            item.setLabel(scientist.getFirstName() + " " + scientist.getLastName() + " (" + profession + ")");
             items.add(item);
         }
         return items;
@@ -776,7 +777,7 @@ public class Controller {
     }
 
     public List<InvCruiseInventory> getAllCruiseInventorys() {
-        String sql = "from InvCruiseInventory i";
+        String sql = "from InvCruiseInventory i order by i.beginDate";
         Query query = getEntityManager().createQuery(sql);
         return query.getResultList();
     }

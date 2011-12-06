@@ -20,11 +20,47 @@
         <f:loadBundle basename="ApplicationMessages" var="msg"/>
         <head>
             <script src="javascript/dictionary.js"></script>
+            <script type="text/javascript">
+                var map, layer;
+                function polygon(minLat, minLon, maxLat, maxLon){
+                    var polygon = new GPolygon([
+                        new GLatLng(minLat, minLon),
+                        new GLatLng(minLat, maxLon),
+                        new GLatLng(maxLat, maxLon),
+                        new GLatLng(maxLat, minLon),
+                        new GLatLng(minLat, minLon)
+                    ], "#f33f00", 5, 1, "#ff0000", 0.2);
+                    map.addOverlay(polygon);     
+                    var mapdisplay = 250;
+                    var dist = (6371 * Math.acos(Math.sin(minLat / 57.2958) * Math.sin(maxLat / 57.2958) + (Math.cos(minLat / 57.2958) * Math.cos(maxLat / 57.2958) * Math.cos((maxLon / 57.2958) - (minLon / 57.2958)))));
+                    var fitLevel = Math.floor(8 - Math.log(1.6446 * dist / Math.sqrt(2 * (mapdisplay * mapdisplay))) / Math.log (2));
+                    //                    alert('fitLevel:' + fitLevel);
+                    //                        if (fitLevel > 1) {
+                    //                                fitLevel = fitLevel -1;
+                    //                        }
+                    var center = new GLatLng(minLat + (maxLat - minLat)/2, minLon + (maxLon - minLon)/2);
+                    //                    alert("bounds:" + map.getBounds());
+                    //                    alert("lat:" + center.lat() + ", lon:" + center.lng());
+                    map.setCenter(center, fitLevel);
+                    //                    alert(map.getCenter());
+                    //                    //map.panTo(new GLatLng(centerLat, centerLon));
+                }
+                
+                
+                function clearMap(){
+                    map.clearOverlays();
+                }
+                function defaultCenterMap(){
+                    var center = new GLatLng(4, -79);
+                    map.setCenter(center);
+                }
+            </script>            
+
             <link rel="stylesheet" type="text/css" href="styles/styles.css" />
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
             <title><h:outputText value="#{msg.cruise_title}"/></title>
         </head>
-        <body>
+        <body onload="initVars()">
             <div class="panel_banner">
                 <table border="0" width="100%" class="header1" cellspacing="0" cellpadding="0">
                     <tr>
@@ -64,7 +100,10 @@
                     </tr>
                 </table>
                 <h:form id="myform">
-
+                    <a4j:jsFunction name="initVars" 
+                                    actionListener="#{cruiseManagedBean.onload}"
+                                    reRender="advancedPanel">                        
+                    </a4j:jsFunction>
                     <div align="center">
                         <table width="100%" align="center" class="main">
                             <tr>
@@ -391,7 +430,7 @@
                                                                     <h:outputText value="#{msg.t_end_date}" />
                                                                 </f:facet>   
                                                                 <span class="gris">  
-                                                                    <h:outputText value="#{cruise.beginDate}" styleClass="gris">
+                                                                    <h:outputText value="#{cruise.endDate}" styleClass="gris">
                                                                         <f:convertDateTime pattern="yyyy-MM-dd"/>
                                                                     </h:outputText> 
                                                                 </span>
@@ -406,13 +445,31 @@
                                                                 <f:facet name="header">
                                                                     <h:outputText value="#{msg.t_show}" />
                                                                 </f:facet>   
-                                                                <span class="gris"><a4j:commandLink actionListener="#{cruiseManagedBean.showDetails}" oncomplete="#{rich:component('detailsPanel')}.show() " reRender="details"><h:graphicImage alt="show" url="images/details.gif" style="border: 0" width="25px"/></a4j:commandLink></span>
-                                                            </rich:column>
-                                                        </rich:dataTable>
+                                                                <span class="gris">
+                                                                    <a4j:commandLink actionListener="#{cruiseManagedBean.showDetails}" 
+                                                                                     reRender="details,details3,minLat,minLon,maxLat,maxLon,divMapaResult"
+                                                                                     oncomplete="#{rich:component('detailsPanel')}.show();" 
+                                                                                     onclick="clearMap();defaultCenterMap();">
+                                                                        <h:graphicImage alt="show" url="images/details.gif" style="border: 0" width="25px"/>
+                                                                    </a4j:commandLink></span>
+                                                                </rich:column>
+                                                            </rich:dataTable>
                                                     </div>
                                                 </rich:panel>
+                                                <rich:panel id="divMapaResult" >
+                                                    <script type="text/javascript">
+                                                        Richfaces.showModalPanel('detailsPanel');
+                                                        clearMap();
+                                                        defaultCenterMap();
+                                                        polygon(<h:outputText value="#{cruiseManagedBean.minLat}"/>, 
+                                                        <h:outputText value="#{cruiseManagedBean.minLon}"/>, 
+                                                        <h:outputText value="#{cruiseManagedBean.maxLat}"/>, 
+                                                        <h:outputText value="#{cruiseManagedBean.maxLon}"/>);
+                                                    </script>
+                                                </rich:panel>
+
                                                 <a4j:form>
-                                                    <rich:modalPanel width="500" id="detailsPanel" autosized="true">
+                                                    <rich:modalPanel width="600" id="detailsPanel" autosized="true" onshow="map.checkResize();">
                                                         <f:facet name="header">
                                                             <h:panelGroup>
                                                                 <h:outputText value="#{msg.detail_title}"></h:outputText>
@@ -424,8 +481,8 @@
                                                                 <rich:componentControl for="detailsPanel" attachTo="hidelink" operation="hide" event="onclick"/>
                                                             </h:panelGroup>
                                                         </f:facet>   
-                                                        <rich:panel id="details">
-                                                            <div class="scroll3">
+                                                        <div class="scroll3">
+                                                            <rich:panel id="details">
                                                                 <table width="100%" style="text-align: left;">
                                                                     <tr>
                                                                         <th width="30%">
@@ -499,16 +556,55 @@
                                                                             </a4j:repeat>
                                                                         </td>
                                                                     </tr>
+                                                                </table>
+
+                                                            </rich:panel>
+                                                            <rich:panel id="details2">
+
+                                                                <table width="100%" style="text-align: left;"> 
                                                                     <tr>
                                                                         <th>
                                                                             <h:outputText value="#{msg.cruise_ocean_sea_areas}"/>
                                                                         </th>
                                                                         <td>
-                                                                            <a4j:repeat value="#{cruiseManagedBean.selectedInventory.oceanArea.regionsdesCollection}" var="region" rows="1">
-                                                                                <b><h:outputText value="#{region.label}"/></b><br/>
-                                                                            </a4j:repeat>                                                                       
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td colspan="3" align="center">
+                                                                                        <h:outputText value="#{cruiseManagedBean.selectedInventory.maxLat}" id="maxLat"/>
+                                                                                    </td>
+                                                                                </tr>                                                                                
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <h:outputText value="#{cruiseManagedBean.selectedInventory.minLon}" id="minLon"/>
+                                                                                    </td>
+                                                                                    <td>                                                                                        
+                                                                                        <rich:gmap gmapVar="map" zoom="6" 
+                                                                                                   style="width:400px;height:400px" 
+                                                                                                   gmapKey="ABQIAAAAyrwFPf71xa3x2zoW0lc_JhSCd7RKMffV5e49tgk6lSz_-7l8WBSFGD_N331e_K7cHpLoIHqaq9FYbg" 
+                                                                                                   id="gmap"
+                                                                                                   lat="12"                                                                                                    
+                                                                                                   lng="-82">
+                                                                                        </rich:gmap>
+
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <h:outputText value="#{cruiseManagedBean.selectedInventory.maxLon}" id="maxLon"/>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td colspan="3" align="center">
+                                                                                        <h:outputText value="#{cruiseManagedBean.selectedInventory.minLat}" id="minLat"/>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
                                                                         </td>
                                                                     </tr>
+                                                                </table>
+
+                                                            </rich:panel>
+                                                            <rich:panel id="details3">
+
+                                                                <table width="100%" style="text-align: left;"> 
                                                                     <tr>
                                                                         <th>
                                                                             <h:outputText value="#{msg.details_laboratories}"/>
@@ -551,8 +647,9 @@
                                                                         </td>
                                                                     </tr>
                                                                 </table>      
-                                                            </div>
-                                                        </rich:panel>
+
+                                                            </rich:panel>
+                                                        </div>
                                                     </rich:modalPanel>
                                                 </a4j:form>
                                             </td>
