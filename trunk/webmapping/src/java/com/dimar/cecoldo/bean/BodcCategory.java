@@ -33,7 +33,7 @@ public class BodcCategory implements Serializable {
     @Column(name = "TITLE")
     private String title;
     @Column(name = "DOCREF")
-    private Integer docref;
+    private String docref;
     @Column(name = "RECORD_LOCK")
     private String recordLock;
     @Column(name = "CREATED")
@@ -69,11 +69,11 @@ public class BodcCategory implements Serializable {
         this.title = title;
     }
 
-    public Integer getDocref() {
+    public String getDocref() {
         return docref;
     }
 
-    public void setDocref(Integer docref) {
+    public void setDocref(String docref) {
         this.docref = docref;
     }
 

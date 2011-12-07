@@ -7,11 +7,12 @@
         <Node id="index.jsp" x="150" y="450" zoom="true"/>
         <Node id="test.jsp" x="400" y="150" zoom="true"/>
         <Node id="CruiseQuery.jsp" x="400" y="300" zoom="true"/>
-        <Node id="help.html" x="900" y="150" zoom="true"/>
         <Node id="NewDictionaryParameterRequest.jsp" x="650" y="150" zoom="true"/>
+        <Node id="help.html" x="900" y="150" zoom="true"/>
         <Node id="DictionaryQuery.jsp" x="150" y="300" zoom="true"/>
-        <Node id="CruiseAdministrator.jsp" x="150" y="600" zoom="true"/>
+        <Node id="*" x="150" y="600" zoom="true"/>
         <Node id="welcomeJSF.jsp" x="150" y="150" zoom="true"/>
+        <Node id="admin/CruiseAdministrator.jsp" x="1150" y="150" zoom="true"/>
     </Scope>
     <Scope Scope="All Faces Configurations"/>
 </Scene>

@@ -88,10 +88,7 @@
                                                                    reRender="loginPanel"
                                                                    onclick="this.disabled=true; globalNS.runButton=this;" oncomplete="globalNS.runButton.disabled=false;"
                                                                    rendered="#{not cruiseManagedBean.adminRole}"/>
-
-                                                <h:commandLink action="#{cruiseManagedBean.toAdminCruisesAction}" 
-                                                               value="#{msg.b_admin_cruises}"
-                                                               rendered="#{cruiseManagedBean.adminRole}"/>
+                                                <a href="CruiseQuery.jsp"><h:outputText value="#{msg.b_query_cruises}"/></a>
                                                 <a4j:commandButton action="#{cruiseManagedBean.logout}" 
                                                                    value="#{msg.b_logout}" id="logoutAction" 
                                                                    rendered="#{cruiseManagedBean.adminRole}"
