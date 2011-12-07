@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
-  <persistence-unit name="WebMappingPU" transaction-type="RESOURCE_LOCAL">
-    <provider>org.hibernate.ejb.HibernatePersistence</provider>
-    <non-jta-data-source/>
-    <class>com.dimar.cecoldo.bean.ArchivoDatos</class>
-    <class>com.dimar.cecoldo.bean.BodcCategory</class>
-    <class>com.dimar.cecoldo.bean.BodcCategoryLink</class>
-    <class>com.dimar.cecoldo.bean.BodcDatos</class>
-    <class>com.dimar.cecoldo.bean.BodcDetalleDatos</class>
-    <class>com.dimar.cecoldo.bean.BodcRequiredParameter</class>
-    <class>com.dimar.cecoldo.bean.CecoldoProperties</class>
-    <class>com.dimar.cecoldo.bean.Groups</class>
-    <class>com.dimar.cecoldo.bean.GenMunicipio</class>
-    <class>com.dimar.cecoldo.bean.GenProfesion</class>
-    <class>com.dimar.cecoldo.bean.Gendepartamento</class>
-    <class>com.dimar.cecoldo.bean.InvChiefScientist</class>
-    <class>com.dimar.cecoldo.bean.InvCruiseInstitutions</class>
-    <class>com.dimar.cecoldo.bean.InvCruiseInventory</class>
-    <class>com.dimar.cecoldo.bean.InvFunctionClassifiers</class>
-    <class>com.dimar.cecoldo.bean.InvInstitutions</class>
-    <class>com.dimar.cecoldo.bean.InvLaboratories</class>
-    <class>com.dimar.cecoldo.bean.InvShipName</class>
-    <class>com.dimar.cecoldo.bean.InvShipType</class>
-    <class>com.dimar.cecoldo.bean.InvStatus</class>
-    <class>com.dimar.cecoldo.bean.InvStatusIndicators</class>
-    <class>com.dimar.cecoldo.bean.Metadata</class>
-    <class>com.dimar.cecoldo.bean.Paises0101</class>
-    <class>com.dimar.cecoldo.bean.Regions</class>
-    <class>com.dimar.cecoldo.bean.SolicitudParametros</class>
-    <class>com.dimar.cecoldo.bean.TempMalla</class>
-    <class>com.dimar.cecoldo.bean.UnlocodePort</class>
-    <class>com.dimar.cecoldo.bean.UnlocodeStatusIndicators</class>
-    <class>com.dimar.cecoldo.bean.Users</class>
-    <class>com.dimar.cecoldo.bean.InvReport</class>
-    <class>com.dimar.cecoldo.bean.InvCruiseBodcCategory</class>
-    <class>com.dimar.cecoldo.bean.InvLaboratoriesCruises</class>
-    <class>com.dimar.cecoldo.bean.InvMetadata</class>
-    <class>com.dimar.cecoldo.bean.InvChiefScientistCruise</class>
-    <class>com.dimar.cecoldo.bean.InvProject</class>
-    <class>com.dimar.cecoldo.bean.InvDiscipline</class>
-    <class>com.dimar.cecoldo.bean.BodcParameter</class>
-    <class>com.dimar.cecoldo.bean.BodcParameterGroup</class>
-    <class>com.dimar.cecoldo.bean.BodcUnits</class>
-    <class>com.dimar.cecoldo.bean.GenCities</class>
-    <properties>
+    <persistence-unit name="WebMappingPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <non-jta-data-source/>
+        <class>com.dimar.cecoldo.bean.ArchivoDatos</class>
+        <class>com.dimar.cecoldo.bean.BodcCategory</class>
+        <class>com.dimar.cecoldo.bean.BodcCategoryLink</class>
+        <class>com.dimar.cecoldo.bean.BodcDatos</class>
+        <class>com.dimar.cecoldo.bean.BodcDetalleDatos</class>
+        <class>com.dimar.cecoldo.bean.BodcRequiredParameter</class>
+        <class>com.dimar.cecoldo.bean.CecoldoProperties</class>
+        <class>com.dimar.cecoldo.bean.Groups</class>
+        <class>com.dimar.cecoldo.bean.GenMunicipio</class>
+        <class>com.dimar.cecoldo.bean.GenProfesion</class>
+        <class>com.dimar.cecoldo.bean.Gendepartamento</class>
+        <class>com.dimar.cecoldo.bean.InvChiefScientist</class>
+        <class>com.dimar.cecoldo.bean.InvCruiseInstitutions</class>
+        <class>com.dimar.cecoldo.bean.InvCruiseInventory</class>
+        <class>com.dimar.cecoldo.bean.InvFunctionClassifiers</class>
+        <class>com.dimar.cecoldo.bean.InvInstitutions</class>
+        <class>com.dimar.cecoldo.bean.InvLaboratories</class>
+        <class>com.dimar.cecoldo.bean.InvShipName</class>
+        <class>com.dimar.cecoldo.bean.InvShipType</class>
+        <class>com.dimar.cecoldo.bean.InvStatus</class>
+        <class>com.dimar.cecoldo.bean.InvStatusIndicators</class>
+        <class>com.dimar.cecoldo.bean.Metadata</class>
+        <class>com.dimar.cecoldo.bean.Paises0101</class>
+        <class>com.dimar.cecoldo.bean.Regions</class>
+        <class>com.dimar.cecoldo.bean.SolicitudParametros</class>
+        <class>com.dimar.cecoldo.bean.TempMalla</class>
+        <class>com.dimar.cecoldo.bean.UnlocodePort</class>
+        <class>com.dimar.cecoldo.bean.UnlocodeStatusIndicators</class>
+        <class>com.dimar.cecoldo.bean.Users</class>
+        <class>com.dimar.cecoldo.bean.InvReport</class>
+        <class>com.dimar.cecoldo.bean.InvCruiseBodcCategory</class>
+        <class>com.dimar.cecoldo.bean.InvLaboratoriesCruises</class>
+        <class>com.dimar.cecoldo.bean.InvMetadata</class>
+        <class>com.dimar.cecoldo.bean.InvChiefScientistCruise</class>
+        <class>com.dimar.cecoldo.bean.InvProject</class>
+        <class>com.dimar.cecoldo.bean.InvDiscipline</class>
+        <class>com.dimar.cecoldo.bean.BodcParameter</class>
+        <class>com.dimar.cecoldo.bean.BodcParameterGroup</class>
+        <class>com.dimar.cecoldo.bean.BodcUnits</class>
+        <class>com.dimar.cecoldo.bean.GenCities</class>
+        <properties>
       <!--
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"/>
@@ -53,16 +53,25 @@
             <property name="hibernate.connection.password" value="cecoldo"/>
             <property name="hibernate.hbm2ddl.auto" value="false"/>
             -->
-      <property name="hibernate.show_sql" value="false"/>
-      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
-      <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-      <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/cecoldo"/>
-      <property name="hibernate.connection.username" value="root"/>
-      <property name="hibernate.connection.password" value="root"/>
-      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
-      <property name="hibernate.cache.use_query_cache" value="false"/>
-      <property name="hibernate.cache.use_minimal_puts" value="false"/>
-      <property name="max_fetch_depth" value="3"/>
-    </properties>
-  </persistence-unit>
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/cecoldo"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value="root"/>
+            <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+            <property name="hibernate.cache.use_query_cache" value="false"/>
+            <property name="hibernate.cache.use_minimal_puts" value="false"/>
+            <property name="max_fetch_depth" value="3"/>
+        <!-- Important -->
+            <property name="hibernate.connection.provider_class" value="org.hibernate.connection.C3P0ConnectionProvider" />
+
+            <property name="hibernate.c3p0.max_size" value="100" />
+            <property name="hibernate.c3p0.min_size" value="5" />
+            <property name="hibernate.c3p0.acquire_increment" value="1" />
+            <property name="hibernate.c3p0.idle_test_period" value="300" />
+            <property name="hibernate.c3p0.max_statements" value="0" />
+            <property name="hibernate.c3p0.timeout" value="100" />      
+        </properties>
+    </persistence-unit>
 </persistence>

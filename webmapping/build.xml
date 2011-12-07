@@ -74,9 +74,9 @@
                  classpath="E:/PROJECTS/ARMADA2011/webmapping_svn/lib/catalina-ant.jar"/>
         <taskdef name="undeploy"  classname="org.apache.catalina.ant.UndeployTask"
                 classpath="E:/PROJECTS/ARMADA2011/webmapping_svn/lib/catalina-ant.jar"/>
-        <undeploy url="http://192.168.0.100:8080/manager" username="deployer"
+        <undeploy url="http://192.168.0.100:8080/manager/text" username="deployer"
                 password="deployer" path="/WebMappingFaces" failonerror="false"/>
-        <deploy url="http://192.168.0.100:8080/manager" username="deployer"
+        <deploy url="http://192.168.0.100:8080/manager/text" username="deployer"
                 password="deployer" path="/WebMappingFaces"
                 war="file:E:/PROJECTS/ARMADA2011/webmapping_svn/dist/WebMappingFaces.war"/>
         <echo message="Finished installing webmapping"/>
