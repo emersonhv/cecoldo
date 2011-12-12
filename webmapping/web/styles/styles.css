@@ -98,12 +98,12 @@ a{
 .scroll2
 {
     width:100%; 
-    height:600px; 
+    height:650px; 
     overflow:auto;
 }
 .scroll3
 {
-    width:600px; 
+    width:650px; 
     height:400px; 
     overflow:auto;
 }
@@ -207,7 +207,7 @@ td.banner-login {
 }
 .content{
     text-align: center;
-    width:600px; 
+    width:650px; 
     font-family: arial;     
 }
 .text_content{
@@ -229,4 +229,19 @@ td.banner-login {
     font-weight: bold;
     font-size: 18px;
     vertical-align: middle;
+}
+.subtitle{
+    font-weight: bold;
+    font-size: 10px;
+}
+.bounds{
+    border: 1px solid #666666;
+    white-space:nowrap;
+    padding: 0px 3px 0px 3px;
+}
+#olMap {
+    width:200px;
+    height:200px;
+    padding:0px;
+    margin:0px;
 }

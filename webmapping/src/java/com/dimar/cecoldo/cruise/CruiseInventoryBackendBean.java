@@ -16,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import org.ajax4jsf.component.html.HtmlAjaxCommandButton;
 import org.ajax4jsf.component.html.HtmlAjaxSupport;
+import org.apache.taglibs.standard.tag.common.sql.ResultImpl;
 import org.richfaces.component.UIDataTable;
 
 /** 
@@ -63,10 +64,16 @@ public class CruiseInventoryBackendBean {
     private Double minLon;
     private Double maxLat;
     private Double maxLon;
+    private Double advMinLat;
+    private Double advMinLon;
+    private Double advMaxLat;
+    private Double advMaxLon;
     private String name;
     private String password;
     private boolean adminRole;
     private HtmlAjaxCommandButton logoutButton;
+    private Double centralLat = 4.4;
+    private Double centralLon = -74.4;
 
     public CruiseInventoryBackendBean() {
         controller = new Controller();
@@ -131,6 +138,10 @@ public class CruiseInventoryBackendBean {
         System.out.println("On load");
         init();
     }
+    
+    public void test(ActionEvent e){
+        System.out.println("Test..." + advMaxLat + "," + advMaxLon + "," + advMinLat +  "," +advMinLon);
+    }
 
     public void search(ActionEvent e) {
         resultList = controller.advancedSearchInventory(this);
@@ -179,7 +190,9 @@ public class CruiseInventoryBackendBean {
         this.scientistSelected = null;
         this.shipNameSelected = null;
         if (e.getSource() instanceof HtmlAjaxSupport) {
-            this.resultList.clear();
+            if(resultList != null){
+                this.resultList.clear();
+            }
             this.resultsCounter = "Results: 0";
         }
     }
@@ -192,6 +205,10 @@ public class CruiseInventoryBackendBean {
         }
         return new ArrayList<InvInstitutions>(institutionSet);
     }
+    public void updateMap(ActionEvent e){
+        
+    }
+    
 
     public UIDataTable getResultsTable() {
         return resultsTable;
@@ -542,5 +559,89 @@ public class CruiseInventoryBackendBean {
      */
     public void setLogoutButton(HtmlAjaxCommandButton logoutButton) {
         this.logoutButton = logoutButton;
+    }
+
+    /**
+     * @return the centralLat
+     */
+    public Double getCentralLat() {
+        return centralLat;
+    }
+
+    /**
+     * @param centralLat the centralLat to set
+     */
+    public void setCentralLat(Double centralLat) {
+        this.centralLat = centralLat;
+    }
+
+    /**
+     * @return the centralLon
+     */
+    public Double getCentralLon() {
+        return centralLon;
+    }
+
+    /**
+     * @param centralLon the centralLon to set
+     */
+    public void setCentralLon(Double centralLon) {
+        this.centralLon = centralLon;
+    }
+
+    /**
+     * @return the advMinLat
+     */
+    public Double getAdvMinLat() {
+        return advMinLat;
+    }
+
+    /**
+     * @param advMinLat the advMinLat to set
+     */
+    public void setAdvMinLat(Double advMinLat) {
+        this.advMinLat = advMinLat;
+    }
+
+    /**
+     * @return the advMinLon
+     */
+    public Double getAdvMinLon() {
+        return advMinLon;
+    }
+
+    /**
+     * @param advMinLon the advMinLon to set
+     */
+    public void setAdvMinLon(Double advMinLon) {
+        this.advMinLon = advMinLon;
+    }
+
+    /**
+     * @return the advMaxLat
+     */
+    public Double getAdvMaxLat() {
+        return advMaxLat;
+    }
+
+    /**
+     * @param advMaxLat the advMaxLat to set
+     */
+    public void setAdvMaxLat(Double advMaxLat) {
+        this.advMaxLat = advMaxLat;
+    }
+
+    /**
+     * @return the advMaxLon
+     */
+    public Double getAdvMaxLon() {
+        return advMaxLon;
+    }
+
+    /**
+     * @param advMaxLon the advMaxLon to set
+     */
+    public void setAdvMaxLon(Double advMaxLon) {
+        this.advMaxLon = advMaxLon;
     }
 }
