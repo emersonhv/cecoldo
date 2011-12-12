@@ -19,6 +19,7 @@
     <f:view>
         <f:loadBundle basename="ApplicationMessages" var="msg"/>
         <head>
+            <link rel="icon" href="favicon.ico" type="image/x-icon">            
             <script src="javascript/dictionary.js"></script>
             <script src="javascript/OpenLayers.js"></script>
             <link rel="stylesheet" type="text/css" href="styles/styles.css" />
@@ -428,11 +429,17 @@
                                                                             <table>
                                                                                 <tr>
                                                                                     <td colspan="3" align="center">
+                                                                                        <span class="subtitle">
+                                                                                            <h:outputText value="#{msg.maxLat}"/>
+                                                                                        </span><br/>
                                                                                         <h:inputText value="#{cruiseAdminManagedBean.maxLat}" size="4" id="maxLat"/>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td>
+                                                                                        <span class="subtitle">
+                                                                                            <h:outputText value="#{msg.minLon}"/>
+                                                                                        </span><br/>
                                                                                         <h:inputText value="#{cruiseAdminManagedBean.minLon}" size="4" id="minLon"/>
                                                                                     </td>
                                                                                     <td width="350px">
@@ -446,11 +453,17 @@
 
                                                                                     </td>
                                                                                     <td>
+                                                                                        <span class="subtitle">
+                                                                                            <h:outputText value="#{msg.maxLon}"/>
+                                                                                        </span><br/>
                                                                                         <h:inputText value="#{cruiseAdminManagedBean.maxLon}" size="4" id="maxLon"/>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td colspan="3" align="center">
+                                                                                        <span class="subtitle">
+                                                                                            <h:outputText value="#{msg.minLat}"/>
+                                                                                        </span><br/>
                                                                                         <h:inputText value="#{cruiseAdminManagedBean.minLat}" size="4" id="minLat"/>
                                                                                     </td>
                                                                                 </tr>

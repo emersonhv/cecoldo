@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/WebMappingFaces">
+<Context path="/cecoldo">
   <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxActive="20" maxIdle="10" maxWait="-1" name="cenimarc" password="root" type="javax.sql.DataSource" url="jdbc:mysql://192.168.0.100:3306/cenimarc_" username="root"/>
 </Context>

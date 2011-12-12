@@ -118,13 +118,16 @@ public class Controller {
 //            System.out.println("status --->" + bean.getStatusSelected());
 //            sql += " and i.status.idStatus = " + bean.getStatusSelected();
 //        }
-        if (bean.getAreasSelected().size() > 0) {
-            sql += " and i.oceanArea.id in (" + bean.getAreasSelected().get(0);
-            for (int i = 1; i < bean.getAreasSelected().size(); i++) {
-                sql += ", " + bean.getAreasSelected().get(i);
-            }
-            sql += ")";
+        if (bean.getAdvMaxLat() != null
+                && bean.getAdvMaxLon() != null
+                && bean.getAdvMinLat() != null
+                && bean.getAdvMinLon() != null) {
+            sql += " and i.minLat > " + bean.getAdvMinLat()
+                    + " and i.minLon > " + bean.getAdvMinLon()
+                    + " and i.maxLat < " + bean.getAdvMaxLat()
+                    + " and i.maxLon < " + bean.getAdvMaxLon();
         }
+
         if (bean.getDisciplineSelected() != -1 && bean.getDataTypesSelected().size() == 0) {
             sql += " and c.bodcCategory.discipline.idDiscipline = " + bean.getDisciplineSelected();
         }
@@ -157,6 +160,7 @@ public class Controller {
             sql += "')";
         }
         sql += " order by i." + bean.getOrderBySelected();
+        System.out.println(">> " + sql);
         Query query = getEntityManager().createQuery(sql);
         if (bean.getBeginDate() != null) {
             query.setParameter("beginDate", bean.getBeginDate(), TemporalType.DATE);
@@ -444,21 +448,16 @@ public class Controller {
         List<SelectItem> items = new ArrayList<SelectItem>();
         SelectItem item = new SelectItem();
         item.setValue("beginDate");
-        item.setLabel("Fecha del Crucero");
+        item.setLabel("Fecha del crucero");
         items.add(item);
         item = new SelectItem();
         item.setValue("shipName");
-        item.setLabel("Nombre del Navío");
+        item.setLabel("Nombre del buque");
         items.add(item);
         item = new SelectItem();
         item.setValue("cruiseName");
-        item.setLabel("Nombre del Crucero");
+        item.setLabel("Nombre del crucero");
         items.add(item);
-        item = new SelectItem();
-        item.setValue("idProject.projectName");
-        item.setLabel("Nombre del Proyecto");
-        items.add(item);
-
         return items;
     }
 

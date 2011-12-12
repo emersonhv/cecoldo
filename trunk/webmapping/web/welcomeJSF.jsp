@@ -14,6 +14,7 @@
 
 <html>
     <head>
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
         <title>::CECOLDO Web Mapping::</title>
         <link rel="stylesheet" type="text/css" href="styles/styles.css" />

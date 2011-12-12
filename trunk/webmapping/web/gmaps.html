@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <title>OpenSearch (with Geo) Test</title>
+    </head>
+    <body style="font-family:arial">
+        <p align="right">Brought to you by <a href="http://www.nearby.org.uk/">nearby.org.uk</a>.</p>
+        <h2>OpenSearch (with Geo) Tester</h2>
+
+        <p>Selected: <b>Geograph British Isles</b> <span style="color:green">www.geograph.org.uk</span></p>
+        <form action="http://www.geograph.org.uk/search.php" method="get" name="theForm" target="_blank">
+            <tt style="font-size:0.7em">&lt;form action="<b>http://www.geograph.org.uk/search.php</b>" method="get" target="_blank"&gt;</tt>
+            <UL>
+                <li>
+                    <tt style="font-size:0.7em">&lt;input type=text name="<b>BBOX</b>"/&gt</tt>
+                    <br>
+                        <div style="width:200px;float:left">opensearchgeo:bbox</div> 
+                        <input type=text name="BBOX" size=60/> (use the map below to define)<br/><br/>
+                </li>
+            </UL>
+            <input type=submit></form>
+        <br/>
+
+        <hr>
+            <div id="map" style="width: 450px; height: 300px"></div>
+
+
+            <script 
+                src="http://maps.google.com/maps?file=api&amp;v=2.80&amp;key=ABQIAAAAw3BrxANqPQrDF3i-BIABYxRD_NKYXuJbpNtn8Yd5DgIQXFr_PxQR7uttpClhLVmMZzYGyjpLMA7ldg"
+            type="text/javascript"></script>
+            <script src="javascript/dragzoom_modded.js" type="text/javascript"></script>
+
+            <script type="text/javascript">
+                //<![CDATA[
+
+                var map;
+                var themarker
+  
+                function load() {
+                    if (GBrowserIsCompatible()) {
+                        map = new GMap2(document.getElementById("map"));
+                        map.addControl(new GSmallMapControl());
+                        map.addControl(new GMapTypeControl());
+                        var point = new GLatLng(0,0);
+                        map.setCenter(point, 1);
+                        map.setMapType(G_NORMAL_MAP);
+
+                        var otherOpts = {
+                            buttonHTML: "click to create bbox.",
+                            buttonZoomingHTML: "Drag on the map to specify bbox. Click to end.",
+                            stickyZoomEnabled: true
+                        };
+   
+                        var callbacks = {
+                            dragend: function(nw,ne,se,sw,nwpx,nepx,sepx,swpx){
+          
+                                document.theForm.BBOX.value = sw.lng()+","+sw.lat()+","+ne.lng()+","+ne.lat();
+                            }
+                        };
+                        var dragZoomControl =  new DragZoomControl({}, otherOpts, callbacks);
+                        map.addControl(dragZoomControl);
+
+//                        map.addOverlay(createMarker(point));
+
+//                        GEvent.addListener(map, "click", function(marker, point) {
+//                            if (marker) {
+//                                //
+//                            } else {
+//                                themarker.setPoint(point);
+//                                markerUpdated();
+//                            }
+//                        });
+
+                    }
+                }
+
+
+
+
+	
+	
+                window.onload = load();
+                window.onunload = GUnload;
+                //]]>
+            </script>
+            <p>Credits for this map goto the <a href="http://www.google.com/apis/maps/">Google Maps API</a>, and <a href=http://googlemapsapi.blogspot.com/2007/06/v282-set-countryviewport-restrictions.html>this blog post</a>, and COULD use <a href=http://maps.huge.info/dragcircle.htm>this</a> to create a search radius (can"t be bothered now, as I dont need it) .
+
+
+                </body>
+                </html>
