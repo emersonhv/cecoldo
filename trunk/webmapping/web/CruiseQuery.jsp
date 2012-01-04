@@ -25,27 +25,42 @@
             <script type="text/javascript">
                 var map, layer;
                 function polygon(minLat, minLon, maxLat, maxLon){
-                    var polygon = new GPolygon([
-                        new GLatLng(minLat, minLon),
-                        new GLatLng(minLat, maxLon),
-                        new GLatLng(maxLat, maxLon),
-                        new GLatLng(maxLat, minLon),
-                        new GLatLng(minLat, minLon)
-                    ], "#f33f00", 5, 1, "#ff0000", 0.2);
-                    map.addOverlay(polygon);     
-                    var mapdisplay = 250;
-                    var dist = (6371 * Math.acos(Math.sin(minLat / 57.2958) * Math.sin(maxLat / 57.2958) + (Math.cos(minLat / 57.2958) * Math.cos(maxLat / 57.2958) * Math.cos((maxLon / 57.2958) - (minLon / 57.2958)))));
-                    var fitLevel = Math.floor(8 - Math.log(1.6446 * dist / Math.sqrt(2 * (mapdisplay * mapdisplay))) / Math.log (2));
-                    //                    alert('fitLevel:' + fitLevel);
-                    //                        if (fitLevel > 1) {
-                    //                                fitLevel = fitLevel -1;
-                    //                        }
-                    var center = new GLatLng(minLat + (maxLat - minLat)/2, minLon + (maxLon - minLon)/2);
-                    //                    alert("bounds:" + map.getBounds());
-                    //                    alert("lat:" + center.lat() + ", lon:" + center.lng());
-                    map.setCenter(center, fitLevel);
-                    //                    alert(map.getCenter());
-                    //                    //map.panTo(new GLatLng(centerLat, centerLon));
+                    var sMaxLon = document.getElementById("maxLon");
+                    var sMinLon = document.getElementById("minLon");
+                    var sMinLat = document.getElementById("minLat");
+                    var sMaxLat = document.getElementById("maxLat");
+                    if(minLat != 0){
+                        sMaxLon.innerHTML = maxLon;
+                        sMinLon.innerHTML = minLon;
+                        sMinLat.innerHTML = minLat;
+                        sMaxLat.innerHTML = maxLat;
+                        var polygon = new GPolygon([
+                            new GLatLng(minLat, minLon),
+                            new GLatLng(minLat, maxLon),
+                            new GLatLng(maxLat, maxLon),
+                            new GLatLng(maxLat, minLon),
+                            new GLatLng(minLat, minLon)
+                        ], "#f33f00", 5, 1, "#ff0000", 0.2);
+                        map.addOverlay(polygon);     
+                        var mapdisplay = 250;
+                        var dist = (6371 * Math.acos(Math.sin(minLat / 57.2958) * Math.sin(maxLat / 57.2958) + (Math.cos(minLat / 57.2958) * Math.cos(maxLat / 57.2958) * Math.cos((maxLon / 57.2958) - (minLon / 57.2958)))));
+                        var fitLevel = Math.floor(8 - Math.log(1.6446 * dist / Math.sqrt(2 * (mapdisplay * mapdisplay))) / Math.log (2));
+                        //                    alert('fitLevel:' + fitLevel);
+                        //                        if (fitLevel > 1) {
+                        //                                fitLevel = fitLevel -1;
+                        //                        }
+                        var center = new GLatLng(minLat + (maxLat - minLat)/2, minLon + (maxLon - minLon)/2);
+                        //                    alert("bounds:" + map.getBounds());
+                        //                    alert("lat:" + center.lat() + ", lon:" + center.lng());
+                        map.setCenter(center, fitLevel);
+                        //                    alert(map.getCenter());
+                        //                    //map.panTo(new GLatLng(centerLat, centerLon));
+                    }else{
+                        sMaxLon.innerHTML = "N/A";
+                        sMinLon.innerHTML = "N/A";
+                        sMinLat.innerHTML = "N/A";
+                        sMaxLat.innerHTML = "N/A";
+                    }
                 }
                 
                 function clearMap(){
@@ -343,7 +358,7 @@
                                                                                         <td width="350px">
                                                                                             <iframe src="gmaps.jsp" width="400" height="400" scrolling="no" id="iframemap" frameborder="0">
                                                                                             </iframe>
-                                                                                            
+
                                                                                         </td>
                                                                                         <td>
                                                                                             <span class="subtitle">
@@ -503,7 +518,7 @@
                                                                 </f:facet>   
                                                                 <span class="gris">
                                                                     <a4j:commandLink actionListener="#{cruiseManagedBean.showDetails}" 
-                                                                                     reRender="details,details3,minLat,minLon,maxLat,maxLon,divMapaResult"
+                                                                                     reRender="details,details3,minLat,minLon,maxLat,divMapaResult"
                                                                                      oncomplete="#{rich:component('detailsPanel')}.show();" 
                                                                                      onclick="clearMap();defaultCenterMap();">
                                                                         <h:graphicImage alt="show" url="images/details.gif" style="border: 0" width="25px"/>
@@ -629,8 +644,7 @@
                                                                                         <span class="subtitle">
                                                                                             <h:outputText value="#{msg.maxLat}"/>
                                                                                         </span><br/>
-                                                                                        <span class="bounds">
-                                                                                            <h:outputText value="#{cruiseManagedBean.selectedInventory.maxLat}" id="maxLat"/>
+                                                                                        <span class="bounds" id="maxLat">
                                                                                         </span>
 
                                                                                     </td>
@@ -638,8 +652,7 @@
                                                                                 <tr>
                                                                                     <td>
                                                                                         <span class="subtitle"><h:outputText value="#{msg.minLon}"/></span><br/>
-                                                                                        <span class="bounds">
-                                                                                            <h:outputText value="#{cruiseManagedBean.selectedInventory.minLon}" id="minLon"/>
+                                                                                        <span class="bounds" id="minLon">
                                                                                         </span>
                                                                                     </td>
                                                                                     <td>                                                                                        
@@ -654,16 +667,14 @@
                                                                                     </td>
                                                                                     <td>
                                                                                         <span class="subtitle"><h:outputText value="#{msg.maxLon}"/></span><br/>
-                                                                                        <span class="bounds">
-                                                                                            <h:outputText value="#{cruiseManagedBean.selectedInventory.maxLon}" id="maxLon"/>
+                                                                                        <span class="bounds" id="maxLon">
                                                                                         </span>
                                                                                     </td>
                                                                                 </tr>
                                                                                 <tr>
                                                                                     <td colspan="3" align="center">
                                                                                         <span class="subtitle"><h:outputText value="#{msg.minLat}"/></span><br/>
-                                                                                        <span class="bounds">
-                                                                                            <h:outputText value="#{cruiseManagedBean.selectedInventory.minLat}" id="minLat"/>
+                                                                                        <span class="bounds" id="minLat">
                                                                                         </span>
                                                                                     </td>
                                                                                 </tr>
