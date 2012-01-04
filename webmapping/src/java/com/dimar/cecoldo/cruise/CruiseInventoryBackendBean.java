@@ -9,6 +9,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import javax.faces.component.html.HtmlOutputText;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import javax.faces.model.SelectItem;
@@ -16,15 +17,15 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import org.ajax4jsf.component.html.HtmlAjaxCommandButton;
 import org.ajax4jsf.component.html.HtmlAjaxSupport;
-import org.apache.taglibs.standard.tag.common.sql.ResultImpl;
 import org.richfaces.component.UIDataTable;
 
-/** 
- * BackendBean asociado a la jsp welcomeJSF
- * Realiza todas las acciones invocadas mediante ajax en la pagina
- * y devuelve la información requerida por cada uno de los componentes del sistemaa.
+/**
+ * BackendBean asociado a la jsp welcomeJSF Realiza todas las acciones invocadas
+ * mediante ajax en la pagina y devuelve la información requerida por cada uno
+ * de los componentes del sistemaa.
+ *
  * @author Helbert Dario Rico Lugo
- * @version 
+ * @version
  */
 public class CruiseInventoryBackendBean {
 
@@ -74,6 +75,7 @@ public class CruiseInventoryBackendBean {
     private HtmlAjaxCommandButton logoutButton;
     private Double centralLat = 4.4;
     private Double centralLon = -74.4;
+    private HtmlOutputText maxLonOutput;
 
     public CruiseInventoryBackendBean() {
         controller = new Controller();
@@ -94,7 +96,7 @@ public class CruiseInventoryBackendBean {
         shipNameList = controller.getAllShipNames();
     }
 
-    public String logout(){
+    public String logout() {
 //        this.user = null;
         getRequest().getSession().invalidate();
         if (isAuthenticated()) {
@@ -117,7 +119,8 @@ public class CruiseInventoryBackendBean {
         return request instanceof HttpServletRequest
                 ? (HttpServletRequest) request : null;
     }
-    public String toAdminCruisesAction(){
+
+    public String toAdminCruisesAction() {
         System.out.println("to admin cruise");
         return "success";
     }
@@ -138,9 +141,9 @@ public class CruiseInventoryBackendBean {
         System.out.println("On load");
         init();
     }
-    
-    public void test(ActionEvent e){
-        System.out.println("Test..." + advMaxLat + "," + advMaxLon + "," + advMinLat +  "," +advMinLon);
+
+    public void test(ActionEvent e) {
+        System.out.println("Test..." + advMaxLat + "," + advMaxLon + "," + advMinLat + "," + advMinLon);
     }
 
     public void search(ActionEvent e) {
@@ -164,13 +167,10 @@ public class CruiseInventoryBackendBean {
 
     public void showDetails(ActionEvent e) {
         selectedInventory = (InvCruiseInventory) resultsTable.getRowData();
-        minLat = selectedInventory.getMinLat();
-        minLon = selectedInventory.getMinLon();
-        maxLat = selectedInventory.getMaxLat();
-        maxLon = selectedInventory.getMaxLon();
-        if (minLat == null || minLon == null || maxLat == null || maxLon == null) {
-        } else {
-        }
+        minLat = selectedInventory.getMinLat() != null ? selectedInventory.getMinLat() : 0;
+        minLon = selectedInventory.getMinLon() != null ? selectedInventory.getMinLon() : 0;
+        maxLat = selectedInventory.getMaxLat() != null ? selectedInventory.getMaxLat() : 0;
+        maxLon = selectedInventory.getMaxLon() != null ? selectedInventory.getMaxLon() : 0;
     }
 
     public void clean(ActionEvent e) {
@@ -190,7 +190,7 @@ public class CruiseInventoryBackendBean {
         this.scientistSelected = null;
         this.shipNameSelected = null;
         if (e.getSource() instanceof HtmlAjaxSupport) {
-            if(resultList != null){
+            if (resultList != null) {
                 this.resultList.clear();
             }
             this.resultsCounter = "Results: 0";
@@ -205,10 +205,9 @@ public class CruiseInventoryBackendBean {
         }
         return new ArrayList<InvInstitutions>(institutionSet);
     }
-    public void updateMap(ActionEvent e){
-        
+
+    public void updateMap(ActionEvent e) {
     }
-    
 
     public UIDataTable getResultsTable() {
         return resultsTable;
@@ -547,6 +546,7 @@ public class CruiseInventoryBackendBean {
     public void setAdminRole(boolean adminRole) {
         this.adminRole = adminRole;
     }
+
     /**
      * @return the logoutButton
      */
@@ -643,5 +643,19 @@ public class CruiseInventoryBackendBean {
      */
     public void setAdvMaxLon(Double advMaxLon) {
         this.advMaxLon = advMaxLon;
+    }
+
+    /**
+     * @return the maxLonOutput
+     */
+    public HtmlOutputText getMaxLonOutput() {
+        return maxLonOutput;
+    }
+
+    /**
+     * @param maxLonOutput the maxLonOutput to set
+     */
+    public void setMaxLonOutput(HtmlOutputText maxLonOutput) {
+        this.maxLonOutput = maxLonOutput;
     }
 }
