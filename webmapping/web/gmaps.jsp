@@ -20,7 +20,7 @@
     <head>
         <f:view>
             <script 
-                src="http://maps.google.com/maps?file=api&amp;v=2.80&amp;key=ABQIAAAAyrwFPf71xa3x2zoW0lc_JhTWNjz-vgWUbDcNxGkdsGe4sjfqJhTKKKsvdkFWjcJpEE_72_HzLrwRpg"
+                src="http://maps.google.com/maps?file=api&amp;v=2.80&amp;key=ABQIAAAAyrwFPf71xa3x2zoW0lc_JhTyuK9OZJ2mOK7lYs8WD7yWXp9BiRQNYl0jyCOT0UULjVjQvKAcxJ-LNA"
             type="text/javascript"></script>
             <script src="javascript/dragzoom_modded.js" type="text/javascript"></script>
 
